@@ -1,7 +1,7 @@
 #+title: DSC 105 Syllabus
 #+author: Marcus Birkenkrahe
 #+startup: overview hideblocks indent
-#+options: toc:nil num:1 ^:nil
+#+options: toc:1 num:1 ^:nil
 #+subtitle: DSC105 Introduction to Data Science - Syllabus Fall 2022
 * General Course Information
 
@@ -82,7 +82,6 @@ the impact of a requirement on your total grade.
 
 You should be able to see your current grade at any time using the
 gradebook for the course.
-
 * Grading table
 
 This table is used to convert completion rates into letter grades. For
@@ -110,7 +109,6 @@ term results, only straight letters are given (by rounding up).
 |   49-0 | F             | F (failed)    |        |
 |--------+---------------+---------------+--------|
 #+TBLFM: @4$4=0.9*455::@7$4=0.76*455::@10$4=0.6*455::@12$4=.50*455
-
 * (Revision) Quizzes
 - Complete before coming to class
 - Recall last chapter or section of class
@@ -251,7 +249,6 @@ of this syllabus. Those details will include at least the following:
 * Learning Management System (LMS)
 
 We will use Canvas in this course ([[https://lyon.instructure.com/courses/568][lyon.instructure.com/courses/568]]).
-
 * Assignments and Honor Code
 
 There will be several assignments during the summer school,
@@ -306,19 +303,17 @@ an extension. Extensions will *not* be granted for reasons such as:
     prior to the scheduled time.  If you are sick the day of the test,
     please e-mail me or leave a message on my phone before the
     scheduled time, and we can make arrangements when you return.
-
 * Attendance policy
 
 In accordance with college policy, you must attend a minimum of 80% of
-non-cancelled meetings without risking a fail. This means that you can
-miss XXX meetings without any issues. If you miss XXX meetings, you
-fail the class automatically. Any missed meetings result in an [[https://catalog.lyon.edu/class-attendance]["Early
-Alert" report]].
+non-cancelled meetings without risking a fail. This means that you
+must attend a minimum of 32/40 meetings. If you miss more than 8
+meetings, you fail the class automatically. Any missed meetings result
+in an [[https://catalog.lyon.edu/class-attendance]["Early Alert" report]].
 
 You should take care not to miss consecutive sessions if at all
 possible - otherwise you risk losing touch with the class and falling
 behind.
-
 * Important term dates
 
 #+name: tab:extra
