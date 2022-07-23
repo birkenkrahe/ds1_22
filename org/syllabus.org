@@ -390,5 +390,6 @@ behind.
 
 [fn:2]First chapter of "Introduction to Data Visualization with
 ggplot2", DataCamp
+
 [fn:1]First chapter of "Data Visualization in R" by Ron Pearson, DataCamp
 
