@@ -70,15 +70,14 @@ the impact of a requirement on your total grade.
 #+name: tbl:grading
 | REQUIREMENT   | UNITS | PPU | TOTAL | % of TOTAL |
 |---------------+-------+-----+-------+------------|
-| Quizzes       |    13 |  10 |   130 |  28.571429 |
-| Assignments   |    15 |  10 |   150 |  32.967033 |
-| Classwork     |    15 |   5 |    75 |  16.483516 |
-| Sprint review |     3 |  20 |    60 |  13.186813 |
-| Exam          |     1 |  40 |    40 |  8.7912088 |
+| Tests         |    15 |  10 |   150 |        30. |
+| Assignments   |    15 |  10 |   150 |        30. |
+| Classwork     |    15 |  10 |   150 |        30. |
+| Sprint review |     5 |  10 |    50 |        10. |
 |---------------+-------+-----+-------+------------|
-| TOTAL         |       |     |   455 | 100.000000 |
+| TOTAL         |       |     |   500 |       100. |
 |---------------+-------+-----+-------+------------|
-#+TBLFM: @2$4=$2*$3::@2$5=(@2$4/@7$4)*100::@3$4=$2*$3::@3$5=(@3$4/@7$4)*100::@4$4=$2*$3::@4$5=(@4$4/@7$4)*100::@5$4=$2*$3::@5$5=(@5$4/@7$4)*100::@6$4=$2*$3::@6$5=(@6$4/@7$4)*100::@7$4=vsum(@2..@6)::@7$5=vsum(@2..@6)
+#+TBLFM: @2$4=$2*$3::@2$5=(@2$4/@6$4)*100::@3$4=$2*$3::@3$5=(@3$4/@6$4)*100::@4$4=$2*$3::@4$5=(@4$4/@6$4)*100::@5$4=$2*$3::@5$5=(@5$4/@6$4)*100::@6$4=vsum(@2..@5)::@6$5=vsum(@2..@5)
 
 You should be able to see your current grade at any time using the
 gradebook for the course.
@@ -93,23 +92,23 @@ term results, only straight letters are given (by rounding up).
 |--------+---------------+---------------+--------|
 | 100-98 | A+            |               |        |
 |  97-96 | A             | A (passed -   |        |
-|  95-90 | A-            | very good)    |  409.5 |
+|  95-90 | A-            | very good)    |   450. |
 |--------+---------------+---------------+--------|
 |  89-86 | B+            |               |        |
 |  85-80 | B             | B (passed -   |        |
-|  79-76 | B-            | good)         |  345.8 |
+|  79-76 | B-            | good)         |   380. |
 |--------+---------------+---------------+--------|
 |  75-70 | C+            |               |        |
 |  69-66 | C             | C (passed -   |        |
-|  65-60 | C-            | satisfactory) |   273. |
+|  65-60 | C-            | satisfactory) |   300. |
 |--------+---------------+---------------+--------|
 |  59-56 | D+            |               |        |
-|  55-50 | D             | D (passed)    |  227.5 |
+|  55-50 | D             | D (passed)    |   250. |
 |--------+---------------+---------------+--------|
 |   49-0 | F             | F (failed)    |        |
 |--------+---------------+---------------+--------|
-#+TBLFM: @4$4=0.9*455::@7$4=0.76*455::@10$4=0.6*455::@12$4=.50*455
-* (Revision) Quizzes
+#+TBLFM: @4$4=0.9*500::@7$4=0.76*500::@10$4=0.6*500::@12$4=.50*500
+* (Revision) Tests
 - Complete before coming to class
 - Recall last chapter or section of class
 - Read relevant textbook chapters
@@ -125,10 +124,6 @@ term results, only straight letters are given (by rounding up).
 - Research exploratory data analysis project
 - Apply agile project management methods
 - Present your results during 3 sprint reviews
-* Final exam
-- Final exam sourced from the quizzes only
-- Multiple choice questions only
-- Online exam taken in the classroom
 * Standard Policies
 
 ** Honor Code
@@ -328,69 +323,68 @@ behind.
 | October 20     | Service day (no classes)        |
 | November 23-27 | Thanksgiving break (no classes) |
 | December 2     | Last day of classes             |
-| December 4-9   | Final exams                     |
 | December 14    | Final grades due                |
 
 * Classroom sessions schedule
 
 #+name: tab:schedule
-| NO | DATE       | TESTS   | ASSIGNMENT                    | TEXTBOOK              |
-|----+------------+---------+-------------------------------+-----------------------|
-|  1 | Wed-17-Aug |         | 1 DS intro [DC]               | 1 Getting started     |
-|  2 | Fri-19-Aug |         | 2 Emacs tutorial              |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-|  3 | Mon-22-Aug | Quiz 1  | 3 Intro to basics [DC]        | 2 R for basic math    |
-|  4 | Wed-24-Aug |         |                               |                       |
-|  5 | Fri-26-Aug |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-|  6 | Mon-29-Aug | Quiz 2  | 4 Vectors [DC]                | 2.3 Vectors           |
-|  7 | Wed-31-Aug |         | Sprint review                 |                       |
-|  8 | Fri-02-Sep |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-|  9 | Wed-07-Sep | Quiz 3  | 5 Matrices [DC]               | 3 Matrices and Arrays |
-| 10 | Fri-09-Sep |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 11 | Mon-12-Sep | Quiz 4  | 6 Logical subsetting          | 4.1 Logical values    |
-| 12 | Wed-14-Sep |         |                               |                       |
-| 13 | Fri-16-Sep |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 14 | Mon-19-Sep | Quiz 5  | 7 String manipulation         | 4.2 Characters        |
-| 15 | Wed-21-Sep |         |                               |                       |
-| 16 | Fri-23-Sep |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 17 | Mon-26-Sep | Quiz 6  | 8 Factors [DC]                | 4.3 Factors           |
-| 18 | Wed-28-Sep |         |                               |                       |
-| 19 | Fri-30-Sep |         | Sprint Review                 |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 20 | Wed-05-Oct | Quiz 7  | 9 Lists [DC]                  | 5.1 Lists             |
-| 21 | Fri-07-Oct |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 22 | Mon-10-Oct | Quiz 8  | 10 Data frames [DC]           | 5.2 Data Frames       |
-| 23 | Wed-12-Oct |         |                               |                       |
-| 24 | Fri-14-Oct |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 25 | Mon-24-Oct | Quiz 9  | 11 Coercing data structures   | 6 Special values,     |
-| 26 | Wed-26-Oct |         |                               | Classes, and          |
-| 27 | Fri-28-Oct |         |                               | Coercion              |
-|----+------------+---------+-------------------------------+-----------------------|
-| 28 | Mon-31-Oct | Quiz 10 | 12 Quick intro [DC][fn:1]     | 7 Basic plotting      |
-| 29 | Wed-02-Nov |         |                               |                       |
-| 30 | Fri-04-Nov |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 31 | Mon-07-Nov | Quiz 11 | 13 Intro to ggplot [DC][fn:2] | 7.4 ggplot2           |
-| 32 | Wed-09-Nov |         |                               |                       |
-| 33 | Fri-11-Nov |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 34 | Mon-14-Nov | Quiz 12 | 14 Reading Excel sheets       | 8.2 Reading data      |
-| 35 | Wed-16-Nov |         |                               |                       |
-| 36 | Fri-18-Nov |         |                               |                       |
-|----+------------+---------+-------------------------------+-----------------------|
-| 37 | Mon-21-Nov | Quiz 13 | 15 Writing graphical data     | 8.3 Writing data      |
-|----+------------+---------+-------------------------------+-----------------------|
-| 38 | Mon-28-Nov |         | Sprint review                 |                       |
-| 39 | Wed-30-Nov |         | Sprint review                 |                       |
-| 40 | Fri-02-Dec |         | Sprint review                 |                       |
-|----+------------+---------+-------------------------------+-----------------------|
+| NO | DATE       | TESTS      | ASSIGNMENT                    | TEXTBOOK           |
+|----+------------+------------+-------------------------------+--------------------|
+|  1 | Wed-17-Aug | Entry test | 1 DS intro [DC] (8-22)        | 1 Getting started  |
+|  2 | Fri-19-Aug |            | 2 Emacs tutorial (8-26)       |                    |
+|----+------------+------------+-------------------------------+--------------------|
+|  3 | Mon-22-Aug | Test 1     | 3 Intro to R [DC] (08-29)     | 2 R for basic math |
+|  4 | Wed-24-Aug |            |                               |                    |
+|  5 | Fri-26-Aug |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+|  6 | Mon-29-Aug | Test 2     | 4 Vectors [DC] (09-07)        | 2.3 Vectors        |
+|  7 | Wed-31-Aug |            | 1st Sprint review             |                    |
+|  8 | Fri-02-Sep |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+|  9 | Wed-07-Sep | Test 3     | 5 Matrices [DC]               | 3 Matrices/Arrays  |
+| 10 | Fri-09-Sep |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 11 | Mon-12-Sep | Test 4     | 6 Logical subsetting          | 4.1 Logical values |
+| 12 | Wed-14-Sep |            |                               |                    |
+| 13 | Fri-16-Sep |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 14 | Mon-19-Sep | Test 5     | 7 String manipulation         | 4.2 Characters     |
+| 15 | Wed-21-Sep |            |                               |                    |
+| 16 | Fri-23-Sep |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 17 | Mon-26-Sep | Test 6     | 8 Factors [DC]                | 4.3 Factors        |
+| 18 | Wed-28-Sep |            |                               |                    |
+| 19 | Fri-30-Sep |            | 2nd Sprint Review             |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 20 | Wed-05-Oct | Test 7     | 9 Lists [DC]                  | 5.1 Lists          |
+| 21 | Fri-07-Oct |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 22 | Mon-10-Oct | Test 8     | 10 Data frames [DC]           | 5.2 Data Frames    |
+| 23 | Wed-12-Oct |            |                               |                    |
+| 24 | Fri-14-Oct |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 25 | Mon-24-Oct | Test 9     | 11 Coercing data structures   | 6 Special values,  |
+| 26 | Wed-26-Oct |            |                               | Classes, and       |
+| 27 | Fri-28-Oct |            |                               | Coercion           |
+|----+------------+------------+-------------------------------+--------------------|
+| 28 | Mon-31-Oct | Test 10    | 12 Quick intro [DC][fn:1]     | 7 Basic plotting   |
+| 29 | Wed-02-Nov |            | 3rd Sprint Review             |                    |
+| 30 | Fri-04-Nov |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 31 | Mon-07-Nov | Test 11    | 13 Intro to ggplot [DC][fn:2] | 7.4 ggplot2        |
+| 32 | Wed-09-Nov |            |                               |                    |
+| 33 | Fri-11-Nov |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 34 | Mon-14-Nov | Test 12    | 14 Reading Excel sheets       | 8.2 Reading data   |
+| 35 | Wed-16-Nov |            |                               |                    |
+| 36 | Fri-18-Nov |            |                               |                    |
+|----+------------+------------+-------------------------------+--------------------|
+| 37 | Mon-21-Nov | Test 13    | 15 Writing graphical data     | 8.3 Writing data   |
+|----+------------+------------+-------------------------------+--------------------|
+| 38 | Mon-28-Nov | Test 14    | Final Sprint review           |                    |
+| 39 | Wed-30-Nov |            | Final Sprint review           |                    |
+| 40 | Fri-02-Dec |            | Final Sprint review           |                    |
+|----+------------+------------+-------------------------------+--------------------|
 
 * Footnotes
 

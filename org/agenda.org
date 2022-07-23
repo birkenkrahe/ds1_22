@@ -1,0 +1,6 @@
+#+TITLE:Agenda - DSC 105 
+#+AUTHOR:Agenda - DSC 105 
+#+SUBTITLE:Agenda - DSC 105 - Introduction to Data Science, Fall 2022
+#+STARTUP:overview hideblocks indent
+#+OPTIONS: toc:nil num:nil ^:nil
+* README 
