@@ -91,7 +91,8 @@ Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WI
 
 * TODO Practice - Course infrastructure
 
-/Useful: take notes/
+*Useful:* take notes! Practice leads to mastery and the practice
+exercises will often come back to haunt you in the tests.
 
 1) Open a browser
 2) Find the GitHub repos (birkenkrahe/ds1 and /org)
@@ -104,4 +105,16 @@ Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WI
 9) Close Emacs
 10) Close the command line terminal
 
-/Class room practice completion = 10 points/
+*Note:* Class room practice completion = 10 points[fn:1].
+
+* Footnotes
+
+[fn:1]From the [[https://lyon.instructure.com/courses/568/assignments/1539][Canvas assignment]]:
+#+begin_quote
+Practice: course infrastructure (see GitHub) - no submission. To be
+completed in the classroom. If you actively participated in the
+practice session and/or uploaded the completed practice file (usually
+Org-mode, occasionally other file formats), you get full points. If
+you missed a classroom session with a submittable practice file, you
+can complete and submit it later.
+#+end_quote
