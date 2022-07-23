@@ -309,7 +309,7 @@ in an [[https://catalog.lyon.edu/class-attendance]["Early Alert" report]].
 You should take care not to miss consecutive sessions if at all
 possible - otherwise you risk losing touch with the class and falling
 behind.
-* Important term dates
+* Dates and class schedule
 
 #+name: tab:extra
 | WHEN           | WHAT                            |
@@ -324,8 +324,6 @@ behind.
 | November 23-27 | Thanksgiving break (no classes) |
 | December 2     | Last day of classes             |
 | December 14    | Final grades due                |
-
-* Classroom sessions schedule
 
 #+name: tab:schedule
 | NO | DATE       | TESTS      | ASSIGNMENT                    | TEXTBOOK           |

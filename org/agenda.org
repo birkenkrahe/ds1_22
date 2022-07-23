@@ -17,12 +17,91 @@
 * Week 1: Getting started
 * TODO Entry test (not graded) - 20 questions
 
+#+attr_html: :width 300px
+#+caption: Start page of the entry quiz on Canvas
+[[../img/entry_quiz.png]]
 
+- You get 10 points for completing this ungraded test
+- All other tests (1-14) are graded
+- Tests have to be completed online, are timed, and have a deadline
 
-* TODO Course overview - syllabus
+* TODO Course overview - syllabus (on GitHub and on Canvas)
+
+#+attr_html: :width 300px
+#+caption: Syllabus on GitHub
+[[../img/syllabus.png]]
+
+- General information & standard policies
+- Course information (grading, attendance)
+- [[https://github.com/birkenkrahe/ds1/blob/piHome/org/syllabus.org#classroom-sessions-schedule][Schedule]] with dates of tests and assignments
+- The [[https://github.com/birkenkrahe/ds1][GitHub repo]] contains course material
+
 * TODO Introduction to DataCamp (some assignments)
-* TODO Introduction to the textbook (some chapters)
-* TODO Introduction to GNU Emacs + ESS + Org-mode
-* TODO Practice
 
+#+attr_html: :width 300px
+#+caption: DataCamp course start page
+[[../img/datacamp.png]]
+
+- DataCamp is a data science learning platform
+- Access for you is free (classroom license)
+- 9/15 assignments are DataCamp assignments
+- Assignments are drawn from 4 courses
+  1. Data science for everyone
+  2. Introduction to R
+  3. Data visualization with R
+  4. Introduction to data visualization with ggplot2
+- Complete them on time to get full points
+- Completed DataCamp courses can [[https://www.linkedin.com/in/birkenkrahe/][support your resume]]
+  
+* TODO Introduction to the textbook
+
+#+attr_html: :width 200px
+#+caption: Cover of Book of R (Davies, 2016)
+[[../img/bookofR.png]]
+
+- R is FOSS with focus on stats and graphics
+- Davies' "[[https://nostarch.com/bookofr][Book of R]]" is extensive (832p.)
+- You don't have to read along but it might help
+- Many other tutorials and textbooks available
+- The best short online tutorial: [[https://github.com/matloff/fasteR][Matloff's "fasteR"]]
+- Beware of ideologies (cp. Matloff's "[[http://github.com/matloff/TidyverseSkeptic][TidyverseSceptic]]")
+
+* TODO Introduction to GNU Emacs + ESS + Org-mode
+
+#+attr_html: :width 200px
+#+caption: GNU Emacs start page
+[[../img/emacs.png]]
  
+- Emacs: self-documenting, extensible FOSS text editor
+- Process, file and package management (like an OS)
+- Literate programming environment for 43 languages
+- IDE for R programming and interactive coding
+
+* TODO Literate Programming
+
+#+attr_html: :width 500px
+#+caption: What is literate programming?
+[[../img/litprog.png]]
+
+Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WILtLJR2sHSfr6Fs/edit?usp=sharing][Teaching data science with hacker tools]]" (2022)
+
+- Common practice among data scientists
+- Paradigm behind interactive computing notebooks
+- Useful when learning anything 
+
+* TODO Practice - Course infrastructure
+
+/Useful: take notes/
+
+1) Open a browser
+2) Find the GitHub repos (birkenkrahe/ds1 and /org)
+3) Open the command line terminal
+4) Open/close R
+5) Open Emacs
+6) Find the Emacs tutorial
+7) Open/close R inside Emacs
+8) Run R in an Org-mode file
+9) Close Emacs
+10) Close the command line terminal
+
+/Class room practice completion = 10 points/
