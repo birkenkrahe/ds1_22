@@ -53,9 +53,33 @@
 - [[https://github.com/birkenkrahe/ds1/blob/piHome/org/syllabus.org#classroom-sessions-schedule][Schedule]] with dates of tests and assignments
 - The [[https://github.com/birkenkrahe/ds1][GitHub repo]] contains course material
 * COURSE TOPICS
+#+attr_html: :width 300px
+#+caption: Course topics
+[[../img/topics.jpg]]
 
+1) The R statistical programming language
+2) Basics of data visualization with R
+3) Professional software development methods
 
-  
+* VIDEO LECTURES
+
+#+attr_html: :width 200px
+[[../img/youtube.png]]
+
+- [[https://www.youtube.com/playlist?list=PLwgb17bzeNygo8GU6SivwwjsQj9QabqAJ][Emacs + Org-mode + R]] (Tutorial videos Spring '22)
+- [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXkLa45V6JeEhNZEXvsmUR1f][Introduction to R: installation and shell]]
+- Vectors in R ([[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3_YDc-8SS5EuG4h1aILHz][part 1]], [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXlA2axuHdNMzhwhuEhtGtlK][part 2]], [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXn0PLpr1dB8NQwkDuThwkf5][part 3]])
+- [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXmMY6rKe2dkUUdn41m50-n6][Data frames, matrices, lists, factors in R]]
+- [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXlKpHIv66nOhGAFxztXaCEd][Data frames in R]]
+- [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXkDVwgn2kXG13Y4SnoWDj9q][Base R plotting]]
+- [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXnLB9cVQQKRxtAFFDfyGw0h][Plotting with ggplot2]]
+- [[https://www.youtube.com/playlist?list=PLwgb17bzeNyi9RjO0pL48am-Bk6XWol44][Data import]] with R
+- [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3RimChL59F7lKSDGA97AZ][RStudio R Notebooks and literate programming]]
+
+* AGILE PROJECT
+#+attr_html: :width 200px
+[[../img//scrum.jpg]]
+ 
 * INTRODUCTION TO DataCamp (SOME ASSIGNMENTS)
 #+attr_html: :width 300px
 #+caption: DataCamp course start page
@@ -183,10 +207,10 @@ points. If you missed a classroom session with a submittable
 practice file, you can complete and submit it later.
 #+end_quote
 
-  #+name: abstract
-   #+begin_quote
-  We start by defining what data science is. We'll cover the data
-  science workflow and how data science is applied to real-world
-  problems. We'll finish the chapter by learning about different roles
-  within the data science field.
-  #+end_quote
+#+name: abstract
+#+begin_quote
+We start by defining what data science is. We'll cover the data
+science workflow and how data science is applied to real-world
+problems. We'll finish the chapter by learning about different roles
+within the data science field.
+#+end_quote
