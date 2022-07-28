@@ -108,18 +108,20 @@ Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WI
 *Useful:* take notes! Practice leads to mastery and the practice
 exercises will often come back to haunt you in the tests.
 
-1) Open a browser
-2) Find the GitHub repos (birkenkrahe/ds1 and /org)
-3) Open the command line terminal
-4) Open/close R
-5) Open Emacs
-6) Find the Emacs tutorial
-7) Open/close R inside Emacs
-8) Run R in an Org-mode file
-9) Close Emacs
-10) Close the command line terminal
+    1) Open a browser
+    2) Find the GitHub repos (birkenkrahe/ds1 and /org)
+    3) Open the command line terminal
+    4) Open/close R
+    5) Open Emacs
+    6) Find the Emacs tutorial
+    7) Open/close R inside Emacs
+    8) Run R in an Org-mode file
+    9) Close Emacs
+    10) Close the command line terminal
 
-*Note:* Class room practice completion = 10 points each.
+*Note:* Class room practice completion = 10 points each for active
+participation.
+
 * ASSIGNMENTS
 
 - There are 15 programming assignments altogether = 10 points each, or
@@ -151,7 +153,7 @@ exercises will often come back to haunt you in the tests.
   5-10 multiple choice, matching and true/false questions.
 - A subset of the test questions will form the final exam (20% of your
   final grade)
-  
+
 * GLOSSARY
 
 | TERM          | MEANING                                |
