@@ -224,10 +224,17 @@ easily by changing a system setting.
 
 #+end_notes
 * PRACTICE: DOWNLOAD PRACTICE FILES
+#+attr_html: :width 300px
+[[../img/3_github.png]]
 
-- Open a CMD line terminal wit a shell program
-- Go to your downloads directory c:\Users\name\Downloads
-- 
+1) Open the course directory in GitHub,
+   https://github.com/birkenkrahe/ds1
+2) Open ~/org/3_practice.org~
+3) Open the ~raw~ version of the file
+4) Save file as ~3_practice.org~
+5) Right click on the file in Explorer
+6) Change ~Opens with:~ property to Emacs
+7) Open file with Emacs from the Explorer
 
 * PRACTICE: INSTALL R
 
@@ -238,28 +245,17 @@ easily by changing a system setting.
 - Windows people: help each other!
 - MacOS people: help each other!
 
-* Opening R for the first time
+* OPENING R FOR THE FIRST TIME
 
 #+NAME: fig:Rlogo
 #+ATTR_HTML: :width 300 px
 [[../img/3_Rlogo.png]]
 
-- Go to https://www.r-project.org
-- Check FAQ and "related projects" pages
 
-  #+begin_notes
-
-  In this section, we open R for the first time and look at what
-  emerges. This won't be much but it's a start. Figure [[fig:Rlogo]]
-  shows the logo of the R project.
-
-  *Challenge:* go to the [[https://www.r-project.org/][project home page]]. It's quite minimalist by
-  design. Have a look around, especially check out the [[http://cran.r-project.org/faqs.html][FAQ]] and the
-  "[[https://www.r-project.org/other-projects.html][related projects]]" page, which gives the shortest overview of a
-  number of R application areas. [[r-project][(Hint)]]
-
-  #+end_notes
-
+- R is an /interpreted language/ - instructions are entered via CLI
+- On your windows box, you have R as a terminal program and as a GUI
+- In Emacs, you can execute R code blocks and display graphs
+  
 * Version and platform
 
 #+NAME: fig:cli-1

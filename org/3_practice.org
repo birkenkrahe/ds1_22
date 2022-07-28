@@ -1,10 +1,12 @@
-#+TITLE:Practice: Introduction to R 
+#+TITLE:Practice: Introduction to R
 #+AUTHOR: [YourName]
 #+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
 #+OPTIONS: toc:nil num:nil ^:nil
 * README
 
-  - Practice instructions for the introduction to R lectures
+- Practice instructions for the introduction to R lectures
+- Emacs + ESS + Org-mode and R must be installed
+- Report any errors or issues directly to the instructor
 
 * TODO IDENTIFY YOURSELF
 
@@ -13,15 +15,8 @@
 
   ~#+STARTUP: overview hideblocks indent~
 
-- With the cursor on theline, activate with ~C-c C-c~. 
+- With the cursor on theline, activate with ~C-c C-c~.
 
-* TODO DOWNLOAD AND INSTALL R
 
-  - You can only do this on a computer where you have adminstrative
-    rights. Hopefully, you've brought your laptop to the session (if
-    you have one).
-  - You find the latest version of R, Emacs + ESS + Org-mode
-    pre-installed on all computer lab PCs.
-  - Detailed instructions are available [[https://github.com/birkenkrahe/org/blob/master/FAQ.org][in the FAQ on GitHub]]. 
 
-* TODO 
+  
