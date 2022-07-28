@@ -6,9 +6,6 @@
 
   - Practice instructions for the introduction to R lectures
 
-    #+attr_html: :width 300px
-    [[../img/3_cezanne.jpg]]
-
 * TODO IDENTIFY YOURSELF
 
 - Update the ~#+AUTHOR:~ information in the header
