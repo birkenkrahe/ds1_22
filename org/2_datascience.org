@@ -2,16 +2,15 @@
 #+AUTHOR: Marcus Birkenkrahe
 #+Subtitle: Data Science Tools and Methods
 #+STARTUP: hideblocks overview indent
-#+OPTIONS: num:nil ^:nil
 #+ATTR_HTML: :width 500px
-#+caption: Modern picture of Pythagoras of Samos (ca. 570-495 BC)x
+#+caption: Modern picture of Pythagoras of Samos (ca. 570-495 BC)
 [[../img/2_pythagoras.jpg]]
 
 - You are like Pythagoras (570-495 B.C.)
 - He saw nature as a structured system of numbers
 - Data science is (still) the "sexiest" job of the century
 
-* What will you learn?
+* WHAT WILL YOU LEARN?
 
 - How and why data science is so popular
 
@@ -21,7 +20,7 @@
 
 - What data scientists do all the time
 
-* Data science as a field of scientific study
+* DATA SCIENCE AS A FIELD OF SCIENTIFIC STUDY
 
 #+ATTR_HTML: :width 500px
 #+caption: Data science as an interdisciplinary field (Source: Barber, 2018)
@@ -83,7 +82,7 @@
   of the document.]]
   #+end_notes
 
-* How popular is data science?
+* HOW POPULAR IS DATA SCIENCE?
 
 #+Caption: Selfie by Cristina Zaragoza (Unsplash)
 #+ATTR_HTML: :width 300px
@@ -91,7 +90,7 @@
 
 - How would you try to find out how popular data science is?
 
-* Ways to explore popularity
+* WAYS TO EXPLORE POPULARITY
 
 #+ATTR_HTML: :width 400px
 #+Caption: Google doodle 4th July 2022
@@ -105,7 +104,6 @@
 *Question: Can you think of any issues with these methods?*
 
 #+begin_notes
-
 1) Search - where? How?
    - Google (Scholar) - disadvantage of Google searches?
    - arxiv.org
@@ -135,7 +133,7 @@ relate to one another in social media, how they behave, perhaps
 even why they do what they do (= statistical inference).
 #+end_notes
 
-* Worldwide searches 2004-2021
+* WORLDWIDE SEARCHES 2004-2021
 
 #+NAME: fig:trend
 #+caption: "Data science" searches, 07/22 (Google trends)
@@ -180,7 +178,7 @@ term on the map.
    - Political divide deepened (immigration, abortion, gun laws)
 #+end_notes
 
-* The definition of sexy (for scientists)
+* THE DEFINITION OF SEXY (FOR SCIENTISTS)
 
 #+caption: Richard Feynman with drums (ca 1964)
 #+attr_html: :width 600px
@@ -190,7 +188,7 @@ term on the map.
 sometimes, developers of new data-discovery tools.  That is the
 definition of sexy.« -Gil Press ([[https://www.forbes.com/sites/gilpress/2012/09/27/data-scientists-the-definition-of-sexy/][Forbes, 09/27/12]])
 
-* Popularity contest
+* POPULARITY CONTEST
 
 *What do you think: which of these terms is most searched?*[fn:3]
 
@@ -213,7 +211,7 @@ definition of sexy.« -Gil Press ([[https://www.forbes.com/sites/gilpress/2012/0
 3) Grid lines (vertical lines) could improve reading
 #+end_notes
 
-* What are data science skills?
+* WHAT ARE DATA SCIENCE SKILLS?
 
 #+name: fig:def
 #+attr_html: :width 600px
@@ -260,9 +258,9 @@ Between two of these areas each are application areas:
 
 #+end_notes
 
-* What about your skills? What are they?
+* WHAT ABOUT YOUR SKILLS? WHAT ARE THEY?
 
-Practice: fill this Kanban board for your own skills (if any)!
+Practice: [[https://ideaboardz.com/for/What%20are%20your%20skills%3F/4579973][fill this Kanban board for your own skills (if any)!]]
 
 - In which domain do you have knowledge?
 - Which (non-trivial) decisions have you made?
@@ -271,10 +269,9 @@ Practice: fill this Kanban board for your own skills (if any)!
 - Which process analytics tools have you used?
 - What are you skills in machine learning?
 
- Compare: [[https://1drv.ms/b/s!AhEvK3qWokrvhPhyO8vS3nRXWah9jA]["My IT skill stack"]][fn:6] 
+  Compare: [[https://github.com/birkenkrahe/ds1/blob/piHome/pdf/my_IT_skill_stack.pdf]["My IT skill stack"]][fn:6]
 
 #+begin_notes
-
 1. Problem solving skills:
    - Understand the problem: the conditions, the unknowns, the
      data. Of these, I am particularly good with data.
@@ -300,27 +297,27 @@ Practice: fill this Kanban board for your own skills (if any)!
 5. Tool skills
    - I love tools
    - In my courses usually use about 20 different IT tools
-
 #+end_notes
 
-** What are technical data science skills?
+* WHAT ARE TECHNICAL DATA SCIENCE SKILLS?
 
 #+NAME: fig:tech
+#+attr_html: :width 700px
 [[../img/2_ds_tech_skills.png]]
 
-#+begin_quote
-Have you heard of any of these?
-#+end_quote
+*Have you heard of any of these?*
 
 #+begin_notes
-Tip: when you come across products you don't know, make it a habit
-to look them up - knowing the names and what they stand for will
-help you anchor yourself in anything you read, and the most
-important products, which are most talked about, are often talked
-about for a reason - e.g. because they represent an innovation
-and/or an advantage. By knowing the products, you can also learn
-something about the innovation. This dependency on products also
-shows that both computer and data science are crafts.
+Tip: when you come across products you don't know, make it a habit to
+look them up - knowing the names and what they stand for will help you
+anchor yourself in anything you read, and the most important products,
+which are most talked about, are often talked about for a reason -
+e.g. because they represent an innovation and/or an advantage. By
+knowing the products, you can also learn something about the
+innovation. This dependency on products also shows that both computer
+and data science are crafts.
+| TOOL         | PURPOSE            | TOOL          | PURPOSE               |
+|--------------+--------------------+---------------+-----------------------|
 | D3.js        | Visualization      | Apache Hadoop | distributed computing |
 | Apache Spark | Analytics engine   | MapReduce     | Google scalability    |
 | Apache Pig   | Analytics platform | NoSQL         | Unstructured big data |
@@ -328,10 +325,10 @@ shows that both computer and data science are crafts.
 | GitHub       | Version control    |               |                       |
 #+end_notes
 
-** What is frankenstein made of?
+* WHAT IS "FRANKENSTEIN'S DATA SCIENTIST" MADE OF?
 
 #+NAME: fig:frankenstein
-#+ATTR_html: :width 300px
+#+ATTR_html: :width 600px
 [[../img/2_datasciencefrankenstein.png]]
 
 Source: [[https://st12.ning.com/topology/rest/1.0/file/get/2808339698?profile=RESIZE_1024x1024][datasciencecentral.com]]
@@ -377,34 +374,27 @@ is a rich metaphor with many connotations.
   understanding of the foundations of data science.
 #+end_notes
 
-** What about you?
+* DO YOU HAVE A BRAIN FOR NUMBERS?
 
-#+begin_quote
+#+attr_html: :width 600px
+[[../img/2_bookshelf.jpg]]
 
-| Do you have a "brain for numbers"? Do you prefer people or stories?        |
-| [[../img/2_bookshelf.jpg]]                                                        |
+- What if you don't have a "brain for numbers"?
+- What if graphs scare you because of the underlying math?
+- What if you like novels but hate manuals?
+- What if you actually hate computers and machines?
 
-#+end_quote
+Can you still have a "brain for data science" like Dr. Frankenstein's
+monster here? [[challenge_brain][(Hint)]]
 
-#+begin_notes
-*...youR tuRn:* What if you don't have a brain for numbers, can you
-still do data science? What if numbers don't turn you on but
-instead put you to sleep?  What if graphs scare you because you
-suspect that difficult mathematics is necessary to understand the
-graph and what's behind it? What if you like novels but don't care
-for manuals - what if you don't even like computers? Can you still
-have a "brain for data science" like Dr. Frankenstein's monster
-here? [[challenge_brain][(Hint)]]
-#+end_notes
+* WHAT ARE METAPHORS GOOD FOR?
 
-** What do metaphors do?
-
-#+attr_html: :height 300px
+#+attr_html: :width 200px
 [[../img/2_frankenstein.jpg]]
 
-#+begin_quote
-Metaphors are models.
-#+end_quote
+- What are the connotations of "Frankenstein's Data Scientist"?
+- Do you find this metaphor apt or not?
+- Which metaphor would you have chosen?
 
 #+begin_notes
 *...youR tuRn:* What are the connotations of using "Frankenstein's
@@ -414,15 +404,13 @@ are confused or not standardized (all of which is the case for data
 science). Metaphors are a type of model. [[challenge_frankenstein][(Hints)]]
 #+end_notes
 
-* What's the (US) job market for data scientists like?
+* WHAT'S THE (US) JOB MARKET FOR DATA SCIENTISTS LIKE?
 
 #+attr_html: :width 750px
 #+NAME: fig:jobs
 [[../img/2_ds_demand.png]]
 
-#+begin_quote
-Challenge: search a job portal for "data scientist".
-#+end_quote
+*Challenge: search a job portal for "data scientist".*
 
 #+begin_notes
 The value of statistics like shown in figure [[fig:jobs]] depends on the
@@ -447,44 +435,44 @@ connections with what you already know you can make.] Here is a
 (free) book called, incidentally, "[[https://www.cs.cornell.edu/jeh/book.pdf][Foundations of Data Science]]"
 ([[blum_2015][Blum et al 2015, 466 p.]]). It includes some geometry, graph theory,
 linear algebra, markov chains, and a variety of algorithms for
-"massive data problems" like streaming, sketching and sampling
-
+"massive data problems" like streaming, sketching and sampling.
 #+end_notes
 
-** Job profiles (DataCamp)
+* JOB PROFILES (ACCORDING TO DATACAMP)
 
 #+name: fig:prof
+#+attr_html: :width 600px
 [[../img/2_ds_jobs.png]]
 
-#+begin_quote
-Who would you rather be?
-#+end_quote
+- Who would you rather be?
+- Why?
+- Which job is most in demand?
 
 #+begin_notes
-Introductory DataCamp courses on data science "for everyone" (that
-is, without being tied to one of the three dominant languages -
-Python, R, or SQL), contain a job profile section to help users
-find their professional data science niche.
+Introductory DataCamp courses on data science "for everyone" (that is,
+without being tied to one of the three dominant languages - Python, R,
+or SQL), contain a job profile section to help users find their
+professional data science niche.
 
-The figure [[fig:prof]] shows four such profiles from a 2020
-course. What is notably missing here is the maths and/or CS or
-software engineering knowledge required or desirable to fill these
-roles. But there are also people who say that you best come to a
-firm as a general-purpose computer scientist and then learn any of
-these on the job depending on the needs and the available
-experience.
+The figure [[fig:prof]] shows four such profiles from a 2020 course. What
+is notably missing here is the maths and/or CS or software engineering
+knowledge required or desirable to fill these roles. But there are
+also people who say that you best come to a firm as a general-purpose
+computer scientist and then learn any of these on the job depending on
+the needs and the available experience.
 #+end_notes
 
-* What are data science problems?
-
+* WHAT ARE TYPICAL DATA SCIENCE PROBLEMS?
 #+NAME: fig:decision
 #+attr_html: :width 750px
+#+caption: Cartoon by Cassie Kozyrkov (@quaesita)
 [[../img/2_data_science_adventure.png]]
 
-Source: Cassie Kozyrkov ([[https://twitter.com/quaesita][@quaesita]])
+- *Data analytics*: explorative or explanatory
+- *Machine learning*: many decisions involving big data
+- *Statistics*: few important decisions with high uncertainty
 
 #+begin_notes
-
 The cartoon in figure [[fig:decision]] is by Google's head of "decision
 intelligence", [[kozyrkov_2019][Cassie Kozyrkov (2018)]]. She has a specific,
 business- and decision-oriented idea of the purpose of data
@@ -518,13 +506,9 @@ idea about what you can do with data science tools.
 *...youR tuRn:* Think about any decision you make - what are the
 steps you go through? Do they amount to a "data science adventure"
 as shown in the figure [[fig:decision]] - why (or why not)? [[challenge_decisions][(Hint)]]
-
-See also my remarks in the wiki on GitHub (in a footnote):
-https://github.com/birkenkrahe/dsc101/wiki/Data-science-process
-
 #+end_notes
 
-** Data science applications
+* DATA SCIENCE APPLICATIONS
 
 #+NAME: fig:app
 #+attr_html: :width 800px
@@ -532,32 +516,26 @@ https://github.com/birkenkrahe/dsc101/wiki/Data-science-process
 
 Source: [[https://data-flair.training/blogs/data-science-applications/][data-flair.training]]
 
-** A real world problem
+* EXAMPLE 1: CYBERSECURITY
 
 #+attr_html: :width 500px
 [[../img/2_ics.png]]
 
 Source: [[https://hackerman.info/][Industrial Cybersecurity (2017)]]
 
-#+begin_notes
-Here is a real world problem worthy of data science, and also well
-suited to R: efficiently securing critical infrastructure systems,
-generally considered essential to the survival of Western
-civilization - cp. "Live Free or Die Hard" (2007)
+- Problem: how to secure critical digital infrastructure
+- Solution: Industrial Control System
+- Data science: EDA (user data), simulation (sample data)
 
-As you can see from the diagram, which shows a properly designed
-(according to the book's author) Industrial Control System, such a
-system is insanely complicated.
+* EXAMPLE 2: TIME SERIES ANALYSIS & TEXT MINING
 
-#+end_notes
-
-** Time series analysis & text mining
-
-#+attr_html: :height 250px
+#+attr_html: :width 800px
 #+name: fig-log
 [[../img/2_syslog.png]]
 
-Source: Linux ~/var/log/syslog~ event log
+- Data: Linux /var/log/syslog event log
+- Problem: Textual time series data
+- Solution: Text or process mining of the event log data
 
 #+begin_notes
 All system components continuously write data protocols in the form
@@ -585,40 +563,21 @@ A separate technique (not immediately part of an R programming
 course) is "process mining".
 #+end_notes
 
-* What is the data science process?
+* WHAT IS THE DATA SCIENCE PROCESS?
 
-#+NAME: fig:lyon
-#+attr_html: :width 800px
-[[../img/2_data_science.png]]
-
-Source: [[https://github.com/birkenkrahe/dsc101/blob/main/wiki/talk_presentation.pdf][Birkenkrahe (2021)]]
-
-#+begin_notes
-See [[https://github.com/birkenkrahe/dsc101/wiki/Data-science-process][course wiki on GitHub]] for some background on this model.
-#+end_notes
-
-** Problem-centered process
 #+NAME: fig:process
 #+attr_html: :width 500px
 [[../img/2_righteda.png]]
 
 Source: [[https://github.com/birkenkrahe/dsc101/blob/main/wiki/talk_presentation.pdf][Birkenkrahe (2021)]]
 
-#+begin_notes
-See [[https://github.com/birkenkrahe/dsc101/wiki/Data-science-process][course wiki on GitHub]] for some background on this model.
-#+end_notes
-
-** EDA-centric process model
+* EXPLORATORY DATA ANALYSIS (EDA) PROCESS MODEL
 
 #+NAME: fig:process
 #+attr_html: :width 750px
 [[../img/2_ria_process1.png]]
 
-Source: [[https://r4ds.had.co.nz/index.html][Wickham/Grolemund (2017)]]
-
-#+begin_quote
-([[https://h5p.org/node/910614][Interactive BPMN version]])
-#+end_quote
+Source: [[https://r4ds.had.co.nz/index.html][Wickham/Grolemund (2017)]] - here is my [[https://h5p.org/node/910614][interactive BPMN version]].
 
 #+begin_notes
 Figure [[fig:process]] shows a process that begins with raw data. Such data are
@@ -636,7 +595,7 @@ underlying structure visible. But visualization does not always have
 to be graphical. Let's look at three examples in the next section.
 #+end_notes
 
-** Data science workflow
+* DATA SCIENCE WORKFLOW
 
 #+NAME: fig:dc
 #+attr_html: :width 750px
@@ -644,86 +603,31 @@ to be graphical. Let's look at three examples in the next section.
 
 Source: [[https://learn.datacamp.com/courses/data-science-for-everyone][Data science for everyone]] (DataCamp)
 
-* Concept summary
+* A MODEL FOR LEARNING DATA SCIENCE 
 
-- Data science is used for decision support, process analytics and
-  machine learning.
-- Data science makes use of domain knowledge - experience in a
-  particular field of business.
-- The job market for data science is good.
-- The data science process includes modeling, visualizing, and
-  communicating data analysis results.
+#+NAME: fig:lyon
+#+attr_html: :width 700px
+#+caption: Talk@Lyon College (Birkenkrahe, 2021)
+[[../img/2_data_science.png]]
 
-  #+begin_quote
-  Read the seminal article by [[https://hbr.org/2012/10/data-scientist-the-sexiest-job-of-the-21st-century][Davenport/Patil (2012)]].
-  #+end_quote
+- Algorithmic vs heuristic
+- Coding vs modeling
+- Dashboards vs. Prediction
 
-* R Demo - visualization example
+* CONCEPT SUMMARY
 
 #+ATTR_HTML: :width 500px
 [[../img/2_rocks.jpg]]
 
-[[https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars][~mtcars~: Motor Trend Car Road Tests]]
+- Data science is used for *decision support*, *process analytics* and
+  *machine learning*.
+- Data science makes use of *domain knowledge* - experience in a
+  particular field of business.
+- The *job market( for data science is good.
+- The data science *process* includes modeling, visualizing, and
+  communicating data analysis results.
 
-#+begin_notes
-You can type along if you already have R installed (next week)
-- ~data(mtcars)~
-- ~?mtcars~
-- ~head(mtcars)~
-- ~rownames(mtcars)~
-- ~str(mtcars)~
-- ~colnames(mtcars)~
-- https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars
-- ~summary(mtcars)~
-- ~plot()~
-- ~lm()~
-- ~abline()~
-#+end_notes
-
-* Code summary
-
-| ~data()~     | import dataset                        |
-| ~head()~     | print first few lines of dataset      |
-| ~str()~      | show dataset structure                |
-| ~summary()~  | print statistics overview of dataset  |
-| ~plot()~     | create scatterplot                    |
-| ~lm()~       | fit linear [regression] model to data |
-| ~abline()~   | add straight lines through a plot     |
-
-#+begin_notes
-R code examples:
-
-We have already seen quite a bit of R code in the examples - the
-why, what and how of R will be the subject of the next
-lecture. You don't need to remember these now - we'll practice
-them soon and often enough - but if you do, it might be helpful:
-
-After hearing a lot of information, I find it sometimes necessary
-to anchor myself again. You can do this now and test your basic
-understanding of data science and brush up on your reading:
-
-[[challenge_davenport][*...youR tuRn:*]] Read the seminal article by [[davenport_2012][Davenport/Patil (2012)]],
-which put data science on the map for business practitioners. What
-has changed since then (if anything)? Test their claims (e.g. "there
-are no university programs offering degrees in data science" - is
-this still true?). How would you measure the performance of a data
-scientist? Has the understanding of data science and data scientist
-("a hybrid of data hacker, analyst, communicator, and trusted
-adviser") changed since then?|
-#+end_notes
-
-* What's next?
-
-| DataCamp assignment | Data collection and storage |
-| Installing R        | [[https://www.datacamp.com/community/tutorials/installing-R-windows-mac-ubuntu][Try it yourself!]]            |
-| First steps in R    | We'll do it together!       |
-| Weekly test         | 5-15 simple questions       |
-
-* Thank you! Questions?
-
-[[../img/2_sunflower.gif]]
-
-* References
+* REFERENCES
 
 1) Barber M (Jan 14, 2018). Data science concepts you need to know!
    Part 1. [[https://towardsdatascience.com/introduction-to-statistics-e9d72d818745][URL: towardsdatascience.com]]
@@ -779,7 +683,7 @@ adviser") changed since then?|
 25) <<wing_2019>> Wing JM (2 Jul 2019). The data life cycle. Harvard Data Science
     Review. Online: [[https://hdsr.mitpress.mit.edu/pub/577rq08d/release/3][hdsr.mitpress.mit.edu.]]
 
-* "Your tuRn" (hints and solutions)
+* "Your tuRn" (HINTS AND SOLUTIONS)
 <<challenges>>
 ** Popularity  <<challenge_popular>>
 Check out the seminal article by [[davenport_2012][Davenport/Patil 2012.]] (At least)
@@ -898,9 +802,8 @@ introductory course. There are many data science programs at
 universities now - often offered as minors or as Masters programs for
 people trained already in maths, computer science, or fields with
 obvious and current data science applications (like biology). The
-understanding of a data scientist as a hybrid professional has not
-really changed sinc
-
+understanding of a data scientist as a hybrid professional is still
+very rudimentary.
 
 * Footnotes
 

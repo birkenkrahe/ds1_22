@@ -48,7 +48,7 @@
 * AGILE TEAM PROJECT
 #+attr_html: :width 600px
 #+caption: Agile (Scrum) project
-[[../img/1_/scrum.png]]
+[[../img/1_scrum.png]]
 
 The team project makes up 20% of your final grade for this course.
 
@@ -119,11 +119,11 @@ exercises will often come back to haunt you in the tests.
 9) Close Emacs
 10) Close the command line terminal
 
-*Note:* Class room practice completion = 10 points each[fn:1].
+*Note:* Class room practice completion = 10 points each.
 * ASSIGNMENTS
 
-- There are 15 programming assignments altogether = 10 points
-  each[fn:2], or 30% of your final grade.
+- There are 15 programming assignments altogether = 10 points each, or
+  30% of your final grade.
 
 - Register with DataCamp and complete the DataCamp chapter
   [[https://lyon.instructure.com/courses/568/assignments/1420][Introduction to data science​]] by Monday, 22 August at 11 am (ca. 20
