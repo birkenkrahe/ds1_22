@@ -111,7 +111,7 @@ URL: https://cran.r-project.org/mirrors.html
 
 - CRAN = "Comprehensive R Archive Network"x at [[https://www.r-project.org][r-project.org]]
 - Use /[[https://cran.r-project.org/mirrors.html][mirror sites]]/ (*what's that?*) for download
-- Practice: *Download the /installer/ program for your operating system*
+- PRACTICE: *DOWNLOAD THE /INSTALLER/ PROGRAM FOR YOUR OPERATING SYSTEM*
 
 #+begin_notes
 
@@ -223,7 +223,7 @@ easily by changing a system setting.
       Mac available and may be able to figure something out.)/
 
 #+end_notes
-* PRACTICE: DOWNLOAD PRACTICE FILES
+* TODO PRACTICE: DOWNLOAD PRACTICE FILES
 #+attr_html: :width 300px
 [[../img/3_github.png]]
 
@@ -236,14 +236,14 @@ easily by changing a system setting.
 6) Change ~Opens with:~ property to Emacs
 7) Open file with Emacs from the Explorer
 
-* PRACTICE: INSTALL R
+* TODO PRACTICE: INSTALL R
 
 #+attr_html: :width 420px
 [[../img/3_practice.png]]
 
-- Download 3_practice.org and open in Emacs
 - Windows people: help each other!
 - MacOS people: help each other!
+- Linux people: you're good!
 
 * OPENING R FOR THE FIRST TIME
 
@@ -251,12 +251,18 @@ easily by changing a system setting.
 #+ATTR_HTML: :width 300 px
 [[../img/3_Rlogo.png]]
 
-
-- R is an /interpreted language/ - instructions are entered via CLI
+- R is an /interpreted language/ - instructions are entered via CLI[fn:3]
 - On your windows box, you have R as a terminal program and as a GUI
-- In Emacs, you can execute R code blocks and display graphs
-  
-* Version and platform
+- In Emacs, you can execute R code blocks and display graphs together
+
+* TODO PRACTICE: FIND R / RUN R SCRIPTS
+
+What you'll learn:
+- R is an interpreted program with a shell (CLI/console)
+- On Windows, there are a GUI and a terminal program
+- You can run R scripts in the foreground or in the background
+
+* VERSION AND PLATFORM
 
 #+NAME: fig:cli-1
 [[../img/3_opening_R_1.png]]
@@ -279,7 +285,7 @@ have (most importantly: 64-bit)? [[platform][(Hint)]]
 
 #+end_notes
 
-* Distribution license
+* DISTRIBUTION LICENSE
 
 #+NAME: fig:cli-2
 [[../img/3_opening_R_2.png]]
@@ -819,7 +825,10 @@ workspace) and reopening it again.
 The simplest way is to type ~help(Boston)~ (again, only after
 loading the ~MASS~ package).
 * Footnotes
-
+[fn:3]In fact, you can also save R instructions as a script and then
+run them using the program ~Rscript~ or in batch mode with the command ~R
+CMD BATCH~. We'll practice these commands in class.
+ 
 [fn:2]To open the R console, and direct plots to the correct device,
 the R program needs to be "plugged into" your operating system, as it
 were. You could still run it otherwise but e.g. you'd have to always
