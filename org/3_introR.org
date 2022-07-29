@@ -257,7 +257,6 @@ easily by changing a system setting.
 
 * TODO PRACTICE: FIND R / RUN R SCRIPTS
 
-What you'll learn:
 - R is an interpreted program with a shell (CLI/console)
 - On Windows, there are a GUI and a terminal program
 - You can run R scripts in the foreground or in the background
@@ -308,7 +307,7 @@ of this language.
 to it? Are there any programs that you have used before? [[gnu][(Hint)]]
 #+end_notes
 
-* The R project
+* THE R PROJECT
 
 #+CAPTION:
 #+NAME: fig:cli-3
@@ -336,7 +335,7 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   (like HTML or LaTeX)? [[latex][(Hint)]]
   #+end_notes
 
-* Demo and help
+* DEMO AND HELP
 
 #+NAME: fig:cli-4
 [[../img/3_opening_R_4.png]]
@@ -379,6 +378,13 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   in command-line mode.
   #+end_notes
 
+* TODO PRACTICE: EXPLORING THE R CONSOLE
+
+- Contents of the R startup screen: R's version, license, project,
+  citation, how to get help and demos, and how to quit R
+- GPL is the GNU Public License (important for FOSS)
+- BibTeX and LaTeX for scientific document processing
+
 * Working directory
 
 #+NAME: fig:cli-5
@@ -404,6 +410,10 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   shell that I use on my Linux computer (and that most MacOS users
   will use) is also available within Windows 10 [[posey][(Posey 2018]]).
   #+end_notes
+* PRACTICE: GET AND SET WORKING DIRECTORY
+
+- 
+
 
 * R "prompt"
 
