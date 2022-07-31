@@ -236,6 +236,14 @@ easily by changing a system setting.
 6) Change ~Opens with:~ property to Emacs
 7) Open file with Emacs from the Explorer
 
+Summary:
+#+begin_comment
+The GitHub directory contains all lecture and practice files. The ~raw~
+version is the Org-mode file without markup 3 In Windows, you can set
+a file type to be opened by one program (not possible in Linux or
+MacOS because Unix does not know file type extensions.
+#+end_comment
+
 * TODO PRACTICE: INSTALL R
 
 #+attr_html: :width 420px
@@ -257,11 +265,12 @@ easily by changing a system setting.
 
 * TODO PRACTICE: FIND R / RUN R SCRIPTS
 
+Summary:
 - R is an interpreted program with a shell (CLI/console)
 - On Windows, there are a GUI and a terminal program
 - You can run R scripts in the foreground or in the background
 
-* VERSION AND PLATFORM
+* R SHELL: VERSION AND PLATFORM
 
 #+NAME: fig:cli-1
 [[../img/3_opening_R_1.png]]
@@ -284,7 +293,7 @@ have (most importantly: 64-bit)? [[platform][(Hint)]]
 
 #+end_notes
 
-* DISTRIBUTION LICENSE
+* R SHELL: DISTRIBUTION LICENSE
 
 #+NAME: fig:cli-2
 [[../img/3_opening_R_2.png]]
@@ -307,7 +316,7 @@ of this language.
 to it? Are there any programs that you have used before? [[gnu][(Hint)]]
 #+end_notes
 
-* THE R PROJECT
+* R SHELL: THE R PROJECT
 
 #+CAPTION:
 #+NAME: fig:cli-3
@@ -335,7 +344,7 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   (like HTML or LaTeX)? [[latex][(Hint)]]
   #+end_notes
 
-* DEMO AND HELP
+* R SHELL: DEMO AND HELP
 
 #+NAME: fig:cli-4
 [[../img/3_opening_R_4.png]]
@@ -378,14 +387,15 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   in command-line mode.
   #+end_notes
 
-* TODO PRACTICE: EXPLORING THE R CONSOLE
+* TODO PRACTICE: EXPLORING THE R SHELL
 
+Summary:
 - Contents of the R startup screen: R's version, license, project,
   citation, how to get help and demos, and how to quit R
 - GPL is the GNU Public License (important for FOSS)
 - BibTeX and LaTeX for scientific document processing
 
-* Working directory
+* WORKING DIRECTORY
 
 #+NAME: fig:cli-5
 [[../img/3_opening_R_5.png]]
@@ -410,195 +420,173 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   shell that I use on my Linux computer (and that most MacOS users
   will use) is also available within Windows 10 [[posey][(Posey 2018]]).
   #+end_notes
-* PRACTICE: GET AND SET WORKING DIRECTORY
+* TODO PRACTICE: CHANGE WORKING DIRECTORY
 
-- 
+Summary:
+- Function without arguments: ~getwd()~
+- Function with arguments: ~setwd('...')~
+- Absolute pathname like ~'c:/Users/birkenkrahe/'~
+- Relative pathnames like ~'../../'~ ("go up by 2 levels")
 
-
-* R "prompt"
+* THE R SHELL PROMPT
 
 #+NAME: fig:cli-6
 [[../img/3_opening_R_6.png]]
 
-- Change your prompt to your name
-- Change it back to ~"> "~
+#+begin_notes
+Figure [[fig:cli-6]] shows a new utility command, ~options()~, that you
+can use to change the identifying prompt at the beginning of the
+command line. You don't have to do this but it's nice to know that
+and how you can do it. One of the advantages of working on the
+command-line is that you experience how you can adapt your working
+environment to your personal needs - something that most graphical
+environments do not allow you do to (at least not without a lot more
+effort). Freedom of extensibility is the name of the command-line
+game.
+#+end_notes
 
-  #+begin_notes
-  Figure [[fig:cli-6]] shows a new utility command, ~options()~, that you
-  can use to change the identifying prompt at the beginning of the
-  command line. You don't have to do this but it's nice to know that
-  and how you can do it. One of the advantages of working on the
-  command-line is that you experience how you can adapt your working
-  environment to your personal needs - something that most graphical
-  environments do not allow you do to (at least not without a lot more
-  effort). Freedom of extensibility is the name of the command-line
-  game.
-  #+end_notes
+* TODO PRACTICE: CHANGE R SHELL PROMPT
 
-* Computing
+Summary:
+- The functions ~options~ controls display options
+- You can extract display options with ~$~, e.g. ~options()$prompt~
+- You can get help with the ~help~ function (or ~?~) 
+
+* COMPUTING AND COMMENTING
 
 #+NAME: fig:cli-8
 #+ATTR_HTML: :height 300 px
 [[../img/3_opening_R_8.png]]
 
-- Compute "$2\times2$" and print it
-- Do it again with a comment (~#~)
+#+begin_notes
+One of the advantages of the interactive command-line is the ability
+to perform arithmetic operations. In figure [[fig:cli-8]] we begin with
+a simple addition. We'll do a lot more of this in the next
+section. When you type the command and click ~ENTER~, R responds by
+printing out the result without the need to explicit instruct it
+using a ~print~ command (though as you can see, this works as
+well). You also see here that ~#~ is the R sign for a comment (which
+is ignored upon execution). The ominous ~[1]~ at the beginning of
+each output line indicates the number of columns printed. R does
+this because it is strongest when manipulating tabular data - data
+ordered in columns and rows.
+#+end_notes
 
-  #+begin_notes
-  One of the advantages of the interactive command-line is the ability
-  to perform arithmetic operations. In figure [[fig:cli-8]] we begin with
-  a simple addition. We'll do a lot more of this in the next
-  section. When you type the command and click ~ENTER~, R responds by
-  printing out the result without the need to explicit instruct it
-  using a ~print~ command (though as you can see, this works as
-  well). You also see here that ~#~ is the R sign for a comment (which
-  is ignored upon execution). The ominous ~[1]~ at the beginning of
-  each output line indicates the number of columns printed. R does
-  this because it is strongest when manipulating tabular data - data
-  ordered in columns and rows.
-  #+end_notes
+* TODO PRACTICE: COMPUTE AND COMMENT
+
+Summary:
+- You can print results with or without ~print~
+- Create (inline) comments with ~#~ 
+- ~eshell~ is a Linux-type shell in Emacs ([[https://www.gnu.org/software/emacs/manual/html_mono/eshell.html#:~:text=Eshell%20is%20a%20command%20shell,code%20is%20natural%20and%20seamless.][doc]])
 
 * R packages
 
-- Contain functions and data sets
-- Must be installed and loaded for use
+- Packages contain functions and data sets
+- Most packages must be installed and loaded first
+- Default data sets are pre-loaded: ~?datasets~
 
-  #+attr_html: :width 400px
-  [[../img/3_package.gif]]
+#+attr_html: :width 200px
+#+caption: MASS is from the book by Venables/Ripley (2002)
+[[../img/3_MASS.png]]
 
-- Can be created with relative ease
-- Default data sets: ~?datasets~
-
-** Install packages
+* INSTALL PACKAGES
 
 #+NAME: fig:cli-9
 #+attr_html: :width 700px
 [[../img/3_opening_R_9.png]]
 
-- install package "~MASS~": enter ~install.packages("MASS")~
+- To install package "~MASS~": enter ~install.packages("MASS")~
+- Installation includes identifying location on your computer
+- Installation downloads compressed /tarball/ from a CRAN mirror site
+- ~md5sum~ is a GNU utility program that checks correct file transfer 
 
-  #+begin_notes
-  R packages are collections of functions and datasets that are ready
-  for you to use. You only have to install them (from repositories
-  like CRAN), and load them (once they are installed) with
-  ~library()~, as shown in figure [[fig:cli-9]] for an already installed
-  package, ~MASS~. The ability to create and use packages easily is
-  one of the main reasons for the popularity of R and an illustration
-  of its extensibility. Figure [[fig:cli-9]] also shows the installation
-  of a package (~ks~) - or rather, only the beginning of the
-  installation output. Once downloaded, the package needs to be
-  compiled for your system, which, for large packages, can take
-  several minutes. A successful installation should end with
-  ~Done([name])~, e.g. ~Done(ks)~ in the example. Packages are updated
-  regularly. To update your packages, you need to enter
-  ~update.packages()~. For a short description of a package, use
-  ~packageDescription("[name]"]~. To see all your installed packages,
-  use ~installed.packages()~ (this might result in a very long
-  list). For a listing of all functions and datasets in a package, use
-  ~help(package="[name]")~, e.g. ~help(package="MASS")~. To see all
-  built-in datasets (that come with base-R, the basic R program), enter
-  ~data()~.
+* MISCELLANEOUS PACKAGE COMMANDS
 
-  See [[alvarez][Alvarez 2019]] for a beginner's guide on R packages.
+- To uninstall a package, use ~remove.packages(package="[pkgname]")~
 
-  #+end_notes
+- To see all installed packages: ~installed.packages()~
 
-** Check datasets
+- To update packages: ~update.packages()~ (this can take a while)
 
-#+attr_html: :width 200px
-[[../img/3_MASS.png]]
+  #+attr_html: :width 700px
+  #+caption: Updating the R package MASS (R session screenshot)
+  [[../img/3_update_package_MASS.png]]
 
-- Which datasets are in ~MASS~?
-- Enter ~data(package="MASS")~
+- For a short package description: ~packageDescription("...")~
+  
+- To see all datasets in a package: ~data(package="...")~
 
-  #+begin_notes
+- ~data()~ will list all datasets for all installed packages
 
-  "MASS" comes from the title of the book "Modern Applied
-  Statistics with S" (freely available [[https://www.researchgate.net/publication/224817420_Modern_Applied_Statistics_With_S][via researchgate.net]]).
+- To load a package into current R session only: ~library("...")~
 
-  Works for R and for its predecessor S.
+- For a list of currently loaded packages: ~search()~
 
-  »S is a language and environment for data analysis originally
-  developed at Bell Laboratories (of AT&T and now Lucent
-  Technologies). It became the statisti-cian's calculator for the
-  1990s, allowing easy access to the computing power and graphical
-  capabilities of modem workstations and personal
-  computers. Various implementations have been available, currently
-  S-PLUS, a commercial system from the Insightful Corporation1 in
-  Seattle, and R,2 an Open Source system writ-ten by a team of
-  volunteers. Both can be run on Windows and a range of UNIX /
-  Linux operating systems: R also runs on Macintoshes.«
+- For a list of search paths (to find pkgs): ~searchpaths()~
 
-  (PDF) Modern Applied Statistics With S. Available from:
-  https://www.researchgate.net/publication/224817420_Modern_Applied_Statistics_With_S
-  [accessed Jul 08 2021].
+  #+attr_html: :width 500px
+  #+caption: Search paths for R packages on my Windows box
+  [[../img/3_searchpaths.png]]
 
-  #+end_notes
+* LOAD DATASETS
 
-* Load package
+- After loading a package that contains data sets, you must load them
 
-#+attr_html: :width 300px
-[[../img/3_MASS1.png]]
+- To load a data set contained in package, use ~data([name])~.
 
-- Load ~MASS~ in current R session
-- Enter ~library(MASS)~
-- See [[https://cran.r-project.org/package=MASS][documentation]] @CRAN
+- You can (often) get help on datasets with ~?~ or ~help([name])~[fn:4]
 
-* Load dataset
+  #+attr_html: :width 300px
+  #+caption: Loading MASS, MASS::phones, listing and delisting 
+  [[../img/3_data.png]]
 
-#+attr_html: :width 700px
-[[../img/3_MASS2.png]]
+* EXPLORE DATA
 
-- Load the data set "~Boston~"
-- What is in ~MASS::Boston~?
-- There are [[https://cran.r-project.org/web/packages/MASS/MASS.pdf][different ways]] to find out!
+- When you've loaded a data set, you should take a look at it
 
-  #+begin_notes
+- Most useful: ~str~ to see the data structure, ~head~ and ~tail~ to see the
+  first and last few rows
 
-  *Challenge:* how many variables (columns) and observations (rows)
-  does the dataset ~MASS::Boston~ contain? [[package][(Hint)]]
+- These functions have many different attributes (check the help)
 
-  You can look information up with ~?Boston~ or look at the data
-  directly using ~str(Boston)~.
+#+attr_html: :width 600px
+#+caption: structure of the built-in data set mtcars
+[[../img/3_mtcars.png]]
 
-  There are more packages than (useful) names. To distinguish between
-  functions or datasets with the same name in different packages, the
-  ~::~ operator is used. Check with ~??Boston~ if another dataset or
-  function with that name is installed. (Answer: no.)
+* TODO PRACTICE: R PACKAGE COMMANDS
 
-  #+end_notes
+Summary:
+- You can install, uninstall packages and data sets in them
+- You must load packages and data sets before using them
+- Your current R session keeps track of all loaded objects
+- Display structure, head and tail of loaded data sets
 
-* Explore dataset
+* SAVING YOUR WORKSPACE
 
-#+attr_html: :width 700px
-[[../img/3_MASS3.png]]
+- When you quit an R session with ~q()~ or ~quit()~, you're asked if you
+  want to save the /workspace image/.
 
-- Print first/last lines: ~head()~ / ~tail()~
-- Show structure: ~str()~
+- The workspace image includes all objects that were defined in the
+  session, like loaded libraries, datasets, variables etc.
 
-* Leaving R
+- In the current directory, R saves your command history (in a
+  readable text file ~.Rhistory~), and all data (in a machine-readable
+  file ~.RData~).
 
 #+NAME: fig:cli-8
 #+attr_html: :width 600px
 [[../img/3_opening_R_7.png]]
 
-- Leave R with ~q()~
-- Save your workspace with ~y~
-- Check which files were created!
+* CUSTOMIZING AT STARTUP
 
-  #+begin_notes
+- When you install packages, you do not need administrative rights,
+  even if R is installed in a read-only portion of your computer. The
+  OS will offer you to install packages in a user directory.
 
-  To leave R, simply type ~quit()~ or ~q()~. R will now ask you if
-  you wish to save your workspace. This includes all variables you
-  may have defined, datasets you may have loaded, and commands you
-  have typed. In your working directory, R has created files for
-  these, ~.Rhistory~ (which is readable) and ~.RData~ (which is not
-  readable). Within one R session, you can call all commands stored
-  in your history using the up and down arrow keys of your keyboard.
-
-  #+end_notes
-
-* Housekeeping
+- When downloading the package as part of the installation or updating
+  process, Windows forces you to pick a mirror. You can disable this
+  by creating your own ~~/.Rprofile~ file and specifying a download
+  mirror.
 
 #+attr_html: :width 600px
 [[../img/3_housekeeping.png]]
@@ -606,38 +594,24 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
 - Saved R commands: ~.Rhistory~
 - Saved R variables: ~.RData~
 - R profile settings: ~.Rprofile~
-- [[https://stackoverflow.com/questions/1189759/expert-r-users-whats-in-your-rprofile][Sample profiles]]
 
-  #+begin_notes
+- See also: [[https://www.r-bloggers.com/2014/09/fun-with-rprofile-and-customizing-r-startup/]["Fun with .Rprofile and customizing R startup"]]
+  (Fischetti, 2014)
+  
 
-  In your working directory, R has created files for these, ~.Rhistory~
-  (which is readable) and ~.RData~ (which is not readable). Within one
-  R session, you can call all commands stored in your history using
-  the up and down arrow keys of your keyboard.
+* TODO PRACTICE: CUSTOMIZING AT STARTUP
 
-  #+end_notes
-
-* Customize startup
-
-#+attr_html: :width 400px
-[[../img/3_kbd.gif]]
-
-- Create a file ~.Rprofile~:
-
-  #+begin_example
-  options(
-  repos = c(CRAN = "https://ftp.fau.de/cran/")
-  )
-  #+end_example
-
-- To check: restart R, re-install ~MASS~
+Summary:
+- Emacs and R have a home directory (~~/~) for startup files
+- You can determine R's startup behavior in ~~/.Rprofile~
+- ~~/.Rprofile~ is read every time a new R shell is started
 
 * The RStudio IDE
 
-#+attr_html: :width 500px
+#+attr_html: :width 600px
 [[../img/3_rstudio.png]]
 
-- Use it at your own [[https://moodle.hwr-berlin.de/mod/book/view.php?id=939064&chapterid=8130][peril]]!
+- RStudio is a popular (free) IDE for R - use it at your own [[https://moodle.hwr-berlin.de/mod/book/view.php?id=939064&chapterid=8130][peril]]!
 - Give [[https://moodle.hwr-berlin.de/mod/book/view.php?id=939064&chapterid=7712][Emacs]] + ESS a chance!
 - Learn "stick shift" first (=CLI)
 
@@ -654,23 +628,29 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
 
 * Code summary
 
-| TERM                       | MEANING             |
-|----------------------------+---------------------|
-| ~license()~, ~licence()~       | License info        |
-| ~help()~, ~?help~, ~??cars~      | get help            |
-| ~demo()~                     | R demos             |
-| ~getwd()~, ~setwd()~           | get/set working dir |
-| ~options(prompt=)~           | set prompt          |
-| ~print(1+1)~                 | result of ~1+1~       |
-| ~quit()~, ~q()~                | leave R             |
-| ~# ...~                      | comment             |
-| ~library("MASS")~            | load                |
-| ~install.packages("MASS")~   | install             |
-| ~installed.packages()~       | list all packages   |
-| ~update.packages()~          | update              |
-| ~packageDescription("MASS")~ | describe            |
-| ~help(package="MASS")~       | show                |
-| ~data()~                     | built-in datasets   |
+| TERM                       | MEANING               |
+|----------------------------+-----------------------|
+| ~license()~, ~licence()~       | License info          |
+| ~help()~, ~?help~              | get help              |
+| ~??[name]~                   | check occurrences     |
+| ~demo()~                     | R demos               |
+| ~getwd()~, ~setwd()~           | get/set working dir   |
+| ~options(prompt=)~           | set prompt            |
+| ~print(1+1)~                 | result of ~1+1~         |
+| ~quit()~, ~q()~                | leave R               |
+| ~# ...~                      | comment               |
+| ~library("MASS")~            | load                  |
+| ~detach("package:[name]")~   | unload package        |
+| ~install.packages("MASS")~   | install               |
+| ~installed.packages()~       | list all packages     |
+| ~update.packages()~          | update                |
+| ~packageDescription("MASS")~ | describe              |
+| ~help(package="MASS")~       | show                  |
+| ~data()~                     | built-in datasets     |
+| ~search()~                   | list loaded pkgs      |
+| ~searchpaths()~              | list pkg search paths |
+| ~ls()~                       | list loaded objects   |
+| ~rm(list=ls())~              | unload objects        |
 
 * What next?
 
@@ -746,6 +726,8 @@ Arithmetic with R
 - <<becker>> Robert Becker (2004). A Brief History of S. Online:
   [[http://sas.uwaterloo.ca/~rwoldfor/software/R-code/historyOfS.pdf][sas.waterloo.ca]].
 - <<davies>> Tilman M. Davies (2016). [[https://nostarch.com/bookofr][The Book of R. No Starch Press.]]
+- Tony Fischetti (September 17, 2014). Fun with .Rprofile and
+  customizing R startup. URL: [[https://www.r-bloggers.com/2014/09/fun-with-rprofile-and-customizing-r-startup/][R-bloggers.com]].
 - <<gallatin>> Kyle Gallatin (1 Nov 2018). Some Important Data
   Science Tools that aren’t Python, R, SQL or Math. Online:
   [[https://towardsdatascience.com/some-important-data-science-tools-that-arent-python-r-sql-or-math-96a109fa56d][towardsdatascience.com]].
@@ -767,6 +749,8 @@ Arithmetic with R
   [[https://blog.shotwell.ca/posts/why_i_use_r/][blog.shotwell.ca]].
 - <<uprety>> Sagar Uprety (23 Jul 2020). Data Cleaning and
   Exploratory Analysis in Python and R. Online: [[https://towardsdatascience.com/data-cleaning-and-exploratory-analysis-in-python-and-r-608de56124e2][towardsdatascience.com]].
+- [[https://link.springer.com/book/10.1007/978-0-387-21706-2][Venables/Ripley (2002). Modern Applied Statistics with
+  S. Springer]]. Online: [[https://www.researchgate.net/publication/224817420_Modern_Applied_Statistics_With_S][researchgate.net]].
 - <<zeng>> Yuleng Zeng (28 Aug 2018). An Introduction to R and
   LaTeX. Online: [[https://bookdown.org/Yuleng/introrlatex/][bookdown.org]].
 * Solutions to the challenges
@@ -835,10 +819,17 @@ workspace) and reopening it again.
 The simplest way is to type ~help(Boston)~ (again, only after
 loading the ~MASS~ package).
 * Footnotes
+
+[fn:4]Strictly speaking, the availability of help depends on the
+package design - well written packages and data sets are well
+documented and are accompanied by short and detailed descriptions, or
+even papers (so-called "vignettes"). An example is the ~Rcpp~ package
+that interfaces R and C++.
+ 
 [fn:3]In fact, you can also save R instructions as a script and then
 run them using the program ~Rscript~ or in batch mode with the command ~R
 CMD BATCH~. We'll practice these commands in class.
- 
+
 [fn:2]To open the R console, and direct plots to the correct device,
 the R program needs to be "plugged into" your operating system, as it
 were. You could still run it otherwise but e.g. you'd have to always
