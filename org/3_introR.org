@@ -150,7 +150,7 @@ worked:
 
 1) After opening the ~R..win.exe~ file, a popup asks you if you
    will let this pogram modify your hard disk. Say "yes" (why is
-   this necessary?[fn:2])
+   this necessary?[fn:1])
 2) In the installation dialog, accept all settings and check the
    options for establishing a desktop shortcut and a quick launch
    icon.
@@ -259,7 +259,7 @@ MacOS because Unix does not know file type extensions.
 #+ATTR_HTML: :width 300 px
 [[../img/3_Rlogo.png]]
 
-- R is an /interpreted language/ - instructions are entered via CLI[fn:3]
+- R is an /interpreted language/ - instructions are entered via CLI[fn:2]
 - On your windows box, you have R as a terminal program and as a GUI
 - In Emacs, you can execute R code blocks and display graphs together
 
@@ -534,7 +534,7 @@ Summary:
 
 - To load a data set contained in package, use ~data([name])~.
 
-- You can (often) get help on datasets with ~?~ or ~help([name])~[fn:4]
+- You can (often) get help on datasets with ~?~ or ~help([name])~[fn:3]
 
   #+attr_html: :width 300px
   #+caption: Loading MASS, MASS::phones, listing and delisting 
@@ -598,11 +598,10 @@ Summary:
 - See also: [[https://www.r-bloggers.com/2014/09/fun-with-rprofile-and-customizing-r-startup/]["Fun with .Rprofile and customizing R startup"]]
   (Fischetti, 2014)
   
-
 * TODO PRACTICE: CUSTOMIZING AT STARTUP
 
 Summary:
-- Emacs and R have a home directory (~~/~) for startup files
+- Emacs and R have a home directory (~~/~) for startup files[fn:4]
 - You can determine R's startup behavior in ~~/.Rprofile~
 - ~~/.Rprofile~ is read every time a new R shell is started
 
@@ -611,20 +610,27 @@ Summary:
 #+attr_html: :width 600px
 [[../img/3_rstudio.png]]
 
-- RStudio is a popular (free) IDE for R - use it at your own [[https://moodle.hwr-berlin.de/mod/book/view.php?id=939064&chapterid=8130][peril]]!
-- Give [[https://moodle.hwr-berlin.de/mod/book/view.php?id=939064&chapterid=7712][Emacs]] + ESS a chance!
-- Learn "stick shift" first (=CLI)
+- RStudio is a popular (FOSS) IDE for R with literate programming
+  capabilities (it supports interactive R Notebooks)
+  
+- We're not using RStudio ([[https://github.com/birkenkrahe/org/blob/master/FAQ.org#are-we-going-to-use-rstudio][why]]) but Emacs + ESS + Org-mode instead
+
+- You can [[https://www.rstudio.com/products/rstudio/download/][download RStudio from here]] - perhaps you learn to like
+  it[fn:6]
 
 * Concept Summary
 
-- R is an easy to *learn* language to quickly and interactively
-  analyse datasets. R is especially strong on visualization.
+- R is an easy to *learn* language to quickly and interactively analyse
+  datasets. R is especially strong on visualization.
+
 - R can be downloaded from ~r-project.org~ and installed on your
   computer.
+
 - There is plenty of *help* on R available from within the program, or
   on the Internet using the wider community of practitioners.
-- When you open R, you establish a working *environment*, which
-  includes packages, functions and variables.
+
+- When you open R, you establish a working *environment*, which includes
+  packages, functions and variables.
 
 * Code summary
 
@@ -636,6 +642,9 @@ Summary:
 | ~demo()~                     | R demos               |
 | ~getwd()~, ~setwd()~           | get/set working dir   |
 | ~options(prompt=)~           | set prompt            |
+| ~options(repos=)~            | set download repo     |
+| ~options()$prompt~           | display prompt        |
+| ~options()$repos~            | display download repo |
 | ~print(1+1)~                 | result of ~1+1~         |
 | ~quit()~, ~q()~                | leave R               |
 | ~# ...~                      | comment               |
@@ -660,60 +669,54 @@ Summary:
 
 See also: [[https://youtu.be/ARJ8cAGm6JE][HAL 9000: "I'm sorry Dave, I'm afraid I can't do that."]]
 
-** What now? read!
+* What now? read!
 
 #+NAME: fig:read
 #+ATTR_HTML: :width 400 px
 [[../img/3_read.jpg]]
 
-* Read frequently and widely
-* Go both deep and stay shallow
+ - Read frequently and widely
+ - Go both deep and stay shallow: You've seen that I don't just cite
+   peer-reviewed papers but blog posts, too. The truth is that I have
+   personally learnt a lot more from them than from scientific
+   papers. However, this is partly a function of my experience and
+   skill. Without these, it might be hard to distinguish what's good
+   and bad - just like when you google any topic you don't know
+   anything about yet. But even if you're a bloody beginner, I
+   recommend reading widely and both deeply (with a lot of focus,
+   e.g. when looking up terms, repeating analyses and retyping code)
+   and shallowly (skimming articles, reading comments), because you
+   build an associative network of terms, arguments and practices. I
+   follow a bunch of data science experts on [[https://twitter.com/birkenkrahe][Twitter]] for the same
+   reason. If you do this for any topic that is being discussed on a
+   factual (rather than an overly political or emotional) basis,
+   you'll learn more faster[fn:5].
+ - For example: take a look at "[[https://rweekly.org/][R Weekly]]" for a weekly, curated
+   collection of articles from the R community. This will give you an
+   idea of the spread of information.
 
-#+begin_notes
-You've seen that I don't just cite peer-reviewed papers but blog
-posts, too. The truth is that I have personally learnt a lot more
-from them than from scientific papers. However, this is partly a
-function of my experience and skill. Without these, it might be
-hard to distinguish what's good and bad - just like when you google
-any topic you don't know anything about yet. But even if you're a
-bloody beginner, I recommend reading widely and both deeply (with a
-lot of focus, e.g. when looking up terms, repeating analyses and
-retyping code) and shallowly (skimming articles, reading comments),
-because you build an associative network of terms, arguments and
-practices. I follow a bunch of data science experts on [[https://twitter.com/birkenkrahe][Twitter]] for
-the same reason. If you do this for any topic that is being
-discussed on a factual (rather than an overly political or
-emotional) basis, you'll learn more faster[fn:1].
-
-For example: take a look at "[[https://rweekly.org/][R Weekly]]" for a weekly, curated
-collection of articles from the R community. This will give you an
-idea of the spread of information.
-#+end_notes
-
-** What now? play!
+* What now? play!
 
 #+NAME: fig:play
 #+ATTR_HTML: :width 400 px
 [[../img/3_play.jpg]]
 
-[[https://drkeithmcnulty.com/2020/06/23/data-scientists-should-learn-through-play/][Data Scientists Should Learn Through Play]]
+[[https://drkeithmcnulty.com/2020/06/23/data-scientists-should-learn-through-play/][Read: Data Scientists Should Learn Through Play]]
 
-#+begin_notes
 To understand why you should play (see figure [[fig:play]]), check the
 article by an active blogger and professional in the R-blogosphere,
 Keith McNulty, who leads data science at the global strategy
 consulting firm McKinsey & Co. He argues that "learning through
 playing around" with the software is a good way to learn ([[mcnulty][McNulty
 2020]]) - I agree. Though I am often distracted by having to create
-teaching material for you, playing around on or off the
-command-line, looking at interesting data and combing through them
-using the analytical tools R offers, or checking other people's
-plots or inferences, is the most fun way of learning R. There's
-nothing wrong with reading or working through a course, watching
-teaching videos, of course, either.
-#+end_notes
+teaching material for you, playing around on or off the command-line,
+looking at interesting data and combing through them using the
+analytical tools R offers, or checking other people's plots or
+inferences, is the most fun way of learning R. There's nothing wrong
+with reading or working through a course, watching teaching videos, of
+course, either.  #+end_notes
 
-** What's the next topic?
+* What's the next topic?
 
 [[../img/3_maths.gif]]
 
@@ -753,7 +756,7 @@ Arithmetic with R
   S. Springer]]. Online: [[https://www.researchgate.net/publication/224817420_Modern_Applied_Statistics_With_S][researchgate.net]].
 - <<zeng>> Yuleng Zeng (28 Aug 2018). An Introduction to R and
   LaTeX. Online: [[https://bookdown.org/Yuleng/introrlatex/][bookdown.org]].
-* Solutions to the challenges
+* Hints
 <<challenges>>
 ** Download from CRAN
 <<mirror>> [[https://en.wikipedia.org/wiki/Mirror_site][Mirror sites]] are called that way because they are actual
@@ -820,22 +823,26 @@ The simplest way is to type ~help(Boston)~ (again, only after
 loading the ~MASS~ package).
 * Footnotes
 
-[fn:4]Strictly speaking, the availability of help depends on the
-package design - well written packages and data sets are well
-documented and are accompanied by short and detailed descriptions, or
-even papers (so-called "vignettes"). An example is the ~Rcpp~ package
-that interfaces R and C++.
- 
-[fn:3]In fact, you can also save R instructions as a script and then
-run them using the program ~Rscript~ or in batch mode with the command ~R
-CMD BATCH~. We'll practice these commands in class.
+[fn:6] 
 
-[fn:2]To open the R console, and direct plots to the correct device,
+[fn:1]To open the R console, and direct plots to the correct device,
 the R program needs to be "plugged into" your operating system, as it
 were. You could still run it otherwise but e.g. you'd have to always
 type the exact program path.
 
-[fn:1]Data science is a mixed affair when it comes to this last tip:
+[fn:2]In fact, you can also save R instructions as a script and then
+run them using the program ~Rscript~ or in batch mode with the command ~R
+CMD BATCH~. We'll practice these commands in class.
+
+[fn:3]Strictly speaking, the availability of help depends on the
+package design - well written packages and data sets are well
+documented and are accompanied by short and detailed descriptions, or
+even papers (so-called "vignettes"). An example is the ~Rcpp~ package
+that interfaces R and C++.
+
+[fn:4]You can also re-set this home directory - [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-to-set-a-new-emacs-home-directory][this FAQ explains how]].
+
+[fn:5]Data science is a mixed affair when it comes to this last tip:
 because of the importance of statistics and models for COVID-19,
 public discussions e.g. on Twitter are often instantly politicized and
 emotionally charged. However, to be able to navigate these waters and
