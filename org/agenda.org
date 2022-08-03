@@ -1,5 +1,5 @@
 #+TITLE:Agenda - DSC 105
-#+AUTHOR:Agenda - DSC 105
+#+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:Agenda - DSC 105 - Introduction to Data Science, Fall 2022
 #+STARTUP:overview hideblocks indent
 #+OPTIONS: toc:nil num:nil ^:nil
@@ -17,7 +17,7 @@
 
 * FAQ - FREQUENTLY ASKED QUESTIONS
 
-#+attr_html: :width 300px
+#+attr_html: :width 600px
 #+caption: Three Spheres II, M.C. Escher (1946)
 [[../img/escher.jpg]]
 

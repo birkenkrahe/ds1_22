@@ -58,7 +58,7 @@ The team project makes up 20% of your final grade for this course.
 
 *Note:* the first /[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-is-a-sprint-review][sprint review]]/ is on August 31. Use it to present your
 initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-do-i-need-to-deliver-at-a-sprint-review][what to deliver]], and [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-should-we-do-in-the-first-sprint][1st sprint review]]).
-* INTRODUCTION TO DataCamp (assignments)
+* INTRODUCTION TO DataCamp (home assignments)
 #+attr_html: :width 500px
 #+caption: DataCamp course start page
 [[../img/1_datacamp.png]]
@@ -122,7 +122,7 @@ exercises will often come back to haunt you in the tests.
 *Note:* Class room practice completion = 10 points each for active
 participation.
 
-* ASSIGNMENTS
+* HOME ASSIGNMENTS
 
 - There are 15 programming assignments altogether = 10 points each, or
   30% of your final grade.
@@ -152,7 +152,7 @@ participation.
 - There will be a revision quiz on Canvas every week, consisting of
   5-10 multiple choice, matching and true/false questions.
 - A subset of the test questions will form the final exam (20% of your
-  final grade)
+  final grade) - we will practice in the last week before the exam.
 
 * GLOSSARY
 
