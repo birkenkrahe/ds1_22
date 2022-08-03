@@ -11,7 +11,7 @@
 [[../img/1_universal_converter_box.png]]
 
 1. Why are you here?
-2. What do you want to get out of this class?
+2. What would delight you?
 3. What would disappoint you?
 4. Where are you headed?
 * COURSE SYLLABUS (on GitHub and on Canvas)
@@ -74,7 +74,7 @@ initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ
 - Complete them on time to get full points
 - Completed DataCamp courses can [[https://www.linkedin.com/in/birkenkrahe/][support your resume]]
 * INTRODUCTION TO THE TEXTBOOK
-#+attr_html: :width 400px
+#+attr_html: :width 200px
 #+caption: Cover of Book of R (Davies, 2016)
 [[../img/1_bookofR.png]]
 
