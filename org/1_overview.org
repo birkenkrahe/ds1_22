@@ -58,7 +58,21 @@ The team project makes up 20% of your final grade for this course.
 
 *Note:* the first /[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-is-a-sprint-review][sprint review]]/ is on August 31. Use it to present your
 initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-do-i-need-to-deliver-at-a-sprint-review][what to deliver]], and [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-should-we-do-in-the-first-sprint][1st sprint review]]).
-* INTRODUCTION TO DataCamp (home assignments)
+* MANY PROJECT OPPORTUNITIES
+
+#+attr_html: :width 350px
+#+caption: DataCamp competition announcement
+[[../img/1_competition.png]]  
+
+- Explore and document an R package
+- Document an [[https://www.r-bloggers.com/][extended analysis example]]
+- Explore a data set of your choice
+- Complete a DataCamp competition
+- See [[https://app.datacamp.com/learn/projects][DataCamp projects]] for examples
+- You can branch out: SQL, Python, Java etc.
+- See GitHub issues for examples (e.g. [[https://github.com/birkenkrahe/ds1/issues/4][whale song]])
+    
+* INTRODUCTION TO DataCamp
 #+attr_html: :width 500px
 #+caption: DataCamp course start page
 [[../img/1_datacamp.png]]
