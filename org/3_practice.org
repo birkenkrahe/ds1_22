@@ -34,6 +34,7 @@
   - With the cursor on theline, activate the header line with ~C-c C-c~.
   - Put your cursor on the headline of this section, and type ~S <LEFT>~
     until you see ~DONE~ instead of ~TODO~ next to the title.
+  - Perform this last step each time you complete a section.
 
 * TODO DOWNLOAD AND INSTALL R (own PC only)
 
