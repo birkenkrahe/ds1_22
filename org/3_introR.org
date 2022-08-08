@@ -1,7 +1,7 @@
 #+TITLE: INTRODUCTION TO R
 #+AUTHOR: R Installation and First Steps
 #+SUBTITLE: Introduction to Data Science DSC 105 Fall 2022
-#+startup: hideblocks overview indent
+#+startup: hideblocks overview indent inlineimages
 #+ATTR_HTML: :width 200px
 #+CAPTION: RStudio Ball Logo (Source: rstudio.com)
 [[../img/3_rstudioball.png]]

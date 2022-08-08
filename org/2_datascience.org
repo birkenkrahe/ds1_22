@@ -1,7 +1,7 @@
 #+TITLE:  DATA SCIENCE OVERVIEW
 #+AUTHOR: Marcus Birkenkrahe
 #+Subtitle: Data Science Tools and Methods
-#+STARTUP: hideblocks overview indent
+#+STARTUP: hideblocks overview indent inlineimages
 #+ATTR_HTML: :width 500px
 #+caption: Modern picture of Pythagoras of Samos (ca. 570-495 BC)
 [[../img/2_pythagoras.jpg]]
