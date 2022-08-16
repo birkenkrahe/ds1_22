@@ -28,11 +28,36 @@
 * WEEK 1: INTRODUCTION TO THE COURSE
 
 - Mutual introductions
+- Review: prerequisites (see email from July 18)
 - Review: Entry test
 - Course overview
 - Practice: course infrastructure
 - Assignments
 - Glossary
+
+** Prerequisites
+
+#+attr_html: :width 400px
+#+caption: 
+[[../img/beatles.jpeg]]
+
+#+begin_quote
+In DSC 105 (Introduction to data science), we'll start with R from
+scratch - no need to prepare unless you want to. If you already took
+DSC 101 in fall 2021, you do not need to take this course. If you took
+DSC 205 in spring 2022, you will experience some repetition. Textbook:
+Book of R, Part I (ch. 1-8), by T D Davies (NoStarch, 2016).
+#+end_quote
+
+- General preparation: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-prepare-for-your-data-science-classes][see the FAQ]] - R, Emacs + ESS + Org-mode
+
+#+begin_notes
+In London in 1962, the Beatles failed a major audition with music
+producers, who commited a Type II statistical error: their null
+hypothesis was that guitar groups are no longer popular, and should
+have been rejected.
+#+end_notes
+
 
 * Week 2: GETTING STARTED
 
