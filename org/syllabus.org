@@ -12,7 +12,7 @@
 - Phone: (870) 307-7254 (office) / (501) 422-4725 (private)
 - Office hours: Monday through Friday after class (see Canvas)
 - Textbook: The Book of R (Part I, ch. 1-8) by T Davies
-  ([[https://nostarch.com/bookofr][NoStarch, 2016]])
+  ([[https://nostarch.com/bookofr][NoStarch, 2016]]) - reserved copy available in the library
 
 * Objectives
 
@@ -30,10 +30,10 @@ productivity tools.
 The course is for anyone who is interested in
 becoming more data literate in their own field of interest - be it
 languages, theatre, biology, psychology or exercise science - and
-growing their personal skill stack. 
+growing their personal skill stack.
 
 Visualization of data-driven insights and improved productivity when
-working with data and media is a concern for any professional. 
+working with data and media is a concern for any professional.
 
 * Student Learning Outcomes
 
@@ -325,7 +325,7 @@ behind.
   | December 2     | Last day of classes             |
   | December 14    | Final grades due                |
 
-- Class session schedule  
+- Class session schedule
   #+name: tab:schedule
   | WK | NO | DATE       | TESTS      | TEXTBOOK           | ASSIGNMENT                    |
   |----+----+------------+------------+--------------------+-------------------------------|
@@ -391,4 +391,3 @@ behind.
 ggplot2", DataCamp
 
 [fn:1]First chapter of "Data Visualization in R" by Ron Pearson, DataCamp
-

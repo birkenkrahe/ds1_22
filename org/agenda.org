@@ -15,7 +15,7 @@
   as well as some content.
 - You can also look at [[https://github.com/birkenkrahe/ds1/blob/piHome/org/agenda.org][the agenda on GitHub]].
 
-* FAQ - FREQUENTLY ASKED QUESTIONS
+* FAQ - Frequently Asked Questions
 
 #+attr_html: :width 600px
 #+caption: Three Spheres II, M.C. Escher (1946)
@@ -25,17 +25,17 @@
 - First place to go to with a general question
 - FAQ is regularly updated with new content
 
-* WEEK 1: INTRODUCTION TO THE COURSE
+* Week 1: introduction to the course
 
-- Mutual introductions
-- Review: prerequisites (see email from July 18)
-- Review: Entry test
-- Course overview
-- Practice: course infrastructure
-- Assignments
-- Glossary
+- [ ] Mutual introductions
+- [ ] Review: prerequisites (see email from July 18)
+- [ ] Review: Entry test
+- [ ] Course overview
+- [ ] Practice: course infrastructure
+- [ ] Assignments
+- [ ] Glossary
 
-** Prerequisites
+* Prerequisites
 
 #+attr_html: :width 400px
 #+caption: 
@@ -53,13 +53,33 @@ Book of R, Part I (ch. 1-8), by T D Davies (NoStarch, 2016).
 
 #+begin_notes
 In London in 1962, the Beatles failed a major audition with music
-producers, who commited a Type II statistical error: their null
+producers, who committed a Type II statistical error: their null
 hypothesis was that guitar groups are no longer popular, and should
 have been rejected.
 #+end_notes
 
+* Practice - course infrastructure
 
-* Week 2: GETTING STARTED
+*Useful:* take notes! Practice leads to mastery and the practice
+exercises will often come back to haunt you in the tests.
+
+1) Open a browser
+2) Find the GitHub repos (birkenkrahe/dviz and /org)
+3) Open the command line terminal
+4) Open/close R
+5) Open Emacs
+6) Find the Emacs tutorial
+7) Open/close R inside Emacs
+8) Run R in an Org-mode file
+9) Close Emacs
+10) Close the command line terminal
+
+*Note:* Class room practice completion = 10 points each for active
+participation.
+
+([[https://github.com/birkenkrahe/ds1/blob/piHome/org/1_practice.org][Link to practice file in GitHub]])
+
+* Week 2: getting started
 
 - Quiz 1: course infrastructure
 - Lecture: Introduction to data science

@@ -5,7 +5,15 @@
 #+attr_html: :width 600px
 #+caption: Blaues Pferd I (Franz Marc, 1911)
 [[../img/1_pferd.jpeg]]
-* MUTUAL INTRODUCTIONS
+* About me
+#+attr_html: :width 300px
+#+caption: Teddy Roosevelt at Harvard (ca. 1877)
+[[../img/1_einstein.jpg]]
+
+- PhD theoretical particle physics (mostly worked alone)
+- Data science interests: languages, infrastructure, culture 
+- Research options: quantum computing, medical imaging, cybersecurity
+* Mutual introductions
 #+attr_html: :width 500px
 #+caption: xkcd: Universal Converter Box
 [[../img/1_universal_converter_box.png]]
@@ -14,7 +22,7 @@
 2. What would delight you?
 3. What would disappoint you?
 4. Where are you headed?
-* COURSE SYLLABUS (on GitHub and on Canvas)
+* Course syllabus (on GitHub and on Canvas)
 #+attr_html: :width 500px
 #+caption: Syllabus on GitHub
 [[../img/1_syllabus.png]]
@@ -23,7 +31,7 @@
 - Course information (grading, attendance)
 - [[https://github.com/birkenkrahe/ds1/blob/piHome/org/syllabus.org#classroom-sessions-schedule][Schedule]] with dates of tests and assignments
 - The [[https://github.com/birkenkrahe/ds1][GitHub repo]] contains course material
-* COURSE TOPICS
+* Course topics
 #+attr_html: :width 500px
 #+caption: Course topics
 [[../img/1_topics.jpg]]
@@ -31,7 +39,7 @@
 1) The R statistical programming language
 2) Basics of data visualization with R
 3) Professional software development methods
-* VIDEO LECTURES
+* Video lectures
 #+attr_html: :width 400px
 #+caption: La lecture Marie Therese (Picasso, 1932)
 [[../img/1_lecture.jpg]]
@@ -45,7 +53,7 @@
 - [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXnLB9cVQQKRxtAFFDfyGw0h][Plotting with ggplot2]]
 - [[https://www.youtube.com/playlist?list=PLwgb17bzeNyi9RjO0pL48am-Bk6XWol44][Data import]] with R
 - [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3RimChL59F7lKSDGA97AZ][RStudio R Notebooks and literate programming]]
-* AGILE TEAM PROJECT
+* Agile team project
 #+attr_html: :width 600px
 #+caption: Agile (Scrum) project
 [[../img/1_scrum.png]]
@@ -58,7 +66,7 @@ The team project makes up 20% of your final grade for this course.
 
 *Note:* the first /[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-is-a-sprint-review][sprint review]]/ is on August 31. Use it to present your
 initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-do-i-need-to-deliver-at-a-sprint-review][what to deliver]], and [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-should-we-do-in-the-first-sprint][1st sprint review]]).
-* MANY PROJECT OPPORTUNITIES
+* Many project opportunities
 
 #+attr_html: :width 350px
 #+caption: DataCamp competition announcement
@@ -71,23 +79,27 @@ initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ
 - See [[https://app.datacamp.com/learn/projects][DataCamp projects]] for examples
 - You can branch out: SQL, Python, Java etc.
 - See GitHub issues for examples (e.g. [[https://github.com/birkenkrahe/ds1/issues/4][whale song]])
+- Double/triple up if you're in > 1 of my courses
+- Use problems from other courses for your project, e.g. data
+  collected by yourself, or data in economics, business, art etc.
     
-* INTRODUCTION TO DataCamp
+* Introduction TO DataCamp
 #+attr_html: :width 500px
 #+caption: DataCamp course start page
 [[../img/1_datacamp.png]]
 
-- DataCamp is a data science learning platform
-- Access for you is free (classroom license)
+- [[https://datacamp.com
+][DataCamp]] is a data science learning platform
+- Access for you is free (academic alliance)
 - 9/15 assignments are DataCamp assignments
 - Assignments are drawn from 4 courses
   1. Data science for everyone
   2. Introduction to R
   3. Data visualization with R
-  4. Introduction to data visualization with ggplot2
+  4. Introduction to data visualization with ~ggplot2~
 - Complete them on time to get full points
 - Completed DataCamp courses can [[https://www.linkedin.com/in/birkenkrahe/][support your resume]]
-* INTRODUCTION TO THE TEXTBOOK
+* Introduction to the textbook
 #+attr_html: :width 200px
 #+caption: Cover of Book of R (Davies, 2016)
 [[../img/1_bookofR.png]]
@@ -98,7 +110,7 @@ initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ
 - Many other tutorials and textbooks available
 - The best short online tutorial: [[https://github.com/matloff/fasteR][Matloff's "fasteR"]]
 - Beware of ideologies (cp. Matloff's "[[http://github.com/matloff/TidyverseSkeptic][TidyverseSceptic]]")
-* INTRODUCTION to GNU Emacs + ESS + Org-mode
+* Introduction to GNU Emacs + ESS + Org-mode
 #+attr_html: :width 500px
 #+caption: GNU Emacs start page
 [[../img/1_emacs.png]]
@@ -107,7 +119,7 @@ initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ
 - Process, file and package management (like an OS)
 - /Literate programming/ environment for 43 languages
 - /IDE/ for R programming and /REPL/ for interactive coding
-* LITERATE PROGRAMMING
+* Literate programming
 #+attr_html: :width 600px
 #+caption: What is literate programming?
 [[../img/1_litprog.png]]
@@ -117,26 +129,7 @@ Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WI
 - Common practice among data scientists
 - /Paradigm/ behind interactive computing notebooks
 - Useful when learning any programming language
-* PRACTICE - COURSE INFRASTRUCTURE
-
-*Useful:* take notes! Practice leads to mastery and the practice
-exercises will often come back to haunt you in the tests.
-
-    1) Open a browser
-    2) Find the GitHub repos (birkenkrahe/ds1 and /org)
-    3) Open the command line terminal
-    4) Open/close R
-    5) Open Emacs
-    6) Find the Emacs tutorial
-    7) Open/close R inside Emacs
-    8) Run R in an Org-mode file
-    9) Close Emacs
-    10) Close the command line terminal
-
-*Note:* Class room practice completion = 10 points each for active
-participation.
-
-* HOME ASSIGNMENTS
+* Home assignments
 
 - There are 15 programming assignments altogether = 10 points each, or
   30% of your final grade.
@@ -156,7 +149,7 @@ participation.
   + Get comfortable with Emacs keyboard bindings
   + Learn how to create, view, edit, save files
   + Learn how to insert a time stamp automatically
-* TESTS (NOT GRADED)
+* Tests (not graded except final exam)
 #+attr_html: :width 500px
 #+caption: Start page of the entry quiz on Canvas
 [[../img/1_entry_quiz.png]]
@@ -167,6 +160,25 @@ participation.
   5-10 multiple choice, matching and true/false questions.
 - A subset of the test questions will form the final exam (20% of your
   final grade) - we will practice in the last week before the exam.
+
+* Practice - course infrastructure
+
+*Useful:* take notes! Practice leads to mastery and the practice
+exercises will often come back to haunt you in the tests.
+
+    1) Open a browser
+    2) Find the GitHub repos (birkenkrahe/ds1 and /org)
+    3) Open the command line terminal
+    4) Open/close R
+    5) Open Emacs
+    6) Find the Emacs tutorial
+    7) Open/close R inside Emacs
+    8) Run R in an Org-mode file
+    9) Close Emacs
+    10) Close the command line terminal
+
+*Note:* Class room practice completion = 10 points each for active
+participation.
 
 * GLOSSARY
 
