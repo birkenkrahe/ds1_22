@@ -42,11 +42,11 @@
 [[../img/beatles.jpeg]]
 
 #+begin_quote
-In DSC 105 (Introduction to data science), we'll start with R from
+"In DSC 105 (Introduction to data science), we'll start with R from
 scratch - no need to prepare unless you want to. If you already took
 DSC 101 in fall 2021, you do not need to take this course. If you took
 DSC 205 in spring 2022, you will experience some repetition. Textbook:
-Book of R, Part I (ch. 1-8), by T D Davies (NoStarch, 2016).
+Book of R, Part I (ch. 1-8), by T D Davies (NoStarch, 2016)."
 #+end_quote
 
 - General preparation: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-prepare-for-your-data-science-classes][see the FAQ]] - R, Emacs + ESS + Org-mode

@@ -31,6 +31,16 @@
 - Course information (grading, attendance)
 - [[https://github.com/birkenkrahe/ds1/blob/piHome/org/syllabus.org#classroom-sessions-schedule][Schedule]] with dates of tests and assignments
 - The [[https://github.com/birkenkrahe/ds1][GitHub repo]] contains course material
+* Course "learning" platform: Canvas
+
+#+attr_html: :width 500px
+#+caption: Course topics
+[[../img/1_canvas.png]]
+
+- All grades should be visible at all times
+- New Content Management System (CMS) for me & for Lyon: bear with us
+- Control your own notifications (email)
+
 * Course topics
 #+attr_html: :width 500px
 #+caption: Course topics
@@ -53,7 +63,7 @@
 - [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXnLB9cVQQKRxtAFFDfyGw0h][Plotting with ggplot2]]
 - [[https://www.youtube.com/playlist?list=PLwgb17bzeNyi9RjO0pL48am-Bk6XWol44][Data import]] with R
 - [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3RimChL59F7lKSDGA97AZ][RStudio R Notebooks and literate programming]]
-* Agile team project
+* Agile [team] project (with "Scrum")
 #+attr_html: :width 600px
 #+caption: Agile (Scrum) project
 [[../img/1_scrum.png]]
@@ -66,6 +76,18 @@ The team project makes up 20% of your final grade for this course.
 
 *Note:* the first /[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-is-a-sprint-review][sprint review]]/ is on August 31. Use it to present your
 initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-do-i-need-to-deliver-at-a-sprint-review][what to deliver]], and [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-should-we-do-in-the-first-sprint][1st sprint review]]).
+* IMRaD and Scrum
+#+attr_html: :width 600px
+#+caption: Agile (Scrum) project
+[[../img/1_imrad.png]]
+
+- Introduction (research question - what you want to find out)
+- Method (how you want to do it)
+- Results (what you found out)
+- Discussion (what it means)
+
+([[https://youtu.be/dip7UwZ3wUM][Video: Research Writing with IMRaD]])
+
 * Many project opportunities
 
 #+attr_html: :width 350px
@@ -88,8 +110,7 @@ initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ
 #+caption: DataCamp course start page
 [[../img/1_datacamp.png]]
 
-- [[https://datacamp.com
-][DataCamp]] is a data science learning platform
+- [[https://datacamp.com][DataCamp]] is a data science learning platform
 - Access for you is free (academic alliance)
 - 9/15 assignments are DataCamp assignments
 - Assignments are drawn from 4 courses
