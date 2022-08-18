@@ -37,10 +37,11 @@
 #+caption: Course topics
 [[../img/1_canvas.png]]
 
-- All grades should be visible at all times
-- New Content Management System (CMS) for me & for Lyon: bear with us
-- Control your own notifications (email)
-
+- All [[https://lyon.instructure.com/courses/568/grades][grades]] should be visible at all times
+- Control your own [[https://lyon.instructure.com/courses/568?view=notifications][notifications]] (email)
+- Important course [[https://lyon.instructure.com/courses/568/pages/course-links][links]] on a page
+- New CMS for me & for Lyon: bear with us[fn:1]
+- Lecture /notes/ (from Emacs Org-mode) will not show in GitHub
 * Course topics
 #+attr_html: :width 500px
 #+caption: Course topics
@@ -201,7 +202,7 @@ exercises will often come back to haunt you in the tests.
 *Note:* Class room practice completion = 10 points each for active
 participation.
 
-* GLOSSARY
+* Glossary
 
 | TERM          | MEANING                                |
 |---------------+----------------------------------------|
@@ -222,3 +223,12 @@ participation.
 | Scrum         | Agile project management method        |
 | Sprint review | Period to complete a prototype         |
 | Prototype     | Intermediate (not perfect) solution    |
+
+* Footnotes
+
+[fn:1]CMS = Content Management System; these are the most common
+systems in business applications - present whenever people create
+'content' of any sort (documents e.g.) and need to store it for
+later. CMS systems rely on database technology. In the case of Canvas,
+that's MySQL.
+ 

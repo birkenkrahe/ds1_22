@@ -60,6 +60,8 @@ have been rejected.
 
 * Practice - course infrastructure
 
+*IF YOU ALREADY DID THIS IN ANOTHER CLASS: FINISH THE EMACS TUTORIAL!*
+
 *Useful:* take notes! Practice leads to mastery and the practice
 exercises will often come back to haunt you in the tests.
 
