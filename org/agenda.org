@@ -35,7 +35,7 @@
 - [ ] Assignments
 - [ ] Glossary
 
-* Prerequisites
+** Prerequisites
 
 #+attr_html: :width 400px
 #+caption: 
@@ -58,7 +58,7 @@ hypothesis was that guitar groups are no longer popular, and should
 have been rejected.
 #+end_notes
 
-* Practice - course infrastructure
+** Practice - course infrastructure
 
 *IF YOU ALREADY DID THIS IN ANOTHER CLASS: FINISH THE EMACS TUTORIAL!*
 
