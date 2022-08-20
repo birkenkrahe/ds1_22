@@ -1,5 +1,5 @@
 #+TITLE: Practice: Course Infrastructure
-#+AUTHOR: [YourName]
+#+AUTHOR: Marcus Birkenkrahe
 #+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
 #+OPTIONS: toc:nil num:nil ^:nil
 #+startup: overview hideblocks indent inlineimages
@@ -25,7 +25,7 @@
   | TOTAL                      |  30 |
   #+TBLFM: @10$2=vsum(@2..@9) 
 
-* TODO Identify yourself
+* DONE Identify yourself
 
   - Update the ~#+AUTHOR:~ information in the header
   - Add this on a line to the header of this file :
@@ -35,7 +35,7 @@
     until you see ~DONE~ instead of ~TODO~ next to the title.
   - Perform this last step each time you complete a section.
 
-* TODO Find the GitHub repos
+* DONE Find the GitHub repos
 
   1) Open any Web browser
   2) Go to the URL https://github.com/birkenkrahe
@@ -51,7 +51,7 @@
   3) On MacOS, find the ~Terminal~ app
   4) Open the app
 
-* TODO Open/close R from the terminal
+* DONE Open/close R from the terminal
 
   1) In the terminal, after the prompt ~>~, enter the command ~R~
   2) On the R shell, enter the command ~plot(rnorm(1000))~
@@ -63,7 +63,7 @@
   #+attr_html: :width 300px
   [[../img/shell.png]]
 
-* TODO Open terminal Emacs
+* DONE Open terminal Emacs
 
   1) In the terminal, after the prompt, enter the command ~emacs -nw~
   2) The GNU Emacs editor opens inside the terminal
@@ -73,7 +73,7 @@
   #+attr_html: :width 300px
   [[../img/emacs.png]]
 
-* TODO Find and open the Emacs tutorial
+* IN PROGRESS Find and open the Emacs tutorial
 
   1) In Emacs, enter ~C-h t~ by pressing CTRL and h followed by t
   2) The Emacs tutorial appears on the screen

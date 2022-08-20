@@ -204,6 +204,7 @@ participation.
 
 * Glossary
 
+#+name: glossary
 | TERM          | MEANING                                |
 |---------------+----------------------------------------|
 | Command line  | aka terminal/shell to talk to the OS   |

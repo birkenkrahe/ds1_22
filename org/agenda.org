@@ -1,7 +1,7 @@
 #+TITLE:Agenda - DSC 105
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:Agenda - DSC 105 - Introduction to Data Science, Fall 2022
-#+STARTUP:overview hideblocks indent
+#+STARTUP:overview hideblocks indent inlineimages
 #+OPTIONS: toc:nil num:nil ^:nil
 * README
 
@@ -26,19 +26,19 @@
 - FAQ is regularly updated with new content
 
 * Week 1: introduction to the course
+** Objectives
 
-- [ ] Mutual introductions
-- [ ] Review: prerequisites (see email from July 18)
-- [ ] Review: Entry test
-- [ ] Course overview
-- [ ] Practice: course infrastructure
-- [ ] Assignments
-- [ ] Glossary
+- [X] Mutual introductions
+- [X] Review: prerequisites (see email from July 18)
+- [X] Review: Entry test
+- [X] Lecture: Course overview
+- [X] Practice: course infrastructure
+- [X] First assignments and tests
+- [ ] [[file:1_overview.org][Glossary]]
 
 ** Prerequisites
-
 #+attr_html: :width 400px
-#+caption: 
+#+caption:
 [[../img/beatles.jpeg]]
 
 #+begin_quote
@@ -58,12 +58,35 @@ hypothesis was that guitar groups are no longer popular, and should
 have been rejected.
 #+end_notes
 
+** Assignments for next week
+
+- By Monday Aug 22, 11 am: [[https://lyon.instructure.com/courses/568/assignments/1609/edit?quiz_lti][Test 1 (Course infrastructure)]] - you
+  complete this 5-question quiz in Canvas.
+
+- By Monday Aug 22, 11 am: [[https://lyon.instructure.com/courses/568/assignments/1420][Introduction to data science (DataCamp)]] -
+  you have to register with DataCamp and join the Lyon fall '22 group.
+
+- By Wednesday Aug 24, 11 am: Enter a project idea and team member
+  names, and your question(s) [[https://lyon.instructure.com/courses/568/pages/enter-your-project-idea-and-participants-here][in this table in Canvas]].
+
+- By Friday Aug 26, 11 am: [[https://lyon.instructure.com/courses/568/assignments/1436][GNU Emacs online tutorial]] - you need to
+  alter, save and submit the tutorial in Canvas. You should also get
+  Emacs + ESS for your PC.
+
+- For general questions, you can use the Google chat for this course
+  (invitation only)
+  
+- Get the mobile app! (Canvas student)
+
+  #+attr_html: :width 300px
+  [[../img/mobile.png]]
+
 ** Practice - course infrastructure
 
 *IF YOU ALREADY DID THIS IN ANOTHER CLASS: FINISH THE EMACS TUTORIAL!*
 
 *Useful:* take notes! Practice leads to mastery and the practice
-exercises will often come back to haunt you in the tests.
+nexercises will often come back to haunt you in the tests.
 
 1) Open a browser
 2) Find the GitHub repos (birkenkrahe/dviz and /org)
@@ -76,8 +99,8 @@ exercises will often come back to haunt you in the tests.
 9) Close Emacs
 10) Close the command line terminal
 
-*Note:* Class room practice completion = 10 points each for active
-participation.
+Note: Class room practice completion = 10 points each for active
+participation (if there's a practice file, you can make up).
 
 ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/1_practice.org][Link to practice file in GitHub]])
 
@@ -86,5 +109,3 @@ participation.
 - Quiz 1: course infrastructure
 - Lecture: Introduction to data science
 - Lecture/practice: Introduction to R
-  
-
