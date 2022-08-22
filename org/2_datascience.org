@@ -135,7 +135,7 @@ relate to one another in social media, how they behave, perhaps
 even why they do what they do (= statistical inference).
 #+end_notes
 
-* WORLDWIDE SEARCHES 2004-2021
+* WORLDWIDE SEARCHES 2004-2022
 #+NAME: fig:tre
 #+caption: "Data science" searches, 07/22 (Google trends)
 #+attr_html: :width 700px
