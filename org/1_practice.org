@@ -73,12 +73,12 @@
   #+attr_html: :width 300px
   [[../img/emacs.png]]
 
-* IN PROGRESS Find and open the Emacs tutorial
+* DONE Find and open the Emacs tutorial
 
   1) In Emacs, enter ~C-h t~ by pressing CTRL and h followed by t
   2) The Emacs tutorial appears on the screen
 
-* TODO @home: work through the Emacs tutorial
+* IN PROGRESS @home: work through the Emacs tutorial
 
   1) Complete the tutorial by going through it line by line (ca. 60')
 
@@ -92,7 +92,7 @@
      ~M-x time-stamp~. Save the file with ~C-x C-w~ as a ~.txt~ file and
      submit it in Canvas.
 
-* TODO Open/close R in GUI Emacs
+* DONE Open/close R in GUI Emacs
 
   1) In the terminal Emacs, enter ~M-x R~
   2) When prompted ~R starting project directory?~, press RET

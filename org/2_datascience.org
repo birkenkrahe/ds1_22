@@ -1,6 +1,6 @@
 #+TITLE:  DATA SCIENCE OVERVIEW
 #+AUTHOR: Marcus Birkenkrahe
-#+Subtitle: Data Science Tools and Methods
+#+Subtitle: Introduction to data science / DSC 105 / Fall 2022
 #+STARTUP: hideblocks overview indent inlineimages
 #+ATTR_HTML: :width 500px
 #+caption: Modern picture of Pythagoras of Samos (ca. 570-495 BC)
@@ -11,14 +11,16 @@
 - Data science is (still) the "sexiest" job of the century
 
 * WHAT WILL YOU LEARN?
+#+ATTR_HTML: :width 500px
+[[../img/objectives.jpg]]
 
-- How and why data science is so popular
+- How and why data science is so *popular*
 
-- What skills you need to do data science
+- What *skills* you need to do data science
 
-- Which problems data science can solve
+- Which *problems* data science can solve
 
-- What data scientists do all the time
+- What data scientists *do* all the time
 
 * DATA SCIENCE AS A FIELD OF SCIENTIFIC STUDY
 
@@ -89,7 +91,7 @@
 [[../img/2_selfie.jpg]]
 
 - How would you try to find out how popular data science is?
-
+  
 * WAYS TO EXPLORE POPULARITY
 
 #+ATTR_HTML: :width 400px
@@ -112,7 +114,7 @@
 2) Find relevant models - what is that?
    - Metaphors are models
    - Mathematical model may not exist
-   - Example for such a model
+   - Example for models?
 3) Generate primary data
    - Which measures are used?
    - Which methods are used?
@@ -134,8 +136,7 @@ even why they do what they do (= statistical inference).
 #+end_notes
 
 * WORLDWIDE SEARCHES 2004-2021
-
-#+NAME: fig:trend
+#+NAME: fig:tre
 #+caption: "Data science" searches, 07/22 (Google trends)
 #+attr_html: :width 700px
 [[../img/2_trend_2022.png]]
@@ -159,11 +160,11 @@ term on the map.
 *What has changed since 2012?*
 
 1) (According to Davenport/Patil, 2022)
-   - Demand in 2012 restricted to a few cities, startups, tech firms
-   - Data scientists in 2012 were science PhDs, exceptional at math,
+   - *Demand* in 2012 restricted to a few cities, startups, tech firms
+   - Data scientists in 2012 were *science PhDs*, exceptional at math,
      who knew how to code
-   - Data scientists now need to develop AI modls
-   - By 2019, postings on Indeed had risen by 256%
+   - Data scientists now need to develop *AI models*
+   - By 2019, postings on career site Indeed had risen by 256%
    - Projected 15% increase from 2019 to 2029
    - Lack of "data-driven cultures" (no use for data insights)
    - Turnover is high (data scientists often don't stay long)
@@ -179,7 +180,6 @@ term on the map.
 #+end_notes
 
 * THE DEFINITION OF SEXY (FOR SCIENTISTS)
-
 #+caption: Richard Feynman with drums (ca 1964)
 #+attr_html: :width 600px
 [[../img/2_feybongo.jpg]]
@@ -212,7 +212,6 @@ definition of sexy.« -Gil Press ([[https://www.forbes.com/sites/gilpress/2012/0
 #+end_notes
 
 * WHAT ARE DATA SCIENCE SKILLS?
-
 #+name: fig:def
 #+attr_html: :width 600px
 [[../img/2_ds_skills.jpg]]
@@ -245,16 +244,16 @@ give rise to different tasks and problem settings:
 
 Between two of these areas each are application areas:
 
-1) Domain knowledge and statistics support decision science. See
+1) Domain knowledge and statistics support *decision science*. See
    [[https://medium.com/@ibobriakov/data-science-vs-decision-science-infographic-7ad6e16698d][infographic]] (source: [[bobriakov_2019][Bobriakov 2019]]).
 
-2) Data analytics are the result of applying database programming
+2) Data analytics are the result of applying *database programming*
    (e.g. with SQL) to domain knowledge problems(this is also
-   sometimes called 'business intelligence' or BI).
+   sometimes called *'business intelligence'* or BI).
 
 3) Programming, maths and statistics give rise to various machine
-   learning (ML) techniques concerned in particular with prediction
-   and pattern recognition.
+   learning (ML) techniques concerned in particular with *prediction*
+   and automatic pattern recognition.
 
 #+end_notes
 
@@ -262,12 +261,14 @@ Between two of these areas each are application areas:
 
 Practice: [[https://ideaboardz.com/for/What%20are%20your%20skills%3F/4579973][fill this Kanban board for your own skills (if any)!]]
 
-- In which domain do you have knowledge?
-- Which (non-trivial) decisions have you made?
-- What do you know in maths and stats
-- Which programming/database languages/systems do you know?
-- Which process analytics tools have you used?
-- What are you skills in machine learning?
+URL: *tinyurl.com/5n75ytbx*
+
+- In which *domain* do you have knowledge?
+- Which (non-trivial) *decisions* have you made?
+- What do you know (really well) in *maths* and *stats*
+- Which programming/database *languages/systems* do you know?
+- Which process analytics *tools* have you used?
+- What are your skills in *machine learning*?
 
   Compare: [[https://github.com/birkenkrahe/ds1/blob/piHome/pdf/my_IT_skill_stack.pdf]["My IT skill stack"]][fn:6]
 
@@ -300,7 +301,6 @@ Practice: [[https://ideaboardz.com/for/What%20are%20your%20skills%3F/4579973][fi
 #+end_notes
 
 * WHAT ARE TECHNICAL DATA SCIENCE SKILLS?
-
 #+NAME: fig:tech
 #+attr_html: :width 700px
 [[../img/2_ds_tech_skills.png]]
@@ -326,11 +326,9 @@ and data science are crafts.
 #+end_notes
 
 * WHAT IS "FRANKENSTEIN'S DATA SCIENTIST" MADE OF?
-
 #+NAME: fig:frankenstein
 #+ATTR_html: :width 600px
 [[../img/2_datasciencefrankenstein.png]]
-
 Source: [[https://st12.ning.com/topology/rest/1.0/file/get/2808339698?profile=RESIZE_1024x1024][datasciencecentral.com]]
 
 #+begin_notes
@@ -375,7 +373,6 @@ is a rich metaphor with many connotations.
 #+end_notes
 
 * DO YOU HAVE A BRAIN FOR NUMBERS?
-
 #+attr_html: :width 600px
 [[../img/2_bookshelf.jpg]]
 
@@ -388,7 +385,6 @@ Can you still have a "brain for data science" like Dr. Frankenstein's
 monster here? [[challenge_brain][(Hint)]]
 
 * WHAT ARE METAPHORS GOOD FOR?
-
 #+attr_html: :width 200px
 [[../img/2_frankenstein.jpg]]
 
@@ -405,7 +401,6 @@ science). Metaphors are a type of model. [[challenge_frankenstein][(Hints)]]
 #+end_notes
 
 * WHAT'S THE (US) JOB MARKET FOR DATA SCIENTISTS LIKE?
-
 #+attr_html: :width 750px
 #+NAME: fig:jobs
 [[../img/2_ds_demand.png]]
@@ -439,7 +434,6 @@ linear algebra, markov chains, and a variety of algorithms for
 #+end_notes
 
 * JOB PROFILES (ACCORDING TO DATACAMP)
-
 #+name: fig:prof
 #+attr_html: :width 600px
 [[../img/2_ds_jobs.png]]
@@ -468,9 +462,9 @@ the needs and the available experience.
 #+caption: Cartoon by Cassie Kozyrkov (@quaesita)
 [[../img/2_data_science_adventure.png]]
 
-- *Data analytics*: explorative or explanatory
-- *Machine learning*: many decisions involving big data
-- *Statistics*: few important decisions with high uncertainty
+- *Data analytics*: explorative or explanatory [DSC 302 fall'22]
+- *Statistics*: few important decisions with high uncertainty [DSC 482 fall'22]
+- *Machine learning*: many decisions involving big data [DSC 305 spring'23]
 
 #+begin_notes
 The cartoon in figure [[fig:decision]] is by Google's head of "decision
@@ -509,7 +503,6 @@ as shown in the figure [[fig:decision]] - why (or why not)? [[challenge_decision
 #+end_notes
 
 * DATA SCIENCE APPLICATIONS
-
 #+NAME: fig:app
 #+attr_html: :width 800px
 [[../img/2_ds_applications.jpg]]
@@ -517,7 +510,6 @@ as shown in the figure [[fig:decision]] - why (or why not)? [[challenge_decision
 Source: [[https://data-flair.training/blogs/data-science-applications/][data-flair.training]]
 
 * EXAMPLE 1: CYBERSECURITY
-
 #+attr_html: :width 500px
 [[../img/2_ics.png]]
 
@@ -528,7 +520,6 @@ Source: [[https://hackerman.info/][Industrial Cybersecurity (2017)]]
 - Data science: EDA (user data), simulation (sample data)
 
 * EXAMPLE 2: TIME SERIES ANALYSIS & TEXT MINING
-
 #+attr_html: :width 800px
 #+name: fig-log
 [[../img/2_syslog.png]]
@@ -564,7 +555,6 @@ course) is "process mining".
 #+end_notes
 
 * WHAT IS THE DATA SCIENCE PROCESS?
-
 #+NAME: fig:process
 #+attr_html: :width 500px
 [[../img/2_righteda.png]]
@@ -572,7 +562,6 @@ course) is "process mining".
 Source: [[https://github.com/birkenkrahe/dsc101/blob/main/wiki/talk_presentation.pdf][Birkenkrahe (2021)]]
 
 * EXPLORATORY DATA ANALYSIS (EDA) PROCESS MODEL
-
 #+NAME: fig:process
 #+attr_html: :width 750px
 [[../img/2_ria_process1.png]]
@@ -589,14 +578,13 @@ databases for analysis with SQL.
 
 Once we have tidy data, an (often repeated) sub-process begins:
 "transform" refers to any operation on the dataset that helps us
-understand the data better. Depending on the size of the data
-tables, we will use different methods of visualization to make
-underlying structure visible. But visualization does not always have
-to be graphical. Let's look at three examples in the next section.
+understand the data better. Depending on the size of the data tables,
+we will use different methods of visualization to make underlying
+structure visible. But visualization does not always have to be
+graphical - it could also be making a table, or creating a metaphor.
 #+end_notes
 
 * DATA SCIENCE WORKFLOW
-
 #+NAME: fig:dc
 #+attr_html: :width 750px
 [[../img/2_ds_workflow.png]]
@@ -604,7 +592,6 @@ to be graphical. Let's look at three examples in the next section.
 Source: [[https://learn.datacamp.com/courses/data-science-for-everyone][Data science for everyone]] (DataCamp)
 
 * A MODEL FOR LEARNING DATA SCIENCE 
-
 #+NAME: fig:lyon
 #+attr_html: :width 700px
 #+caption: Talk@Lyon College (Birkenkrahe, 2021)
@@ -615,7 +602,6 @@ Source: [[https://learn.datacamp.com/courses/data-science-for-everyone][Data sci
 - Dashboards vs. Prediction
 
 * CONCEPT SUMMARY
-
 #+ATTR_HTML: :width 500px
 [[../img/2_rocks.jpg]]
 

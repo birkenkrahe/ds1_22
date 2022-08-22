@@ -75,7 +75,7 @@ have been rejected.
 
 - For general questions, you can use the Google chat for this course
   (invitation only)
-  
+
 - Get the mobile app! (Canvas student)
 
   #+attr_html: :width 300px
@@ -106,6 +106,47 @@ participation (if there's a practice file, you can make up).
 
 * Week 2: getting started
 
-- Quiz 1: course infrastructure
-- Lecture: Introduction to data science
-- Lecture/practice: Introduction to R
+- [ ] Quiz 1: course infrastructure
+- [ ] Lecture: Introduction to data science
+- [ ] Lecture/practice: Introduction to R
+- [ ] Practice: Introduction to R 
+- [ ] Practice: Running R in an Emacs Org-mode file
+
+* Home assignments - how they work
+#+attr_html: :width 400px
+#+captions: course infrastructure
+[[../img/platforms.png]]
+
+- Assignment is posted on [[https://lyon.instructure.com/courses/568/assignments/1435][Canvas]] (includes the link)
+- Assignment must be completed on time on [[https://app.datacamp.com/groups/lyon-college-data-science-fall-2022/assignments][DataCamp]]
+- You loose 1 point for every day of late submission
+- Canvas Gradebook is updated manually (with some delay)
+
+* Team projects - check in
+#+attr_html: :width 600px
+[[../img/scrum.jpg]]
+
+- Course has grown to 15 participants!
+- You'll have to do the project in a team - 2 to 3 people
+- I can only accommodate at most 9 projects (last week of term)
+- Put your team/ideas into this table ([[https://lyon.instructure.com/courses/568/pages/enter-your-project-idea-and-participants-here][Canvas]]) by Wednesday
+  
+- [ ] *Who has not yet found a team?*
+- [ ] *Who has a team but no idea what to do?* 
+
+  
+* DataCamp assignment: What Is Data Science?
+
+- Data science definition biased towards Machine Learning
+  #+attr_html: :width 600px
+
+[[../img/power.png]]
+
+- What do you think about the claim:
+
+  /"Programming languages are like power tools"/
+
+- What follows if this claim is true? What if it isn't?
+
+
+  
