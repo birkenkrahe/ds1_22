@@ -7,7 +7,7 @@
 [[../img/3_rstudioball.png]]
 * OVERVIEW
 
-#+ATTR_HTML: :width 400px
+#+ATTR_HTML: :width 600px
 #+CAPTION: Bridge and Waterfall at Pontoise (Cezanne, 1881)
 [[../img/3_cezanne.jpg]]
 
@@ -96,7 +96,7 @@ interest in COVID-19 data analysis.
 * MATLOFF'S 10 REASONS
 
 #+name: fig:matloff
-#+attr_html: :width 600px
+#+attr_html: :width 700px
 [[../img/3_tarp.png]]
 
 Source: [[https://nostarch.com/artofr.htm][The Art of R Programming (2011)]]

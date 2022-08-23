@@ -10,7 +10,7 @@
 - He saw nature as a structured system of numbers
 - Data science is (still) the "sexiest" job of the century
 
-* WHAT WILL YOU LEARN?
+* DONE WHAT WILL YOU LEARN?
 #+ATTR_HTML: :width 500px
 [[../img/objectives.jpg]]
 
@@ -22,7 +22,7 @@
 
 - What data scientists *do* all the time
 
-* DATA SCIENCE AS A FIELD OF SCIENTIFIC STUDY
+* DONE DATA SCIENCE AS A FIELD OF SCIENTIFIC STUDY
 
 #+ATTR_HTML: :width 500px
 #+caption: Data science as an interdisciplinary field (Source: Barber, 2018)
@@ -84,7 +84,7 @@
   of the document.]]
   #+end_notes
 
-* HOW POPULAR IS DATA SCIENCE?
+* DONE HOW POPULAR IS DATA SCIENCE?
 
 #+Caption: Selfie by Cristina Zaragoza (Unsplash)
 #+ATTR_HTML: :width 300px
@@ -92,7 +92,7 @@
 
 - How would you try to find out how popular data science is?
   
-* WAYS TO EXPLORE POPULARITY
+* DONE WAYS TO EXPLORE POPULARITY
 
 #+ATTR_HTML: :width 400px
 #+Caption: Google doodle 4th July 2022
@@ -135,7 +135,7 @@ relate to one another in social media, how they behave, perhaps
 even why they do what they do (= statistical inference).
 #+end_notes
 
-* WORLDWIDE SEARCHES 2004-2022
+* DONE WORLDWIDE SEARCHES 2004-2022
 #+NAME: fig:tre
 #+caption: "Data science" searches, 07/22 (Google trends)
 #+attr_html: :width 700px
@@ -179,7 +179,7 @@ term on the map.
    - Political divide deepened (immigration, abortion, gun laws)
 #+end_notes
 
-* THE DEFINITION OF SEXY (FOR SCIENTISTS)
+* DONE THE DEFINITION OF SEXY (FOR SCIENTISTS)
 #+caption: Richard Feynman with drums (ca 1964)
 #+attr_html: :width 600px
 [[../img/2_feybongo.jpg]]
@@ -188,7 +188,7 @@ term on the map.
 sometimes, developers of new data-discovery tools.  That is the
 definition of sexy.« -Gil Press ([[https://www.forbes.com/sites/gilpress/2012/09/27/data-scientists-the-definition-of-sexy/][Forbes, 09/27/12]])
 
-* POPULARITY CONTEST
+* DONE POPULARITY CONTEST
 
 *What do you think: which of these terms is most searched?*[fn:3]
 
@@ -211,7 +211,7 @@ definition of sexy.« -Gil Press ([[https://www.forbes.com/sites/gilpress/2012/0
 3) Grid lines (vertical lines) could improve reading
 #+end_notes
 
-* WHAT ARE DATA SCIENCE SKILLS?
+* DONE WHAT ARE DATA SCIENCE SKILLS?
 #+name: fig:def
 #+attr_html: :width 600px
 [[../img/2_ds_skills.jpg]]
@@ -257,7 +257,7 @@ Between two of these areas each are application areas:
 
 #+end_notes
 
-* WHAT ABOUT YOUR SKILLS? WHAT ARE THEY?
+* DONE WHAT ABOUT YOUR SKILLS? WHAT ARE THEY?
 
 Practice: [[https://ideaboardz.com/for/What%20are%20your%20skills%3F/4579973][fill this Kanban board for your own skills (if any)!]]
 
@@ -387,7 +387,6 @@ monster here? [[challenge_brain][(Hint)]]
 * WHAT ARE METAPHORS GOOD FOR?
 #+attr_html: :width 200px
 [[../img/2_frankenstein.jpg]]
-
 - What are the connotations of "Frankenstein's Data Scientist"?
 - Do you find this metaphor apt or not?
 - Which metaphor would you have chosen?
@@ -406,6 +405,10 @@ science). Metaphors are a type of model. [[challenge_frankenstein][(Hints)]]
 [[../img/2_ds_demand.png]]
 
 *Challenge: search a job portal for "data scientist".*
+
+#+attr_html: :width 300px
+#+NAME: fig:jobs
+[[../img/2_ds_demand1.png]]
 
 #+begin_notes
 The value of statistics like shown in figure [[fig:jobs]] depends on the
