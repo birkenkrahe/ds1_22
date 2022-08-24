@@ -107,12 +107,13 @@ participation (if there's a practice file, you can make up).
 * Week 2: getting started
 
 - [X] Quiz 1: course infrastructure
+- [X] Team projects: getting ready for 1st sprint review
 - [ ] Lecture: Introduction to data science
 - [ ] Lecture/practice: Introduction to R
 - [ ] Practice: Introduction to R 
 - [ ] Practice: Running R in an Emacs Org-mode file
 
-** Home assignments - how they work
+* Home assignments - how they work
 #+attr_html: :width 400px
 #+captions: course infrastructure
 [[../img/platforms.png]]
@@ -122,7 +123,7 @@ participation (if there's a practice file, you can make up).
 - You loose 1 point for every day of late submission
 - Canvas Gradebook is updated manually (with some delay)
 
-** Team projects - check in
+* Team projects - check in
 #+attr_html: :width 600px
 [[../img/scrum.jpg]]
 
@@ -134,7 +135,7 @@ participation (if there's a practice file, you can make up).
 - [X] *Who has not yet found a team?*
 - [X] *Who has a team but no idea what to do?* 
 
-** DataCamp assignment: What Is Data Science?
+* DataCamp assignment: What Is Data Science?
 
 - Data science definition biased towards Machine Learning
   #+attr_html: :width 600px
@@ -147,5 +148,15 @@ participation (if there's a practice file, you can make up).
 
 - What follows if this claim is true? What if it isn't?
 
-** [[https://github.com/birkenkrahe/ds1/blob/piHome/pdf/1_skills.pdf][What are your skills? (Mon 22-Aug)]]
+* [[https://github.com/birkenkrahe/ds1/blob/piHome/pdf/1_skills.pdf][What are your skills? (Mon 22-Aug)]]
+
+
+* 1st sprint review - Wed 31-Aug
+
+- [[https://lyon.instructure.com/courses/568/assignments/1438][Canvas assignment with submission]]
+
+- Complete [[https://lyon.instructure.com/courses/568/pages/enter-your-project-idea-and-participants-here][projects overview table]] in Canvas *today*!
+
+- If you are in > 1 course, you can use the same project idea!
+  
 

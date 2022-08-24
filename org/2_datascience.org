@@ -612,7 +612,7 @@ Source: [[https://learn.datacamp.com/courses/data-science-for-everyone][Data sci
   *machine learning*.
 - Data science makes use of *domain knowledge* - experience in a
   particular field of business.
-- The *job market( for data science is good.
+- The job market (for data science is good.
 - The data science *process* includes modeling, visualizing, and
   communicating data analysis results.
 
