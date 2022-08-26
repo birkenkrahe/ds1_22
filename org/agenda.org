@@ -112,8 +112,8 @@ participation (if there's a practice file, you can make up).
 - [X] Team projects: getting ready for 1st sprint review
 - [X] Lecture: Introduction to data science
 - [ ] Lecture/practice: Introduction to R
-- [ ] Practice: Introduction to R 
 - [ ] Practice: Running R in an Emacs Org-mode file
+- [ ] Practice: Introduction to R 
 
 * DONE Home assignments - how they work
 #+attr_html: :width 400px
@@ -161,3 +161,15 @@ participation (if there's a practice file, you can make up).
 - If you are in > 1 course, you can use the same project idea!
   
 
+* TODO Test 2 open ("What is data science?")
+
+* TODO Project idea: compare base-R and "Tidyverse"
+
+- Base-R is the foundation software from CRAN (the one you're using)
+- "Tidyverse" is a popular bundle of packages (like ~dplyr~)
+- The project would consist of comparing both with examples, along the
+  lines of Matloff's "[[https://github.com/matloff/TidyverseSkeptic][TidyverseSceptic]]" essay (see also recent [[https://github.com/matloff/TidyverseSkeptic/blob/master/RDesign.pdf][update]])
+
+* TODO Run R in Org-mode file
+
+file:./1_overview_practice.org
