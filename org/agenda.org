@@ -172,4 +172,4 @@ participation (if there's a practice file, you can make up).
 
 * TODO Run R in Org-mode file
 
-file:./1_overview_practice.org
+- [[https://github.com/birkenkrahe/ds1/blob/piHome/org/1_overview_practice.org#run-r-in-org-mode-file][See GitHub]]
