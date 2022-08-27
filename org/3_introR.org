@@ -101,7 +101,7 @@ interest in COVID-19 data analysis.
 
 Source: [[https://nostarch.com/artofr.htm][The Art of R Programming (2011)]]
 
-* OBTAINING AND INSTALLING R FROM CRAN
+* SOMEDAY Obtaining and installing r from cran
 
 URL: https://cran.r-project.org/mirrors.html
 
@@ -138,7 +138,7 @@ Answer: GitHub
 
 #+end_notes
 
-* HOW THIS LOOKS UNDER WINDOWS
+** How this looks under windows
 
 #+ATTR_HTML: :width 600px
 [[../img/3_windows.png]]
@@ -181,7 +181,7 @@ worked:
 
 #+end_notes
 
-* HOW THIS LOOKS ON A MAC
+** How this looks on a mac
 
 #+ATTR_HTML: :width 600px
 [[../img/3_macos.png]]
@@ -223,7 +223,7 @@ easily by changing a system setting.
       Mac available and may be able to figure something out.)/
 
 #+end_notes
-* TODO PRACTICE: DOWNLOAD PRACTICE FILES
+* DONE Practice: download practice files
 #+attr_html: :width 300px
 [[../img/3_github.png]]
 
@@ -244,7 +244,7 @@ a file type to be opened by one program (not possible in Linux or
 MacOS because Unix does not know file type extensions.
 #+end_comment
 
-* TODO PRACTICE: INSTALL R
+* SOMEDAY Practice: install R
 
 #+attr_html: :width 420px
 [[../img/3_practice.png]]
@@ -253,7 +253,7 @@ MacOS because Unix does not know file type extensions.
 - MacOS people: help each other!
 - Linux people: you're good!
 
-* OPENING R FOR THE FIRST TIME
+* DONE Opening r for the first time
 
 #+NAME: fig:Rlogo
 #+ATTR_HTML: :width 300 px
@@ -263,14 +263,14 @@ MacOS because Unix does not know file type extensions.
 - On your windows box, you have R as a terminal program and as a GUI
 - In Emacs, you can execute R code blocks and display graphs together
 
-* TODO PRACTICE: FIND R / RUN R SCRIPTS
+* TODO Practice: find R / run R scripts
 
 Summary:
 - R is an interpreted program with a shell (CLI/console)
 - On Windows, there are a GUI and a terminal program
 - You can run R scripts in the foreground or in the background
 
-* R SHELL: VERSION AND PLATFORM
+* R shell: version and platform
 
 #+NAME: fig:cli-1
 [[../img/3_opening_R_1.png]]
@@ -293,7 +293,7 @@ have (most importantly: 64-bit)? [[platform][(Hint)]]
 
 #+end_notes
 
-* R SHELL: DISTRIBUTION LICENSE
+* R shell: distribution license
 
 #+NAME: fig:cli-2
 [[../img/3_opening_R_2.png]]
@@ -316,7 +316,7 @@ of this language.
 to it? Are there any programs that you have used before? [[gnu][(Hint)]]
 #+end_notes
 
-* R SHELL: THE R PROJECT
+* R shell: the r project
 
 #+CAPTION:
 #+NAME: fig:cli-3
@@ -344,7 +344,7 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   (like HTML or LaTeX)? [[latex][(Hint)]]
   #+end_notes
 
-* R SHELL: DEMO AND HELP
+* R shell: demo and help
 
 #+NAME: fig:cli-4
 [[../img/3_opening_R_4.png]]
@@ -387,7 +387,7 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   in command-line mode.
   #+end_notes
 
-* TODO PRACTICE: EXPLORING THE R SHELL
+* TODO Practice: exploring the r shell
 
 Summary:
 - Contents of the R startup screen: R's version, license, project,
@@ -395,7 +395,7 @@ Summary:
 - GPL is the GNU Public License (important for FOSS)
 - BibTeX and LaTeX for scientific document processing
 
-* WORKING DIRECTORY
+* Working directory
 
 #+NAME: fig:cli-5
 [[../img/3_opening_R_5.png]]
@@ -420,7 +420,7 @@ Summary:
   shell that I use on my Linux computer (and that most MacOS users
   will use) is also available within Windows 10 [[posey][(Posey 2018]]).
   #+end_notes
-* TODO PRACTICE: CHANGE WORKING DIRECTORY
+* TODO Practice: change working directory
 
 Summary:
 - Function without arguments: ~getwd()~
@@ -428,7 +428,7 @@ Summary:
 - Absolute pathname like ~'c:/Users/birkenkrahe/'~
 - Relative pathnames like ~'../../'~ ("go up by 2 levels")
 
-* THE R SHELL PROMPT
+* The R shell prompt
 
 #+NAME: fig:cli-6
 [[../img/3_opening_R_6.png]]
@@ -445,14 +445,14 @@ effort). Freedom of extensibility is the name of the command-line
 game.
 #+end_notes
 
-* TODO PRACTICE: CHANGE R SHELL PROMPT
+* TODO Practice: change r shell prompt
 
 Summary:
 - The functions ~options~ controls display options
 - You can extract display options with ~$~, e.g. ~options()$prompt~
 - You can get help with the ~help~ function (or ~?~) 
 
-* COMPUTING AND COMMENTING
+* Computing and commenting
 
 #+NAME: fig:cli-8
 #+ATTR_HTML: :height 300 px
@@ -472,7 +472,7 @@ this because it is strongest when manipulating tabular data - data
 ordered in columns and rows.
 #+end_notes
 
-* TODO PRACTICE: COMPUTE AND COMMENT
+* TODO Practice: compute and comment
 
 Summary:
 - You can print results with or without ~print~
@@ -489,7 +489,7 @@ Summary:
 #+caption: MASS is from the book by Venables/Ripley (2002)
 [[../img/3_MASS.png]]
 
-* INSTALL PACKAGES
+* Install packages
 
 #+NAME: fig:cli-9
 #+attr_html: :width 700px
@@ -500,7 +500,7 @@ Summary:
 - Installation downloads compressed /tarball/ from a CRAN mirror site
 - ~md5sum~ is a GNU utility program that checks correct file transfer 
 
-* MISCELLANEOUS PACKAGE COMMANDS
+* Miscellaneous package commands
 
 - To uninstall a package, use ~remove.packages(package="[pkgname]")~
 
@@ -528,7 +528,7 @@ Summary:
   #+caption: Search paths for R packages on my Windows box
   [[../img/3_searchpaths.png]]
 
-* LOAD DATASETS
+* Load datasets
 
 - After loading a package that contains data sets, you must load them
 
@@ -540,7 +540,7 @@ Summary:
   #+caption: Loading MASS, MASS::phones, listing and delisting 
   [[../img/3_data.png]]
 
-* EXPLORE DATA
+* Explore data
 
 - When you've loaded a data set, you should take a look at it
 
@@ -553,7 +553,7 @@ Summary:
 #+caption: structure of the built-in data set mtcars
 [[../img/3_mtcars.png]]
 
-* TODO PRACTICE: R PACKAGE COMMANDS
+* TODO Practice: r package commands
 
 Summary:
 - You can install, uninstall packages and data sets in them
@@ -561,7 +561,7 @@ Summary:
 - Your current R session keeps track of all loaded objects
 - Display structure, head and tail of loaded data sets
 
-* SAVING YOUR WORKSPACE
+* Saving your workspace
 
 - When you quit an R session with ~q()~ or ~quit()~, you're asked if you
   want to save the /workspace image/.
@@ -577,7 +577,7 @@ Summary:
 #+attr_html: :width 600px
 [[../img/3_opening_R_7.png]]
 
-* CUSTOMIZING AT STARTUP
+* Customizing at startup
 
 - When you install packages, you do not need administrative rights,
   even if R is installed in a read-only portion of your computer. The
@@ -598,7 +598,7 @@ Summary:
 - See also: [[https://www.r-bloggers.com/2014/09/fun-with-rprofile-and-customizing-r-startup/]["Fun with .Rprofile and customizing R startup"]]
   (Fischetti, 2014)
   
-* TODO PRACTICE: CUSTOMIZING AT STARTUP
+* TODO Practice: customizing at startup
 
 Summary:
 - Emacs and R have a home directory (~~/~) for startup files[fn:4]

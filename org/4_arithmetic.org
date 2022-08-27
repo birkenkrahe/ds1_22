@@ -1,7 +1,8 @@
 #+TITLE: ARITHMETIC in R
 #+AUTHOR: Introduction to data science (DSC 105) Fall 2022
 #+startup: hideblocks indent overview inlineimages
-* WHAT WILL YOU LEARN?
+[[../img/4_math.jpg]]
+* What will you learn?
 
 - Perform basic numerical operations
 - Translate complex mathematical formulas
@@ -38,14 +39,14 @@
 
 * ARITHMETIC OPERATORS
 
-1) Parentheses: ~()~
-2) Exponentiation: ~^~ or ~**~
-3) Multiplication: ~*~
-4) Division: ~/~
-5) Addition: ~+~
-6) Subtraction: ~-~
+1) *P* arentheses: ~()~
+2) *E* xponentiation: ~^~ or ~**~
+3) *M* ultiplication: ~*~
+4) *D* ivision: ~/~
+5) *A* ddition: ~+~
+6) *S* ubtraction: ~-~
 
-   #+begin_notes
+#+begin_notes
    In R, standard mathematical rules apply. The order of operators is
    as usual - left to right, parentheses, exponents, multiplication,
    division, addition, subtraction (PEMDAS = Please Excuse My Dear
@@ -58,7 +59,7 @@
 
    [[../img/4_identical.png]]
 
-   #+end_notes
+#+end_notes
 
 * FORMULA TRANSLATOR I
 
@@ -68,7 +69,7 @@
 - Compute in your head first
 - Then check in the R console
 
-  #+begin_notes
+#+begin_notes
 
   *Challenge:*
   What's the result of the following expression?
@@ -80,7 +81,7 @@
 
   Let's look at more complicated expressions than this one.
 
-  #+end_notes
+#+end_notes
 
 * FORMULA TRANSLATOR I
 
@@ -161,6 +162,8 @@
 | ~?log10~ |
 | ~?exp~   |
 | ~?pi~    |
+
+*Do you know how to compute these by hand?*[fn:1]
 
 * LOGARITHMIC TRANSFORMATION
 
@@ -541,3 +544,14 @@ rounding error in the example in the figure actually?
 
 - <<matloff>> Norman Matloff (2020). [[https://github.com/matloff/fasteR][fasteR: Fast Lane to Learning R!]].
   <<pemdas>>
+
+* Footnotes
+
+[fn:1]I've recently been reminded [[https://bigthink.com/13-8/math-thinking/][through this article]] how important
+it may be to be able to do computations without the help of
+machines. Here are [[https://gauravvjn.quora.com/4-ways-to-calculate-Square-Root-without-using-inbuilt-functions-in-C-language-Interview-Puzzle][4 ways]] to compute ~sqrt~ in C (though not very
+fast). In general: 1) using logarithms and exponentials
+($sqrt(x)=e^{0.5 \times ln(x)}$), 2) using successive approximate
+numerical methods like [[https://mathworld.wolfram.com/NewtonsIteration.html][Newton's iteration]], 3) using modified long
+division ([[https://www.wikihow.com/Calculate-a-Square-Root-by-Hand#Finding_Square_Roots_Manually_sub][prime factorization]]), 4) [[https://www.mathworks.com/help/fixedpoint/ug/implement-fixed-point-square-root-using-lookup-table.html][looking it up in a table]] (source:
+[[https://www.quora.com/How-do-computers-calculate-square-roots][quora.com]])
