@@ -5,7 +5,7 @@
 #+ATTR_HTML: :width 200px
 #+CAPTION: RStudio Ball Logo (Source: rstudio.com)
 [[../img/3_rstudioball.png]]
-* OVERVIEW
+* DONE OVERVIEW
 
 #+ATTR_HTML: :width 600px
 #+CAPTION: Bridge and Waterfall at Pontoise (Cezanne, 1881)
@@ -24,7 +24,7 @@
   a [[challenges][section at the end of the document]].
   #+end_notes
 
-* WHY WE ARE USING R
+* DONE WHY WE ARE USING R
 
 #+NAME: fig:tiobe
 #+ATTR_HTML: :width 700px
@@ -93,7 +93,7 @@ interest in COVID-19 data analysis.
 
 #+end_notes
 
-* MATLOFF'S 10 REASONS
+* DONE MATLOFF'S 10 REASONS
 
 #+name: fig:matloff
 #+attr_html: :width 700px
@@ -229,9 +229,9 @@ easily by changing a system setting.
 
 1) Open the course directory in GitHub,
    https://github.com/birkenkrahe/ds1
-2) Open ~/org/3_practice.org~
+2) Open ~/org/3_introR_practice.org~
 3) Open the ~raw~ version of the file
-4) Save file as ~3_practice.org~
+4) Save file as ~3_introR_practice.org~
 5) Right click on the file in Explorer
 6) Change ~Opens with:~ property to Emacs
 7) Open file with Emacs from the Explorer

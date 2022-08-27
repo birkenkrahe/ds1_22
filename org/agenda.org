@@ -111,11 +111,11 @@ participation (if there's a practice file, you can make up).
 - [X] Quiz 1: course infrastructure
 - [X] Team projects: getting ready for 1st sprint review
 - [X] Lecture: Introduction to data science
-- [ ] Lecture/practice: Introduction to R
-- [ ] Practice: Running R in an Emacs Org-mode file
-- [ ] Practice: Introduction to R 
+- [X] Lecture/practice: Introduction to R
+- [X] Practice: Running R in an Emacs Org-mode file
+- [X] Practice: Introduction to R 
 
-* DONE Home assignments - how they work
+** DONE Home assignments - how they work
 #+attr_html: :width 400px
 #+captions: course infrastructure
 [[../img/platforms.png]]
@@ -125,7 +125,7 @@ participation (if there's a practice file, you can make up).
 - You loose 1 point for every day of late submission
 - Canvas Gradebook is updated manually (with some delay)
 
-* DONE Team projects - check in
+** DONE Team projects - check in
 #+attr_html: :width 600px
 [[../img/scrum.jpg]]
 
@@ -137,7 +137,7 @@ participation (if there's a practice file, you can make up).
 - [X] *Who has not yet found a team?*
 - [X] *Who has a team but no idea what to do?* 
 
-* DONE DataCamp assignment: What Is Data Science?
+** DONE DataCamp assignment: What Is Data Science?
 
 - Data science definition biased towards Machine Learning
   #+attr_html: :width 600px
@@ -150,9 +150,9 @@ participation (if there's a practice file, you can make up).
 
 - What follows if this claim is true? What if it isn't?
 
-* DONE [[https://github.com/birkenkrahe/ds1/blob/piHome/pdf/1_skills.pdf][What are your skills? (Mon 22-Aug)]]
+** DONE [[https://github.com/birkenkrahe/ds1/blob/piHome/pdf/1_skills.pdf][What are your skills? (Mon 22-Aug)]]
 
-* DONE 1st sprint review - Wed 31-Aug
+** DONE 1st sprint review - Wed 31-Aug
 
 - [[https://lyon.instructure.com/courses/568/assignments/1438][Canvas assignment with submission]]
 
@@ -160,16 +160,27 @@ participation (if there's a practice file, you can make up).
 
 - If you are in > 1 course, you can use the same project idea!
   
+** DONE Test 2 open ("What is data science?")
 
-* TODO Test 2 open ("What is data science?")
-
-* TODO Project idea: compare base-R and "Tidyverse"
+** DONE Project idea: compare base-R and "Tidyverse"
 
 - Base-R is the foundation software from CRAN (the one you're using)
 - "Tidyverse" is a popular bundle of packages (like ~dplyr~)
 - The project would consist of comparing both with examples, along the
   lines of Matloff's "[[https://github.com/matloff/TidyverseSkeptic][TidyverseSceptic]]" essay (see also recent [[https://github.com/matloff/TidyverseSkeptic/blob/master/RDesign.pdf][update]])
 
-* TODO Run R in Org-mode file
+** DONE Practice: Run R in Org-mode file
 
-- [[https://github.com/birkenkrahe/ds1/blob/piHome/org/1_overview_practice.org#run-r-in-org-mode-file][See GitHub]]
+- [[https://github.com/birkenkrahe/ds1/blob/piHome/org/1_overview_practice.org#run-r-in-org-mode-file][Instructions in GitHub]]
+- Update your Emacs configuration file
+- Check that you can run R inside Emacs
+
+** IN PROGRESS Lecture/practice: introduction to R
+
+1) [[https://github.com/birkenkrahe/ds1/blob/piHome/org/3_introR_practice.org][Download the file]]
+2) Complete the file
+3) Nothing to upload
+
+* Week 3: arithmetics with R
+
+ - [ ] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete practice file]]
