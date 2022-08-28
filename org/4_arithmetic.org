@@ -3,6 +3,9 @@
 #+startup: hideblocks indent overview inlineimages
 [[../img/4_math.jpg]]
 * What will you learn?
+#+attr_html: :width 500px
+#+caption: The Arithmetic 1492-94 Fresco Palazzi Pontifici, Vatican Borgia Apartment
+[[../img/4_aritmetica.jpg]]
 
 - Perform basic numerical operations
 - Translate complex mathematical formulas
@@ -11,33 +14,35 @@
 - Know R's special numbers
 - Understand logical values and operators
 
-  #+begin_notes
+#+begin_notes
+*Image:* The Arithmetic 1492-94 Fresco Palazzi Pontifici, Vatican
+Borgia Apartment (Wikipedia).
 
-  *Sources:* Some material for this lesson comes from [[davies][Davies (2016)]]
-  and [[matloff][Matloff (2020)]]. These and other sources have been important to
-  me in preparing the course. Check them out for a more systematic
-  treatment of R. There is also a more philosophical, personal view on
-  my use of sources [[https://github.com/birkenkrahe/ds101/wiki/Why-R,-my-path,-DataCamp][in the Wiki]] for the 2020 version of this course.
+*Sources:* Some material for this lesson comes from [[davies][Davies (2016)]]
+and [[matloff][Matloff (2020)]]. These and other sources have been important to
+me in preparing the course. Check them out for a more systematic
+treatment of R. There is also a more philosophical, personal view on
+my use of sources [[https://github.com/birkenkrahe/ds101/wiki/Why-R,-my-path,-DataCamp][in the Wiki]] for the 2020 version of this course.
 
-  *What is this?* When we say "Arithmetic", we don't mean that
-  we "study" numbers but that we use them to perform
-  computations. After this section, you'll be able to perform any
-  arithmetic operation using R.
+*What is this?* When we say "Arithmetic", we don't mean that
+we "study" numbers but that we use them to perform
+computations. After this section, you'll be able to perform any
+arithmetic operation using R.
 
-  We will look at operators first, then at simple but important
-  functions that occur again and again, especially in statistics.
+We will look at operators first, then at simple but important
+functions that occur again and again, especially in statistics.
 
-  *How can you learn better?* This presentation consists mostly of text and
-  code chunks. Because this is dry stuff, I urge you (both if you hear
-  this in class, and if you work through this on your own) to open an
-  R session on the side and type along - this will build muscle memory
-  and keep you entertained, too! Another trick, which you will find in
-  [[matloff][Matloff's text]], is to make your own little exercises by varying the
-  instructions.
+*How can you learn better?* This presentation consists mostly of text and
+code chunks. Because this is dry stuff, I urge you (both if you hear
+this in class, and if you work through this on your own) to open an
+R session on the side and type along - this will build muscle memory
+and keep you entertained, too! Another trick, which you will find in
+[[matloff][Matloff's text]], is to make your own little exercises by varying the
+instructions.
+#+end_notes
+* Please Excuse My Dear Aunt Sally
 
-  #+end_notes
-
-* ARITHMETIC OPERATORS
+*Operator order:*
 
 1) *P* arentheses: ~()~
 2) *E* xponentiation: ~^~ or ~**~
@@ -46,113 +51,23 @@
 5) *A* ddition: ~+~
 6) *S* ubtraction: ~-~
 
-#+begin_notes
-   In R, standard mathematical rules apply. The order of operators is
-   as usual - left to right, parentheses, exponents, multiplication,
-   division, addition, subtraction (PEMDAS = Please Excuse My Dear
-   Aunt Sally) mnemonic).
 
-   The operators ~^~ and ~**~ for exponentiation are identical, though
-   ~^~ is more common. You can check that in the R console with the
-   ~identical~ function - the result should be ~TRUE~ (this is a truth
-   or Boolean value - more on this below) - see figure
-
-   [[../img/4_identical.png]]
-
-#+end_notes
-
-* FORMULA TRANSLATOR I
-
-[[../img/4_challenge1.png]]
-
-- What is the result of this expression?
-- Compute in your head first
-- Then check in the R console
+/Tip: You can check identity in R with the ~identical~ function./
 
 #+begin_notes
+In R, standard mathematical rules apply. The order of operators is as
+usual - left to right, parentheses, exponents, multiplication,
+division, addition, subtraction (PEMDAS = Please Excuse My Dear Aunt
+Sally) mnemonic).
 
-  *Challenge:*
-  What's the result of the following expression?
-  \begin{equation}
-  \label{eqn:1}
-    24+6/3\times5\times2^3-9
-  \end{equation}
-  Compute (\ref{eqn:1}) in your head first, then in the R console!
+The operators ~^~ and ~**~ for exponentiation are identical, though ~^~ is
+more common. You can check that in the R console with the ~identical~
+function - the result should be ~TRUE~ (this is a truth or Boolean
+value - more on this below) - see figure
 
-  Let's look at more complicated expressions than this one.
+[[../img/4_identical.png]]
 
 #+end_notes
-
-* FORMULA TRANSLATOR I
-
-[[../img/4_sol1.png]]
-
-- Remember the PEMDAS order
-- Instead of ~^~ you can use ~**~
-
-* FORMULA TRANSLATOR II
-
-[[../img/4_challenge2.png]]
-
-- Compute the expressions (2)-(5)
-- Use the R console
-
-  #+begin_notes
-
-  \begin{equation}
-  \label{eqn:2}
-  10^2 + \frac{3 \times 60}{8} - 3
-  \end{equation}
-  \begin{equation}
-  \label{eqn:3}
-  \frac{5^3 \times \left(6-2\right)}{61-3+4}
-  \end{equation}
-  \begin{equation}
-  \label{eqn:4}
-  2^{2+1}-4+64^{-2^{2.25-\frac{1}{4}}}
-  \end{equation}
-  \begin{equation}
-  \label{eqn:5}
-  \left(\frac{0.44 \times\left(1-0.44\right)}{34}\right)^\frac{1}{2}
-  \end{equation}
-
-  *Challenge*: compute the expressions in the equations
-  (\ref{eqn:2}) -- (\ref{eqn:5}) using R.
-
-  Even if you don't code functions yourself, you may need to know
-  these things if you have to check someone else's function, e.g. when
-  the return values seem strange to you.
-
-  #+end_notes
-
-* FORMULA TRANSLATOR II
-
-[[../img/4_fig_formula.png]]
-
-- You need parentheses in the exponent
-- $-2$ is interpreted as ~-1 * 2~
-- What does ~(-1)^(1/2)~ return?
-
-  #+begin_notes
-
-  When you use R, you'll often have to translate a formula into
-  code. Consider the formulas (\ref{eqn:2}) -- (\ref{eqn:5}),
-  which seem pretty complicated: the only trick here is that you
-  often need to use parentheses, e.g. around calculations in the
-  exponent, or when calculating with negative numbers in
-  eq. (\ref{eqn:4}), because the number $-2$ e.g. is interpreted by R
-  as the operation ~-1 * 2~.
-
-  Complex numbers? Last term, Lea S. solved my personal puzzle
-  (thanks!), the "~NaN~" result, which is also "[[https://www.menshealth.com/entertainment/a31782879/square-root-negative-one-westworld/][The Math Problem That
-  Broke the Westworld Simulation]]" (the 2019 AI TV
-  mini-series). Basically, R will hand you a "Not A Number" whenever
-  you try to, e.g. take the square root of a negative number (try
-  ~sqrt(-1)~ or ~(-1)^(1/2))~. We won't need complex numbers in this
-  course, but (of course) there are functions to handle them ([[https://stat.ethz.ch/R-manual/R-devel/library/base/html/complex.html][see
-  here]]).
-
-  #+end_notes
 
 * MATHEMATICAL FUNCTIONS
 
@@ -408,7 +323,7 @@ of $10$.
 #+attr_html: :height 200px
 [[../img/4_kbd.gif]]
 
-* Enter ~10^309~
+- Enter ~10^309~
 * Subtract $\sqrt{2}^{2}$ from $2$
 
 #+begin_notes

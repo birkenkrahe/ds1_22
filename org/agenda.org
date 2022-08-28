@@ -113,7 +113,7 @@ participation (if there's a practice file, you can make up).
 - [X] Lecture: Introduction to data science
 - [X] Lecture/practice: Introduction to R
 - [X] Practice: Running R in an Emacs Org-mode file
-- [X] Practice: Introduction to R 
+- [X] Practice: Introduction to R
 
 ** DONE Home assignments - how they work
 #+attr_html: :width 400px
@@ -133,9 +133,9 @@ participation (if there's a practice file, you can make up).
 - You'll have to do the project in a team - 2 to 3 people
 - I can only accommodate at most 9 projects (last week of term)
 - Put your team/ideas into this table ([[https://lyon.instructure.com/courses/568/pages/enter-your-project-idea-and-participants-here][Canvas]]) by Wednesday
-  
+
 - [X] *Who has not yet found a team?*
-- [X] *Who has a team but no idea what to do?* 
+- [X] *Who has a team but no idea what to do?*
 
 ** DONE DataCamp assignment: What Is Data Science?
 
@@ -159,7 +159,7 @@ participation (if there's a practice file, you can make up).
 - Complete [[https://lyon.instructure.com/courses/568/pages/enter-your-project-idea-and-participants-here][projects overview table]] in Canvas *today*!
 
 - If you are in > 1 course, you can use the same project idea!
-  
+
 ** DONE Test 2 open ("What is data science?")
 
 ** DONE Project idea: compare base-R and "Tidyverse"
@@ -182,5 +182,14 @@ participation (if there's a practice file, you can make up).
 3) Nothing to upload
 
 * Week 3: arithmetics with R
+#+attr_html: :width 400px
+[[../img/arithmetic.jpg]]
 
- - [ ] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete practice file]]
+- [ ] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete practice file]]
+
+* GNU Emacs: ref cards
+#+attr_html: :width 400px
+[[../img/gnu.jpg]]
+
+- [ ] The power of Dired on one page ([[https://github.com/birkenkrahe/org/blob/master/emacs/dired-ref.pdfhttps://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][v28]])
+- [ ] The power of Emacs on two pages ([[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][v27]])
