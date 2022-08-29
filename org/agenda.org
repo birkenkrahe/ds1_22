@@ -185,11 +185,47 @@ participation (if there's a practice file, you can make up).
 #+attr_html: :width 400px
 [[../img/arithmetic.jpg]]
 
-- [ ] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete practice file]]
+
+- [ ] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete introR practice file]]
+- [ ] Lecture & practice: arithmetics in R
+- [ ] DataCamp assignment "[[https://app.datacamp.com/learn/courses/free-introduction-to-r][Intro to basics]]"
+
+* DataCamp assignment "Intro to basics"
+
+- Always try stuff on your own (using the console or Emacs)
+- R as a scientific calculator
+- Assignment operators ~<-~, ~=~, ~->~
+- ~ls()~ function (list defined R objects)
+- Review: how do you add two variables ~x~ and ~y~?
+- Tip: you can use ~;~ to add commands on one line
+- Review: which data types does R have?
+- Useful functions: (object) ~class~, (storage) ~mode~ (or ~typeof~)
+
+  #+begin_src R :session *R* :result outout
+    foo <- "a"; foo
+    typeof(foo)
+    typeof(x)
+  #+end_src
+
+  #+RESULTS:
+  : double
+
+
+
+
+
+
+
+
+* READ Monday Aug 29 last day to drop class
+
+[[../img/drop.png]]
+
+(https://my.lyon.edu/ICS/Academics/Student_Forms.jnz) 
 
 * GNU Emacs: ref cards
 #+attr_html: :width 400px
 [[../img/gnu.jpg]]
 
-- [ ] The power of Dired on one page ([[https://github.com/birkenkrahe/org/blob/master/emacs/dired-ref.pdfhttps://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][v28]])
+- [ ] The power of Dired on one page ([[https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][v28]])
 - [ ] The power of Emacs on two pages ([[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][v27]])

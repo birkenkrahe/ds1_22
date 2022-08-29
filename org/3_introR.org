@@ -264,6 +264,8 @@ MacOS because Unix does not know file type extensions.
 - In Emacs, you can execute R code blocks and display graphs together
 
 * TODO Practice: find R / run R scripts
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
 Summary:
 - R is an interpreted program with a shell (CLI/console)
@@ -388,6 +390,8 @@ to it? Are there any programs that you have used before? [[gnu][(Hint)]]
   #+end_notes
 
 * TODO Practice: exploring the r shell
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
 Summary:
 - Contents of the R startup screen: R's version, license, project,
@@ -421,6 +425,8 @@ Summary:
   will use) is also available within Windows 10 [[posey][(Posey 2018]]).
   #+end_notes
 * TODO Practice: change working directory
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
 Summary:
 - Function without arguments: ~getwd()~
@@ -446,6 +452,8 @@ game.
 #+end_notes
 
 * TODO Practice: change r shell prompt
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
 Summary:
 - The functions ~options~ controls display options
@@ -473,6 +481,8 @@ ordered in columns and rows.
 #+end_notes
 
 * TODO Practice: compute and comment
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
 Summary:
 - You can print results with or without ~print~
@@ -554,6 +564,8 @@ Summary:
 [[../img/3_mtcars.png]]
 
 * TODO Practice: r package commands
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
 Summary:
 - You can install, uninstall packages and data sets in them
@@ -599,6 +611,8 @@ Summary:
   (Fischetti, 2014)
   
 * TODO Practice: customizing at startup
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
 Summary:
 - Emacs and R have a home directory (~~/~) for startup files[fn:4]

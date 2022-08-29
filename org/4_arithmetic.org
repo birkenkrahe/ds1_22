@@ -69,28 +69,43 @@ value - more on this below) - see figure
 
 #+end_notes
 
-* MATHEMATICAL FUNCTIONS
-
+* TODO Practice: Formula Translator
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+* Mathematical functions
 [[../img/4_maths1.gif]]
 
-| ~?sqrt~  |
-| ~?log10~ |
-| ~?exp~   |
-| ~?pi~    |
+- ~?sqrt~ ( \radic )
+
+- ~?log10~ ( log_10)
+
+- ~?exp~ (e)
+
+- ~?pi~ (\pi)
 
 *Do you know how to compute these by hand?*[fn:1]
 
-* LOGARITHMIC TRANSFORMATION
-
-#+SOURCE: r-graph-gallery.com, Book of R Chapter 2
-#+ATTR_HTML: :width 700px
-#+ATTR_ORG: :width 200px
+* Logarithmic transformation
+#+ATTR_HTML: :width 800px
 [[../img/4_exp_log_plot.png]]
+#+SOURCE: r-graph-gallery.com, Book of R Chapter 2
 
-See also: [[https://view.e.economist.com/?qs=d55c97a1de83b95ad1aa9d756a88fafe97cb7fc75d8e405bd20caf999b5f482d71a7106eb82724938a8ff8a420c219a05b9b132f0e969760ea83e57c2668331e133e24432173498d2cd548123781e419][The Economist/Off The Charts 04/20/2021]]
+Some examples:
+#+begin_example
+log10(1e7)
+
+log10(100) log10(1000) log10(1e3)
+
+log(1) = log10(1) = 0
+
+log(x=100,b=100) = log(4.583,4.583) = 1
+
+log(x=100,b=10) = log(b=10,x=100) = 2
+#+end_example
+
+More examples: [[https://view.e.economist.com/?qs=d55c97a1de83b95ad1aa9d756a88fafe97cb7fc75d8e405bd20caf999b5f482d71a7106eb82724938a8ff8a420c219a05b9b132f0e969760ea83e57c2668331e133e24432173498d2cd548123781e419][The Economist/Off The Charts 04/20/2021]]
 
 #+begin_notes
-
 It is often necessary to transform numerical data, e.g. transforming
 data using the logarithm leading e.g. from the left to the right
 graph in the figure. As you can see, this transformation
@@ -103,94 +118,34 @@ were transformed using the ~log()~ function, the logarithm with base
 $10$. The logarithm of $x=100$ to the base $10$ is $2$, because
 $10^2 = 100$. In R, ~log(x=100,b=10) = 2~ (try this yourself!).
 
-~log10(1e7)~
-
-~log10(100)~ ~log10(1000)~ ~log10(1e3)~
-
-~log(1) = log10(1) = 0~
-
-~log(x=100,b=100) = log(4.583,4.583) = 1~
-
-~log(x=100,b=10) = log(b=10,x=100) = 2~
-
 #+end_notes
 
-* LOGARITHM RULES
+* Logarithm rules
 
 [[../img/4_rules.gif]]
 
 - Argument ~x~ and base ~b~ must be positive
-- $\forall x$: ~log(x,b=x)=1~ since only $x^1=x$
-- $\forall b$: ~log(x=1,b)=0~ since $b^0=1$
+- For all x: ~log(x, b=x) = 1~ since only x^1 = x
+- For all b: ~log(x=1, b) = 0~ since b^0 = 1
 
-* LOGARITHM PUZZLES
-
-#+attr_html: :height 200px
-[[../img/4_kbd.gif]]
-
-- Compute $log_{10}(10,000,000)$ in R
-- Enter ~log10(10,000,000)~ in R
-- Find the logarithm with base $10$ for $10,000,010$.
-- Why is the result the same as before?
-- Check: enter ~log10(10000100)~
-
-  #+begin_notes
-
-  (1) The error in the first line results from the fact that in R
-  functions, the comma separates arguments, so it looks to R as if
-  3 arguments were provided where only one is required, because,
-  unlike the function ~log()~, ~log10()~ already has a fixed base
-  ~b=10~. This is fixed in the next line.
-
-  (2) The trouble with the seemingly identical results of
-  ~log10(10000010)~ and ~log10(10000000)~ lies in the suppression
-  of digits. This can be fixed with the ~options()~ utility
-  function, which we met in an earlier lecture. After setting
-  ~options(digits=10)~, the missing numbers appear.
-
-  (3) Typing ~log10(10000100)~ would have revealed the problem,
-  because this result can be shown with the default number of
-  digits (~7~).
-
-  [[../img/4_logerror.png]]
-
-  #+end_notes
-
-* EXPONENTIAL FUNCTION
-
+* Exponential function
+#+attr_html: :width 500px
 [[../img/4_euler.jpeg]]
 
-* $log(x)$ implies $b=e\approx{2.7182}$
-* Verify for $x=10$,$x=2.718282$,$x=0$:
-\begin{equation}
-       \label{eqn:e}
-       e^{ln(x)} = ln(e^x)=x
-\end{equation}
+- ~log(x)~ implies ~b = e \approx 2.7182~
 
-#+begin_notes
+- In mathematics, the /Euler constant/ $e$ is as magical as the other
+  mysterious constants \pi, 0, 1 and i (the imaginary unit). There are
+  [[https://en.wikipedia.org/wiki/E_(mathematical_constant)][different ways]] to arrive at its value of approximately 2.718282.
 
-In mathematics, the /Euler constant/ $e$ is as magical as the other
-mysterious constants $\pi$, $0$, $1$ and $i$ (the imaginary
-unit). There are [[https://en.wikipedia.org/wiki/E_(mathematical_constant)][different ways]] to arrive at its value of
-approximately $2.718282$.
+- For now, we only care about the fact that $e$ is the base of the
+  natural logarithm, denoted as ~ln~ or log_e(x).
 
-For now, we only care about the fact that $e$ is the base of the
-natural logarithm, denoted as $ln$ or $log_e(x)$.
+* TODO Practice: logarithms and constants
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
-#+end_notes
-
-* CONSTANTS
-
-#+attr_html: :height 200px
-[[../img/4_kbd.gif]]
-
-- ~pi~ ($\pi \approx 3.14$)
-- ~LETTERS~ and ~letters~
-- ~month.name~ and ~month.abb~
-- What about Euler's number $e$?
-
-* E-NOTATION
-
+* E-notation
 #+NAME: fig:powers
 #+ATTR_HTML: :height 400px
 [[../img/4_powers-ten.png]]
@@ -208,39 +163,25 @@ of $10$.
 
 #+end_notes
 
-* EXAMPLES
+* E-xamples
 
 [[../img/4_penguins.gif]]
 
-| $10\,000 = 10\times10\times10\times10\times10=1\times10^5 =$ ~1eR+05~   |
-| ~7.45678389e12~ = $7.45678389\times10^{12}$ = $745.678389\times10^{10}$ |
-| $e$ ~= 271828182845e-11~ $= 271828182845\times10^{-11}$                 |
+- 10,0000 = ~10 * 10 * 10 * 10 * 10~ = 1 * 10^5 = ~1e+05~
 
-* BE THE COMPUTER!
+- ~7.45678389e12~ = 7.45678389\times10^12 = 745.678389\times10^10
 
-#+attr_html: :height 200px
-[[../img/4_kbd.gif]]
+- ~exp(1)~ = e = ~271828182845e-11~ = 271828182845\times10^{-11}
 
-- Enter $100\,000\,000$
-- Enter $0.00000000000000010$
-- Enter ~exp(1000)~ and ~(-1)/0~
-- Enter ~sqrt(-1)~
+* TODO Practice: e-notation
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
   #+begin_notes
 
-  Let's look at some examples:
-
-  $10\,000 = 10\times10\times10\times10\times10=1\times10^5$, shown
-  in R as ~1e+05~.
-
-  ~7.45678389e12~ is the same as $7.45678389\times10^{12}$ and the
-  same as $745.678389\times10^{10}$.
-
-  $e$ ~= 271828182845e-11~ $= 271828182845\times10^{-11}$
-
-  To get from the e-notation with exponent $y$ or $-y$ to the
-  complete number of digits, simply move the decimal point by $y$
-  places to the right or to the left, resp.
+  To get from the e-notation with exponent y or -y to the complete
+  number of digits, simply move the decimal point by y places to the
+  right or to the left, resp.
 
   No information is lost even if R hides digits; e-notation is purely
   to improve readability. Extra bits are stored by R
@@ -249,7 +190,7 @@ of $10$.
 
   #+end_notes
 
-* MATH HELP IN R
+* Math help in R
 
 [[../img/4_help.gif]]
 
