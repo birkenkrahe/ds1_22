@@ -190,7 +190,7 @@ participation (if there's a practice file, you can make up).
 - [ ] Lecture & practice: arithmetics in R
 - [ ] DataCamp assignment "[[https://app.datacamp.com/learn/courses/free-introduction-to-r][Intro to basics]]"
 
-* DataCamp assignment "Intro to basics"
+** DataCamp assignment "Intro to basics"
 
 - Always try stuff on your own (using the console or Emacs)
 - R as a scientific calculator
@@ -210,22 +210,43 @@ participation (if there's a practice file, you can make up).
   #+RESULTS:
   : double
 
-
-
-
-
-
-
-
-* READ Monday Aug 29 last day to drop class
+** READ Monday Aug 29 last day to drop class
 
 [[../img/drop.png]]
 
 (https://my.lyon.edu/ICS/Academics/Student_Forms.jnz) 
 
-* GNU Emacs: ref cards
+** GNU Emacs: ref cards
 #+attr_html: :width 400px
 [[../img/gnu.jpg]]
 
 - [ ] The power of Dired on one page ([[https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][v28]])
 - [ ] The power of Emacs on two pages ([[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][v27]])
+
+* Review: test 2 - what is data science?
+
+- *Which skills are relevant for data science?*
+  + Customer service skills is a general people skill, not specific to
+    data science
+  + Database management is a general IT skill, not specific to data
+    science
+  + "Sales knowledge" is domain knowledge, and actually not a skill
+    (bad phrasing of the question on my part)
+  + All skills and all knowledge can of course be brought to bear on
+    data science, which means this is not a very well focused question
+
+- *Which of these are part of the typical data science process?*
+  + The typical data science process does not involve "machine
+    learning" (ML). ML is a specific data science application.
+  + Coding is a skill
+
+- Data science as a *discipline* is neither very immature (undefined)
+  nor very mature (standardized). It's changing so fast that its
+  "maturity" is difficult to assess
+
+- *Purpose of Scrum:* team and customer happiness are not suitable
+  goals, because 'happiness' is highly subjective - too hard to define
+  and measure (it's marketing and sales lingo)
+
+- *Coding*, though still relevant and important, is no longer the most
+  important skill for data scientists
