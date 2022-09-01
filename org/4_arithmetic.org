@@ -177,18 +177,18 @@ of $10$.
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
-  #+begin_notes
+#+begin_notes
 
-  To get from the e-notation with exponent y or -y to the complete
-  number of digits, simply move the decimal point by y places to the
-  right or to the left, resp.
+To get from the e-notation with exponent y or -y to the complete
+number of digits, simply move the decimal point by y places to the
+right or to the left, resp.
 
-  No information is lost even if R hides digits; e-notation is purely
-  to improve readability. Extra bits are stored by R
+No information is lost even if R hides digits; e-notation is purely
+to improve readability. Extra bits are stored by R
 
-  ~Inf~, ~-Inf~ and ~NaN~ are special numbers.
+~Inf~, ~-Inf~ and ~NaN~ are special numbers.
 
-  #+end_notes
+#+end_notes
 
 * Math help in R
 
@@ -198,12 +198,12 @@ of $10$.
 - ~?Math~
 - ~?Comparison~ etc.
 
-* TO INFINITY AND BEYOND
+* To infinity and beyond
 
 #+SOURCE: Learning R (Cotton, 2013)
 [[../img/4_infinity.gif]]
 
-* SPECIAL NUMBERS
+* Special numbers
 
 #+attr_html: :height 300px
 [[../img/4_special.gif]]
@@ -213,36 +213,24 @@ of $10$.
 - ~NaN~ for "not-a-number" (not displayable)
 - ~NA~ for "not available" (missing value)
 
-  #+begin_notes
-
-  ~NA~ values are especially important when we clean data and must
-  remove missing values. There are Boolean (logical) functions to test
-  for special values.
-
-  Missing values can be created easily by doing "forbidden" stuff. An
-  example is trying to compute the square root of a negative number,
-  e.g. ~(-2)^(1/2)~. The result is a complex number (in this case the
-  solution to the quadratic equation $x²+1=0$, called the imaginary
-  number $i$). You can also use the function ~is.na~ to test for
-  missing values: compute ~is.nan(sqrt(-1))~ for example.
-
-  #+end_notes
-
-* BE THE COMPUTER!
-
-#+attr_html: :height 200px
-[[../img/4_kbd.gif]]
-
-| ~Inf+1~   | ~Inf-1~   |
-| ~Inf/Inf~ | ~Inf-Inf~ |
-| ~NA~      | ~NA+NA~   |
-| ~NaN~     | ~NaN+NaN~ |
-
 #+begin_notes
 
-[[../img/4_special.png]]
+~NA~ values are especially important when we clean data and must
+remove missing values. There are Boolean (logical) functions to test
+for special values.
+
+Missing values can be created easily by doing "forbidden" stuff. An
+example is trying to compute the square root of a negative number,
+e.g. ~(-2)^(1/2)~. The result is a complex number (in this case the
+solution to the quadratic equation $x²+1=0$, called the imaginary
+number $i$). You can also use the function ~is.na~ to test for
+missing values: compute ~is.nan(sqrt(-1))~ for example.
 
 #+end_notes
+
+* TODO Practice: special numbers
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
 * SPECIAL FUNCTIONS
 

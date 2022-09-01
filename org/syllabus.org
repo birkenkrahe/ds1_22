@@ -5,6 +5,8 @@
 #+subtitle: DSC105 Introduction to Data Science - Syllabus Fall 2022
 * General Course Information
 
+- Course title: Introduction to data science
+- Course number and section: DSC 105.01
 - Meeting Times: Mon-Wed-Fri from 11:00-11:50 am
 - Meeting place: Lyon Building Computer Lab room 104
 - Professor: Marcus Birkenkrahe
@@ -149,7 +151,7 @@ administrative withdrawal and the assigning of an “F” grade at four
 weeks. Students who are administratively withdrawn from more than one
 course will be placed on probation or suspended.
 
-** Disabilities
+** Academic Support
 
 The Morrow Academic Center (MAC) helps students who want to improve
 grades by providing peer-led services including Supplemental
