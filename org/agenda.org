@@ -223,7 +223,7 @@ participation (if there's a practice file, you can make up).
 - [ ] The power of Dired on one page ([[https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][v28]])
 - [ ] The power of Emacs on two pages ([[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][v27]])
 
-** Review: test 2 - what is data science?
+** Review: [[https://lyon.instructure.com/courses/568/assignments/1452][test 2 - what is data science?]]
 
 - *Which skills are relevant for data science?*
   + Customer service skills is a general people skill, not specific to
@@ -251,4 +251,4 @@ participation (if there's a practice file, you can make up).
 - *Coding*, though still relevant and important, is no longer the most
   important skill for data scientists
 
-* Week 4: Arithmetic with R / Vectors in R
+
