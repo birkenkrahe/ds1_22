@@ -182,8 +182,8 @@ participation (if there's a practice file, you can make up).
 3) Nothing to upload
 
 * Week 3: Introduction to R
-#+attr_html: :width 400px
-[[../img/arithmetic.jpg]]
+#+attr_html: :width 500px
+[[../img/online.jpg]]
 
 
 - [ ] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete introR practice file]]
@@ -231,7 +231,7 @@ participation (if there's a practice file, you can make up).
   + Database management is a general IT skill, not specific to data
     science
   + "Sales knowledge" is domain knowledge, and actually not a skill
-    (bad phrasing of the question on my part)
+P    (bad phrasing of the question on my part)
   + All skills and all knowledge can of course be brought to bear on
     data science, which means this is not a very well focused question
 

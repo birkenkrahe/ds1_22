@@ -263,7 +263,7 @@ MacOS because Unix does not know file type extensions.
 - On your windows box, you have R as a terminal program and as a GUI
 - In Emacs, you can execute R code blocks and display graphs together
 
-* TODO Practice: find R / run R scripts
+* DONE Practice: find R / run R scripts
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -770,6 +770,10 @@ Arithmetic with R
   S. Springer]]. Online: [[https://www.researchgate.net/publication/224817420_Modern_Applied_Statistics_With_S][researchgate.net]].
 - <<zeng>> Yuleng Zeng (28 Aug 2018). An Introduction to R and
   LaTeX. Online: [[https://bookdown.org/Yuleng/introrlatex/][bookdown.org]].
+- R Core Team (2022). R: A language and environment for statistical
+  computing. R Foundation for Statistical Computing, Vienna, Austria.
+  URL https://www.R-project.org/.
+  
 * Hints
 <<challenges>>
 ** Download from CRAN
