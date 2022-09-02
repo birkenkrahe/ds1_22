@@ -25,7 +25,7 @@
 - First place to go to with a general question
 - FAQ is regularly updated with new content
 
-* Week 1: introduction to the course
+* Week 1: Introduction to the course
 ** Objectives
 
 - [X] Mutual introductions
@@ -104,7 +104,7 @@ participation (if there's a practice file, you can make up).
 
 ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/1_practice.org][Link to practice file in GitHub]])
 
-* Week 2: getting started
+* Week 2: Getting started
 
 -*START BBB RECORDING*-
 
@@ -181,7 +181,7 @@ participation (if there's a practice file, you can make up).
 2) Complete the file
 3) Nothing to upload
 
-* Week 3: arithmetics with R
+* Week 3: Introduction to R
 #+attr_html: :width 400px
 [[../img/arithmetic.jpg]]
 
@@ -223,7 +223,7 @@ participation (if there's a practice file, you can make up).
 - [ ] The power of Dired on one page ([[https://www.gnu.org/software/emacs/refcards/pdf/dired-ref.pdf][v28]])
 - [ ] The power of Emacs on two pages ([[https://www.gnu.org/software/emacs/refcards/pdf/refcard.pdf][v27]])
 
-* Review: test 2 - what is data science?
+** Review: test 2 - what is data science?
 
 - *Which skills are relevant for data science?*
   + Customer service skills is a general people skill, not specific to
@@ -250,3 +250,5 @@ participation (if there's a practice file, you can make up).
 
 - *Coding*, though still relevant and important, is no longer the most
   important skill for data scientists
+
+* Week 4: Arithmetic with R / Vectors in R
