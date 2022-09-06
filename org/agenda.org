@@ -251,4 +251,7 @@ P    (bad phrasing of the question on my part)
 - *Coding*, though still relevant and important, is no longer the most
   important skill for data scientists
 
+* Week 4
+* NEXT [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-do-emacs--org-mode--ess-work-work-together][How Emacs, Org-mode and ESS work together]]
+
 
