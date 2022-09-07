@@ -252,6 +252,32 @@ P    (bad phrasing of the question on my part)
   important skill for data scientists
 
 * Week 4
-* NEXT [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-do-emacs--org-mode--ess-work-work-together][How Emacs, Org-mode and ESS work together]]
+* TODO [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-do-emacs--org-mode--ess-work-work-together][How Emacs, Org-mode and ESS work together]]
+* TODO Review: test 3 - getting started with R
 
+- What does ~help(x)~ do in R?
+- What type of argument does ~install.packages~ require?
+- What is the difference between ~Rscript~ and ~R CMD BATCH~?
 
+* TODO Review: 1st sprint review
+#+attr_html: :width 500px
+[[../img/1_scrum.png]]
+
+- What is a *reference*? What do I have to reference?
+- What do you think of [[https://www.marktechpost.com/2022/08/14/top-data-visualization-tools-for-data-science-and-analytics/][this reference]] in particular?
+  tinyurl.com/23f9uz8s
+
+- Excellent *questions* for other teams (Kim/Balah/Boogie):
+  1) Where and how did you find your data?
+  2) What was challenging about picking your topic?
+
+- *SUMMARY:*
+  1) deliver more than the bare minimum
+  2) work systematically, gather and list your references
+  3) split up the work if you work in a team
+  4) ask me for support before the sprint review deadline
+  5) reflect on your project process and project success
+
+* TODO Practice: Introduction to R (customization)
+
+* NEXT Arithmetics in R - lecture & practice
