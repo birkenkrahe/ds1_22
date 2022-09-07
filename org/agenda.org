@@ -252,24 +252,52 @@ P    (bad phrasing of the question on my part)
   important skill for data scientists
 
 * Week 4
-* TODO [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-do-emacs--org-mode--ess-work-work-together][How Emacs, Org-mode and ESS work together]]
-* TODO Review: test 3 - getting started with R
+#+attr_html: :width 300px
+
+[[../img/numbers.jpg]]
+
+- [X] Emacs + Org-mode + ESS
+- [X] Review test 3
+- [X] Review 1st sprint review
+- [X] Review vectors in R (1)
+- [X] Practice: introduction to R
+- [ ] Review vectors in R (2)
+- [ ] Arithmetics in R (lecture + practice)
+
+* DONE [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-do-emacs--org-mode--ess-work-work-together][How Emacs, Org-mode and ESS work together]]
+
+#+attr_html: :width 500px
+[[../img/emacsorg.png]]
+
+* DONE Review: test 3 - getting started with R
 
 - What does ~help(x)~ do in R?
+  - To access web pages on a device that device needs to run a web server
+  - Apache web server (FOSS)
+  - XAMPP from https://www.apachefriends.org/
+
 - What type of argument does ~install.packages~ require?
+  - e.g. installing ~MASS~: ~install.packages("MASS")~
+
 - What is the difference between ~Rscript~ and ~R CMD BATCH~?
 
-* TODO Review: 1st sprint review
-#+attr_html: :width 500px
-[[../img/1_scrum.png]]
+* DONE Review: 1st sprint review
+#+attr_html: :width 400px
+[[../img/pitchers.png]]
 
 - What is a *reference*? What do I have to reference?
+  1) All sources (incl. personal comm., incl. software like R)
+  2) *Author(s)*, *Date of publication*, *Place of publication*, *Title*
+  3) References need to be consistent and complete
 - What do you think of [[https://www.marktechpost.com/2022/08/14/top-data-visualization-tools-for-data-science-and-analytics/][this reference]] in particular?
-  tinyurl.com/23f9uz8s
 
 - Excellent *questions* for other teams (Kim/Balah/Boogie):
   1) Where and how did you find your data?
   2) What was challenging about picking your topic?
+
+* DONE Better next time!
+#+attr_html: :width 500px
+[[../img/1_scrum.png]]
 
 - *SUMMARY:*
   1) deliver more than the bare minimum
@@ -278,6 +306,121 @@ P    (bad phrasing of the question on my part)
   4) ask me for support before the sprint review deadline
   5) reflect on your project process and project success
 
+* DONE Review: DataCamp chapter "[[https://lyon.instructure.com/courses/568/assignments/1437][Vectors in R]]"
+
+1) There is no "Boolean" type in R, but ~logical~ instead, e.g. for the
+   value ~TRUE~. How can I show this?
+
+   #+begin_src R
+     class(TRUE)
+   #+end_src
+
+   #+RESULTS:
+   : logical
+
+2) How can I turn ~TRUE~ in a vector named ~bool~?
+
+   #+begin_src R :results output
+     bool <- c(TRUE)
+     bool
+   #+end_src
+
+   #+RESULTS:
+   : [1] TRUE
+
+3) How can I make sure it's a vector?
+
+   #+begin_src R :results output
+     bool <- c(TRUE)
+     is.vector(bool)
+   #+end_src
+
+   #+RESULTS:
+   : [1] TRUE
+
+4) Is ~bool~ a named vector? How do I know?
+
+   #+begin_src R :results output
+     bool <- c(TRUE)
+     names(bool)
+   #+end_src
+
+   #+RESULTS:
+   : NULL
+
+5) If ~bool~ is not named, how can I name it?
+
+   #+begin_src R :results output
+     bool <- c(TRUE)
+     names(bool) <- "Nick"
+     names(bool)
+     bool
+   #+end_src
+
+   #+RESULTS:
+   : [1] "Nick"
+   : Nick 
+   : TRUE 
+
+** Solutions
+
+1) There is no "Boolean" type in R, but ~logical~ instead, e.g. for the
+   value ~TRUE~. How can I show this?
+
+   #+begin_src R
+     class(TRUE)
+   #+end_src
+
+2) How can I turn ~TRUE~ in a vector named ~bool~?
+
+   #+begin_src R :results output
+     bool <- c(TRUE)
+     bool
+     class(bool)
+   #+end_src
+
+   #+RESULTS:
+   : [1] TRUE
+   : [1] "logical"
+
+3) How can I make sure it's a vector?
+
+   #+begin_src R
+     bool <- c(TRUE)
+     is.vector(bool)
+   #+end_src
+
+   #+RESULTS:
+   : TRUE
+  
+4) Is ~bool~ a named vector? How do I know?
+
+   #+begin_src R :results output
+     bool <- c(TRUE)
+     names(bool)
+   #+end_src
+
+   #+RESULTS:
+   : NULL
+
+5) If ~bool~ is not named, how can I name it?
+   
+   #+begin_src R :results output
+     bool <- c(TRUE)
+     names(bool) <- "Joey"
+     bool
+     names(bool)
+   #+end_src
+
+   #+RESULTS:
+   : Joey 
+   : TRUE 
+   : [1] "Joey"
+
 * TODO Practice: Introduction to R (customization)
 
+#+attr_html: :width 500px
+[[../img/3_play.jpg]]
+
 * NEXT Arithmetics in R - lecture & practice
+* NEXT DataCamp assignment: "[[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]" (Sept 14)
