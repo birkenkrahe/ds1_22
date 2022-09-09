@@ -1,6 +1,6 @@
 #+TITLE: ARITHMETIC in R
 #+AUTHOR: Introduction to data science (DSC 105) Fall 2022
-#+startup: hideblocks indent overview inlineimages
+#+startup: hideblocks indent overview inlineimages entitiespretty
 [[../img/4_math.jpg]]
 * What will you learn?
 #+attr_html: :width 500px
@@ -18,27 +18,29 @@
 *Image:* The Arithmetic 1492-94 Fresco Palazzi Pontifici, Vatican
 Borgia Apartment (Wikipedia).
 
-*Sources:* Some material for this lesson comes from [[davies][Davies (2016)]]
-and [[matloff][Matloff (2020)]]. These and other sources have been important to
-me in preparing the course. Check them out for a more systematic
-treatment of R. There is also a more philosophical, personal view on
-my use of sources [[https://github.com/birkenkrahe/ds101/wiki/Why-R,-my-path,-DataCamp][in the Wiki]] for the 2020 version of this course.
+*Sources:* Some material for this lesson comes from [[davies][Davies (2016)]] and
+[[matloff][Matloff (2020)]]. These and other sources have been important to me in
+preparing this course and getting into R int he first place. Check
+them out for a more systematic treatment of R. There is also a more
+philosophical, personal view on my use of sources [[https://github.com/birkenkrahe/ds101/wiki/Why-R,-my-path,-DataCamp][in the Wiki]] for the
+2020 version of this course.
 
-*What is this?* When we say "Arithmetic", we don't mean that
-we "study" numbers but that we use them to perform
-computations. After this section, you'll be able to perform any
-arithmetic operation using R.
+*What is this?* When we say "Arithmetic", we don't mean that we "study"
+numbers but that we use them to perform computations. After this
+section, you'll be able to perform any arithmetic operation using R.
 
-We will look at operators first, then at simple but important
-functions that occur again and again, especially in statistics.
+We will look at /operators/ first, then at simple but important
+functions that occur again and again, especially in /statistics/.
 
-*How can you learn better?* This presentation consists mostly of text and
-code chunks. Because this is dry stuff, I urge you (both if you hear
-this in class, and if you work through this on your own) to open an
-R session on the side and type along - this will build muscle memory
-and keep you entertained, too! Another trick, which you will find in
-[[matloff][Matloff's text]], is to make your own little exercises by varying the
-instructions.
+*How can you learn better?* This presentation consists mostly of text
+and code chunks. Because this is dry stuff, I urge you (both if you
+hear this in class, and if you work through this on your own) to open
+an R session on the side and type along - this will build muscle
+memory and keep you entertained, too! Another trick, which you will
+find in [[matloff][Matloff's excellent beginner's tutorial]], is to make your own
+little exercises by varying the instructions. A third way is to go
+through the lecture and create your own Emacs Org-mode notebook with R
+code blocks.
 #+end_notes
 * Please Excuse My Dear Aunt Sally
 
@@ -51,7 +53,6 @@ instructions.
 5) *A* ddition: ~+~
 6) *S* ubtraction: ~-~
 
-
 /Tip: You can check identity in R with the ~identical~ function./
 
 #+begin_notes
@@ -63,7 +64,7 @@ Sally) mnemonic).
 The operators ~^~ and ~**~ for exponentiation are identical, though ~^~ is
 more common. You can check that in the R console with the ~identical~
 function - the result should be ~TRUE~ (this is a truth or Boolean
-value - more on this below) - see figure
+value - more on this below) - see figure:
 
 [[../img/4_identical.png]]
 
@@ -91,32 +92,32 @@ value - more on this below) - see figure
 #+SOURCE: r-graph-gallery.com, Book of R Chapter 2
 
 Some examples:
-#+begin_example
-log10(1e7)
+#+begin_example R
+log10(1e7) = ?
 
-log10(100) log10(1000) log10(1e3)
+log10(100) = ? , log10(1000) = ?, log10(1e3) = ?
 
-log(1) = log10(1) = 0
+log(1) = ?, log10(1) = ?
 
-log(x=100,b=100) = log(4.583,4.583) = 1
+log(x=100,b=100) = ? , log(4.583,4.583) = ?
 
-log(x=100,b=10) = log(b=10,x=100) = 2
+log(x=100,b=10) = ?, log(b=10,x=100) = ?
 #+end_example
 
-More examples: [[https://view.e.economist.com/?qs=d55c97a1de83b95ad1aa9d756a88fafe97cb7fc75d8e405bd20caf999b5f482d71a7106eb82724938a8ff8a420c219a05b9b132f0e969760ea83e57c2668331e133e24432173498d2cd548123781e419][The Economist/Off The Charts 04/20/2021]]
+More examples: [[https://view.e.economist.com/?qs=d55c97a1de83b95ad1aa9d756a88fafe97cb7fc75d8e405bd20caf999b5f482d71a7106eb82724938a8ff8a420c219a05b9b132f0e969760ea83e57c2668331e133e24432173498d2cd548123781e419][The Economist/Off The Charts 04/20/2021]][fn:2]
 
 #+begin_notes
 It is often necessary to transform numerical data, e.g. transforming
-data using the logarithm leading e.g. from the left to the right
-graph in the figure. As you can see, this transformation
-leads to a compression of the ~y~-values, so that more of
-these values can be shown.
+data using the logarithm leading e.g. from the left to the right graph
+in the figure. As you can see, this transformation leads to a
+compression of the ~y~-values, so that more of these values can be
+shown.
 
-The /logarithm/ of a number $x$ is always computed using a /base/
-$b$. In the diagram, $b=10$, the numbers on the $x$ axis
-were transformed using the ~log()~ function, the logarithm with base
-$10$. The logarithm of $x=100$ to the base $10$ is $2$, because
-$10^2 = 100$. In R, ~log(x=100,b=10) = 2~ (try this yourself!).
+The /logarithm/ of a number ~x~ is always computed using a /base/ ~b~. In
+the diagram, ~b=10~, the numbers on the ~x~ axis were transformed
+using the ~log()~ function, the logarithm with base ~10~. The logarithm
+of ~x=100~ to the base ~10~ is ~2~, because 10^2 = 100. In R,
+~log(x=100,b=10) = 2~ (try this yourself!).
 
 #+end_notes
 
@@ -132,11 +133,16 @@ $10^2 = 100$. In R, ~log(x=100,b=10) = 2~ (try this yourself!).
 #+attr_html: :width 500px
 [[../img/4_euler.jpeg]]
 
-- ~log(x)~ implies ~b = e \approx 2.7182~
+- In R, ~log(x)~ implies ~b = e \approx 2.7182~
 
-- In mathematics, the /Euler constant/ $e$ is as magical as the other
+- In mathematics, the /Euler constant/ ~e~ is as magical as the other
   mysterious constants \pi, 0, 1 and i (the imaginary unit). There are
-  [[https://en.wikipedia.org/wiki/E_(mathematical_constant)][different ways]] to arrive at its value of approximately 2.718282.
+  [[https://en.wikipedia.org/wiki/E_(mathematical_constant)][different ways]] to arrive at its value of approximately
+  2.718282. 
+
+- The Wikipedia entry on ~e~ contains some fun stuff for nerds
+  ([[https://en.wikipedia.org/wiki/E_(mathematical_constant)#In_computer_culture][here]]). Apparently, /Steve Wozniak/ computed ~e~ to 116,000 digites on
+  an "ancient" Apple II computer in /1981/!
 
 - For now, we only care about the fact that $e$ is the base of the
   natural logarithm, denoted as ~ln~ or log_e(x).
@@ -151,16 +157,14 @@ $10^2 = 100$. In R, ~log(x=100,b=10) = 2~ (try this yourself!).
 [[../img/4_powers-ten.png]]
 
 #+begin_notes
-
-You already know that the number of digits that is displayed by R
-can be changed using the ~options()~ utility function. The default
-number of digits displayed is $7$.
+You already know that the number of digits that is displayed by R can
+be changed using the ~options()~ utility function. The default number of
+digits displayed is 7.
 
 In order to display values with many more digits than that - either
 very large, or very small numbers, we use the scientific or
 e-notation. In this notation, any number is expressed as a multiple
-of $10$.
-
+of 10.
 #+end_notes
 
 * E-xamples
@@ -178,7 +182,6 @@ of $10$.
 [[../img/practice.jpg]]
 
 #+begin_notes
-
 To get from the e-notation with exponent y or -y to the complete
 number of digits, simply move the decimal point by y places to the
 right or to the left, resp.
@@ -187,7 +190,6 @@ No information is lost even if R hides digits; e-notation is purely
 to improve readability. Extra bits are stored by R
 
 ~Inf~, ~-Inf~ and ~NaN~ are special numbers.
-
 #+end_notes
 
 * Math help in R
@@ -198,41 +200,33 @@ to improve readability. Extra bits are stored by R
 - ~?Math~
 - ~?Comparison~ etc.
 
-* To infinity and beyond
-
-#+SOURCE: Learning R (Cotton, 2013)
-[[../img/4_infinity.gif]]
-
 * Special numbers
 
-#+attr_html: :height 300px
-[[../img/4_special.gif]]
+#+attr_html: :width 400px
+[[../img/4_special.jpg]]
 
-- ~Inf~ for positive infinity ($\infty$)
-- ~-Inf~ for negative infinity ($-\infty$)
+- ~Inf~ for positive infinity (\infty)
+- ~-Inf~ for negative infinity (-\infty)
 - ~NaN~ for "not-a-number" (not displayable)
 - ~NA~ for "not available" (missing value)
 
 #+begin_notes
-
-~NA~ values are especially important when we clean data and must
-remove missing values. There are Boolean (logical) functions to test
-for special values.
-
-Missing values can be created easily by doing "forbidden" stuff. An
-example is trying to compute the square root of a negative number,
-e.g. ~(-2)^(1/2)~. The result is a complex number (in this case the
-solution to the quadratic equation $x²+1=0$, called the imaginary
-number $i$). You can also use the function ~is.na~ to test for
-missing values: compute ~is.nan(sqrt(-1))~ for example.
-
+1) ~NA~ values are especially important when we clean data and must
+   remove missing values. There are Boolean (logical) functions to
+   test for special values.
+2) Missing values can be created easily by doing "forbidden" stuff. An
+   example is trying to compute the square root of a negative number,
+   e.g. ~(-2)^(1/2)~. The result is a complex number (in this case the
+   solution to the quadratic equation $x²+1=0$, called the imaginary
+   number $i$). You can also use the function ~is.na~ to test for
+   missing values: compute ~is.nan(sqrt(-1))~ for example.
 #+end_notes
 
 * TODO Practice: special numbers
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
-* SPECIAL FUNCTIONS
+* Special functions
 
 #+attr_html: :width 600px
 [[../img/4_penguins.gif]]
@@ -247,66 +241,35 @@ missing values: compute ~is.nan(sqrt(-1))~ for example.
 
 #+end_notes
 
-* BE THE COMPUTER!
-
-#+attr_html: :height 200px
-[[../img/4_kbd.gif]]
-
-- Enter ~10^309~
-* Subtract $\sqrt{2}^{2}$ from $2$
-
-#+begin_notes
-
-(1) ~10^309~ is ~Inf~. The last number is infinite, because the
-largest number that can be represented by a 64-bit computer is
-$1.7976931348623157e+308$.
-
-(2) Subtract ~sqrt(2)^2~ from ~2~. The
-answer is: ~4.440892e-16~.
-
-#+end_notes
-
-* LOGICAL VALUES AND OPERATORS
-
-#+attr_html: :height 500px
+* TODO Practice: special functions
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
+* Logical values and operators
+#+attr_html: :width 300px
+#+caption: George Boole (
 [[../img/4_boole.jpg]]
 
 #+begin_notes
-
-~TRUE~ and ~FALSE~ are reserved in R for logical values, and the
-variables ~T~ and ~F~ are already predefined. This can cause
-problems, because these variable names are not reserved, i.e. you
-can redefine them. So better stay away from saving time by using the
-short versions of these values.
-
+~TRUE~ and ~FALSE~ are reserved in R for logical values, and the variables
+~T~ and ~F~ are already predefined. This can cause problems, because these
+variable names are not reserved, i.e. you can redefine them. So better
+stay away from saving time by using the short versions of these
+values.
 #+end_notes
 
-* BE THE COMPUTER!
+* TODO Practice: logical values
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
-#+attr_html: :height 200px
-[[../img/4_kbd.gif]]
-
-| ~T~          | ~= TRUE~  |
-| ~F~          | ~= FALSE~ |
-| ~T <- FALSE~ | ~=> ?~    |
-| ~F <- TRUE~  | ~=> ?~    |
-
-#+begin_notes
-
-[[cotton][Cotton (2013)]] calls R's logic "Troolean" logic, because besides the
-so-called Boolean values ~TRUE~ and ~FALSE~, R also has a third
-logical value, the "missing" value, ~NA~
-
-[[../img/4_predef.png]]
-
-#+end_notes
-
-* LOGICAL OPERATORS
+* Logical operators
 
 There are three logical operators in R:
-| ~!~ for "/not/": | ~1 != 1~          |
-| ~&~ for "/and/": | ~(1==1)&(1==2)    |
-| \vert for  "/or/": | (1==2)\vert(1!=1) |
+
+~!~ for "/not/":  ~1 != 1~            
+
+~&~ for "/and/":  ~(1==1)&(1==2)~   
+
+~|~ for  "/or/": ~(1==2) ~| (1!=1)~ 
 
 #+begin_notes
 
@@ -317,52 +280,30 @@ In the last command, we generated a ~FALSE~ value by comparing two
 
 #+end_notes
 
-* BE THE COMPUTER!
+* TODO Practice: logical operators
+#+attr_html: :width 500px
+[[../img/practice.jpg]]
 
-#+attr_html: :height 200px
-[[../img/4_kbd.gif]]
-
-| ~sqrt(2)^2~      |
-| ~sqrt(2)^2 == 2~ |
-| ~all.equal(sqrt(2)^2, 2)~      |
-| ~identical(sqrt(2)^2, 2)~      |
-
-#+begin_notes
-
-Comparing non-integers is iffy, because non-integers
-(floating-point numbers) are only an approximation of the "pure",
-real numbers - how accurate they are depends on the architecture of
-your computer. In practice, this means that rounding errors can
-creep in your calculations, leading to wildly wrong answers. [[https://cran.r-project.org/doc/FAQ/R-FAQ.html#Why-doesn_0027t-R-think-these-numbers-are-equal_003f][The R
-FAQ has an own entry about it]]. The figure shows a simple example:
-~sqrt(2)^2~ and ~2~ should be the same, but they aren't as far as R
-is concerned - a logical comparison with ~==~ gives ~FALSE~. To
-test near equality (bar rounding errors), you can use the function
-~all.equal~. To test for exact equality, use ~identical~:
-
-[[../.../img/4_3/floating.png]]
-
-*CHALLENGE:* (1) Check the help pages ~?all.equal~ and
-~?identical~. (2) Which of these numbers are infinite? ~0~, ~Inf~,
-~-Inf~, ~NaN~, ~NA~, ~10^308~, ~10^309~. (3) How small is the
-rounding error in the example in the figure actually?
-
-#+end_notes
-
-* CONCEPT SUMMARY
+* Concept summary
+#+attr_html: :width 400px
+[[../img/4_summary.jpg]]
 
 - In R mathematical expressions are evaluated according to the
-  PEMDAS rule.
+  /PEMDAS/ rule.
+
 - The natural logarithm $ln(x)$ is the inverse of the exponential
-  function $e^x$.
+  function e^x.
+
 - In the scientific or e-notation, numbers are expressed as positive
-  or negative multiples of $10$.
+  or negative multiples of 10.
+
 - Each positive or negative multiple shifts the digital point to the
   right or left, respectively.
-- Infinity ~Inf~, not-a-number ~NaN~, and not available numbers ~NA~
-  are special values in R.
 
-* CODE SUMMARY
+- Infinity ~Inf~, not-a-number ~NaN~, and not available numbers ~NA~
+  are /special values/ in R.
+
+* Code summary
 
 | CODE           | DESCRIPTION                           |
 |----------------+---------------------------------------|
@@ -376,7 +317,7 @@ rounding error in the example in the figure actually?
 | ~identical(x,y)~ | tests exact equality                  |
 | ~1e2~, ~1e-2~      | $10^{2}=100$, $10^{-2}=\frac{1}{100}$ |
 
-* REFERENCES
+* References
 
 - <<cotton>> Richard Cotton (2013). [[http://duhi23.github.io/Analisis-de-datos/Cotton.pdf][Learning R.]] O'Reilly Media.
 
@@ -391,11 +332,20 @@ rounding error in the example in the figure actually?
 
 * Footnotes
 
+[fn:2]The log transformation uses "Covid-19, confirmed deaths"
+data. In hindsight, I don't find the explanation in the text
+particularly satisfying: "Plotted on a linear scale countries'
+caseload seemed to rocket up out of nowhere. But plotted on a log
+scale it became easy to see which countries were on the path to an
+outbreak, and how far ahead or behind each one was, relative to the
+others." I just don't see this information more clearly in the log
+plot, do you?
+
 [fn:1]I've recently been reminded [[https://bigthink.com/13-8/math-thinking/][through this article]] how important
 it may be to be able to do computations without the help of
 machines. Here are [[https://gauravvjn.quora.com/4-ways-to-calculate-Square-Root-without-using-inbuilt-functions-in-C-language-Interview-Puzzle][4 ways]] to compute ~sqrt~ in C (though not very
 fast). In general: 1) using logarithms and exponentials
-($sqrt(x)=e^{0.5 \times ln(x)}$), 2) using successive approximate
+(sqrt(x)=e^{0.5 \times ln(x)}), 2) using successive approximate
 numerical methods like [[https://mathworld.wolfram.com/NewtonsIteration.html][Newton's iteration]], 3) using modified long
 division ([[https://www.wikihow.com/Calculate-a-Square-Root-by-Hand#Finding_Square_Roots_Manually_sub][prime factorization]]), 4) [[https://www.mathworks.com/help/fixedpoint/ug/implement-fixed-point-square-root-using-lookup-table.html][looking it up in a table]] (source:
 [[https://www.quora.com/How-do-computers-calculate-square-roots][quora.com]])
