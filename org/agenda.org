@@ -253,7 +253,6 @@ P    (bad phrasing of the question on my part)
 
 * Week 4
 #+attr_html: :width 300px
-
 [[../img/numbers.jpg]]
 
 - [X] Emacs + Org-mode + ESS
@@ -306,7 +305,9 @@ P    (bad phrasing of the question on my part)
   4) ask me for support before the sprint review deadline
   5) reflect on your project process and project success
 
-* DONE Review: DataCamp chapter "[[https://lyon.instructure.com/courses/568/assignments/1437][Vectors in R]]"
+* DONE Review: DataCamp chapter "[[https://lyon.instructure.com/courses/568/assignments/1437][Vectors in R]]" (1)
+
+The first part of the review deals with vector data types and names.
 
 1) There is no "Boolean" type in R, but ~logical~ instead, e.g. for the
    value ~TRUE~. How can I show this?
@@ -416,11 +417,18 @@ P    (bad phrasing of the question on my part)
    : Joey 
    : TRUE 
    : [1] "Joey"
-
-* TODO Practice: Introduction to R (customization)
+   
+* DONE Practice: Introduction to R (customization)
 
 #+attr_html: :width 500px
 [[../img/3_play.jpg]]
 
-* NEXT Arithmetics in R - lecture & practice
+* TODO Review: DataCamp chapter "Vectors in R" (2)
+
+The second part of the review deals with vector extraction.
+
+* TODO Arithmetics in R - lecture & practice
+
+[[../img/4_math.jpg]]
+
 * NEXT DataCamp assignment: "[[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]" (Sept 14)
