@@ -93,15 +93,15 @@ value - more on this below) - see figure:
 
 Some examples:
 #+begin_example R
-log10(1e7) = ?
+log10(1 * 10^7) = 7
 
-log10(100) = ? , log10(1000) = ?, log10(1e3) = ?
+log10(100) = 2 , log10(1000) = 3 , log10(1e3) = log10(1 * 10^3) = 3
 
-log(1) = ?, log10(1) = ?
+log(1) = 0, log10(1) = 0
 
-log(x=100,b=100) = ? , log(4.583,4.583) = ?
+log(x=100,b=100) = 1 , log(4.583,4.583) = 1
 
-log(x=100,b=10) = ?, log(b=10,x=100) = ?
+log(x=100,b=10) = 2 , log(b=10,x=100) = 2
 #+end_example
 
 More examples: [[https://view.e.economist.com/?qs=d55c97a1de83b95ad1aa9d756a88fafe97cb7fc75d8e405bd20caf999b5f482d71a7106eb82724938a8ff8a420c219a05b9b132f0e969760ea83e57c2668331e133e24432173498d2cd548123781e419][The Economist/Off The Charts 04/20/2021]][fn:2]

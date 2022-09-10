@@ -251,7 +251,7 @@ P    (bad phrasing of the question on my part)
 - *Coding*, though still relevant and important, is no longer the most
   important skill for data scientists
 
-* Week 4
+* Week 4: Arithmetics in R
 #+attr_html: :width 300px
 [[../img/numbers.jpg]]
 
@@ -260,15 +260,14 @@ P    (bad phrasing of the question on my part)
 - [X] Review 1st sprint review
 - [X] Review vectors in R (1)
 - [X] Practice: introduction to R
-- [ ] Review vectors in R (2)
-- [ ] Arithmetics in R (lecture + practice)
+- [X] Arithmetics in R (lecture + practice)
 
-* DONE [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-do-emacs--org-mode--ess-work-work-together][How Emacs, Org-mode and ESS work together]]
+** DONE [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-do-emacs--org-mode--ess-work-work-together][How Emacs, Org-mode and ESS work together]]
 
 #+attr_html: :width 500px
 [[../img/emacsorg.png]]
 
-* DONE Review: test 3 - getting started with R
+** DONE Review: test 3 - getting started with R
 
 - What does ~help(x)~ do in R?
   - To access web pages on a device that device needs to run a web server
@@ -280,7 +279,7 @@ P    (bad phrasing of the question on my part)
 
 - What is the difference between ~Rscript~ and ~R CMD BATCH~?
 
-* DONE Review: 1st sprint review
+** DONE Review: 1st sprint review
 #+attr_html: :width 400px
 [[../img/pitchers.png]]
 
@@ -294,7 +293,7 @@ P    (bad phrasing of the question on my part)
   1) Where and how did you find your data?
   2) What was challenging about picking your topic?
 
-* DONE Better next time!
+** DONE Better next time!
 #+attr_html: :width 500px
 [[../img/1_scrum.png]]
 
@@ -305,7 +304,7 @@ P    (bad phrasing of the question on my part)
   4) ask me for support before the sprint review deadline
   5) reflect on your project process and project success
 
-* DONE Review: DataCamp chapter "[[https://lyon.instructure.com/courses/568/assignments/1437][Vectors in R]]" (1)
+** DONE Review: DataCamp chapter "[[https://lyon.instructure.com/courses/568/assignments/1437][Vectors in R]]" (1)
 
 The first part of the review deals with vector data types and names.
 
@@ -363,7 +362,7 @@ The first part of the review deals with vector data types and names.
    : Nick 
    : TRUE 
 
-** Solutions
+** DONE Solutions
 
 1) There is no "Boolean" type in R, but ~logical~ instead, e.g. for the
    value ~TRUE~. How can I show this?
@@ -418,12 +417,21 @@ The first part of the review deals with vector data types and names.
    : TRUE 
    : [1] "Joey"
    
-* DONE Practice: Introduction to R (customization)
+** DONE Practice: Introduction to R (customization)
 
 #+attr_html: :width 500px
 [[../img/3_play.jpg]]
 
-* TODO Arithmetics in R - lecture & practice
+** NEXT DataCamp assignment: "[[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]" (Sept 14)
+* Week 5: Vectors in R
+#+attr_html: :width 300px
+[[../img/queen.jpg]]
+
+- [ ] Review vectors in R (2)
+- [ ] Continued: Arithmetic in R (lecture/practice)
+- [ ] Review test
+
+** IN PROGRESS Arithmetics in R - lecture & practice
 
 #+attr_html: :width 700px
 [[../img/setup.png]]
@@ -444,8 +452,7 @@ The first part of the review deals with vector data types and names.
 
 - You can cycle through buffers with your mouse (on the buffer title)
 
-* TODO Review: DataCamp chapter "Vectors in R" (2)
+** TODO Review: DataCamp chapter "Vectors in R" (2)
 
 The second part of the review deals with vector extraction.
 
-* NEXT DataCamp assignment: "[[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]" (Sept 14)

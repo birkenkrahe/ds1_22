@@ -1,0 +1,196 @@
+#+TITLE:Practice: Arithmetics in R
+#+AUTHOR: [YourName]
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+OPTIONS: toc:nil num:nil ^:nil
+#+STARTUP: overview hideblocks indent
+** README
+
+- Practice file for the lecture on "Arithmetics in R" ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/4_arithmetic.org][GitHub]])
+- Emacs + ESS + Org-mode and R must be installed
+- Upload the completed file as a class assignment ([[https://lyon.instructure.com/courses/568/assignments/2594][Canvas link]])
+
+** Time Table
+
+#+name: tab:3_practice
+| PRACTICE                  | MIN |
+|---------------------------+-----|
+| Formula translator        |  10 |
+| Logarithms                |   5 |
+| Exponential and logarithm |   5 |
+| Constants                 |   5 |
+| E-notation                |   5 |
+| Special numbers           |   5 |
+| Special functions         |   5 |
+| Logical values            |   5 |
+| Logical operators         |   5 |
+|---------------------------+-----|
+| TOTAL                     |  50 |
+#+TBLFM: @11$2=vsum(@2..@10)
+
+** TODO Formula translator I
+
+[[../img/4_challenge1.png]]
+
+- What is the result of this expression?
+- Compute in your head first
+- Then check in the R console using the code block below
+
+#+begin_src R :results output
+  ...
+#+end_src
+  
+** READ Formula translator II
+
+- Remember the PEMDAS order:
+  #+begin_example
+  2**3 = 2^3 = 8
+  6/3 = 2
+  2 * 5 * 8 = 80
+  24 + 80 = 104
+  104 - 9 = 95
+  #+end_example
+
+- Instead of ~^~ you can use ~**~
+  
+- R code: 
+  #+name: formula
+  #+begin_src R
+    24 + 6/3 * 5 * 2**3 - 9
+  #+end_src
+
+** TODO Formula translator III
+
+[[../img/4_challenge2.png]]
+
+- Compute the expressions (2)-(5)
+  
+- Use the R console
+
+*Note:* Even if you don't code functions yourself, you may need to know
+these things if you have to check someone else's function, e.g. when
+the return values seem strange to you.
+
+#+begin_src R :results output
+  ...
+#+end_src
+
+** READ Formula translator IV
+
+[[../img/4_fig_formula.png]]
+
+- You need parentheses in the exponent
+- ~-2~ is interpreted as ~-1 * 2~
+
+** TODO Formula Translator V
+
+  - What does ~(-1)^(1/2)~ return?
+  - Use a function to compute this last command
+  - Can you explain the result?
+
+  #+begin_src R :results output
+    ...
+  #+end_src
+
+** TODO Logarithms
+
+1) Compute the log of 10,000,000 to base 10 in R
+2) Enter ~log10(10,000,000)~ in R. What's going on?
+3) Find the logarithm to base 10 for 10,000,010.
+4) Why is the result the same as before?
+5) Tip: enter ~log10(10000100)~
+
+#+begin_src R :results output
+  ...
+#+end_src
+
+** TODO Exponential and logarithm
+
+Verify this for ~x=10~, ~x=2.718282~, and ~x=0~ using R:
+
+   e^ln^(x) = ln(e^x) = x
+
+#+begin_src R :results output
+  ...
+#+end_src
+
+** TODO Constants
+
+1) Print ~pi~ (\pi \approx 3.14)
+2) Print ~LETTERS~ and ~letters~
+3) Verify that these are ~character~ vectors
+4) Print ~month.name~ and ~month.abb~
+5) Verify that ~month.abb~ is a vector is ~TRUE~
+6) Print Euler's number e to precision 10
+
+#+begin_src R :results output
+  ...
+#+end_src
+
+** TODO E-notation
+
+Look at the ~help~ for the ~options~ function if necessary.
+
+1) Show the current value of how many digits are displayed
+2) Reset this value to 15 (you know two ways to do this)
+3) Store 100,000,000 in an object ~foo~ and print it
+4) Print ~foo~ using ~format~ and set the attribute ~scientific~ to ~FALSE~:
+   ~format(foo, scientific=FALSE)~
+5) Enter 0.00000000000000010
+6) Enter ~exp(1000)~ and ~(-1)/0~
+7) Enter ~sqrt(-1)~
+   
+#+begin_src R :results output
+  ...
+#+end_src
+
+** TODO Special numbers
+
+Execute the following expressions in an R code block - before running
+it with ~C-c C-c~, think about the likely output!
+
+1) ~Inf + 1~
+2) ~Inf - 1~
+3) ~Inf - Inf~
+4) ~Inf / Inf~
+5) ~1/0~
+6) ~-1/0~
+7) ~NA~
+8) ~NA + NA~
+9) ~NaN~
+10) ~NaN + NaN~
+
+** TODO Special functions
+
+1) Enter ~10^309~ and ~10^308~. What's going on?
+2) Subtract ~sqrt(2)**2~ from ~2~. What's going on?
+3) Show that ~sqrt(2)**2~ and ~2~ are not identical using ~identical~
+4) Show that ~sqrt(2)**2~ and ~2~ are almost identical using ~all.equal~
+5) Is ~NA~ finite in R?
+6) Show that ~NaN~ is not a number
+7) Are missing values numbers in R?
+
+#+begin_src R :results output
+  ...
+#+end_src
+
+** TODO Logical values
+
+1) Print ~TRUE~
+2) Can you use ~true~ instead of ~TRUE~?
+4) Can you use ~T~ instead of ~TRUE~?
+5) Assign ~FALSE~ to an R object named ~T~
+6) Print ~T~
+7) What type of R object is ~TRUE~?
+
+#+begin_src R :results output
+  ...
+#+end_src
+
+** TODO Logical operators
+
+1) Check equality of ~sqrt(2)^2~ and ~2~ using a logical operator.
+2) Check that "1 is equal 2 or 1 is not equal 1" is ~FALSE~.
+ 
+#+begin_src R :results output
+  ...
+#+end_src
