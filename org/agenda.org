@@ -427,94 +427,147 @@ The first part of the review deals with vector data types and names.
 #+attr_html: :width 300px
 [[../img/queen1.jpg]]
 
-- [ ] Review vectors in R (2)
+- [X] Review DataCamp vectors in R (2)
 - [ ] Continued: Arithmetic in R (lecture/practice)
-- [ ] Review test 4
+- [ ] Review test 4 - arithmetic in R
 - [ ] Vectors in R
 
-* NEXT Review: DataCamp chapter "Vectors in R" (2)
+* DONE Review: DataCamp chapter "Vectors in R" (2)
 
-1) How can you add ~c(1,2,3)~ and ~c(4,5,6)~?
+   1) How can you add ~c(1,2,3)~ and ~c(4,5,6)~?
 
-   #+begin_src R
-     ## save vectors as R objects (variables)
-     foo <- c(1,2,3)
-     bar <- c(4,5,6)
+      #+begin_src R :results output
+        ## save vectors as R objects (variables)
+        foo <- c(1,2,3)
+        bar <- c(4,5,6)
 
-     ## add vectors as they are
-     c(1,2,3) + c(4,5,6)
+        ## add vectors as they are
+        c(1,2,3) + c(4,5,6)
 
-     ## add vectors as variables
-     foo + bar
+        ## add vectors as variables
+        foo + bar
 
-     ## add vectors by hand
-     c(1 + 4, 2 + 5, 3 + 6)
-   #+end_src
+        ## add vectors by hand
+        c(1 + 4, 2 + 5, 3 + 6)
+      #+end_src
 
-2) What happens if you add a named and an unnamed vector?
+      #+RESULTS:
+      : [1] 5 7 9
+      : [1] 5 7 9
+      : [1] 5 7 9
 
-   #+begin_src R
-     foo <- c("i"= 1, "j" = 2, "k" = 3)
-     bar <- c(4,5,6)
-     names(foo)
-     names(bar)
-     foo + bar
-     names(foo + bar)
-   #+end_src
+   2) What happens if you add a named and an unnamed vector?
 
-3) What is the result of comparing ~c(1,2,3)~ and ~c(4,5,6)~ using
-   relational operators ~>~ and ~<~ ?
+      #+begin_src R :results output
+        foo <- c("i"= 1, "j" = 2, "k" = 3)
+        bar <- c(4,5,6)
+        names(foo)
+        names(bar)
+        foo + bar
+        names(foo + bar)
+      #+end_src
 
-   #+begin_src R
-     c(1,2,3) > c(4,5,6)
-     c(4,5,6) > c(1,2,3)
-   #+end_src
+      #+RESULTS:
+      : [1] "i" "j" "k"
+      : NULL
+      : i j k 
+      : 5 7 9 
+      : [1] "i" "j" "k"
 
-4) How can you add the first and second value of ~baz <- c(2,2)~?
+      Adding vectors of different length:
+      #+begin_src R :results output
+        foo <- c(1,2)
+        bar <- c(1,2,3,4)
+        foo + bar
+      #+end_src
 
-   #+begin_src R
-     baz <- c(2,2)
-     baz[1] + baz[2]
-   #+end_src
+      #+RESULTS:
+      : [1] 2 4 4 6
 
-5) What happens if you get it wrong, and you try to add a value that's
-   not there?
+   3) What is the result of comparing ~c(1,2,3)~ and ~c(4,5,6)~ using
+      relational operators ~>~ and ~<~ ?
 
-   #+begin_src R
-     foo <- c(1)
-     foo[1]
-     foo[2]
-     foo[1] + foo[2]
-   #+end_src
+      #+begin_src R :results output
+        c(1,2,3) > c(4,5,1)
+        c(0,5,6) > c(1,2,3)
+      #+end_src
 
-6) What does ~qux[c(1:3)]~ mean?
+      #+RESULTS:
+      : [1] FALSE FALSE  TRUE
+      : [1] FALSE  TRUE  TRUE
 
-   #+begin_src R
-     qux <- c(10,100,1000)
-     qux[1]; qux[2]; qux[3]
-     qux[c(1,2,3)]
-     qux[c(1:3)]
-   #+end_src
+   4) How can you add the first and second value of ~baz <- c(2,2)~?
+      
+      Parentheses suggest that ~baz~ is a function - this is not it:
+      #+begin_src R :results output
+        baz(1) + baz(2)
+      #+end_src
 
-7) How can you extract elements from ~qux~ that are greater than 100?
+      #+begin_src R :results output
+        baz <- c(2,2)
+        baz[1] + baz[2]
+      #+end_src
 
-   #+begin_src R
-     qux <- c(10,100,1000)
+      #+RESULTS:
+      : [1] 4
 
-     ## This generates an index or selection vector
-     qux > 100
+   5) What happens if you get it wrong, and you try to add a value that's
+      not there?
 
-     ## Values of qux greater than 100
-     qux[qux > 100]
+      #+begin_src R :results output
+        foo <- c(1)
+        foo[1]
+        foo[2]
+        foo[1] + foo[2]
+      #+end_src
 
-     ## same as
-     qux[c(F,F,T)]
+      #+RESULTS:
+      : [1] 1
+      : [1] NA
+      : [1] NA
 
-     ## Index of extracted values
-     which(qux > 100)
+   6) What does ~qux[c(1:3)]~ mean?
 
-     qux[which(qux>100)] # resolves to qux[3]
-   #+end_src
+      #+begin_src R :results output
+        qux <- c(10,100,1000)
+        qux[1]; qux[2]; qux[3] # print individual values
+        qux[c(1,2,3)]  # print values using index vector
+        qux[c(1:3)]
+      #+end_src
+
+      #+RESULTS:
+      : [1] 10
+      : [1] 100
+      : [1] 1000
+      : [1]   10  100 1000
+      : [1]   10  100 1000
+
+   7) How can you extract elements from ~qux~ that are greater than 100?
+
+      #+begin_src R :results output
+        qux <- c(10,100,1000)
+
+        ## This generates an index or selection vector
+        qux > 100
+
+        ## Values of qux greater than 100
+        qux[qux > 100]
+
+        ## same as
+        qux[c(F,F,T)]
+
+        ## Index of extracted values
+        which(qux > 100)
+
+        qux[which(qux>100)] # resolves to qux[3]
+      #+end_src
+
+      #+RESULTS:
+      : [1] FALSE FALSE  TRUE
+      : [1] 1000
+      : [1] 1000
+      : [1] 3
+      : [1] 1000
 
 * IN PROGRESS Arithmetics in R - lecture & practice
 
@@ -537,5 +590,37 @@ The first part of the review deals with vector data types and names.
 
 - You can cycle through buffers with your mouse (on the buffer title)
 
-* TODO Review test 4
+* Featured applications (R and around R)
+#+attr_html: :width 500px
+[[../img/horizon.jpg]]
 
+[[https://github.com/birkenkrahe/ds1/issues][See GitHub issues list]]:
+- Automate tasks with R (using UNIX' cron(1))
+- Python vs. R by IBM (7 min)
+- Learning a new programming language (8 min)
+
+  #+begin_quote
+  Frank Stajano: "The single most important factor of your learning
+  success is that you enjoy and would do it for its own sake."/
+  #+end_quote
+
+    1) Understand how you learn and choose resources that support your
+     *learning style*
+  2) Set your own *incentives* and *goals* that you like and stage them as
+     stepping stones
+  3) Learn from the *best* - check competence of authors, e.g. to learn
+     a language, grab the book written by the author[fn:1], and study
+     conventions of great programmers in that language.
+
+* TODO Review test 4
+* TODO R's workhorse: Vectors in R
+* References
+
+Chambers J (2008). Software for Data Analysis - Programming with
+R. New York: Springer. Online: [[https://doi.org/10.1007/978-0-387-75936-4][doi.org/10.1007/978-0-387-75936-4]]
+
+* Footnotes
+
+[fn:1] In the case of R, John Chambers is a good starting point. Check
+out his book ([[https://link.springer.com/book/10.1007/978-0-387-75936-4][Chambers, 2008]]) and this [[https://youtu.be/qWG_MLrxKps][2021 webinar by him]] (90 min)
+which is based on his 2020 article [[https://dl.acm.org/doi/10.1145/3386334][S, R, and data science]].
