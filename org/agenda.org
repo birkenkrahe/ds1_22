@@ -425,7 +425,7 @@ The first part of the review deals with vector data types and names.
 ** NEXT DataCamp assignment: "[[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]" (Sept 14)
 * Week 5: Vectors in R
 #+attr_html: :width 300px
-[[../img/queen.jpg]]
+[[../img/queen1.jpg]]
 
 - [ ] Review vectors in R (2)
 - [ ] Continued: Arithmetic in R (lecture/practice)
