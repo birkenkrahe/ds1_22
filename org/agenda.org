@@ -214,7 +214,7 @@ participation (if there's a practice file, you can make up).
 
 [[../img/drop.png]]
 
-(https://my.lyon.edu/ICS/Academics/Student_Forms.jnz) 
+(https://my.lyon.edu/ICS/Academics/Student_Forms.jnz)
 
 ** GNU Emacs: ref cards
 #+attr_html: :width 400px
@@ -232,8 +232,8 @@ participation (if there's a practice file, you can make up).
     science
   + "Sales knowledge" is domain knowledge, and actually not a skill
 P    (bad phrasing of the question on my part)
-  + All skills and all knowledge can of course be brought to bear on
-    data science, which means this is not a very well focused question
++ All skills and all knowledge can of course be brought to bear on
+  data science, which means this is not a very well focused question
 
 - *Which of these are part of the typical data science process?*
   + The typical data science process does not involve "machine
@@ -359,8 +359,8 @@ The first part of the review deals with vector data types and names.
 
    #+RESULTS:
    : [1] "Nick"
-   : Nick 
-   : TRUE 
+   : Nick
+   : TRUE
 
 ** DONE Solutions
 
@@ -392,7 +392,7 @@ The first part of the review deals with vector data types and names.
 
    #+RESULTS:
    : TRUE
-  
+
 4) Is ~bool~ a named vector? How do I know?
 
    #+begin_src R :results output
@@ -404,7 +404,7 @@ The first part of the review deals with vector data types and names.
    : NULL
 
 5) If ~bool~ is not named, how can I name it?
-   
+
    #+begin_src R :results output
      bool <- c(TRUE)
      names(bool) <- "Joey"
@@ -413,10 +413,10 @@ The first part of the review deals with vector data types and names.
    #+end_src
 
    #+RESULTS:
-   : Joey 
-   : TRUE 
+   : Joey
+   : TRUE
    : [1] "Joey"
-   
+
 ** DONE Practice: Introduction to R (customization)
 
 #+attr_html: :width 500px
@@ -429,17 +429,102 @@ The first part of the review deals with vector data types and names.
 
 - [ ] Review vectors in R (2)
 - [ ] Continued: Arithmetic in R (lecture/practice)
-- [ ] Review test
+- [ ] Review test 4
+- [ ] Vectors in R
 
-** IN PROGRESS Arithmetics in R - lecture & practice
+* NEXT Review: DataCamp chapter "Vectors in R" (2)
+
+1) How can you add ~c(1,2,3)~ and ~c(4,5,6)~?
+
+   #+begin_src R
+     ## save vectors as R objects (variables)
+     foo <- c(1,2,3)
+     bar <- c(4,5,6)
+
+     ## add vectors as they are
+     c(1,2,3) + c(4,5,6)
+
+     ## add vectors as variables
+     foo + bar
+
+     ## add vectors by hand
+     c(1 + 4, 2 + 5, 3 + 6)
+   #+end_src
+
+2) What happens if you add a named and an unnamed vector?
+
+   #+begin_src R
+     foo <- c("i"= 1, "j" = 2, "k" = 3)
+     bar <- c(4,5,6)
+     names(foo)
+     names(bar)
+     foo + bar
+     names(foo + bar)
+   #+end_src
+
+3) What is the result of comparing ~c(1,2,3)~ and ~c(4,5,6)~ using
+   relational operators ~>~ and ~<~ ?
+
+   #+begin_src R
+     c(1,2,3) > c(4,5,6)
+     c(4,5,6) > c(1,2,3)
+   #+end_src
+
+4) How can you add the first and second value of ~baz <- c(2,2)~?
+
+   #+begin_src R
+     baz <- c(2,2)
+     baz[1] + baz[2]
+   #+end_src
+
+5) What happens if you get it wrong, and you try to add a value that's
+   not there?
+
+   #+begin_src R
+     foo <- c(1)
+     foo[1]
+     foo[2]
+     foo[1] + foo[2]
+   #+end_src
+
+6) What does ~qux[c(1:3)]~ mean?
+
+   #+begin_src R
+     qux <- c(10,100,1000)
+     qux[1]; qux[2]; qux[3]
+     qux[c(1,2,3)]
+     qux[c(1:3)]
+   #+end_src
+
+7) How can you extract elements from ~qux~ that are greater than 100?
+
+   #+begin_src R
+     qux <- c(10,100,1000)
+
+     ## This generates an index or selection vector
+     qux > 100
+
+     ## Values of qux greater than 100
+     qux[qux > 100]
+
+     ## same as
+     qux[c(F,F,T)]
+
+     ## Index of extracted values
+     which(qux > 100)
+
+     qux[which(qux>100)] # resolves to qux[3]
+   #+end_src
+
+* IN PROGRESS Arithmetics in R - lecture & practice
 
 #+attr_html: :width 700px
 [[../img/setup.png]]
 
-- Download/open the Org-mode file from GitHub: [[tinyurl.com/4dekhhw5]]
+- Download/open the Org-mode file from GitHub: [[https://tinyurl.com/4dekhhw5][tinyurl.com/4dekhhw5]]
 
 - Put your name and ~[pledged]~ next to it in the meta data header
- 
+
 - Open an R console inside Emacs with ~M-x R~
 
 - We'll go back and forth between lecture and practice file
@@ -452,7 +537,5 @@ The first part of the review deals with vector data types and names.
 
 - You can cycle through buffers with your mouse (on the buffer title)
 
-** TODO Review: DataCamp chapter "Vectors in R" (2)
-
-The second part of the review deals with vector extraction.
+* TODO Review test 4
 

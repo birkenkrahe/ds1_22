@@ -70,7 +70,7 @@ value - more on this below) - see figure:
 
 #+end_notes
 
-* TODO Practice: Formula Translator
+* DONE Practice: Formula Translator
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 * Mathematical functions
