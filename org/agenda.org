@@ -470,8 +470,8 @@ The first part of the review deals with vector data types and names.
       #+RESULTS:
       : [1] "i" "j" "k"
       : NULL
-      : i j k 
-      : 5 7 9 
+      : i j k
+      : 5 7 9
       : [1] "i" "j" "k"
 
       Adding vectors of different length:
@@ -497,7 +497,7 @@ The first part of the review deals with vector data types and names.
       : [1] FALSE  TRUE  TRUE
 
    4) How can you add the first and second value of ~baz <- c(2,2)~?
-      
+
       Parentheses suggest that ~baz~ is a function - this is not it:
       #+begin_src R :results output
         baz(1) + baz(2)
@@ -591,26 +591,27 @@ The first part of the review deals with vector data types and names.
 - You can cycle through buffers with your mouse (on the buffer title)
 
 * Featured applications (R and around R)
-#+attr_html: :width 500px
-[[../img/horizon.jpg]]
 
 [[https://github.com/birkenkrahe/ds1/issues][See GitHub issues list]]:
 - Automate tasks with R (using UNIX' cron(1))
 - Python vs. R by IBM (7 min)
 - Learning a new programming language (8 min)
 
-  #+begin_quote
-  Frank Stajano: "The single most important factor of your learning
-  success is that you enjoy and would do it for its own sake."/
-  #+end_quote
+#+attr_html: :width 500px
+[[../img/horizon.jpg]]
 
-    1) Understand how you learn and choose resources that support your
-     *learning style*
-  2) Set your own *incentives* and *goals* that you like and stage them as
-     stepping stones
-  3) Learn from the *best* - check competence of authors, e.g. to learn
-     a language, grab the book written by the author[fn:1], and study
-     conventions of great programmers in that language.
+#+begin_quote
+  Frank Stajano: /"The single most important factor of your learning
+  success is that you enjoy and would do it for its own sake."/
+#+end_quote
+
+1) Understand how you learn and choose resources that support your
+   *learning style*
+2) Set your own *incentives* and *goals* that you like and stage them as
+   stepping stones
+3) Learn from the *best* - check competence of authors, e.g. to learn a
+   language, grab the book written by the author[fn:1], and study
+   conventions of great programmers in that language[fn:2].
 
 * TODO Review test 4
 * TODO R's workhorse: Vectors in R
@@ -620,6 +621,12 @@ Chambers J (2008). Software for Data Analysis - Programming with
 R. New York: Springer. Online: [[https://doi.org/10.1007/978-0-387-75936-4][doi.org/10.1007/978-0-387-75936-4]]
 
 * Footnotes
+
+[fn:2]In the case of R, Norm Matloff is one of the greatest,
+especially when it comes to parallelization of code, debugging, and
+linking computer science and statistics, the author of a great
+tutorial for beginners, [[https://github.com/matloff/fasteR][fasteR]]. Another one is Matt Dowle, the creator
+of the [[https://github.com/Rdatatable/data.table][data.table package]].
 
 [fn:1] In the case of R, John Chambers is a good starting point. Check
 out his book ([[https://link.springer.com/book/10.1007/978-0-387-75936-4][Chambers, 2008]]) and this [[https://youtu.be/qWG_MLrxKps][2021 webinar by him]] (90 min)
