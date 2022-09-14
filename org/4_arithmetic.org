@@ -147,7 +147,7 @@ of ~x=100~ to the base ~10~ is ~2~, because 10^2 = 100. In R,
 - For now, we only care about the fact that $e$ is the base of the
   natural logarithm, denoted as ~ln~ or log_e(x).
 
-* TODO Practice: logarithms and constants
+* Practice: logarithms and constants
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -179,7 +179,7 @@ of 10.
 
 - ~exp(1)~ = e = ~271828182845e-11~ = 271828182845\times10^{-11}
 
-* TODO Practice: e-notation
+* DONE Practice: e-notation
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -224,7 +224,7 @@ to improve readability. Extra bits are stored by R
    missing values: compute ~is.nan(sqrt(-1))~ for example.
 #+end_notes
 
-* TODO Practice: special numbers
+* DONE Practice: special numbers
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -269,7 +269,7 @@ There are three logical operators in R:
 
 ~!~ for "/not/":  ~1 != 1~            
 
-~&~ for "/and/":  ~(1==1)&(1==2)~   
+~&~ for "/and/":  ~(1==1) & (1==2)~   
 
 ~|~ for  "/or/": ~(1==2) ~| (1!=1)~ 
 
