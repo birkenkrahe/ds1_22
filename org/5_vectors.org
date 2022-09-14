@@ -51,7 +51,7 @@ to have. Views of different packages (like the Tidyverse) differ
 massively regarding all of these.
 #+end_notes
 
-* Assigning objects [[https://youtu.be/WZqJ_AyoOEU][video​]]
+* Assigning objects [[https://youtu.be/WZqJ_AyoOEU][(video)​]]
 
 - You can use ~<-~ or ~=~ for assignment of values to variables
 - Use ~<-~ for objects, and ~=~ to assign function parameters
@@ -73,38 +73,28 @@ massively regarding all of these.
 
   5) Check all variables in the current session with ~ls~.
 
-* Why we need vectors [[https://youtu.be/iFsB_34mnR0][video]]
+* Why we need vectors [[https://youtu.be/iFsB_34mnR0][(video)]]
 
 - We need vectors to handle multiple items in R
 - Vectors contain observations or measurements of a single variable
-- Each vector can have only one data type - e.g. ~numeric~
-
-#+begin_notes
-We need vectors to handle multiple items in R (more than one data
-point). Interesting data are usually made up of multiple
-items. Think of a vector as a collection of observations or
-measurements concerning a single variable. An important condition
-for vectors is that all entries must be observations of the same
-type[fn:1].
-#+end_notes
+- Each vector can have only one data type - e.g. ~numeric~ [fn:1]
 
 1) Give three examples of such collections for vectors:
    - numbers, e.g. the heights of students in this class
    - text, e.g. the names of students of this class
    - logical values, e.g. sex of students of this class
 
-2) Define sample vectors ~s_heights~, ~s_names~ and ~s_male~
+2) Define sample vectors ~s_heights~, ~s_names~ and ~s_male~.
 
-3) Print the vectors
+3) Print the vectors.
 
 #+begin_notes
-*SOLUTION*
-#+begin_quote
 1) the heights of every student of this class, in cm.
 2) the first names of every student of this class (strings).
 3) observations, if a student is male or not male (male means ~TRUE~).
-#+end_quote
+
 Let's put some wood behind the arrow and define sample vectors for these:
+
 #+begin_src R :session :results output
   s_heights <- c(180, 181, 158, 175, 179, 168)
   s_names <- c("Vincent", "Natalija", "Adrian", "Andres", "Helena")
@@ -907,9 +897,9 @@ handy!
 
 * Footnotes
 
-[fn:1]Note: If this is not the case, R coerces the vector elements to
-conform to one type, as we will see later. A data type that can hold
-any type of value is called a list.
+[fn:1]Note: If a vector contains different data types, R coerces the
+vector elements to conform to one type, as we will see later. A data
+type that can hold any type of value is called a ~list~.
 
 [fn:2]The [[https://en.wikipedia.org/wiki/Histogram][Wikipedia entry for "histogram"]] is not bad as a start, lots
 of examples and you'll soon find out how to make these yourself! The
