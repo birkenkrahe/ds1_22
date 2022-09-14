@@ -20,6 +20,8 @@ After this lesson, you should be able to:
 /Most sections are accompanied by YouTube videos./
 
 * Everything is an object
+#+attr_html: :width 500px
+[[../img/berlin.png]]
 
 - R is a functional, object-oriented language
 
@@ -51,57 +53,29 @@ to have. Views of different packages (like the Tidyverse) differ
 massively regarding all of these.
 #+end_notes
 
-* Assigning objects
+* Assigning objects [[https://youtu.be/WZqJ_AyoOEU][[video]​]]
 
-[[https://youtu.be/WZqJ_AyoOEU][[Watch the video (10 min)]​]]
+- You can use ~<-~ or ~=~ for assignment of values to variables
+- Use ~<-~ for objects, and ~=~ to assign function parameters
+- Object names must start with a letter and avoid reserved words
 
-We talk about "assigning values to a variable" or "storing values
-in a variable." These expressions are interchangeable. We can use
-~<-~ or ~=~ for assignment. Whatever you do, try to be consistent.
+- Challenge:
 
-1) Create an object ~a~ that stores the value $3^2\times 4^\frac{1}{8}$
-2) Overwrite ~a~ with itself divided by $2.33$. Print the result to
-   the console.
-3) Create a new object ~b~ with the value $-8.2\times 10^{-13}$
-4) Print to the console the result of multiplying ~a~ and ~b~.
+  1) Create an object ~a~ that stores the value 3^2 \times 4^{1/8} and
+     display it.
 
-#+begin_notes
-Because you can overwrite variables easily, ~=~ could be confusing,
-because it looks like mathematical equality (a status) while it
-actually is an action. ~=~ is usually reserved for setting arguments
-inside functions. You've seen this before: ~log(x=100, b=10)~.
+  2) Overwrite ~a~ with itself divided by 2.33. Print the result to the
+     console.
 
-There are also some naming rules: objects must start with a letter
-and they must avoid reserved words (like ~TRUE~ or
-~NA~). Interesting objects for us include: vectors, factors, and
-data frames.
-#+end_notes
+  3) Create a new object ~b~ with the value -8.2 \times 10^{-13} using
+     scientific (e-) notation and print it to the console *without*
+     scientific notation using the ~format~ function.
+     
+  4) Print the result of multiplying ~a~ and ~b~ to the console.
 
-#+begin_notes
-#+begin_src R :session
-  a <- 3^2 * 4^(1/8)  # 1) 10.70286
-  a <- a/2.33         # 2) 4.593504
-  a
-  b <- (-8.2) * 10^(-13) # 3) -8.2e-13
-  a * b                  # 4) -3.766673e-12
-#+end_src
+  5) Check all variables in the current session with ~ls~.
 
-The session results:
-#+begin_example
-> a <- 3^2 * 4^(1/8)
-> a <- a/2.33
-> a
-[1] 4.593504
-> b <- (-8.2)*10^(-13)
-> b
-[1] -8.2e-13
-> a * b
-[1] -3.766673e-12
-#+end_example
-#+end_notes
-
-* Why we need vectors
-[[https://youtu.be/iFsB_34mnR0][[Watch the video (6:40)]​]]
+* Why we need vectors [[https://youtu.be/iFsB_34mnR0][[video]​]]
 
 - We need vectors to handle multiple items in R
 - Vectors contain observations or measurements of a single variable
@@ -141,8 +115,14 @@ Let's put some wood behind the arrow and define sample vectors for these:
 #+end_notes
 
 * R object ~class~
+#+attr_html: :width 600px
+[[../img/class.jpg]]
 
 - The function ~class~ (check the help) returns the R object type
+
+- Object type is not the same as data type or storage type
+
+- Besides types there are also data structures (like ~vector~)
 
 - Let's check the class for our three vectors with student data
 
