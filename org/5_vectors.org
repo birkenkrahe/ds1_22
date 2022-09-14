@@ -19,7 +19,7 @@ After this lesson, you should be able to:
 
 /Most sections are accompanied by YouTube videos./
 
-* Everything is an object
+* Everything is an object [[https://youtu.be/7Ab2RQs7Lj8][video​]]
 #+attr_html: :width 500px
 [[../img/berlin.png]]
 
@@ -35,9 +35,7 @@ After this lesson, you should be able to:
 
 - EASE OF USE: determines the fun you have when programming
 
-[[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3_YDc-8SS5EuG4h1aILHz][[Watch YouTube Playlist​]​]]
-
-[[https://youtu.be/7Ab2RQs7Lj8][[Watch the video (4:33 min)]​]]
+[[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3_YDc-8SS5EuG4h1aILHz][[Watch YouTube Playlist Vectors Part I​]​]]
 
 #+begin_notes
 R is a functional, object-oriented language: everything's an object,
@@ -53,7 +51,7 @@ to have. Views of different packages (like the Tidyverse) differ
 massively regarding all of these.
 #+end_notes
 
-* Assigning objects [[https://youtu.be/WZqJ_AyoOEU][[video]​]]
+* Assigning objects [[https://youtu.be/WZqJ_AyoOEU][video​]]
 
 - You can use ~<-~ or ~=~ for assignment of values to variables
 - Use ~<-~ for objects, and ~=~ to assign function parameters
@@ -75,7 +73,7 @@ massively regarding all of these.
 
   5) Check all variables in the current session with ~ls~.
 
-* Why we need vectors [[https://youtu.be/iFsB_34mnR0][[video]​]]
+* Why we need vectors [[https://youtu.be/iFsB_34mnR0][video]]
 
 - We need vectors to handle multiple items in R
 - Vectors contain observations or measurements of a single variable
