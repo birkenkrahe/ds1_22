@@ -435,140 +435,140 @@ The first part of the review deals with vector data types and names.
 
 * DONE Review: DataCamp chapter "Vectors in R" (2)
 
-   1) How can you add ~c(1,2,3)~ and ~c(4,5,6)~?
+1) How can you add ~c(1,2,3)~ and ~c(4,5,6)~?
 
-      #+begin_src R :results output
-        ## save vectors as R objects (variables)
-        foo <- c(1,2,3)
-        bar <- c(4,5,6)
+   #+begin_src R :results output
+     ## save vectors as R objects (variables)
+     foo <- c(1,2,3)
+     bar <- c(4,5,6)
 
-        ## add vectors as they are
-        c(1,2,3) + c(4,5,6)
+     ## add vectors as they are
+     c(1,2,3) + c(4,5,6)
 
-        ## add vectors as variables
-        foo + bar
+     ## add vectors as variables
+     foo + bar
 
-        ## add vectors by hand
-        c(1 + 4, 2 + 5, 3 + 6)
-      #+end_src
+     ## add vectors by hand
+     c(1 + 4, 2 + 5, 3 + 6)
+   #+end_src
 
-      #+RESULTS:
-      : [1] 5 7 9
-      : [1] 5 7 9
-      : [1] 5 7 9
+   #+RESULTS:
+   : [1] 5 7 9
+   : [1] 5 7 9
+   : [1] 5 7 9
 
-   2) What happens if you add a named and an unnamed vector?
+2) What happens if you add a named and an unnamed vector?
 
-      #+begin_src R :results output
-        foo <- c("i"= 1, "j" = 2, "k" = 3)
-        bar <- c(4,5,6)
-        names(foo)
-        names(bar)
-        foo + bar
-        names(foo + bar)
-      #+end_src
+   #+begin_src R :results output
+     foo <- c("i"= 1, "j" = 2, "k" = 3)
+     bar <- c(4,5,6)
+     names(foo)
+     names(bar)
+     foo + bar
+     names(foo + bar)
+   #+end_src
 
-      #+RESULTS:
-      : [1] "i" "j" "k"
-      : NULL
-      : i j k
-      : 5 7 9
-      : [1] "i" "j" "k"
+   #+RESULTS:
+   : [1] "i" "j" "k"
+   : NULL
+   : i j k
+   : 5 7 9
+   : [1] "i" "j" "k"
 
-      Adding vectors of different length:
-      #+begin_src R :results output
-        foo <- c(1,2)
-        bar <- c(1,2,3,4)
-        foo + bar
-      #+end_src
+   Adding vectors of different length:
+   #+begin_src R :results output
+     foo <- c(1,2)
+     bar <- c(1,2,3,4)
+     foo + bar
+   #+end_src
 
-      #+RESULTS:
-      : [1] 2 4 4 6
+   #+RESULTS:
+   : [1] 2 4 4 6
 
-   3) What is the result of comparing ~c(1,2,3)~ and ~c(4,5,6)~ using
-      relational operators ~>~ and ~<~ ?
+3) What is the result of comparing ~c(1,2,3)~ and ~c(4,5,6)~ using
+   relational operators ~>~ and ~<~ ?
 
-      #+begin_src R :results output
-        c(1,2,3) > c(4,5,1)
-        c(0,5,6) > c(1,2,3)
-      #+end_src
+   #+begin_src R :results output
+     c(1,2,3) > c(4,5,1)
+     c(0,5,6) > c(1,2,3)
+   #+end_src
 
-      #+RESULTS:
-      : [1] FALSE FALSE  TRUE
-      : [1] FALSE  TRUE  TRUE
+   #+RESULTS:
+   : [1] FALSE FALSE  TRUE
+   : [1] FALSE  TRUE  TRUE
 
-   4) How can you add the first and second value of ~baz <- c(2,2)~?
+4) How can you add the first and second value of ~baz <- c(2,2)~?
 
-      Parentheses suggest that ~baz~ is a function - this is not it:
-      #+begin_src R :results output
-        baz(1) + baz(2)
-      #+end_src
+   Parentheses suggest that ~baz~ is a function - this is not it:
+   #+begin_src R :results output
+     baz(1) + baz(2)
+   #+end_src
 
-      #+begin_src R :results output
-        baz <- c(2,2)
-        baz[1] + baz[2]
-      #+end_src
+   #+begin_src R :results output
+     baz <- c(2,2)
+     baz[1] + baz[2]
+   #+end_src
 
-      #+RESULTS:
-      : [1] 4
+   #+RESULTS:
+   : [1] 4
 
-   5) What happens if you get it wrong, and you try to add a value that's
-      not there?
+5) What happens if you get it wrong, and you try to add a value that's
+   not there?
 
-      #+begin_src R :results output
-        foo <- c(1)
-        foo[1]
-        foo[2]
-        foo[1] + foo[2]
-      #+end_src
+   #+begin_src R :results output
+     foo <- c(1)
+     foo[1]
+     foo[2]
+     foo[1] + foo[2]
+   #+end_src
 
-      #+RESULTS:
-      : [1] 1
-      : [1] NA
-      : [1] NA
+   #+RESULTS:
+   : [1] 1
+   : [1] NA
+   : [1] NA
 
-   6) What does ~qux[c(1:3)]~ mean?
+6) What does ~qux[c(1:3)]~ mean?
 
-      #+begin_src R :results output
-        qux <- c(10,100,1000)
-        qux[1]; qux[2]; qux[3] # print individual values
-        qux[c(1,2,3)]  # print values using index vector
-        qux[c(1:3)]
-      #+end_src
+   #+begin_src R :results output
+     qux <- c(10,100,1000)
+     qux[1]; qux[2]; qux[3] # print individual values
+     qux[c(1,2,3)]  # print values using index vector
+     qux[c(1:3)]
+   #+end_src
 
-      #+RESULTS:
-      : [1] 10
-      : [1] 100
-      : [1] 1000
-      : [1]   10  100 1000
-      : [1]   10  100 1000
+   #+RESULTS:
+   : [1] 10
+   : [1] 100
+   : [1] 1000
+   : [1]   10  100 1000
+   : [1]   10  100 1000
 
-   7) How can you extract elements from ~qux~ that are greater than 100?
+7) How can you extract elements from ~qux~ that are greater than 100?
 
-      #+begin_src R :results output
-        qux <- c(10,100,1000)
+   #+begin_src R :results output
+     qux <- c(10,100,1000)
 
-        ## This generates an index or selection vector
-        qux > 100
+     ## This generates an index or selection vector
+     qux > 100
 
-        ## Values of qux greater than 100
-        qux[qux > 100]
+     ## Values of qux greater than 100
+     qux[qux > 100]
 
-        ## same as
-        qux[c(F,F,T)]
+     ## same as
+     qux[c(F,F,T)]
 
-        ## Index of extracted values
-        which(qux > 100)
+     ## Index of extracted values
+     which(qux > 100)
 
-        qux[which(qux>100)] # resolves to qux[3]
-      #+end_src
+     qux[which(qux>100)] # resolves to qux[3]
+   #+end_src
 
-      #+RESULTS:
-      : [1] FALSE FALSE  TRUE
-      : [1] 1000
-      : [1] 1000
-      : [1] 3
-      : [1] 1000
+   #+RESULTS:
+   : [1] FALSE FALSE  TRUE
+   : [1] 1000
+   : [1] 1000
+   : [1] 3
+   : [1] 1000
 
 * IN PROGRESS Arithmetics in R - lecture & practice
 
@@ -602,8 +602,8 @@ The first part of the review deals with vector data types and names.
 [[../img/horizon.jpg]]
 
 #+begin_quote
-  Frank Stajano: /"The single most important factor of your learning
-  success is that you enjoy and would do it for its own sake."/
+Frank Stajano: /"The single most important factor of your learning
+success is that you enjoy and would do it for its own sake."/
 #+end_quote
 
 1) Understand how you learn and choose resources that support your
@@ -615,7 +615,63 @@ The first part of the review deals with vector data types and names.
    conventions of great programmers in that language[fn:2].
 
 * TODO Review test 4
-* TODO R's workhorse: Vectors in R
+
+1) What is ~log(1)~ independent of the base parameter
+2) What are exponentiation operators in R
+3) What's the difference: ~log(base=10,x=100)~ vs. ~log(x=100,base=10)~
+4) What's ~format(271.82e-2, scientific=FALSE)~
+5) What's ~-4**2 + 2~ vs ~(-4)**2 + 2~
+6) What is ~sqrt(2)^2 == 2~
+7) What is ~all.equal(exp(3000),Inf)~
+8) What is ~identical(exp(3000),Inf)~
+9) What are the special values in R? Are they all numeric?
+10) What's ~NA+1~
+11) What's ~NA**0~
+12) What's ~mean(1,3)~
+13) What are the elements of a complete reference?
+14) How can you find out what is ~$HOME~ to Emacs?
+    #+attr_html: :width 600px
+    [[../img/emacshome.png]]
+15) How can you make sure that the R session runs in Emacs' ~$HOME~?
+    #+attr_html: :width 600px
+    [[../img/setwd.png]]
+
+#+begin_src R :results output
+  log(1)
+  format(271.82e-2, scientific=FALSE)
+  -4**2 + 2
+  (-4)**2 + 2
+  all.equal(exp(3000),Inf)
+  identical(exp(3000),Inf)
+  exp(709.7)
+  class(NaN)
+  class(NA)
+  class(Inf)
+  NA+1
+  NA**0
+  mean(c(1,3))
+  mean(1,3)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+[1] 0
+[1] "2.7182"
+[1] -14
+[1] 18
+[1] TRUE
+[1] TRUE
+[1] 1.654984e+308
+[1] "numeric"
+[1] "logical"
+[1] "numeric"
+[1] NA
+[1] 1
+[1] 2
+[1] 1
+#+end_example
+
+* IN PROGRESS R's workhorse: Vectors in R
 #+attr_html: :width 600px
 [[../img/5_workhorse.png]]
 
