@@ -31,7 +31,7 @@ After this lesson, you should be able to:
 
 - PERFORMANCE: important for large data sets only
 
-- CLARITY: essential wen communicating methods, code, results
+- CLARITY: essential when communicating methods, code, results
 
 - EASE OF USE: determines the fun you have when programming
 

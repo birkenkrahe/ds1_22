@@ -428,9 +428,10 @@ The first part of the review deals with vector data types and names.
 [[../img/queen1.jpg]]
 
 - [X] Review DataCamp vectors in R (2)
+- [ ] Featured applications: automation, Python, learning
 - [ ] Continued: Arithmetic in R (lecture/practice)
-- [ ] Review test 4 - arithmetic in R
 - [ ] Vectors in R
+- [ ] Review test 4 - arithmetic in R
 
 * DONE Review: DataCamp chapter "Vectors in R" (2)
 
@@ -615,6 +616,9 @@ The first part of the review deals with vector data types and names.
 
 * TODO Review test 4
 * TODO R's workhorse: Vectors in R
+#+attr_html: :width 600px
+[[../img/5_workhorse.png]]
+
 * References
 
 Chambers J (2008). Software for Data Analysis - Programming with

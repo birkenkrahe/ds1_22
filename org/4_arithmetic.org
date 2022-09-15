@@ -243,12 +243,12 @@ to improve readability. Extra bits are stored by R
 
 #+end_notes
 
-* TODO Practice: special functions
+* DONE Practice: special functions
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 * Logical values and operators
 #+attr_html: :width 300px
-#+caption: George Boole (
+#+caption: George Boole
 [[../img/4_boole.jpg]]
 
 #+begin_notes
@@ -259,7 +259,7 @@ stay away from saving time by using the short versions of these
 values.
 #+end_notes
 
-* TODO Practice: logical values
+* DONE Practice: logical values
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -282,7 +282,7 @@ In the last command, we generated a ~FALSE~ value by comparing two
 
 #+end_notes
 
-* TODO Practice: logical operators
+* DONE Practice: logical operators
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -293,7 +293,7 @@ In the last command, we generated a ~FALSE~ value by comparing two
 - In R mathematical expressions are evaluated according to the
   /PEMDAS/ rule.
 
-- The natural logarithm $ln(x)$ is the inverse of the exponential
+- The natural logarithm ln(x) is the inverse of the exponential
   function e^x.
 
 - In the scientific or e-notation, numbers are expressed as positive
