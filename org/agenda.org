@@ -428,12 +428,12 @@ The first part of the review deals with vector data types and names.
 [[../img/queen1.jpg]]
 
 - [X] Review DataCamp vectors in R (2)
-- [ ] Featured applications: automation, Python, learning
-- [ ] Continued: Arithmetic in R (lecture/practice)
-- [ ] Vectors in R
-- [ ] Review test 4 - arithmetic in R
+- [X] Featured applications: automation, Python, learning
+- [X] Continued: Arithmetic in R (lecture/practice)
+- [X] Review test 4 - arithmetic in R
+- [X] Vectors in R
 
-* DONE Review: DataCamp chapter "Vectors in R" (2)
+** DONE Review: DataCamp chapter "Vectors in R" (2)
 
 1) How can you add ~c(1,2,3)~ and ~c(4,5,6)~?
 
@@ -570,7 +570,7 @@ The first part of the review deals with vector data types and names.
    : [1] 3
    : [1] 1000
 
-* IN PROGRESS Arithmetics in R - lecture & practice
+** DONE Arithmetics in R - lecture & practice
 
 #+attr_html: :width 700px
 [[../img/setup.png]]
@@ -591,7 +591,7 @@ The first part of the review deals with vector data types and names.
 
 - You can cycle through buffers with your mouse (on the buffer title)
 
-* Featured applications (R and around R)
+** Featured applications (R and around R)
 
 [[https://github.com/birkenkrahe/ds1/issues][See GitHub issues list]]:
 - Automate tasks with R (using UNIX' cron(1))
@@ -614,24 +614,83 @@ success is that you enjoy and would do it for its own sake."/
    language, grab the book written by the author[fn:1], and study
    conventions of great programmers in that language[fn:2].
 
-* TODO Review test 4
+** DONE Review test 4
 
 1) What is ~log(1)~ independent of the base parameter
-2) What are exponentiation operators in R
+2) What are exponentiation operators in R: ~^, ~**~, ~exp~
+      #+begin_src R
+     exp(1)
+   #+end_src
+
+   #+RESULTS:
+   : 2.71828182845905
 3) What's the difference: ~log(base=10,x=100)~ vs. ~log(x=100,base=10)~
 4) What's ~format(271.82e-2, scientific=FALSE)~
+   #+begin_src R
+     format(271.82e-2, scientific=FALSE)
+   #+end_src
+
+   #+RESULTS:
+   : 2.7182
 5) What's ~-4**2 + 2~ vs ~(-4)**2 + 2~
+   #+begin_src R :results output
+     -4**2 + 2
+     (-4)**2 + 2
+   #+end_src
+
+   #+RESULTS:
+   : [1] -14
+   : [1] 18
 6) What is ~sqrt(2)^2 == 2~
+   #+begin_src R
+     sqrt(2)^2 == 2
+   #+end_src
+
+   #+RESULTS:
+   : FALSE
 7) What is ~all.equal(exp(3000),Inf)~
 8) What is ~identical(exp(3000),Inf)~
+
+   #+begin_src R :results output
+     all.equal(exp(3000),Inf)
+     identical(exp(3000),Inf)
+   #+end_src
+
+   #+RESULTS:
+   : [1] TRUE
+   : [1] TRUE
 9) What are the special values in R? Are they all numeric?
+   #+begin_src R :results output
+     class(NaN)
+     class(NA) 
+     class(Inf)
+   #+end_src
+
+   #+RESULTS:
+   : [1] "numeric"
+   : [1] "logical"
+   : [1] "numeric"
 10) What's ~NA+1~
+
 11) What's ~NA**0~
+    
 12) What's ~mean(1,3)~
+
+    #+begin_src R :results output
+      mean(1,3)  # mean(x=1,???)
+      mean(c(1,3))
+    #+end_src
+
+    #+RESULTS:
+    : [1] 1
+    : [1] 2
+    
 13) What are the elements of a complete reference?
+    
 14) How can you find out what is ~$HOME~ to Emacs?
     #+attr_html: :width 600px
     [[../img/emacshome.png]]
+
 15) How can you make sure that the R session runs in Emacs' ~$HOME~?
     #+attr_html: :width 600px
     [[../img/setwd.png]]
@@ -671,7 +730,8 @@ success is that you enjoy and would do it for its own sake."/
 [1] 1
 #+end_example
 
-* IN PROGRESS R's workhorse: Vectors in R
+* Week 6
+** IN PROGRESS R's workhorse: Vectors in R
 #+attr_html: :width 600px
 [[../img/5_workhorse.png]]
 

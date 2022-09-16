@@ -4,28 +4,6 @@
 #+PROPERTY: header-args:R :results output :session *R*
 #+attr_html: :width 700px
 [[../img/5_workhorse.png]]
-* DONE Preparations to code along
-#+attr_html: :width 400px
-[[../img/emacsprep.png]]
-
-- Open a new Org-mode file ~vectors.org~ in Emacs
-
-- Put this line at the top of the file ~vectors.org~:
-
-  ~#+PROPERTY: header-args:R :results output :session *R*~
-
-- Activate the code by putting your cursor on the line and entering
-  ~C-c C-c~. You should see the message ~Local setup has been refreshed~
-  in the minibuffer at the bottom of the editor.
-
-- When you execute your first R code block, you'll be asked where you
-  want the session named ~*R*~ to run: enter the path to ~vectors.org~
-
-- For plots, use the header ~:results graphics file :file vectors.png~
-  (this will overwrite the PNG file every time you create a new plot)
-
-- When you leave Emacs, you'll be warned that the session ~*R*~ is
-  active: you can ignore this warning
 
 * What will you learn?
 #+attr_html: :width 500px
@@ -95,6 +73,29 @@ massively regarding all of these.
   4) Print the result of multiplying ~a~ and ~b~ to the console.
 
   5) Check all variables in the current session with ~ls~.
+
+* DONE Preparations to code along
+#+attr_html: :width 400px
+[[../img/emacsprep.png]]
+
+- Open a new Org-mode file ~vectors.org~ in Emacs
+
+- Put this line at the top of the file ~vectors.org~:
+
+  ~#+PROPERTY: header-args:R :results output :session *R*~
+
+- Activate the code by putting your cursor on the line and entering
+  ~C-c C-c~. You should see the message ~Local setup has been refreshed~
+  in the minibuffer at the bottom of the editor.
+
+- When you execute your first R code block, you'll be asked where you
+  want the session named ~*R*~ to run: enter the path to ~vectors.org~
+
+- For plots, use the header ~:results graphics file :file vectors.png~
+  (this will overwrite the PNG file every time you create a new plot)
+
+- When you leave Emacs, you'll be warned that the session ~*R*~ is
+  active: you can ignore this warning
 
 * Why we need vectors [[https://youtu.be/iFsB_34mnR0][(video)]]
 
@@ -187,7 +188,7 @@ The resulting session output:
   #+begin_src R :session :results output
     myvec3 <- c(myvec, myvec2)
     myvec3
-    class(myvec3)
+    class(myvec3)n
   #+end_src
 
 - In the resulting output, the two vectors were put side by side. The
@@ -227,7 +228,7 @@ The resulting session output:
 
     #+end_example
 
-* NEXT Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
+* Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
 #+attr_html: :width 600px
 [[../img/nile.png]]
 * Base R - what's that again?
