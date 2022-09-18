@@ -186,7 +186,7 @@ participation (if there's a practice file, you can make up).
 [[../img/online.jpg]]
 
 
-- [ ] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete introR practice file]]
+- [X] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete introR practice file]]
 - [ ] Lecture & practice: arithmetics in R
 - [ ] DataCamp assignment "[[https://app.datacamp.com/learn/courses/free-introduction-to-r][Intro to basics]]"
 
@@ -614,6 +614,11 @@ success is that you enjoy and would do it for its own sake."/
    language, grab the book written by the author[fn:1], and study
    conventions of great programmers in that language[fn:2].
 
+#+begin_quote
+“Anyone who has lost track of time when using a computer knows the
+propensity to dream, the urge to make dreams come true, and the
+tendency to miss lunch.” — Tim Berners-Lee
+#+end_quote
 ** DONE Review test 4
 
 1) What is ~log(1)~ independent of the base parameter
@@ -734,6 +739,10 @@ success is that you enjoy and would do it for its own sake."/
 ** IN PROGRESS R's workhorse: Vectors in R
 #+attr_html: :width 600px
 [[../img/5_workhorse.png]]
+
+- Journey down the Nile (plotting example)
+- Vectors as sequences and repetitions
+- Sorting and measuring length of vectors
 
 * References
 

@@ -450,7 +450,7 @@ look at help pages, the more you recognize known concepts.
   outside of the interval $[5.3,-45.5])$.
   #+end_notes
 
-* TODO Sequences
+* NEXT Sequences
 
 - The function ~seq~ allows modifying the step-width with ~by~:
   #+begin_src R
