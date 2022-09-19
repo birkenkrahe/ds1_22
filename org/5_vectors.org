@@ -643,20 +643,6 @@ look at help pages, the more you recognize known concepts.
     attributes(foo) # attributes is a list of 1 element, $names
     str(attributes(foo))
   #+end_src
-
-  #+RESULTS:
-  #+begin_example
-  NULL
-  [1] "a" "b" "c" "d"
-  a b c d
-  1 2 3 4
-   Named int [1:4] 1 2 3 4
-   - attr(*, "names")= chr [1:4] "a" "b" "c" "d"
-  $names
-  [1] "a" "b" "c" "d"
-  List of 1
-   $ names: chr [1:4] "a" "b" "c" "d"
-  #+end_example
 * Length of ~names~ vs. vector
 
 - What if your names are too short (or too long) for your vector?
@@ -691,7 +677,7 @@ look at help pages, the more you recognize known concepts.
     names(bar) <- NULL # remove names altogether
     bar
   #+end_src
-* READ Indexing vectors - summary
+* Indexing vectors - summary
 - Passing a vector of positive numbers returns the slice of the
   vector containing the elements at those locations.
   #+begin_src R
@@ -715,7 +701,7 @@ look at help pages, the more you recognize known concepts.
     names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
     x[c("one", "nine", "twenty five")]
   #+end_src
-* READ Coercion - summary
+* Coercion - summary
 All vector elements have to be of the same ~class~ or type:
 ~logical~, ~numeric~, or ~character~. What happens when you mix
 these? R will make it happen at the price of "coercion". Let's look
@@ -798,7 +784,7 @@ converted into ~TRUE~:
 I think that's enough evidence for you to stay away from mixing data
 types in vectors - though the conversion functions will come in very
 handy!
-* READ Summary with examples
+* Summary with examples
 - R is a functional language in which everything's an object.
 - R functions differ in: performance (speed), ease-of-use and
   clarity.
@@ -838,7 +824,7 @@ handy!
   | ~names(x)~                                 | return names of vector ~x~ (or ~NULL~)        |
   | ~as.character~, ~as.numeric~, ~as.logical~ | coerce arguments to the resp. class           |
 
-* READ Concept summary
+* Concept summary
 #+attr_html: :width 400px
 [[../img/4_summary.jpg]]
 
@@ -857,7 +843,7 @@ handy!
 - Infinity ~Inf~, not-a-number ~NaN~, and not available numbers ~NA~
   are /special values/ in R.
 
-* READ Code summary
+* Code summary
 
 | CODE           | DESCRIPTION                           |
 |----------------+---------------------------------------|
