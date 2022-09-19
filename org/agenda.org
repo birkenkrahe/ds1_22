@@ -1,7 +1,7 @@
 #+TITLE:Agenda - DSC 105
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:Agenda - DSC 105 - Introduction to Data Science, Fall 2022
-#+STARTUP:overview hideblocks indent inlineimages
+#+STARTUP:overview hideblocks indent inlineimages 
 #+OPTIONS: toc:nil num:nil ^:nil
 * README
 
@@ -735,7 +735,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 [1] 1
 #+end_example
 
-* Week 6
+* Week 6: Vectors in R (continued)
 ** IN PROGRESS R's workhorse: Vectors in R
 #+attr_html: :width 600px
 [[../img/5_workhorse.png]]
@@ -743,7 +743,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 - Journey down the Nile (plotting example)
 - Vectors as sequences and repetitions
 - Sorting and measuring length of vectors
-
+- Naming, indexing and subsetting
 * References
 
 Chambers J (2008). Software for Data Analysis - Programming with

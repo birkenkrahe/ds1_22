@@ -1,6 +1,6 @@
 #+TITLE: VECTORS in R
 #+AUTHOR: Introduction to data science (DSC 105) Fall 2022
-#+startup: hideblocks indent overview inlineimages
+#+startup: hideblocks indent overview inlineimages entitiespretty
 #+PROPERTY: header-args:R :results output :session *R*
 #+attr_html: :width 700px
 [[../img/5_workhorse.png]]
@@ -44,7 +44,7 @@ After this lesson, you should be able to:
 
 * Everything is an object [[https://youtu.be/7Ab2RQs7Lj8][video​]]
 #+attr_html: :width 500px
-[[../img/berlin.png]]
+[[../img/5_berlin.png]]
 
 - R is a functional, object-oriented language
 
@@ -128,7 +128,7 @@ Let's put some wood behind the arrow and define sample vectors for these:
 
 * R object ~class~
 #+attr_html: :width 600px
-[[../img/class.jpg]]
+[[../img/5_class.jpg]]
 
 - The function ~class~ (check the help) returns the R object type
 
@@ -230,6 +230,21 @@ The resulting session output:
 * NEXT Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
 #+attr_html: :width 600px
 [[../img/nile.png]]
+
+- Open your Emacs Org-mode practice file ~vectors.org~
+
+- At the top, below the ~#+PROPERTY:~ line, add a headline like this:
+  #+begin_example org
+    * Vectors in R
+  #+end_example
+- Go to the bottom of your file with ~M->~
+
+- Add another headline
+  #+begin_example org
+    * Plotting the ~Nile~
+  #+end_example
+- Additional code blocks should go below this headline
+
 * Base R - what's that again?
 
 - Let's not forget that there are real data out there!
@@ -242,14 +257,6 @@ The resulting session output:
   is ~Nile~. Do you remember how to get information on such a dataset
   (or on any R object)?
 
-#+begin_notes
-*Solution:*
-#+begin_src R :session
-  data()      # lists all available/loaded datasets
-  ?Nile       # opens help page for the dataset Nile
-#+end_src
-#+end_notes
-
 * What data structure is ~Nile~?
 
 - ~Nile~ contains a so-called "time series", a sequence of numbers that
@@ -261,7 +268,7 @@ The resulting session output:
     class(Nile)  # what type of dataset is this?
   #+end_src
 
-  #+begin_notes
+  #+begin_notes time series
   The output is ~"ts"~ or time series. You may remember that we
   previously looked at large datasets. ~mtcars~ for example was a
   "data frame" (we'll learn more about them later).
@@ -269,7 +276,7 @@ The resulting session output:
 
 - How can we print this dataset, or parts of it, on the screen?
 
-  #+begin_notes
+  #+begin_notes solution
 
   *Solution:* there are different ways to look inside ~Nile~:
   #+begin_src R :session
@@ -322,7 +329,7 @@ The resulting session output:
 
 - How can you find out more about plotting a histogram in R?
 
-  #+begin_notes
+  #+begin_notes help(hist)
   *HELP:* You know of course what to do at this point: call for help
   using ~?hist~. Skip to the ~Examples~ section at the end, where you find
   the command ~hist(islands)~. This creates a histogram of another
@@ -358,7 +365,7 @@ The resulting session output:
     hist(Nile, breaks=20)
   #+end_src
 
-#+begin_notes
+#+begin_notes hist function
 The ~hist~ function creates 10 bins by default and distributes the data
 accordingly. You can alter this number of bins by changing the
 argument ~breaks~, e.g. ~hist(Nile, breaks=20)~ (try it!).
@@ -384,7 +391,7 @@ next four sections, we're going to look at useful functions.
 
 * Asking for help
 
-[[../img/help.jpg]]
+[[../img/5_help.jpg]]
 
 - When you see a new function or dataset, look it up
 
@@ -406,15 +413,15 @@ look at help pages, the more you recognize known concepts.
 #+end_notes
 
 * Creating sequences and repetitions [[https://youtu.be/G2P_MVq3eyM][(video)]]
-
-[[../img/sequence.jpg]]
-
+#+attr_html: :width 600px
+[[../img/5_sequence.jpg]]
 * The colon ~:~ operator
 
 - ~1:n~ creates a sequence of numbers separated by intervals of 1
   #+begin_src R
     3:21
   #+end_src
+
 - Check what type of R object ~3:21~ is by applying the functions:
   - ~class~ (R object class),
   - ~mode~ (R object storage mode)
@@ -424,24 +431,27 @@ look at help pages, the more you recognize known concepts.
     mode(3:27)
     is.vector(3:27)
   #+end_src
+
 - Sequences created this way can also be stored.
   #+begin_src R
     foo <- 5.3
     bar <- foo:10
     bar
   #+end_src
+
 - What happens if the first argument of ~:~ is smaller than the second?
   #+begin_src R
     x <- 10:foo
     x
   #+end_src
+
 - You can perform computations to specify the range.
   #+begin_src R
     baz <- foo:(-47+1.5)
     baz
   #+end_src
 
-  #+begin_notes
+  #+begin_notes details
   Try to understand what happened here by checking the numbers: the
   first value of the sequence is ~foo = 5.3~. The last value is a
   negative value, ~-47+1.5 = -45.5~. In order to generate the
@@ -450,192 +460,161 @@ look at help pages, the more you recognize known concepts.
   outside of the interval $[5.3,-45.5])$.
   #+end_notes
 
-* NEXT Sequences
+* Sequences
 
 - The function ~seq~ allows modifying the step-width with ~by~:
   #+begin_src R
     seq(from = 3, to = 27, by = 3)
   #+end_src
-
 - ~seq~ always starts at ~from~ but not always end on ~to~:
   #+begin_src R
     seq(from=1, to=10, by=2) # range even, stepsize even
     seq(from=1, to=11, by=2) # range odd, stepsize even
   #+end_src
-
-- To end exactly on the last value, use ~length.out~ (always >0):
+- To end exactly on the last value, use ~length.out~:
   #+begin_src R
     seq(from=1, to=10, length.out=10) # either by or length.out
     seq(from = 3, to = 27, length.out = 40)
   #+end_src
-
 - [ ] What is the step-width in the last case? Compute it and use it
-  to create a sequence of 40 numbers from 3 to 27 exactly.
-  #+begin_src R
-    ...
-  #+end_src
-
-  #+begin_notes
+  to create a sequence of 40 numbers from 3 to 27 exactly, with ~seq~.
+  #+begin_notes solution
   #+begin_src R
     s <- seq(from = 3, to = 27, length.out = 40)
     s[2]-s[1] # step-width
     seq(from = 3, to = 27, by = s[2]-s[1])
   #+end_src
   #+end_notes
+- ~length.out~ can only be positive (there is no 'negative length').
 
-  #+begin_notes
-  The intervals between the ~40~ values generated are exactly evenly
-spaced. If you want the sequence to decrease, ~by~ must be
-negative, like here:
-#+begin_example
-  > foo <- 5.3
-  > myseq <- seq(from=foo, to=(-47+1.5),by=-2.4)
-  > myseq
-  [1]   5.3   2.9   0.5  -1.9  -4.3  -6.7  -9.1 -11.5 -13.9 -16.3 -18.7 -21.1
-  [13] -23.5 -25.9 -28.3 -30.7 -33.1 -35.5 -37.9 -40.3 -42.7 -45.1
-#+end_example
-~length,out~ can only be positive (there is no 'negative
-length'). This example creates a decreasing sequence of length $5$:
-#+begin_example
-  > myseq2 <- seq(from=foo, to=(-47+1.5), length.out=5)
-  > myseq2
-  [1]   5.3  -7.4 -20.1 -32.8 -45.5
-#+end_example
-
+- [ ] Create a decreasing sequence of length 5 from 5 to -5. Use
+  ~length.out~ first, then use ~by~ to achieve the same result.
+  #+begin_notes solution
+  #+begin_src R
+    myseq <- seq(from=5, to=-5, length.out=5)
+    myseq
+    myseq1 <- seq(from=5, to=-5, by = -2.5)
+    myseq1
+  #+end_src
   #+end_notes
-* TODO Repetition
-If you simply want to repeat a value, you can use the ~rep~
-function. For example, to create a sequence of four numbers ~1~, type:
-#+begin_example
-R> rep(x=1, times=4)
-[1] 1 1 1 1
-#+end_example
-You can repeat any object! Here are three different repetitions of
-the numerical vector ~c(3, 62, 8, 3)~ - first guess the outcome,
-then type them into the R console to check your thinking:
-#+begin_src R :session :results output
-  rep(x=c(3,62,8,3), times=3)
-  rep(x=c(3,62,8,3), each=2)
-  rep(x=c(3,62,8,3), times=3, each=2)
-#+end_src
-The argument ~times~ says how many *times* ~x~ is repeated. The
-argument ~each~ says how many times *each* element of ~x~ is
-repeated. The output should look like this:
-#+begin_example
-R> rep(x=c(3,62,8,3), times=3)
-[1]  3 62  8  3  3 62  8  3  3 62  8  3
+* Repetition
 
-R> rep(x=c(3,62,8,3), each=2)
-[1]  3  3 62 62  8  8  3  3
+- Use ~rep~ to repeat a value, e.g. the number 1, four times:
+  #+begin_src R
+    rep( x = 1, times = 4)
+  #+end_src
+- You can repeat any R object, e.g. the vector ~c(3, 62, 8, 3)~, or the
+  scalar ~foo~, or an arbitrary arithmetic expression:
+  #+begin_src R
+    rep(x=c(3,62,8,3),times=3)
+    rep(x=foo, times=2)
+    rep(x=2*2, times=(foo*2)) # times must be a positive integer
+  #+end_src
+- The ~each~ argument of ~rep(x)~ says how many times each element of ~x~ is
+  repeated:
+  #+begin_src R :session :results output
+    rep(x=c(3,62), times=3)  # repeat vector three times
+    rep(x=c(3,62), each=2)   # repeat each vector element twice
+    rep(x=c(3,62), times=3, each=2) # repeat each vector element twice,
+                                            # and repeat the result three times
+  #+end_src
+- [ ] The default of ~times~ and ~each~ is ~1~. What is ~rep(c(3,62))~ ?
+- As with ~seq~, you can include the result of ~rep~ in a vector of the
+  same data type (e.g. ~numeric~):
+  #+begin_src R
+    foo <- 4 # store 4 in foo
 
-R> rep(x=c(3,62,8,3), times=3, each=2)
-[1]  3  3 62 62  8  8  3  3  3  3 62 62  8  8  3  3  3  3 62 62  8  8  3  3
-#+end_example
-If neither are specified, the default is ~times = each =
-1~. Therefore, what do you think is the output of ~rep(c(3,62,8,3))~[fn:3]?
+    ## create vector with rep and seq
+    c(3, 8.3, rep(x=32,times=foo), seq(from=-2,to=1,length.out=foo+1))
+  #+end_src
+* Repetition with characters
 
-As with ~seq~, you can include the result of ~rep~ in a vector of
-the same data type (e.g. "numeric"):
-#+begin_example
-R> foo <- 4
-R> c(3,8.3,rep(x=32,times=foo), seq(from=-2,to=1,length.out=foo+1))
-[1]  3.0  8.3 32.0 32.0 32.0 32.0 32.0 -2.0 -1.5 -1.0 -0.5  0.0  0.5  1.0
-#+end_example
+- ~rep~ also works for characters and character vectors:
+  #+begin_src R
+    rep(x="data science", times=2)
+    rep(x=c("data","science"), times=2)
+    rep(x=c("data","science"), times=2, each=2)
+  #+end_src
 
-~rep~ also works for characters and character vectors:
-#+begin_example
-R> rep("data science", times=2)
-[1] "data science" "data science"
+- [ ] What happens if you try to mix characters, numbers, Booleans?
+  Repeat an expression that has all three data types in it.
+  #+begin_src R
+    rep(x=c("data", 1, TRUE), times=2)
+  #+end_src
 
-R> rep(c("data","science"), times=2)
-[1] "data"    "science" "data"    "science"
+  #+begin_notes coercion
+  When you call a function with an argument of the wrong
+  type, or, as in the case of ~c~, you try to create a vector of
+  different data types, R responds with "[[https://www.oreilly.com/library/view/r-in-a/9781449358204/ch05s08.html][coercion]]" to make it happen.
+  #+end_notes
 
-R> rep(c("data","science"), times=2, each=2)
-[1] "data"    "data"    "science" "science" "data"    "data"    "science"
-[8] "science"
-#+end_example
+* Sorting and measuring lengths [[https://youtu.be/KRghGmuS6Ck][(video)]]
+#+attr_html: :width 500px
+[[../img/5_sorting.jpg]]
+* Sorting vector elements
 
-Did you hear the "matching data type" remark? Try to mix characters
-and numbers in a vector and see what happens! (Tip: it's called
-"[[https://www.oreilly.com/library/view/r-in-a/9781449358204/ch05s08.html][coercion]]").
+- /Sorting/ is important because we don't care about memory locations
 
-If you want a vector of a specified type and length, you can use the
-~vector~ function. Each of the values in the result is zero,
-~FALSE~, or an empty string, or whatever the equivalent of "nothing"
-is. You can check the ~class~ yourself:
-#+begin_example
-R> vector("numeric",5)
-[1] 0 0 0 0 0
-R> vector("logical",5)
-[1] FALSE FALSE FALSE FALSE FALSE
-R> vector("character",5)
-[1] "" "" "" "" ""
-#+end_example
-So-called "wrapper" functions exist, which achieve the same thing
-when creating vectors this way:
-#+begin_example
-R> numeric(5)
-[1] 0 0 0 0 0
-R> logical(5)
-[1] FALSE FALSE FALSE FALSE FALSE
-R> character(5)
-[1] "" "" "" "" ""
-#+end_example
-* TODO Sorting and measuring lengths
-[[https://youtu.be/KRghGmuS6Ck][[Watch the video (9:30)]​]]
------
-** SORT
-Sorting and ordering and ranking vector elements comes up all the
-time, because what we wish to know, or show, or display, is
-irrelevant to the way the data are stored. We'll talk about ordering
-and ranking later, when we have introduced sub-setting vectors.
+- ~sort(x)~ arranges the elements of x according to size
 
-R is simple, so of course the function we're looking for is called
-~sort~. Sorting a numerical vector rearranges the elements according
-to size. Let's look at a few examples
-#+begin_example sort
-R> sort(x = c(2.5, -1, -10, 3.44), decreasing = FALSE)
-[1] -10.00  -1.00   2.50   3.44
+- The default order is ascending, or ~decreasing = FALSE~
+  #+begin_src R
+    sort(x = c(2.5, -1, -10, 3.44))  # sort ascending
+    sort(x = c(2.5, -1, -10, 3.44), decreasing = FALSE) # sort ascending
+    sort(x = c(2.5, -1, -10, 3.44), decreasing = TRUE)  # sort descending
+  #+end_src
 
-R> sort(x = c(2.5, -1, -10, 3.44), decreasing = TRUE)
-[1]   3.44   2.50  -1.00 -10.00
-#+end_example
-You supply a vector to the function as the argument ~x~, and a
-second argument, ~decreasing~, to indicate the order you wish to
-sort in: ~decreasing=FALSE~ is the default (i.e. increasing) -
-sorting from smallest to largest, while ~decreasing=TRUE~ means
-searching from largest to smallest.
+- Special values are removed, put last or first with ~na.last~. This
+  works for all special values - ~NA~, ~NaN~ and ~Inf~.
+  #+begin_src R
+    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=TRUE)  # put NA last
+    sort(x = c(2.5, -1, -10, 3.44,NaN), na.last=TRUE) # put NaN last
+    sort(x = c(2.5, -1, -10, 3.44,Inf), na.last=TRUE) # put Inf last
+    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=FALSE) # put NA first
+    sort(x = c(2.5, -1, -10, 3.44,NA), na.last=NA)    # remove NA
+  #+end_src
 
-Note: the argument value of ~decreasing~ is not ~numeric~, it is
-~logical~.
-** LENGTH
-The ~length~ function (check the help!) gets or sets the length of
-vectors[fn:4] - for vectors, ~length(x)~ determines, how many
-entries the vector has:
-#+begin_example
-R> length(x=c(3,2,8,1))
-[1] 4
-R> length(x=5:13)
-[1] 9
-#+end_example
+- [ ] Remember that ~NA~ is a ~logical~ object. How can you check that?
+  #+begin_src R
+    class(NA)
+  #+end_src
+* Length of vectors
 
-You can still include objects that need to be evaluated - arithmetic
-computations, or sequences, or repetitions - but ~length~ will tell
-you the number of entries after the inner functions have been executed.
+- The ~length~ function gets or sets the length of vectors[fn:4]:
+  #+begin_src R
+    length(x = c(3,2,8,1,10))  # vector of 5 elements
+    length(x = 5:13)           # vector of 9 elements
+    length(x = c(3,2,2^3,5*3)) # vector of 4 elements
+    length(1000)               # scalar/vector of 1 element
+  #+end_src
 
-#+begin_example
-R> foo <- 4
-R> bar <- c(3, 8.3, rep(x=32, times=foo), seq(from=-2, to=1, length.out=foo+1))
-R> length(bar)
-[1] 11
-R> bar
-[1]  3.00  8.30 32.00 32.00 32.00 32.00 -2.00 -1.25 -0.50  0.25  1.00
-#+end_example
+- If you have functions inside the object definition, ~length~ gives you
+  the number of entries /after/ the inner functions have been executed:
+  #+begin_src R
+    foo <- 4
+    bar <- c(3,8.3,rep(x=32,times=foo),seq(from=-2,to=1,length.out=foo+1))
+    bar
+    length(bar)
+  #+end_src
 
-The help page ~?length~ contains a peculiar example: you can measure
-the utility function ~options()~, it seems! (In fact, I didn't know
-this!) Try it yourself: type ~length(options())~. Can you figure out
-why the answer is ~68~?
+- [ ] R's display options are stored in ~options()~, which is a
+  ~list~. Lists have a length like options. How many options does
+  ~options()~ have?
+  #+begin_src R
+    class(options())   # class of options()
+    length(options())  # length of options() : number of options
+    class(options)     # class of options as a function
+    class(options()$digits) # class of one options() element
+    length(options()$digits) # length of one options() element
+  #+end_src
+
+  #+RESULTS:
+  : [1] "list"
+  : [1] 65
+  : [1] "function"
+  : [1] "integer"
+  : [1] 1
+  
 * TODO Exercises [[https://youtu.be/lKxNNR1l3u8][(video)]]
 
 1) Create and store a sequence of values from ~5~ to ~-11~ that progresses
@@ -931,14 +910,10 @@ origin of the name "histogram" is not clear - it was probably invented
 by Pearson, who introduced this type of graph, and is short for
 "HISTorical diaGRAM".
 
-[fn:3]The answer is ~[1] 3 62 8 3~. ~times=each=1~ means that the
-vector and each of its elements is repeated once, i.e. identical to
-the input vector.
-
-[fn:4] Both ~length~ and ~sort~, as you can read in the respective
-help pages, work both for vectors and for "factors". These are
-necessary whenever we deal with qualities (like "male" or "female")
-rather than quantities. You'll learn about them soon!
+[fn:4] Both ~length~ and ~sort~, as you can read in the respective help
+pages, work both for vectors and for factors. These are necessary
+whenever we deal with qualities or categories (like "male" or
+"female") rather than quantities. You'll learn about them soon!
 
 [fn:5] You should look up the examples in ~help(names)~: the data set
 ~islands~ is a named vector suited to play around with vector naming.
