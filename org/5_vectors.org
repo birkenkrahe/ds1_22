@@ -207,7 +207,7 @@ The resulting session output:
     is.infinite(specvec1)  # testing for infiniteness
     class(specvec1)
     #+end_src
-* NEXT Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
+* Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
 #+attr_html: :width 600px
 [[../img/nile.png]]
 
@@ -336,7 +336,7 @@ The resulting session output:
     hist(Nile)
   #+end_src
 
-- [ ] *Can you interpret the plot given what you know about the data?*
+- [X] *Can you interpret the plot given what you know about the data?*
 
 - [ ] Add the argument ~breaks=20~ to the ~hist~ function call. Change the
   file name in the code block header if you want to create a new PNG file
@@ -392,7 +392,7 @@ system of learning - looking up the help content - and the more you
 look at help pages, the more you recognize known concepts.
 #+end_notes
 
-* Creating sequences and repetitions [[https://youtu.be/G2P_MVq3eyM][(video)]]
+* NEXT Creating sequences and repetitions [[https://youtu.be/G2P_MVq3eyM][(video)]]
 #+attr_html: :width 600px
 [[../img/5_sequence.jpg]]
 * The colon ~:~ operator

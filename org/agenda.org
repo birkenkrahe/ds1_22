@@ -1,7 +1,7 @@
 #+TITLE:Agenda - DSC 105
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE:Agenda - DSC 105 - Introduction to Data Science, Fall 2022
-#+STARTUP:overview hideblocks indent inlineimages 
+#+STARTUP:overview hideblocks indent inlineimages
 #+OPTIONS: toc:nil num:nil ^:nil
 * README
 
@@ -623,7 +623,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 
 1) What is ~log(1)~ independent of the base parameter
 2) What are exponentiation operators in R: ~^, ~**~, ~exp~
-      #+begin_src R
+   #+begin_src R
      exp(1)
    #+end_src
 
@@ -667,7 +667,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 9) What are the special values in R? Are they all numeric?
    #+begin_src R :results output
      class(NaN)
-     class(NA) 
+     class(NA)
      class(Inf)
    #+end_src
 
@@ -678,7 +678,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 10) What's ~NA+1~
 
 11) What's ~NA**0~
-    
+
 12) What's ~mean(1,3)~
 
     #+begin_src R :results output
@@ -689,9 +689,9 @@ tendency to miss lunch.” — Tim Berners-Lee
     #+RESULTS:
     : [1] 1
     : [1] 2
-    
+
 13) What are the elements of a complete reference?
-    
+
 14) How can you find out what is ~$HOME~ to Emacs?
     #+attr_html: :width 600px
     [[../img/emacshome.png]]
@@ -736,7 +736,6 @@ tendency to miss lunch.” — Tim Berners-Lee
 #+end_example
 
 * Week 6: Vectors in R (continued)
-** IN PROGRESS R's workhorse: Vectors in R
 #+attr_html: :width 600px
 [[../img/5_workhorse.png]]
 
@@ -744,6 +743,28 @@ tendency to miss lunch.” — Tim Berners-Lee
 - Vectors as sequences and repetitions
 - Sorting and measuring length of vectors
 - Naming, indexing and subsetting
+* Featured application: S
+
+- John M. Chambers: S, R, and Data Science ([[This talk discusses the history and characteristics of the R software. R began, 20-odd years ago, as the open-source clone of the S software. So the story of R has to start with S and with its history. S came from the Statistics and Data Analysis Research group at AT&T Bell Labs. We'll see that the design goal of S, and so of R, is to support studies in what we'd now call data science. The principles resulting from this goal are still central to computing for data science.][video]])
+  #+attr_html: :width 400px
+  [[../img/chambers.png]]
+  #+begin_quote
+  This talk discusses the history and characteristics of the R
+  software. R began, 20-odd years ago, as the open-source clone of the
+  S software. So the story of R has to start with S and with its
+  history. S came from the Statistics and Data Analysis Research group
+  at AT&T Bell Labs. We'll see that the design goal of S, and so of R,
+  is to support studies in what we'd now call data science. The
+  principles resulting from this goal are still central to computing
+  for data science.
+  #+end_quote
+
+- Development of S was influenced by [[https://en.wikipedia.org/wiki/APL_(programming_language)][APL ("A Programming Language")]],
+  whose central data structure is the multi-dimensional array. What
+  does the APL logo remind you of?
+
+  [[../img/apl.png]]
+  
 * References
 
 Chambers J (2008). Software for Data Analysis - Programming with
