@@ -683,6 +683,7 @@ look at help pages, the more you recognize known concepts.
   #+begin_src R
     x <- (1:5)^2   # example vector
     x
+    x[1] # extract the first element only
     x[c(1,3,5)] # extract elements with indices 1,3,5
   #+end_src
 - Passing a vector of negative numbers returns the slice of the vector
