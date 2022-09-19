@@ -580,7 +580,7 @@ look at help pages, the more you recognize known concepts.
   #+end_src
 * Length of vectors
 
-- The ~length~ function gets or sets the length of vectors[fn:4]:
+- The ~length~ function gets or sets the length of vectors[fn:3]:
   #+begin_src R
     length(x = c(3,2,8,1,10))  # vector of 5 elements
     length(x = 5:13)           # vector of 9 elements
@@ -614,122 +614,128 @@ look at help pages, the more you recognize known concepts.
   : [1] "function"
   : [1] "integer"
   : [1] 1
-  
+
 * TODO Exercises [[https://youtu.be/lKxNNR1l3u8][(video)]]
 
-1) Create and store a sequence of values from ~5~ to ~-11~ that progresses
+1) Create a new section in your ~vectors.org~ practice file for the
+   solution to these exercises.
+
+2) Create and store a sequence of values from ~5~ to ~-11~ that progresses
    in steps of ~0.3~.
 
-2) Overwrite the object from (1) using the same sequence with the
+3) Overwrite the object from (2) using the same sequence with the
    order reversed.
 
-3) Repeat the vector ~c(-1,3,-5,7,-9)~ twice, with each element repeated
+4) Repeat the vector ~c(-1,3,-5,7,-9)~ twice, with each element repeated
    ~10~ times, and store the result. Display the result sorted from
    largest to smallest.
 
-4) Create and store a vector that contains, in any configuration, the
+5) Create and store a vector that contains, in any configuration, the
    following:
    - A sequence of integers from ~6~ to ~12~ (inclusive)
    - A threefold repetition of the value ~5.3~
    - The number ~-3~
    - A sequence of nine values starting at ~102~ and ending at the
-     number that is the total length of the vector created in problem (3).
-   - Confirm that the length of the vector created is ~20~
+     number that is the total length of the vector created in problem (4).
+   - Confirm that the length of the vector created is ~20~.
 
-* TODO Naming
-# Cp. Cotton, p. 42
-Each vector element can be given a name. This can make code much
-more readable. Elements can be named inside the vector definition:
-#+begin_src R :session
-  c(apple = 1, banana = 2, "kiwi fruit" = 3, 4)
-#+end_src
+* Naming
 
-Or they can be named explicitly using the function ~names~[fn:5]
-#+begin_src R :session
-  x <- 1:4
-  names(x) <- c("apple", "bananas", "kiwi fruit", "")
-  x
-#+end_src
+- Naming vector elements makes code more readable.
+  #+begin_src R :session
+    c(apple = 1, banana = 2, "kiwi fruit" = 3, 4)
+  #+end_src
+- Or you can name elements explicitly using the function ~names~[fn:4]
+  #+begin_src R :session
+    x <- 1:4
+    names(x) <- c("apple", "bananas", "kiwi fruit", "")
+    x
+    names(x)
+  #+end_src
+- Looking under the hood of ~names~:
+  #+begin_src R :session
+    foo <- 1:4  # vector 1,2,3,4
+    names(foo)  # vector is not named (NULL)
+    names(foo) <- letters[1:4]  # assign letter names
+    names(foo)
+    foo  # default display includes names
+    str(foo)  # structures reveals names as attributes
+    attributes(foo) # attributes is a list of 1 element, $names
+    str(attributes(foo))
+  #+end_src
 
-~names(x)~ returns the names of a vector, and you can remove the
-names by overwriting ~names(x)~ with ~NULL~, an object whose value
-is undefined (not to be mixed up with ~NA~ and ~NaN~):
+  #+RESULTS:
+  #+begin_example
+  NULL
+  [1] "a" "b" "c" "d"
+  a b c d
+  1 2 3 4
+   Named int [1:4] 1 2 3 4
+   - attr(*, "names")= chr [1:4] "a" "b" "c" "d"
+  $names
+  [1] "a" "b" "c" "d"
+  List of 1
+   $ names: chr [1:4] "a" "b" "c" "d"
+  #+end_example
+* Length of ~names~ vs. vector
 
-#+begin_src R :session
-  names(1:4)  # unnamed sequence vector has the value NULL
-  names(c(apple=1,banana=2,3))  # last element's name is empty ""
-  class(names)
-#+end_src
+- What if your names are too short (or too long) for your vector?
 
-And here are some data type checks involving names:
-#+begin_src R :session
-  class(names)             # "function"
-  class(names(1:4))        # "NULL"
-  class(c(apple=1))        # "numeric"
-  class(names(c(apple=1))) # "character"
-#+end_src
+- Define a vector ~week~ whose elements are the names of weekdays
+  #+begin_src R
+    week <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
+    week
+  #+end_src
 
-What if your names are too short (or too long) for your vector?
-Watch this:
-#+begin_src R :session
-  week <- c("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
-  week    # "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"
-  vec <- rep(x=c(1,2,3,4,5,6,7),times=2)
-  vec   #  1 2 3 4 5 6 7 1 2 3 4 5 6 7
-  names(vec) <- week
-  vec   # this one shows seven NA names
-  vec[8:14]                 # subvector with the NA names only
-  names(vec)[8:14] <- week  # name the subvector (remove NA)
-  names(vec)[-(8:14)]       # deleting names subvector
-  names(vec) <- NULL        # remove names
-#+end_src
-* TODO Example dataset ~islands~
-This is the example used in ~help(names)~.
-#+begin_example
-> str(islands)
- Named num [1:48] 11506 5500 16988 2968 16 ...
- - attr(*, "names")= chr [1:48] "Africa" "Antarctica" "Asia" "Australia" ...
-> head(islands)
-      Africa   Antarctica         Asia    Australia Axel Heiberg       Baffin
-       11506         5500        16988         2968           16          184
-#+end_example
-(Yes, "Axel Heiberg Island" exists: [[https://en.wikipedia.org/wiki/Axel_Heiberg_Island][$16,671$ square miles according to Wikipedia]].)
-* TODO Indexing vectors (again)
-[Watch video]
+- Define a vector ~foo~ that contains seven numbers, and name its
+  elements according to the ~week~.
+  #+begin_src R
+    foo <- 1:7
+    names(foo) <- week
+    foo
+  #+end_src
 
-# cp. Cotton, Learning R
+- Copy ~week~ to ~workweek~, and remove ~"Saturday" and "Sunday"~ from the
+  ~workweek~.
+  #+begin_src R
+    workweek <- week[1:5] # or week[-(6:7)]
+    workweek
+  #+end_src
+
+- Copy ~foo~ to ~bar~, and overwrite ~names(bar)~ with ~workweek~.
+  #+begin_src R results output
+    bar <- foo
+    bar
+    names(bar) <- workweek
+    names(bar[6:7])  # names of the last two elements missing - NA
+    names(bar) <- NULL # remove names altogether
+    bar
+  #+end_src
+* READ Indexing vectors - summary
 - Passing a vector of positive numbers returns the slice of the
   vector containing the elements at those locations.
-#+begin_example
-> x <- (1:5)^2   # example vector
-> x
-[1]  1  4  9 16 25
- > x[c(1,3,5)]
-[1]  1  9 25
-#+end_example
-- Passing a vector of negative numbers returns the slice of the
-vector containing the elements everywhere except at those
-locations.
-#+begin_example
-> x[c(-2,-4)]
-[1]  1  9 25
-#+end_example
-- Passing a logical vector returns the slice of the vector
-containing the elements where the index is TRUE.
-#+begin_example
-> x[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
-[1]  1  9 25
-#+end_example
+  #+begin_src R
+    x <- (1:5)^2   # example vector
+    x
+    x[c(1,3,5)] # extract elements with indices 1,3,5
+  #+end_src
+- Passing a vector of negative numbers returns the slice of the vector
+  containing the elements everywhere except at those locations.
+  #+begin_src R
+    x[c(-2,-4)]
+  #+end_src
+- Passing a logical vector returns the slice of the vector containing
+  the elements where the index is ~TRUE~.
+  #+begin_src R
+    x[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
+  #+end_src
 - For named vectors, passing a character vector of names returns the
-slice of the vector containing the elements with those names.
-#+begin_example
-> names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
-> x[c("one", "nine", "twenty five")]
-   one        nine twenty five
-     1           9          25
-#+end_example
-* TODO Coercion
-# (Irizarry p. 32)
+  slice of the vector containing the elements with those names.
+  #+begin_src R
+    names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
+    x[c("one", "nine", "twenty five")]
+  #+end_src
+* READ Coercion - summary
 All vector elements have to be of the same ~class~ or type:
 ~logical~, ~numeric~, or ~character~. What happens when you mix
 these? R will make it happen at the price of "coercion". Let's look
@@ -812,7 +818,7 @@ converted into ~TRUE~:
 I think that's enough evidence for you to stay away from mixing data
 types in vectors - though the conversion functions will come in very
 handy!
-* TODO Summary
+* READ Summary with examples
 - R is a functional language in which everything's an object.
 - R functions differ in: performance (speed), ease-of-use and
   clarity.
@@ -829,7 +835,7 @@ handy!
 - Vector length can be measured as the number of vector elements with ~length~.
 - Index vectors can be used to select sub-vectors.
 - Negative index values delete the corresponding vector elements
-  -----
+
   *R CODE EXAMPLES:*
   | ~x <- 5~                                   | assign ~5~ to object ~x~                      |
   | ~x <- x+1~                                 | overwrite ~x~ (new value)                     |
@@ -852,7 +858,7 @@ handy!
   | ~names(x)~                                 | return names of vector ~x~ (or ~NULL~)        |
   | ~as.character~, ~as.numeric~, ~as.logical~ | coerce arguments to the resp. class           |
 
-* TODO Concept summary
+* READ Concept summary
 #+attr_html: :width 400px
 [[../img/4_summary.jpg]]
 
@@ -871,7 +877,7 @@ handy!
 - Infinity ~Inf~, not-a-number ~NaN~, and not available numbers ~NA~
   are /special values/ in R.
 
-* TODO Code summary
+* READ Code summary
 
 | CODE           | DESCRIPTION                           |
 |----------------+---------------------------------------|
@@ -910,48 +916,48 @@ origin of the name "histogram" is not clear - it was probably invented
 by Pearson, who introduced this type of graph, and is short for
 "HISTorical diaGRAM".
 
-[fn:4] Both ~length~ and ~sort~, as you can read in the respective help
+[fn:3] Both ~length~ and ~sort~, as you can read in the respective help
 pages, work both for vectors and for factors. These are necessary
 whenever we deal with qualities or categories (like "male" or
 "female") rather than quantities. You'll learn about them soon!
 
-[fn:5] You should look up the examples in ~help(names)~: the data set
+[fn:4] You should look up the examples in ~help(names)~: the data set
 ~islands~ is a named vector suited to play around with vector naming.
 
-[fn:6]You know this, too: ~str(Nile)~ for the structure, or
-~head(Nile)~ to see the first few (6) elements.
+[fn:5] DEFINITION NOT FOUND.
 
-[fn:7] This page-wise presentation mode with previous|next|up|down
-navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
-presentation.
-
-[fn:8] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
-commands. Will only work if the corresponding dataset has been
-loaded - for ~Nile~, this is the case.
-
-[fn:9] This was mentioned in the "Getting started with R" lesson. To
-list all built-in datasets in base-R, enter simply ~data()~. This is
-the same function that you use to load a dataset after loading the
-respective library (which contains more than one dataset).
-
-[fn:10] Fun fact: 'FORTRAN' stands for 'FORmula TRANslator'. A large
-part of R's code base is written in FORTRAN, which is the oldest
-programming language specifically used for scientific computations
-(e.g. it was the first language I learnt at university).
-
-[fn:11] For a while, I had also envisioned that I might use a
-block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
-able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
-courses]] on Snap! and you can learn all about Scratch online, too.
-
-[fn:12] Not just one MOOC, in fact, but a series of nine courses
-altogether, with which you can get a professional certificate. These
-MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
-
-[fn:13] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
+[fn:6] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
 [τέχνη], tiké [téchne], 'art') is a branch of mathematics that
 consists of the study of numbers, especially the properties of the
 traditional operations on them—addition, subtraction, multiplication,
 division, exponentiation and extraction of roots." ([[https://en.wikipedia.org/wiki/Arithmetic][Wikipedia]])
 
-[fn:14] DEFINITION NOT FOUND.
+[fn:7] Not just one MOOC, in fact, but a series of nine courses
+altogether, with which you can get a professional certificate. These
+MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
+
+[fn:8] For a while, I had also envisioned that I might use a
+block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
+able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
+courses]] on Snap! and you can learn all about Scratch online, too.
+
+[fn:9] Fun fact: 'FORTRAN' stands for 'FORmula TRANslator'. A large
+part of R's code base is written in FORTRAN, which is the oldest
+programming language specifically used for scientific computations
+(e.g. it was the first language I learnt at university).
+
+[fn:10] This was mentioned in the "Getting started with R" lesson. To
+list all built-in datasets in base-R, enter simply ~data()~. This is
+the same function that you use to load a dataset after loading the
+respective library (which contains more than one dataset).
+
+[fn:11] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
+commands. Will only work if the corresponding dataset has been
+loaded - for ~Nile~, this is the case.
+
+[fn:12] This page-wise presentation mode with previous|next|up|down
+navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
+presentation.
+
+[fn:13]You know this, too: ~str(Nile)~ for the structure, or
+~head(Nile)~ to see the first few (6) elements.
