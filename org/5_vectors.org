@@ -199,19 +199,14 @@ The resulting session output:
 
   #+begin_src R
     specvec <- c(NA, NaN) # a vector with a NA and a NaN
- specvec
     class(specvec)
-
     is.nan(specvec)  # testing for NaN values
     is.na(specvec)   # testing for NA values
-
     specvec1 <- c(specvec, Inf, -Inf) # a new vector with Inf, Inf
-     specvec1
-
-      is.finite(specvec1)  # testing for finiteness
-     is.infinite(specvec1)  # testint for infiniteness
-     class(specvec1)
-  #+end_src
+    is.finite(specvec1)  # testing for finiteness
+    is.infinite(specvec1)  # testing for infiniteness
+    class(specvec1)
+    #+end_src
 * NEXT Example: down the Nile [[https://youtu.be/wwsD2KuoKt8][(video)]]
 #+attr_html: :width 600px
 [[../img/nile.png]]
