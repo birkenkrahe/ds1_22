@@ -766,6 +766,8 @@ tendency to miss lunch.” — Tim Berners-Lee
   [[../img/apl.png]]
   
 * References
+#+attr_html: :width 500px
+[[../img/books.jpg]]
 
 Chambers J (2008). Software for Data Analysis - Programming with
 R. New York: Springer. Online: [[https://doi.org/10.1007/978-0-387-75936-4][doi.org/10.1007/978-0-387-75936-4]]
