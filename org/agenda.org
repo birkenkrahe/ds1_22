@@ -743,6 +743,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 - Vectors as sequences and repetitions
 - Sorting and measuring length of vectors
 - Naming, indexing and subsetting
+- Practice creating vectors
 
 * Featured application: S
 
@@ -780,7 +781,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 - The next DataCamp assignment ([[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]) postponed by 1 week
   
 - The next 2-3 assignments will be independent sets of exercises to be
-  completed in and submitted as Org-mode files - 1st assignment today!
+  completed in and submitted as Org-mode files - [[https://lyon.instructure.com/courses/568/assignments/2952][1st assignment today!]]
   
 * References
 #+attr_html: :width 500px

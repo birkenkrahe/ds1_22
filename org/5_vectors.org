@@ -588,13 +588,13 @@ look at help pages, the more you recognize known concepts.
 #+attr_html: :width 400px
 [[../img/5_gnome.jpg]]
 
-- Practice what you've learnt independently by solving problems
-- Save the ~raw~  practice file from GitHub as an Org-mode file
+- Practice what you've learnt by solving problems independently
+- Save the [[https://raw.githubusercontent.com/birkenkrahe/ds1/piHome/org/5_vectors_practice.org][raw practice file from GitHub]] as an Org-mode file
 - Complete the file in Emacs by using R code blocks
-- Submit the result on Canvas no later than Monday September 26 8 am
+- [[https://lyon.instructure.com/courses/568/assignments/2952][Submit the result on Canvas]] no later than Monday September 26 8 am
   (to give me an opportunity to check and grade your results)
 
-* Naming
+* Naming vectors
 
 - Naming vector elements makes code more readable.
   #+begin_src R :session
