@@ -441,7 +441,6 @@ look at help pages, the more you recognize known concepts.
   #+end_notes
 
 * Sequences
-
 - The function ~seq~ allows modifying the step-width with ~by~:
   #+begin_src R
     seq(from = 3, to = 27, by = 3)
@@ -478,7 +477,6 @@ look at help pages, the more you recognize known concepts.
   #+end_src
   #+end_notes
 * Repetition
-
 - Use ~rep~ to repeat a value, e.g. the number 1, four times:
   #+begin_src R
     rep( x = 1, times = 4)
@@ -515,7 +513,6 @@ look at help pages, the more you recognize known concepts.
     rep(x=c("data","science"), times=2)
     rep(x=c("data","science"), times=2, each=2)
   #+end_src
-
 - [ ] What happens if you try to mix characters, numbers, Booleans?
   Repeat an expression that has all three data types in it.
   #+begin_src R
@@ -527,7 +524,6 @@ look at help pages, the more you recognize known concepts.
   type, or, as in the case of ~c~, you try to create a vector of
   different data types, R responds with "[[https://www.oreilly.com/library/view/r-in-a/9781449358204/ch05s08.html][coercion]]" to make it happen.
   #+end_notes
-
 * Sorting and measuring lengths [[https://youtu.be/KRghGmuS6Ck][(video)]]
 #+attr_html: :width 500px
 [[../img/5_sorting.jpg]]
@@ -588,36 +584,15 @@ look at help pages, the more you recognize known concepts.
     length(options()$digits) # length of one options() element
   #+end_src
 
-  #+RESULTS:
-  : [1] "list"
-  : [1] 65
-  : [1] "function"
-  : [1] "integer"
-  : [1] 1
+* TODO Practice: creating vectors
+#+attr_html: :width 400px
+[[../img/5_gnome.jpg]]
 
-* TODO Exercises [[https://youtu.be/lKxNNR1l3u8][(video)]]
-
-1) Create a new section in your ~vectors.org~ practice file for the
-   solution to these exercises.
-
-2) Create and store a sequence of values from ~5~ to ~-11~ that progresses
-   in steps of ~0.3~.
-
-3) Overwrite the object from (2) using the same sequence with the
-   order reversed.
-
-4) Repeat the vector ~c(-1,3,-5,7,-9)~ twice, with each element repeated
-   ~10~ times, and store the result. Display the result sorted from
-   largest to smallest.
-
-5) Create and store a vector that contains, in any configuration, the
-   following:
-   - A sequence of integers from ~6~ to ~12~ (inclusive)
-   - A threefold repetition of the value ~5.3~
-   - The number ~-3~
-   - A sequence of nine values starting at ~102~ and ending at the
-     number that is the total length of the vector created in problem (4).
-   - Confirm that the length of the vector created is ~20~.
+- Practice what you've learnt independently by solving problems
+- Save the ~raw~  practice file from GitHub as an Org-mode file
+- Complete the file in Emacs by using R code blocks
+- Submit the result on Canvas no later than Monday September 26 8 am
+  (to give me an opportunity to check and grade your results)
 
 * Naming
 

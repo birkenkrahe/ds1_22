@@ -743,6 +743,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 - Vectors as sequences and repetitions
 - Sorting and measuring length of vectors
 - Naming, indexing and subsetting
+
 * Featured application: S
 
 - John M. Chambers: S, R, and Data Science ([[This talk discusses the history and characteristics of the R software. R began, 20-odd years ago, as the open-source clone of the S software. So the story of R has to start with S and with its history. S came from the Statistics and Data Analysis Research group at AT&T Bell Labs. We'll see that the design goal of S, and so of R, is to support studies in what we'd now call data science. The principles resulting from this goal are still central to computing for data science.][video]])
@@ -764,6 +765,22 @@ tendency to miss lunch.” — Tim Berners-Lee
   does the APL logo remind you of?
 
   [[../img/apl.png]]
+  
+* DataCamp deal - mid-term miracle
+
+#+attr_html: :width 400px
+[[../img/miracle.jpg]]
+
+- It's a mid-term miracle! You can complete missing DataCamp lessons
+  by Friday, Sept 30, 12 pm for 50% of the points! Alleluiah!
+
+- This course is all about *getting the skills*, not about getting the
+  certificate(s) or the grades (though these are nice to have, too).
+
+- The next DataCamp assignment ([[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]) postponed by 1 week
+  
+- The next 2-3 assignments will be independent sets of exercises to be
+  completed in and submitted as Org-mode files - 1st assignment today!
   
 * References
 #+attr_html: :width 500px
