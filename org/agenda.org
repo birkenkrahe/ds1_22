@@ -767,7 +767,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 
   [[../img/apl.png]]
   
-* DataCamp deal - mid-term miracle
+* NEXT DataCamp deal - mid-term miracle
 
 #+attr_html: :width 400px
 [[../img/miracle.jpg]]
@@ -783,6 +783,9 @@ tendency to miss lunch.” — Tim Berners-Lee
 - The next 2-3 assignments will be independent sets of exercises to be
   completed in and submitted as Org-mode files - [[https://lyon.instructure.com/courses/568/assignments/2952][1st assignment today!]]
   
+* TODO About the 2nd sprint review
+[[../img/scrum.jpg]]
+
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
