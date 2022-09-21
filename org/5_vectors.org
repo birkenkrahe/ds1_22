@@ -441,6 +441,7 @@ look at help pages, the more you recognize known concepts.
   #+end_notes
 
 * Sequences
+
 - The function ~seq~ allows modifying the step-width with ~by~:
   #+begin_src R
     seq(from = 3, to = 27, by = 3)

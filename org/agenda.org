@@ -769,7 +769,7 @@ tendency to miss lunch.” — Tim Berners-Lee
   
 * NEXT DataCamp deal - mid-term miracle
 
-#+attr_html: :width 400px
+#+attr_html: :width 300px
 [[../img/miracle.jpg]]
 
 - It's a mid-term miracle! You can complete missing DataCamp lessons
@@ -785,6 +785,9 @@ tendency to miss lunch.” — Tim Berners-Lee
   
 * TODO About the 2nd sprint review
 [[../img/scrum.jpg]]
+* Review: creating, sorting, measuring vectors
+
+- ~options()~ question - how many parameters does it have?
 
 * References
 #+attr_html: :width 500px
