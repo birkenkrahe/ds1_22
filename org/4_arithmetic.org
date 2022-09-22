@@ -70,7 +70,7 @@ value - more on this below) - see figure:
 
 #+end_notes
 
-* DONE Practice: Formula Translator
+* Practice: Formula Translator
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 * Mathematical functions
@@ -179,7 +179,7 @@ of 10.
 
 - ~exp(1)~ = e = ~271828182845e-11~ = 271828182845\times10^{-11}
 
-* DONE Practice: e-notation
+* Practice: e-notation
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -224,7 +224,7 @@ to improve readability. Extra bits are stored by R
    missing values: compute ~is.nan(sqrt(-1))~ for example.
 #+end_notes
 
-* DONE Practice: special numbers
+* Practice: special numbers
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -243,7 +243,7 @@ to improve readability. Extra bits are stored by R
 
 #+end_notes
 
-* DONE Practice: special functions
+* Practice: special functions
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 * Logical values and operators
@@ -259,7 +259,7 @@ stay away from saving time by using the short versions of these
 values.
 #+end_notes
 
-* DONE Practice: logical values
+* Practice: logical values
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 
@@ -282,7 +282,7 @@ In the last command, we generated a ~FALSE~ value by comparing two
 
 #+end_notes
 
-* DONE Practice: logical operators
+* Practice: logical operators
 #+attr_html: :width 500px
 [[../img/practice.jpg]]
 

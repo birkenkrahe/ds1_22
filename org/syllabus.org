@@ -325,6 +325,7 @@ behind.
   | October 20     | Service day (no classes)        |
   | November 23-27 | Thanksgiving break (no classes) |
   | December 2     | Last day of classes             |
+  | December 4-9   | Final exams                     |
   | December 14    | Final grades due                |
 
 - Class session schedule

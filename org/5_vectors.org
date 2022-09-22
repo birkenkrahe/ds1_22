@@ -4,7 +4,7 @@
 #+PROPERTY: header-args:R :results output :session *R*
 #+attr_html: :width 700px
 [[../img/5_workhorse.png]]
-* DONE Preparations to code along
+* Preparations to code along
 #+attr_html: :width 400px
 [[../img/emacsprep.png]]
 
@@ -392,7 +392,7 @@ system of learning - looking up the help content - and the more you
 look at help pages, the more you recognize known concepts.
 #+end_notes
 
-* NEXT Creating sequences and repetitions [[https://youtu.be/G2P_MVq3eyM][(video)]]
+* Creating sequences and repetitions [[https://youtu.be/G2P_MVq3eyM][(video)]]
 #+attr_html: :width 600px
 [[../img/5_sequence.jpg]]
 * The colon ~:~ operator
@@ -595,7 +595,7 @@ look at help pages, the more you recognize known concepts.
 - [[https://lyon.instructure.com/courses/568/assignments/2952][Submit the result on Canvas]] no later than Monday September 26 8 am
   (to give me an opportunity to check and grade your results)
 
-* Naming vectors
+* TODO Naming vectors
 
 - Naming vector elements makes code more readable.
   #+begin_src R :session
@@ -619,7 +619,7 @@ look at help pages, the more you recognize known concepts.
     attributes(foo) # attributes is a list of 1 element, $names
     str(attributes(foo))
   #+end_src
-* Length of ~names~ vs. vector
+* TODO Length of ~names~ vs. vector
 
 - What if your names are too short (or too long) for your vector?
 
@@ -653,7 +653,7 @@ look at help pages, the more you recognize known concepts.
     names(bar) <- NULL # remove names altogether
     bar
   #+end_src
-* Indexing vectors - summary
+* TODO Indexing vectors - summary
 - Passing a vector of positive numbers returns the slice of the
   vector containing the elements at those locations.
   #+begin_src R
@@ -678,7 +678,7 @@ look at help pages, the more you recognize known concepts.
     names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
     x[c("one", "nine", "twenty five")]
   #+end_src
-* Coercion - summary
+* TODO Coercion - summary
 All vector elements have to be of the same ~class~ or type:
 ~logical~, ~numeric~, or ~character~. What happens when you mix
 these? R will make it happen at the price of "coercion". Let's look
