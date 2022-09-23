@@ -585,7 +585,8 @@ look at help pages, the more you recognize known concepts.
     length(options()$digits) # length of one options() element
   #+end_src
 
-* TODO Practice: creating vectors
+* IN PROGRESS Practice: creating vectors
+DEADLINE: <2022-09-26 Mon 08:00>
 #+attr_html: :width 400px
 [[../img/5_gnome.jpg]]
 

@@ -784,7 +784,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 - The next 2-3 assignments will be independent sets of exercises to be
   completed in and submitted as Org-mode files - [[https://lyon.instructure.com/courses/568/assignments/2952][1st assignment today!]]
   
-* Review: creating, sorting, measuring vectors
+* TODO Review: creating, sorting, measuring vectors
 
 1) How many parameters does ~options()~ have?
    #+begin_src R
