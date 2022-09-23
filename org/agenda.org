@@ -784,7 +784,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 - The next 2-3 assignments will be independent sets of exercises to be
   completed in and submitted as Org-mode files - [[https://lyon.instructure.com/courses/568/assignments/2952][1st assignment today!]]
   
-* TODO Review: creating, sorting, measuring vectors
+* DONE Review: creating, sorting, measuring vectors
 
 1) How many parameters does ~options()~ have?
    #+begin_src R
@@ -819,14 +819,6 @@ tendency to miss lunch.” — Tim Berners-Lee
      rep(x=1,times=2,length.out=NA,each=2)
    #+end_src
 
-   #+RESULTS:
-   : [1]   1.0  34.5   1.0   1.0 500.0   8.0   9.0  10.0
-   : [1] 8
-   : [1] 1 1
-   : [1] 1 1
-   : [1] 1 1 1 1
-   : [1] 1 1 1 1
-
 * TODO About the 2nd sprint review
 #+attr_html: :width 600px
 [[../img/scrum.png]]
@@ -845,6 +837,7 @@ tendency to miss lunch.” — Tim Berners-Lee
   1) Emphasis on basics and concepts
   2) Emphasis on data origin, quality
   3) Emphasis on basic uses of R
+- If you don't know what this means --> ASK ME
 
 * TODO Vectors: naming, indexing, coercion
 #+attr_html: :width 600px
@@ -852,10 +845,10 @@ tendency to miss lunch.” — Tim Berners-Lee
 
 End of the lecture on vectors. Next stop: subsetting/extraction.
 
-* Week 7: Logical subsetting
-* Week 8: String manipulation
-* Week 9: Factors
-* Week 10: Data frames
+* Week 7: Logical subsetting and extraction
+* Week 8: Character and string manipulation
+* Week 9: Factors and levels
+* Week 10: Data frames and lists
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]

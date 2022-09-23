@@ -621,6 +621,20 @@ DEADLINE: <2022-09-26 Mon 08:00>
     str(attributes(foo))
   #+end_src
 
+  #+RESULTS:
+  #+begin_example
+  NULL
+  [1] "a" "b" "c" "d"
+  a b c d 
+  1 2 3 4
+   Named int [1:4] 1 2 3 4
+   - attr(*, "names")= chr [1:4] "a" "b" "c" "d"
+  $names
+  [1] "a" "b" "c" "d"
+  List of 1
+   $ names: chr [1:4] "a" "b" "c" "d"
+  #+end_example
+
 * TODO Length of ~names~ vs. vector
 
 - What if your names are too short (or too long) for your vector?
