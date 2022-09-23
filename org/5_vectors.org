@@ -620,6 +620,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
     attributes(foo) # attributes is a list of 1 element, $names
     str(attributes(foo))
   #+end_src
+
 * TODO Length of ~names~ vs. vector
 
 - What if your names are too short (or too long) for your vector?
@@ -655,6 +656,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
     bar
   #+end_src
 * TODO Indexing vectors - summary
+
 - Passing a vector of positive numbers returns the slice of the
   vector containing the elements at those locations.
   #+begin_src R
@@ -680,89 +682,43 @@ DEADLINE: <2022-09-26 Mon 08:00>
     x[c("one", "nine", "twenty five")]
   #+end_src
 * TODO Coercion - summary
-All vector elements have to be of the same ~class~ or type:
-~logical~, ~numeric~, or ~character~. What happens when you mix
-these? R will make it happen at the price of "coercion". Let's look
-at a few examples:
 
-In the first example, ~foo~ contains a missing value, a number and a
-character, but the vector is still classified as a ~character~
-vector, and the number is converted to a character, because R knows
-how to turn ~3~ into ~"3"~, but does not know what number to assign
-to a character:
-#+begin_src R :session :results output
-  (foo <- c("a",NA,1))
-  class(foo)
-#+end_src
-Output:
-#+begin_example
-: [1] "a" NA  "1"
-: [1] "character"
-#+end_example
+- All vector elements have to be of the same ~class~ or type
 
-With the ~is.na~ function, we can test for ~NA~ values, and with
-~as.character~ and ~is.numeric~ for ~character~ and ~numeric~
-values, respectively:
-#+begin_src R :session :results output
-  is.na(foo)         # check for missing values
-  is.character(foo)  # check for character vector
-  is.numeric(foo)    # check for numeric vector
-#+end_src
-Output:
-#+begin_example
-: [1] FALSE  TRUE FALSE
-: [1] TRUE
-: [1] FALSE
-#+end_example
+- When you try to mix them, R will create vectores with "coercion":
+  #+begin_src R
+    foo <- c("a",NA,1)
+    foo
+    class(foo)  # foo becomes a character vector
+  #+end_src
 
-You can also (try to) explicitly convert the elements using
-~as.[class]~: Let's do this one by one to relish the results:
-#+begin_src R :session :results output
-  as.character(foo) # convert vector to character values
-#+end_src
-#+begin_example
-: [1] "a" NA  "1"
-#+end_example
-No surprises here. This is the default
+- Missing values ~NA~ are not coerced to ~character~ (e.g. ~"NA"~) because
+  this would mean altering their main property, to be missing.
 
-Now, force vector to numeric values:
-#+begin_src R :session :results output
-  as.numeric(foo)  # convert vector to numeric values
-#+end_src
-#+begin_example
-: [1] NA NA  1
-: Warning message:
-: NAs introduced by coercion
-#+end_example
-The output contains some surprises! The first element of the
-~"character"~ vector is ~"a"~ and cannot be turned into a number,
-hence it becomes MIA, and R confesses to "coercion".
+- Still, the whole vector is a ~character~ vector object:
+  #+begin_src R
+    mode(foo)  # R storage mode
+    class(foo) # R object class
+  #+end_src
+    
+- You can also explicitly convert elements using the functions
+  ~as.character~, ~as.logical~ or ~as.numeric~.
+  #+begin_src R
+    as.character(c(1,2,TRUE)) # convert vector to character values
+    as.numeric(c("a",2,TRUE)) # R turns characters and Booleans into NA
+    as.logical(c("a",0,TRUE)) # R turns characters and numerics into NA
+  #+end_src
 
-And lastly, not to forget logical values:
-#+begin_src R :session :results output
-  as.logical(foo)   # convert vector to logical values
-#+end_src
-#+begin_example
-: [1] NA NA NA
-#+end_example
-This may come as a surprise, since we learnt that ~TRUE~ is stored
-as ~1~ and ~FALSE~ as ~0~ (remember summing with ~sum~ over a
-logical vector?). But the presence of ~NA~ and character ~"a"~
-spoils it. The conversion of a vector consisting only of numbers
-does however work - sort of. In fact, any non-zero number is
-converted into ~TRUE~:
-#+begin_src R :session :results output
-  as.logical(c(1,0,-1, 0.333, -Inf,NaN ))
-#+end_src
+- Conversion with ~as.logical~ has a surprise: any non-zero number is
+  turned into ~TRUE~ if the vector is ~numeric~. 
+  #+begin_src R
+    as.logical(c(1,0,-1, 0.333, -Inf, NaN ))
+  #+end_src
 
-#+begin_example
-: [1]  TRUE FALSE  TRUE  TRUE  TRUE    NA
-...except ~NaN~, but that's not a number, by definition):
-#+end_example
-I think that's enough evidence for you to stay away from mixing data
-types in vectors - though the conversion functions will come in very
-handy!
+- The lesson: don't mix data types in vectors if you can avoid it!
+
 * Summary with examples
+
 - R is a functional language in which everything's an object.
 - R functions differ in: performance (speed), ease-of-use and
   clarity.
@@ -868,40 +824,40 @@ whenever we deal with qualities or categories (like "male" or
 [fn:4] You should look up the examples in ~help(names)~: the data set
 ~islands~ is a named vector suited to play around with vector naming.
 
-[fn:5] DEFINITION NOT FOUND.
+[fn:5]You know this, too: ~str(Nile)~ for the structure, or
+~head(Nile)~ to see the first few (6) elements.
 
-[fn:6] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
-[τέχνη], tiké [téchne], 'art') is a branch of mathematics that
-consists of the study of numbers, especially the properties of the
-traditional operations on them—addition, subtraction, multiplication,
-division, exponentiation and extraction of roots." ([[https://en.wikipedia.org/wiki/Arithmetic][Wikipedia]])
+[fn:6] This page-wise presentation mode with previous|next|up|down
+navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
+presentation.
 
-[fn:7] Not just one MOOC, in fact, but a series of nine courses
-altogether, with which you can get a professional certificate. These
-MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
+[fn:7] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
+commands. Will only work if the corresponding dataset has been
+loaded - for ~Nile~, this is the case.
 
-[fn:8] For a while, I had also envisioned that I might use a
-block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
-able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
-courses]] on Snap! and you can learn all about Scratch online, too.
+[fn:8] This was mentioned in the "Getting started with R" lesson. To
+list all built-in datasets in base-R, enter simply ~data()~. This is
+the same function that you use to load a dataset after loading the
+respective library (which contains more than one dataset).
 
 [fn:9] Fun fact: 'FORTRAN' stands for 'FORmula TRANslator'. A large
 part of R's code base is written in FORTRAN, which is the oldest
 programming language specifically used for scientific computations
 (e.g. it was the first language I learnt at university).
 
-[fn:10] This was mentioned in the "Getting started with R" lesson. To
-list all built-in datasets in base-R, enter simply ~data()~. This is
-the same function that you use to load a dataset after loading the
-respective library (which contains more than one dataset).
+[fn:10] For a while, I had also envisioned that I might use a
+block-based, visual programming language like MIT's [[https://scratch.mit.edu/][Scratch]] or its
+able cousin from Berkeley U., [[https://snap.berkeley.edu/][Snap!]] OpenSAP offers great [[https://open.sap.com/courses/snap2][(free)
+courses]] on Snap! and you can learn all about Scratch online, too.
 
-[fn:11] Enter ~help(Nile)~, or ~?Nile~. This is one of the more useful
-commands. Will only work if the corresponding dataset has been
-loaded - for ~Nile~, this is the case.
+[fn:11] Not just one MOOC, in fact, but a series of nine courses
+altogether, with which you can get a professional certificate. These
+MOOCs are hosted by [[https://www.edx.org/professional-certificate/harvardx-data-science][edX.org]].
 
-[fn:12] This page-wise presentation mode with previous|next|up|down
-navigation is actually the page-wise [[https://www.emacswiki.org/emacs/InfoMode][(Emacs) ~Info~]] style
-presentation.
+[fn:12] "Arithmetic (from the Greek ἀριθμός arithmos, 'number' and τική
+[τέχνη], tiké [téchne], 'art') is a branch of mathematics that
+consists of the study of numbers, especially the properties of the
+traditional operations on them—addition, subtraction, multiplication,
+division, exponentiation and extraction of roots." ([[https://en.wikipedia.org/wiki/Arithmetic][Wikipedia]])
 
-[fn:13]You know this, too: ~str(Nile)~ for the structure, or
-~head(Nile)~ to see the first few (6) elements.
+[fn:13] DEFINITION NOT FOUND.

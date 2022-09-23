@@ -831,6 +831,11 @@ tendency to miss lunch.” — Tim Berners-Lee
 [[../img/scrum.jpg]]
 
 
+* TODO Vectors: naming, indexing, coercion
+#+attr_html: :width 600px
+[[../img/coercion.jpg]]
+
+End of the lecture on vectors. Next stop: subsetting/extraction.
 
 * Week 7: Logical subsetting
 * Week 8: String manipulation
