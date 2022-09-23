@@ -828,8 +828,23 @@ tendency to miss lunch.” — Tim Berners-Lee
    : [1] 1 1 1 1
 
 * TODO About the 2nd sprint review
-[[../img/scrum.jpg]]
+#+attr_html: :width 600px
+[[../img/scrum.png]]
 
+- *Read* my comments carefully and respond to them
+- *Distinguish* your projects if your topic spans > 1 course
+- *Complete* your literature review to identify methods
+- *Highlight* your method(s) (how you want to do it)
+- *Ask* questions for customer/teams
+- *Read* the FAQ »[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#what-should-we-do-in-the-second-sprint][What should we do in the 2nd sprint]]«
+- *Read* the FAQ »[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-do-you-report-on-and-plan-a-research-method][How do you report on and plan a research “method”?]]«
+- *Submit* a text file or a PowerPoint presentation
+- *Meet* the deadline or lose all points
+
+- *What is special about a "introduction to data science" project?*
+  1) Emphasis on basics and concepts
+  2) Emphasis on data origin, quality
+  3) Emphasis on basic uses of R
 
 * TODO Vectors: naming, indexing, coercion
 #+attr_html: :width 600px
