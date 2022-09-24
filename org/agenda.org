@@ -497,7 +497,7 @@ The first part of the review deals with vector data types and names.
    #+RESULTS:
    : [1] FALSE FALSE  TRUE
    : [1] FALSE  TRUE  TRUE
-   
+
 4) How can you add the first and second value of ~baz <- c(2,2)~?
 
    Parentheses suggest that ~baz~ is a function - this is not it:
@@ -746,7 +746,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 - Naming, indexing and subsetting
 - Practice creating vectors
 
-* Featured application: S
+** Featured application: S
 
 - John M. Chambers: S, R, and Data Science ([[This talk discusses the history and characteristics of the R software. R began, 20-odd years ago, as the open-source clone of the S software. So the story of R has to start with S and with its history. S came from the Statistics and Data Analysis Research group at AT&T Bell Labs. We'll see that the design goal of S, and so of R, is to support studies in what we'd now call data science. The principles resulting from this goal are still central to computing for data science.][video]])
   #+attr_html: :width 400px
@@ -767,9 +767,8 @@ tendency to miss lunch.” — Tim Berners-Lee
   does the APL logo remind you of?
 
   [[../img/apl.png]]
-  
-* DataCamp deal - mid-term miracle
 
+** DataCamp deal - mid-term miracle
 #+attr_html: :width 300px
 [[../img/miracle.jpg]]
 
@@ -780,11 +779,11 @@ tendency to miss lunch.” — Tim Berners-Lee
   certificate(s) or the grades (though these are nice to have, too).
 
 - The next DataCamp assignment ([[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]) postponed by 1 week
-  
+
 - The next 2-3 assignments will be independent sets of exercises to be
   completed in and submitted as Org-mode files - [[https://lyon.instructure.com/courses/568/assignments/2952][1st assignment today!]]
-  
-* DONE Review: creating, sorting, measuring vectors
+
+** DONE Review: creating, sorting, measuring vectors
 
 1) How many parameters does ~options()~ have?
    #+begin_src R
@@ -819,7 +818,7 @@ tendency to miss lunch.” — Tim Berners-Lee
      rep(x=1,times=2,length.out=NA,each=2)
    #+end_src
 
-* TODO About the 2nd sprint review
+** TODO About the 2nd sprint review
 #+attr_html: :width 600px
 [[../img/scrum.png]]
 
@@ -839,13 +838,104 @@ tendency to miss lunch.” — Tim Berners-Lee
   3) Emphasis on basic uses of R
 - If you don't know what this means --> ASK ME
 
-* TODO Vectors: naming, indexing, coercion
+** TODO Vectors: naming, indexing, coercion
 #+attr_html: :width 600px
 [[../img/coercion.jpg]]
 
 End of the lecture on vectors. Next stop: subsetting/extraction.
 
 * Week 7: Logical subsetting and extraction
+#+attr_html: :width 500px
+#+caption: Francisco Goya, 'The Colossus (ca. 1818–25). Museo Nacional del Prado, Madrid.
+[[../img/colossus.jpeg]]
+
+- [ ] Review test 5 - vectors and matrics in R
+- [ ] 2nd sprint review due by Friday afternoon
+- [ ] Lecture/lab subsetting vectors
+- [ ] Next DataCamp lesson "Factors"
+
+* TODO Review test 5 - vectors and matrices in R
+
+1) [ ] Which commands creates this matrix?
+   #+begin_example R
+          [,1] [,2]
+     [1,] "1"  "2"
+     [2,] "a"  "b"
+   #+end_example
+
+   #+begin_src R
+     matrix(c("1","2","a","b"), nrow=2, byrow=TRUE)
+     rbind(c(1,2),c("a","b"))
+     cbind(c(1,"a"),c(2,"b"))
+   #+end_src
+
+   #+RESULTS:
+   :      [,1] [,2]
+   : [1,] "1"  "2"
+   : [2,] "a"  "b"
+   :      [,1] [,2]
+   : [1,] "1"  "2"
+   : [2,] "a"  "b"
+   :      [,1] [,2]
+   : [1,] "1"  "2"
+   : [2,] "a"  "b"
+
+2) [ ] What R data type/object is ~rbind(1, "Archipel Gulag")~ (and what
+   does "Archipel Gulag" mean?)
+
+3) [ ] What is ~c(1,2) == c(1,2)~ and why?
+
+   #+begin_src R
+     c(1,2) == c(1,2) # the result is a 2-element logical vector because
+                      # every element of each vector is compared with its
+                      # opposite number
+   #+end_src
+
+4) [ ] What is ~matrix(c(c(1,2)))~ - what is ~matrix(c(1, c(1,2)))~?
+
+   #+begin_src R
+     m1 <- matrix(c(c(1,2)))   # c(c(1,2)) is c(1,2)
+     m2 <- matrix(c(1, c(1,2)))  # one-dimensional matrix
+     c(c(1,2))
+     c(1,c(1,2))
+     m1
+     m2
+     dim(m2)
+   #+end_src
+   
+5) [ ] How do you extract elements from ~qux <- c(10,100,1000)~ that are
+   greater or equal than 100 (without doing it manually)?
+   #+begin_src R
+     qux <- c(10,100,1000)   # define vector
+     qux[qux >= 100]         # logical index vector
+     qux[which(qux >= 100)]  # indices extracted with which()
+
+     which(qux>=100)  # index vector
+     (qux >= 100)     # logical vector
+
+     qux[(qux >= 100) + 1] # extracts elements (F,T,T)+1=(T,T,T)
+     qux[which(qux >= 100) + 1] # extracts elements (3,4)
+   #+end_src
+
+6) [ ] The output show the Star Wars revenue data for three films:
+   [[../img/t5matrix.png]]
+   Which command extracts the names like this:
+   #+begin_example R
+   : [1] "A New Hope"              "The Empire Strikes Back"
+   : [3] "Return of the Jedi"
+   #+end_example
+
+   #+begin_src R
+     star_wars <- cbind(
+       "US" = c(460.998,290.475,309.306),
+       "non-US" = c(314.4,247.9,165.8))
+     rownames(star_wars) <- c("A New Hope",
+                              "The Empire Strikes Back",
+                              "Return of the Jedi")
+     star_wars
+     rownames(star_wars)
+   #+end_src
+
 * Week 8: Character and string manipulation
 * Week 9: Factors and levels
 * Week 10: Data frames and lists

@@ -596,7 +596,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
 - [[https://lyon.instructure.com/courses/568/assignments/2952][Submit the result on Canvas]] no later than Monday September 26 8 am
   (to give me an opportunity to check and grade your results)
 
-* TODO Naming vectors
+* Naming vectors
 
 - Naming vector elements makes code more readable.
   #+begin_src R :session
@@ -622,18 +622,6 @@ DEADLINE: <2022-09-26 Mon 08:00>
   #+end_src
 
   #+RESULTS:
-  #+begin_example
-  NULL
-  [1] "a" "b" "c" "d"
-  a b c d 
-  1 2 3 4
-   Named int [1:4] 1 2 3 4
-   - attr(*, "names")= chr [1:4] "a" "b" "c" "d"
-  $names
-  [1] "a" "b" "c" "d"
-  List of 1
-   $ names: chr [1:4] "a" "b" "c" "d"
-  #+end_example
 
 * TODO Length of ~names~ vs. vector
 
