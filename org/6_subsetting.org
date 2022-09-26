@@ -16,8 +16,7 @@ Subsetting and extracting relates to vectorization:
 #+attr_html: :width 400px
 [[../img/emacsprep.png]]
 
-- Open a new Org-mode file ~subsetting.org~ in Emacs (unless you prefer
-  to work in your former ~vectors.org~ file
+- Open a new Org-mode file ~subsetting.org~ in Emacs
 
 - Put this line at the top of the file ~subsetting.org~
 
@@ -35,13 +34,6 @@ Subsetting and extracting relates to vectorization:
 
 - When you leave Emacs, you'll be warned that the session ~*R*~ is
   active: you can ignore this warning
-
-Subsetting and extracting relates to vectorization:
-- How to get to parts of a vector
-- How to control the indexing
-- How to rescale vectors
-- How to create matrices and arrays
-- How to mix different data types
 
 * Vectorization 1-2-3
 
@@ -205,24 +197,12 @@ We're working with the pre-loaded ~Nile~ data set.
 
 
 * TODO Logical functions in vectors
-
 * TODO Selecting with logical index/flag vectors
-
 * TODO Practice with ~Nile~
-
-
 * TODO Negative indices
-
-
 * TODO Putting dissected vectors back together
-
-
 * TODO Defining and using index vectors
-
-
 * TODO Overwriting subvectors
-
-
 * TODO Practice: subsetting (home assignment)
 
 
