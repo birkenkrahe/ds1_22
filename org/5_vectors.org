@@ -633,6 +633,9 @@ DEADLINE: <2022-09-26 Mon 08:00>
     week
   #+end_src
 
+  #+RESULTS:
+  : [1] "Mon" "Tue" "Wed" "Thu" "Fri" "Sat" "Sun"
+
 - Define a vector ~foo~ that contains seven numbers, and name its
   elements according to the ~week~.
   #+begin_src R
@@ -641,12 +644,19 @@ DEADLINE: <2022-09-26 Mon 08:00>
     foo
   #+end_src
 
+  #+RESULTS:
+  : Mon Tue Wed Thu Fri Sat Sun 
+  :   1   2   3   4   5   6   7
+
 - Copy ~week~ to ~workweek~, and remove ~"Saturday" and "Sunday"~ from the
   ~workweek~.
-  #+begin_src R
+ #+begin_src R
     workweek <- week[1:5] # or week[-(6:7)]
     workweek
   #+end_src
+
+  #+RESULTS:
+  : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
 
 - Copy ~foo~ to ~bar~, and overwrite ~names(bar)~ with ~workweek~.
   #+begin_src R results output

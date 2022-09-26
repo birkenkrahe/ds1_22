@@ -849,7 +849,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
 #+caption: Francisco Goya, 'The Colossus (ca. 1818–25). Museo Nacional del Prado, Madrid.
 [[../img/colossus.jpeg]]
 
-- [ ] Review test 5 - vectors and matrics in R
+- [ ] Review test 5 - vectors and matrices in R
 - [ ] 2nd sprint review due by Friday afternoon
 - [ ] Lecture/lab subsetting vectors
 - [ ] Next DataCamp lesson "Factors" (complete by Oct 7)
@@ -935,6 +935,36 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
      star_wars
      rownames(star_wars)
    #+end_src
+
+* TODO Review naming vectors and indexing
+
+- [ ] The open question from last week - how to fix ~bar~?
+- [ ] How many ways are there to extract the elements 3 to 4 of this vector?
+  #+begin_src R
+    vec <- c("hundred"=100, "thousand"=1000, "fifty"=50, "five-hundred"=500)
+    vec
+  #+end_src
+
+  #+RESULTS:
+  :      hundred     thousand        fifty five-hundred 
+  :          100         1000           50          500
+
+  #+begin_src R
+    vec[3:4]
+    vec[-(1:2)]
+    vec[c("fifty","five-hundred")]
+    vec[c(length(vec)-1,length(vec))]
+  #+end_src
+
+  #+RESULTS:
+  :        fifty five-hundred 
+  :           50          500
+  :        fifty five-hundred 
+  :           50          500
+  :        fifty five-hundred 
+  :           50          500
+  :        fifty five-hundred 
+  :           50          500
 
 * Week 8: Character and string manipulation
 ** TODO Review DataCamp Factors
