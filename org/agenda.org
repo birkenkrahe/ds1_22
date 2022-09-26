@@ -854,7 +854,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
 - [ ] Lecture/lab subsetting vectors
 - [ ] Next DataCamp lesson "Factors" (complete by Oct 7)
 
-* TODO Review test 5 - vectors and matrices in R
+* TODO WED Review test 5 - vectors and matrices in R
 
 1) [ ] Which commands creates this matrix?
    #+begin_example R
@@ -936,9 +936,45 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
      rownames(star_wars)
    #+end_src
 
-* TODO Review naming vectors and indexing
+* TODO WED Review naming vectors and indexing
 
-- [ ] The open question from last week - how to fix ~bar~?
+- [ ] The open question from Monday - how to fix ~bar~? The problem:
+    ~names(bar)[6:7]~ should only overwrite two elements of ~names(bar)~,
+    but instead the elements 1:5 were missing!
+    #+begin_src R
+      week <- c("Mon","Tue","Wed","Thu","Fri","Sat","Sun")
+      foo <- seq(from=100, to=200, length.out=7)
+      names(foo) <- week
+      foo
+      workweek <- week[-(6:7)]
+      workweek
+      names(foo) <- workweek
+      names(foo)  # last two names are now missing
+      names(foo)[6:7]
+      names(foo)[6:7] <- week[6:7]
+      foo
+    #+end_src
+
+    #+RESULTS:
+    :      Mon      Tue      Wed      Thu      Fri      Sat      Sun 
+    : 100.0000 116.6667 133.3333 150.0000 166.6667 183.3333 200.0000
+    : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
+    : [1] "Mon" "Tue" "Wed" "Thu" "Fri" NA    NA
+    : [1] NA NA
+    :      Mon      Tue      Wed      Thu      Fri      Sat      Sun 
+    : 100.0000 116.6667 133.3333 150.0000 166.6667 183.3333 200.0000
+
+    #+begin_src R
+      names(foo) <- NULL  # this command was the culprit!
+      names(foo)
+      names(foo)[6:7] <- week[6:7]
+      names(foo)
+    #+end_src
+
+    #+RESULTS:
+    : NULL
+    : [1] NA    NA    NA    NA    NA    "Sat" "Sun"
+
 - [ ] How many ways are there to extract the elements 3 to 4 of this vector?
   #+begin_src R
     vec <- c("hundred"=100, "thousand"=1000, "fifty"=50, "five-hundred"=500)
@@ -966,10 +1002,25 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
   :        fifty five-hundred 
   :           50          500
 
+- [ ] If ~z <- c("Alpha" = 0, "Omega" = 1)~ what are:
+  1) ~names(z)["Alpha"]~
+  2) ~names(z)[-2]~
+  3) ~z["Alpha"]~
+  4) ~z[1]~
+
+  #+begin_src R
+    z <- c("Alpha" = 0, "Omega" = 1)
+    names(z)[c(TRUE,FALSE)]
+    names(z)[-2]
+    z["Alpha"]
+    z[1]
+  #+end_src
+
 * Week 8: Character and string manipulation
 ** TODO Review DataCamp Factors
 * Week 9: Factors and levels
 * Week 10: Data frames and lists
+* Week 11-15: Plotting / Reading / Writing data / Projects
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
