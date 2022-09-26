@@ -693,7 +693,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
     foo
     class(foo)  # foo becomes a character vector
   #+end_src
-
+  
 - Missing values ~NA~ are not coerced to ~character~ (e.g. ~"NA"~) because
   this would mean altering their main property, to be missing.
 

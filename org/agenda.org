@@ -852,7 +852,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
 - [ ] Review test 5 - vectors and matrics in R
 - [ ] 2nd sprint review due by Friday afternoon
 - [ ] Lecture/lab subsetting vectors
-- [ ] Next DataCamp lesson "Factors"
+- [ ] Next DataCamp lesson "Factors" (complete by Oct 7)
 
 * TODO Review test 5 - vectors and matrices in R
 
@@ -882,7 +882,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
 
 2) [ ] What R data type/object is ~rbind(1, "Archipel Gulag")~ (and what
    does "Archipel Gulag" mean?)
-
+   
 3) [ ] What is ~c(1,2) == c(1,2)~ and why?
 
    #+begin_src R
@@ -937,6 +937,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
    #+end_src
 
 * Week 8: Character and string manipulation
+** TODO Review DataCamp Factors
 * Week 9: Factors and levels
 * Week 10: Data frames and lists
 * References
