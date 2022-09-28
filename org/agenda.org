@@ -849,14 +849,22 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
 #+caption: Francisco Goya, 'The Colossus (ca. 1818–25). Museo Nacional del Prado, Madrid.
 [[../img/colossus.jpeg]]
 
+- [ ] Upload in-class practice file for [[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org]["Vectors in R"]] (or send it)
 - [ ] Review test 5 - vectors and matrices in R
 - [ ] 2nd sprint review due by Friday afternoon
 - [ ] Lecture/lab subsetting vectors
 - [ ] Next DataCamp lesson "Factors" (complete by Oct 7)
 
-* TODO WED Review test 5 - vectors and matrices in R
+* TODO Upload Vectors in R in-class practice file
 
-1) [ ] Which commands creates this matrix?
+- I have cleaned up the Canvas course dashboard
+- Upload the in-class practice file to Canvas or send me an email
+
+* TODO Review test 5 - vectors and matrices in R
+
+1) What's a "scalar"?
+
+2) Which commands creates this matrix?
    #+begin_example R
           [,1] [,2]
      [1,] "1"  "2"
@@ -866,33 +874,28 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
    #+begin_src R
      matrix(c("1","2","a","b"), nrow=2, byrow=TRUE)
      rbind(c(1,2),c("a","b"))
-     cbind(c(1,"a"),c(2,"b"))
+     cbind(c(1,"a"),c(2,"b"))  # not recommended - implies coercion
    #+end_src
 
-   #+RESULTS:
-   :      [,1] [,2]
-   : [1,] "1"  "2"
-   : [2,] "a"  "b"
-   :      [,1] [,2]
-   : [1,] "1"  "2"
-   : [2,] "a"  "b"
-   :      [,1] [,2]
-   : [1,] "1"  "2"
-   : [2,] "a"  "b"
-
-2) [ ] What R data type/object is ~rbind(1, "Archipel Gulag")~ (and what
+3) What R data type/object is ~rbind(1, "Archipel Gulag")~ (and what
    does "Archipel Gulag" mean?)
-   
-3) [ ] What is ~c(1,2) == c(1,2)~ and why?
+   #+begin_src R
+     rb <- rbind(1,"Archipel Gulag")
+     rb
+     is.vector(rb)
+     is.matrix(rb)
+     is.numeric(rb)
+     is.character(rb)
+   #+end_src
 
+4) What R object is ~c(1,2) == c(1,2)~, what's the result and why?
    #+begin_src R
      c(1,2) == c(1,2) # the result is a 2-element logical vector because
-                      # every element of each vector is compared with its
-                      # opposite number
+                                             # every element of each vector is compared with its
+                                             # opposite number
    #+end_src
 
-4) [ ] What is ~matrix(c(c(1,2)))~ - what is ~matrix(c(1, c(1,2)))~?
-
+5) What is ~matrix(c(c(1,2)))~ - what is ~matrix(c(1, c(1,2)))~?
    #+begin_src R
      m1 <- matrix(c(c(1,2)))   # c(c(1,2)) is c(1,2)
      m2 <- matrix(c(1, c(1,2)))  # one-dimensional matrix
@@ -902,8 +905,8 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
      m2
      dim(m2)
    #+end_src
-   
-5) [ ] How do you extract elements from ~qux <- c(10,100,1000)~ that are
+
+6) How do you extract elements from ~qux <- c(10,100,1000)~ that are
    greater or equal than 100 (without doing it manually)?
    #+begin_src R
      qux <- c(10,100,1000)   # define vector
@@ -917,7 +920,12 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
      qux[which(qux >= 100) + 1] # extracts elements (3,4)
    #+end_src
 
-6) [ ] The output show the Star Wars revenue data for three films:
+7) In R, what is ~(-8)^(1/3)~
+   #+begin_src R
+     (-8)^(1/3)
+   #+end_src
+
+8) The output show the Star Wars revenue data for three films
    [[../img/t5matrix.png]]
    Which command extracts the names like this:
    #+begin_example R
@@ -929,6 +937,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
      star_wars <- cbind(
        "US" = c(460.998,290.475,309.306),
        "non-US" = c(314.4,247.9,165.8))
+
      rownames(star_wars) <- c("A New Hope",
                               "The Empire Strikes Back",
                               "Return of the Jedi")
@@ -936,44 +945,148 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
      rownames(star_wars)
    #+end_src
 
-* TODO WED Review naming vectors and indexing
+* TODO Review test 6 - creating, sorting, measuring
+
+1) What is the difference between:
+   - ~options~
+   - ~options()~
+   - ~names(options())~
+
+   #+begin_src R
+     str(options)  # a function - needs an argument
+     is.vector(options()) # a non-atomic vector (and a list)
+     head(options(),2)
+     class(names(options()))
+     head(names(options()),2)
+   #+end_src
+
+2) What is ~letters~ and what data type is ~length(letters)~?
+   #+begin_src R
+     letters
+     length(letters)
+     dim(letters)   # this is NULL for vectors
+   #+end_src
+
+3) What is ~c(TRUE, FALSE, 2)~
+   #+begin_src R
+     c(TRUE,FALSE,2) #coerced into a numeric vector
+     class(c(TRUE,FALSE,2))
+     2 == TRUE
+     1 == TRUE    # internal representation of Booleans
+     0 == FALSE
+     T == TRUE    # short cut
+     F == FALSE
+   #+end_src
+
+4) What type of vector is ~c(FALSE, "Lyon", Inf)~
+   #+begin_src R
+     c(FALSE, "Lyon", Inf)
+     is.character(c(FALSE, "Lyon", Inf))
+   #+end_src
+
+5) How can you create a vector ~"a" "b" "c" "a" "b" "c"~
+   #+begin_src R
+     c("a", "b","c", "a", "b", "c")
+     rep(letters[1:3], times=2)
+     rep(c("a","b","c"), times=2)
+   #+end_src
+
+6) Which command reverses ~x <- seq(from=1,to=3.6, by=0.5)~
+   #+begin_src R
+     x <- seq(from=1,to=3.6, by=0.5)
+     x
+     seq(from=3.6,to=1, by=0.5)
+     seq(from=3.6,to=1, by=-0.5)
+     sort(x, decreasing=TRUE)
+   #+end_src
+
+7) What is the length of ~c(3e+1, rep(5,10, 5))~. NOTE: this question
+   was malformatted: ~rep(from=5, times=10, 5)~ is just confusing and it
+   is odd that R would accept it at all...
+   #+begin_src R
+     ## default behavior:
+     ## rep(x, times = 1, length.out = NA, each = 1)
+     rep(5,10,5) # x = 5, times = 10, length.out = 5
+     rep(x=5,times=10, length.out=5)
+   #+end_src
+
+8) If ~x <- c(1,2)~ What is
+   - ~names(x)~
+   - ~names(x) <- c("1", NA); x~
+   - ~names(x) <- c("1", ""); x~
+   #+begin_src R
+     x <- c(1,2); x; names(x)
+     names(x) <- c("1",NA); x
+     names(x) <- c("1",""); x
+   #+end_src
+
+9) What types are the rows and columns of this data frame? What are
+   their names?
+   #+begin_example R
+             jane joe   jim
+     janet      1   a  TRUE
+     jackson    2   b FALSE
+     jordan     3   c FALSE
+   #+end_example
+   #+begin_src R
+     df <- data.frame(
+       "jane"=1:3,
+       "joe"=letters[1:3],
+       "jim"=c(TRUE,FALSE,FALSE))
+     rownames(df) <- c("janet","jackson","jordan")
+     df
+     names(df$"joe")
+     colnames(df)
+     colnames(df[2])
+   #+end_src
+
+   #+RESULTS:
+   :         jane joe   jim
+   : janet      1   a  TRUE
+   : jackson    2   b FALSE
+   : jordan     3   c FALSE
+   : NULL
+   : [1] "jane" "joe"  "jim"
+   : [1] "joe"
+
+* TODO Review naming vectors and indexing
 
 - [ ] The open question from Monday - how to fix ~bar~? The problem:
-    ~names(bar)[6:7]~ should only overwrite two elements of ~names(bar)~,
-    but instead the elements 1:5 were missing!
-    #+begin_src R
-      week <- c("Mon","Tue","Wed","Thu","Fri","Sat","Sun")
-      foo <- seq(from=100, to=200, length.out=7)
-      names(foo) <- week
-      foo
-      workweek <- week[-(6:7)]
-      workweek
-      names(foo) <- workweek
-      names(foo)  # last two names are now missing
-      names(foo)[6:7]
-      names(foo)[6:7] <- week[6:7]
-      foo
-    #+end_src
+  ~names(bar)[6:7]~ should only overwrite two elements of ~names(bar)~,
+  but instead the elements 1:5 were missing!
+  #+begin_src R
+    week <- c("Mon","Tue","Wed","Thu","Fri","Sat","Sun")
+    foo <- seq(from=100, to=200, length.out=7)
+    names(foo) <- week
+    foo
+    workweek <- week[-(6:7)]
+    workweek
+    names(foo) <- workweek
+    names(foo)  # last two names are now missing
+    names(foo)[6:7]
+    names(foo)[6:7] <- week[6:7]
+    foo
+  #+end_src
 
-    #+RESULTS:
-    :      Mon      Tue      Wed      Thu      Fri      Sat      Sun 
-    : 100.0000 116.6667 133.3333 150.0000 166.6667 183.3333 200.0000
-    : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
-    : [1] "Mon" "Tue" "Wed" "Thu" "Fri" NA    NA
-    : [1] NA NA
-    :      Mon      Tue      Wed      Thu      Fri      Sat      Sun 
-    : 100.0000 116.6667 133.3333 150.0000 166.6667 183.3333 200.0000
+  #+RESULTS:
+  :      Mon      Tue      Wed      Thu      Fri      Sat      Sun
+  : 100.0000 116.6667 133.3333 150.0000 166.6667 183.3333 200.0000
+  : [1] "Mon" "Tue" "Wed" "Thu" "Fri"
+  : [1] "Mon" "Tue" "Wed" "Thu" "Fri" NA    NA
+  : [1] NA NA
+  :      Mon      Tue      Wed      Thu      Fri      Sat      Sun
+  : 100.0000 116.6667 133.3333 150.0000 166.6667 183.3333 200.0000
 
-    #+begin_src R
-      names(foo) <- NULL  # this command was the culprit!
-      names(foo)
-      names(foo)[6:7] <- week[6:7]
-      names(foo)
-    #+end_src
+  #+begin_src R
+    names(foo) <- NULL  # this command was the culprit!
+    names(foo)
+    names(foo)[6:7] <- week[6:7]
+    names(foo)
+  #+end_src
 
-    #+RESULTS:
-    : NULL
-    : [1] NA    NA    NA    NA    NA    "Sat" "Sun"
+  #+RESULTS:
+  : NULL
+  : [1] NA    NA    NA    NA    NA    "Sat" "Sun"
 
 - [ ] How many ways are there to extract the elements 3 to 4 of this vector?
   #+begin_src R
@@ -982,7 +1095,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
   #+end_src
 
   #+RESULTS:
-  :      hundred     thousand        fifty five-hundred 
+  :      hundred     thousand        fifty five-hundred
   :          100         1000           50          500
 
   #+begin_src R
@@ -992,21 +1105,17 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
     vec[c(length(vec)-1,length(vec))]
   #+end_src
 
-  #+RESULTS:
-  :        fifty five-hundred 
-  :           50          500
-  :        fifty five-hundred 
-  :           50          500
-  :        fifty five-hundred 
-  :           50          500
-  :        fifty five-hundred 
-  :           50          500
-
 - [ ] If ~z <- c("Alpha" = 0, "Omega" = 1)~ what are:
+
   1) ~names(z)["Alpha"]~
+
   2) ~names(z)[-2]~
+
   3) ~z["Alpha"]~
+
   4) ~z[1]~
+
+  5) ~names(z) <- NULL; z[1]~
 
   #+begin_src R
     z <- c("Alpha" = 0, "Omega" = 1)
@@ -1014,7 +1123,12 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
     names(z)[-2]
     z["Alpha"]
     z[1]
+    names(z) <- NULL; z[1]
   #+end_src
+
+* TODO Lecture/practice: subsetting and extracting
+* TODO (FRIDAY) Lab session: subsetting with ~Nile~
+* TODO (FRIDAY) What did you learn so far?
 
 * Week 8: Character and string manipulation
 ** TODO Review DataCamp Factors
