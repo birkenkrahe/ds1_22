@@ -855,12 +855,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
 - [ ] Lecture/lab subsetting vectors
 - [ ] Next DataCamp lesson "Factors" (complete by Oct 7)
 
-* TODO Upload Vectors in R in-class practice file
-
-- I have cleaned up the Canvas course dashboard
-- Upload the in-class practice file to Canvas or send me an email
-
-* TODO Review test 5 - vectors and matrices in R
+* DONE Review test 5 - vectors and matrices in R
 
 1) What's a "scalar"?
    
@@ -945,7 +940,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
      rownames(star_wars)
    #+end_src
 
-* TODO Review test 6 - creating, sorting, measuring
+* DONE Review test 6 - creating, sorting, measuring
 
 1) What is the difference between:
    - ~options~
@@ -1070,6 +1065,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
    : [1] "jane" "joe"  "jim"
    : [1] "joe"
 
+* TODO [[https://lyon.instructure.com/courses/568/assignments/2903][Upload Vectors in R in-class practice file]]
 * TODO Review naming vectors and indexing
 
 - [ ] The open question from Monday - how to fix ~bar~? The problem:
