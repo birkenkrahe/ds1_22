@@ -1065,8 +1065,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
    : [1] "jane" "joe"  "jim"
    : [1] "joe"
 
-* TODO [[https://lyon.instructure.com/courses/568/assignments/2903][Upload Vectors in R in-class practice file]]
-* TODO Review naming vectors and indexing
+* DONE Review naming vectors and indexing
 
 - [ ] The open question from Monday - how to fix ~bar~? The problem:
   ~names(bar)[6:7]~ should only overwrite two elements of ~names(bar)~,
@@ -1143,10 +1142,28 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
     names(z) <- NULL; z[1]
   #+end_src
 
+* TODO [[https://lyon.instructure.com/courses/568/assignments/2903][Upload Vectors in R in-class practice file]]
 * TODO Lecture/practice: subsetting and extracting
 * TODO (FRIDAY) Lab session: subsetting with ~Nile~
+* TODO Project Update - 2nd sprint
 * TODO (FRIDAY) What did you learn so far?
 
+What's on your list?
+
+Here's my list
+#+begin_quote
+1) Basic agile project management process (with Scrum)
+2) Principles and practice of Literate Programming
+3) Introduction to GNU Emacs + ESS + Org-mode infrastructure
+4) Data science jobs, skills, job profiles and trends
+5) Why R, R console, shell commands and basic workflow
+6) R package management: installing, loading, viewing data
+7) R as a community project for data exploration and analysis
+8) Arithmetic with R: numbers and mathematical expressions
+9) 
+10) 
+11) 
+#+end_quote
 
 
 * Week 8: Character and string manipulation

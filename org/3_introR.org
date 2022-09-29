@@ -544,7 +544,7 @@ Summary:
 
 - To load a data set contained in package, use ~data([name])~.
 
-- You can (often) get help on datasets with ~?~ or ~help([name])~[fn:3]
+- You can (often) get help on datasets with ~?~ or ~help([name])~  [fn:3]
 
   #+attr_html: :width 300px
   #+caption: Loading MASS, MASS::phones, listing and delisting 
