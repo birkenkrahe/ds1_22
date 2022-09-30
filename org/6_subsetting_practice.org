@@ -34,8 +34,8 @@
    #+end_quote
 
 4) Extract the time that corresponds to the first value of ~Nile~ using
-   the ~time~ function. Store that time in ~year~. /Tip: look at ~time(Nile)~
-   first./
+   the ~time~ function. Store that time in ~year~. Tip: look at ~time(Nile)~
+   first.
 
 5) What is the value of the /last/ element of ~Nile~? Use the ~length~
    function to answer this question and store the value in ~last~. 
