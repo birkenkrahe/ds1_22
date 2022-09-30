@@ -1164,10 +1164,6 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
     which(v<0)          # indices of negative elements of v
     v[which(v<0)]       # negative elements of v with which()
   #+end_src
-  1) Download practice file from here:  and open in Emacs
-
-
-  2) 
 
    
      
