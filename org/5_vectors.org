@@ -648,7 +648,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
   : Mon Tue Wed Thu Fri Sat Sun 
   :   1   2   3   4   5   6   7
 
-- Copy ~week~ to ~workweek~, and remove ~"Saturday" and "Sunday"~ from the
+- Copy ~week~ to ~workweek~, and remove ~"Saturday"~ and ~"Sunday"~ from the
   ~workweek~.
  #+begin_src R
     workweek <- week[1:5] # or week[-(6:7)]
@@ -693,6 +693,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
     names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
     x[c("one", "nine", "twenty five")]
   #+end_src
+
 * Coercion
 
 - All vector elements have to be of the same ~class~ or type

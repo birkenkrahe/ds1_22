@@ -1145,32 +1145,32 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
 * TODO [[https://lyon.instructure.com/courses/568/assignments/2903][Upload Vectors in R in-class practice file]]
   #+attr_html: :width 600px
   [[../img/vectorsinR.png]]
-* TODO Lab session: ~Nile~ extraction!
-  #+attr_html: :width 500px
-  [[../img/extraction.png]]
+* TODO Mini-Lab: indexing vectors ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org#indexing-vectors][GitHub]])
+  #+attr_html: :width 300px
+  [[../img/indexing.jpg]]
 
-  Functions and operators for subsetting:
-    - get element 5 of vector v: ~v[5]~
-    - length of v: ~length(v)~
-    - remove element 5 of vector v: ~v[-5]~
-    - positive elements of v: ~v[v>0]~
-    - indices of negative elements of v: ~which(v==0)~
-      
+    Functions and operators for subsetting:
+    - Get element 5 of vector v: ~v[5]~
+    - Length of v: ~length(v)~
+    - Remove element 5 of vector v: ~v[-5]~
+    - Positive elements of v: ~v[v>0]~
+    - Indices of negative elements of v: ~which(v==0)~
   #+begin_src R
-    v <- c(45, -3, 2)
-    length(v)
-    v[3]
-    v[-3]
-    v[v<0]
-    which(v<0)
-    v[which(v<0)]
+    v <- c(45, -3, 2)   # example vector v
+    length(v)           # length of v
+    v[3]                # 3rd element of v
+    v[-3]               # all of v but 3rd element
+    v[v<0]              # negative elements of v with logical flag vector
+    which(v<0)          # indices of negative elements of v
+    v[which(v<0)]       # negative elements of v with which()
   #+end_src
+  1) Download practice file from here:  and open in Emacs
 
-  - Download ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
-    tinyurl.com/4azpfkpz
 
-  - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
-  
+  2) 
+
+   
+     
 * TODO Project Update - 2nd sprint
   #+attr_html: :width 600px
   [[../img/scrum.jpg]]
@@ -1199,7 +1199,7 @@ Here's my list - 3 x infrastructure + 7 x content
 6) R package management: installing, loading, viewing data
 7) R as a community project for data exploration and analysis
 8) Arithmetic with R: numbers and mathematical expressions
-9) How to create, subset, sort and measure vectors
+9) How to create, sort, measure vectors and extract indices and values
 10) Everything is an object, and there's a function for everything
 #+end_quote
 
@@ -1210,6 +1210,32 @@ Here's my list - 3 x infrastructure + 7 x content
 ** TODO Lecture/practice: subsetting and extracting
   #+attr_html: :width 600px
   [[../img/extraction.png]]
+** TODO Lab session: ~Nile~ extraction!
+  #+attr_html: :width 500px
+  [[../img/extraction.png]]
+
+  Functions and operators for subsetting:
+    - get element 5 of vector v: ~v[5]~
+    - length of v: ~length(v)~
+    - remove element 5 of vector v: ~v[-5]~
+    - positive elements of v: ~v[v>0]~
+    - indices of negative elements of v: ~which(v==0)~
+      
+  #+begin_src R
+    v <- c(45, -3, 2)
+    length(v)
+    v[3]
+    v[-3]
+    v[v<0]
+    which(v<0)
+    v[which(v<0)]
+  #+end_src
+
+  - Download ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
+    tinyurl.com/4azpfkpz
+
+  - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
+  
 * Week 9: Factors and levels
 * Week 10: Data frames and lists
 * Week 11-15: Plotting / Reading / Writing data / Projects

@@ -1,0 +1,3 @@
+#+TITLE: Mini-lab indexing vectors
+#+AUTHOR: [yourname] (pledged)
+#+PROPERTY: header-args:R :results output :session *R*
