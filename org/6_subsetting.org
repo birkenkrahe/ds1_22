@@ -3,7 +3,7 @@
 #+startup: hideblocks indent overview inlineimages entitiespretty
 #+PROPERTY: header-args:R :results output :session *R*
 #+attr_html: :width 600px
-[[../img/6_seoul.jpg]]
+[[../img/extraction.png]]
 
 Subsetting and extracting relates to vectorization:
 - How to get to parts of a vector
@@ -227,5 +227,6 @@ We're working with the pre-loaded ~Nile~ data set.
 * TODO Defining and using index vectors
 * TODO Overwriting subvectors
 * TODO Practice: subsetting (home assignment)
+
 
 

@@ -1,0 +1,50 @@
+#+TITLE:Practice: Vectors in R
+#+AUTHOR: [YourName] 
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:R :session *R* :results output
+* README
+
+- Practice file for the lecture on "Subsetting and extracting indices
+  in R" ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org][GitHub]])
+- All content from that lecture is also available [[https://www.youtube.com/playlist?list=PL6SfZh1-kWXl3_YDc-8SS5EuG4h1aILHz][on YouTube]]
+- Create, execute and debug R code blocks as needed
+- Emacs + ESS + Org-mode and R must be installed
+- Upload the completed file as a class assignment ([[https://lyon.instructure.com/courses/568/assignments/2952][Canvas]])
+
+* TODO IDENTIFY YOURSELF
+
+  - Update the ~#+AUTHOR:~ information in the header
+  - Add ~(pledged)~ after your name
+  - Put your cursor on the headline of this section, and type ~S <LEFT>~
+    until you see ~DONE~ instead of ~TODO~ next to the title.
+  - Perform this last step each time you complete a section.
+
+* TODO NINE TIMES DOWN THE NILE
+
+1) Print the length of the data set ~Nile~ using an R function
+
+2) Retrieve the first value of the ~Nile~ data set
+
+3) Which data science question does the last output answer? Write a
+   full sentence.
+
+   #+begin_quote
+     ...
+   #+end_quote
+
+4) Extract the time that corresponds to the first value of ~Nile~ using
+   the ~time~ function. Store that time in ~year~. /Tip: look at ~time(Nile)~
+   first./
+
+5) What is the value of the /last/ element of ~Nile~? Use the ~length~
+   function to answer this question and store the value in ~last~. 
+
+6) What was the Nile flow in 1967?
+
+7) What is the index of the third-to-last element of ~Nile~? Use ~which~
+   to answer this question.
+
+8) How many values of ~Nile~ are larger than the third-to-last value?
+
+9) How much water flowed down the Nile between 1871 and 1970?
