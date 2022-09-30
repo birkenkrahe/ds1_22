@@ -585,7 +585,7 @@ look at help pages, the more you recognize known concepts.
     length(options()$digits) # length of one options() element
   #+end_src
 
-* IN PROGRESS Practice: creating vectors
+* Practice: creating vectors
 DEADLINE: <2022-09-26 Mon 08:00>
 #+attr_html: :width 400px
 [[../img/5_gnome.jpg]]
@@ -623,7 +623,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
 
   #+RESULTS:
 
-* TODO Length of ~names~ vs. vector
+* Length of ~names~ vs. vector
 
 - What if your names are too short (or too long) for your vector?
 
@@ -667,7 +667,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
     names(bar) <- NULL # remove names altogether
     bar
   #+end_src
-* TODO Indexing vectors - summary
+* Indexing vectors
 
 - Passing a vector of positive numbers returns the slice of the
   vector containing the elements at those locations.
@@ -693,7 +693,7 @@ DEADLINE: <2022-09-26 Mon 08:00>
     names(x) <- c("one", "four", "nine", "sixteen", "twenty five")
     x[c("one", "nine", "twenty five")]
   #+end_src
-* TODO Coercion - summary
+* Coercion
 
 - All vector elements have to be of the same ~class~ or type
 
@@ -720,6 +720,13 @@ DEADLINE: <2022-09-26 Mon 08:00>
     as.numeric(c("a",2,TRUE)) # R turns characters and Booleans into NA
     as.logical(c("a",0,TRUE)) # R turns characters and numerics into NA
   #+end_src
+
+  #+RESULTS:
+  : [1] "1" "2" "1"
+  : [1] NA  2 NA
+  : Warning message:
+  : NAs introduced by coercion
+  : [1]   NA   NA TRUE
 
 - Conversion with ~as.logical~ has a surprise: any non-zero number is
   turned into ~TRUE~ if the vector is ~numeric~. 
