@@ -1164,6 +1164,9 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
     which(v<0)          # indices of negative elements of v
     v[which(v<0)]       # negative elements of v with which()
   #+end_src
+    *Download raw practice file [[https://raw.githubusercontent.com/birkenkrahe/ds1/piHome/org/5_indexing_practice.org][from GitHub]]: tinyurl.com/5n6t398v*
+
+   
 
    
      

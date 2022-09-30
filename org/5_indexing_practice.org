@@ -1,3 +1,29 @@
 #+TITLE: Mini-lab indexing vectors
 #+AUTHOR: [yourname] (pledged)
 #+PROPERTY: header-args:R :results output :session *R*
+
+1) Replace ~[yourname]~ at the top with your own name. Create simple R
+   code blocks below as appropriate.
+
+2) Store a vector of these 10 values in ~foo~: ~7 5 6 1 2 10 8 3 8 2~
+
+3) Show that the vector has 10 values using an R function.
+
+4) Extract the fifth through seventh elements of ~foo~ and add ~5~ to
+   these elements (the answer should be: ~7 15 13~).
+
+5) Create a logical flag vector with the command ~foo >= 5~
+
+6) Extract the elements of ~foo~ that are greater than or equal to 5 and
+   store them in ~bar~
+
+7) Create a logical index vector named ~index~ that contains the indices
+   of the elements of ~foo~ that are greater than or equal to 5 using
+   the function ~which~
+   
+8) Print those elements of ~foo~ that are smaller than ~5~ using ~index~ 
+
+9) Complete these exercises on your own if you did not finish you can
+   use [[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org#indexing-vectors][this summary]] on GitHub for answers. Upload result to Canvas!
+
+10) Read up on the meaning of [[https://en.wikipedia.org/wiki/Foobar][Foobar]]!
