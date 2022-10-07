@@ -1220,7 +1220,13 @@ Here's my list - 3 x infrastructure + 7 x content
 #+end_quote
 
 * Week 8: Character and string manipulation
-* NEXT Review: 2nd sprint review
+
+ - [ ] Review 2nd sprint review
+ - [ ] Subsetting vectors and extracting elements
+ - [ ] Review DataCamp lesson on Factors
+ - [ ] Lab session: subsetting with ~Nile~
+
+* DONE Review: 2nd sprint review
 #+attr_html: :width 500px
 [[../img/scrum.png]]
 
@@ -1234,6 +1240,7 @@ Here's my list - 3 x infrastructure + 7 x content
   certainly will inject some needed energy. If the problem persists
   afterwards, external factors may play a role (e.g. other commitments).
   #+end_notes
+
 - Questions (Jackson):
   1) Wide or narrow focus (e.g. special players or whole league)
      #+begin_notes
@@ -1258,6 +1265,14 @@ Here's my list - 3 x infrastructure + 7 x content
      get to know the data. Also, again: other people's related
      investigations may give you interesting insights.
      #+end_notes
+
+- Whatever you do, you should comment on your choices and reflect
+  minimally at least on what your options were and why you chose them.
+
+- Is there a specific dress code?  Answer: no, but you should always strive to look "professional" (this means adapted to the occasion - possible check with someone)
+* TODO Lecture/practice: subsetting and extracting
+#+attr_html: :width 600px
+[[../img/extraction.png]]
 * TODO Review DataCamp Factors
 #+attr_html: :width 600px
 [[../img/factory.jpg]]
@@ -1335,10 +1350,7 @@ Here's my list - 3 x infrastructure + 7 x content
 
 - Example taken from [[https://campus.datacamp.com/courses/introduction-to-r-for-finance/factors-4?ex=1]["Introduction to R for Finance" @DataCamp]]
 
-* TODO Lecture/practice: subsetting and extracting
-#+attr_html: :width 600px
-[[../img/extraction.png]]
-* TODO Lab session: ~Nile~ extraction!
+* TODO Home assignment: ~Nile~ extraction!
 #+attr_html: :width 500px
 [[../img/nile.png]]
 
@@ -1346,6 +1358,8 @@ Here's my list - 3 x infrastructure + 7 x content
   [[https://tinyurl.com/5fzh98vd][tinyurl.com/5fzh98vd]]
 
 - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
+
+- Deadline Monday, October 17, 11 AM.
 
 * Week 9: Factors and levels
 * Week 10: Data frames and lists
