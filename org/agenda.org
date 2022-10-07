@@ -845,17 +845,19 @@ tendency to miss lunch.” — Tim Berners-Lee
 End of the lecture on vectors. Next stop: subsetting/extraction.
 
 * Week 7: Logical subsetting and extraction
-#+attr_html: :width 500px
+#+attr_html: :width 400px
 #+caption: Francisco Goya, 'The Colossus (ca. 1818–25). Museo Nacional del Prado, Madrid.
 [[../img/colossus.jpeg]]
 
 - [ ] Upload in-class practice file for [[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org]["Vectors in R"]] (or send it)
-- [ ] Review test 5 - vectors and matrices in R
+- [ ] Upload in-class practice file for "Indexing vectors" (or send it)
+- [X] Review test 5 - vectors and matrices in R
+- [X] Review test 6 - creating, sorting, measuring vectors
 - [ ] 2nd sprint review due by Friday afternoon
 - [ ] Lecture/lab subsetting vectors
 - [ ] Next DataCamp lesson "Factors" (complete by Oct 7)
 
-* DONE Review test 5 - vectors and matrices in R
+** Review test 5 - vectors and matrices in R
 
 1) What's a "scalar"?
 
@@ -940,7 +942,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
      rownames(star_wars)
    #+end_src
 
-* DONE Review test 6 - creating, sorting, measuring
+** Review test 6 - creating, sorting, measuring
 
 1) What is the difference between:
    - ~options~
@@ -1065,7 +1067,7 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
    : [1] "jane" "joe"  "jim"
    : [1] "joe"
 
-* DONE Review naming vectors and indexing
+** Review naming vectors and indexing
 
 - [ ] The open question from Monday - how to fix ~bar~? The problem:
   ~names(bar)[6:7]~ should only overwrite two elements of ~names(bar)~,
@@ -1142,50 +1144,66 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
     names(z) <- NULL; z[1]
   #+end_src
 
-* TODO [[https://lyon.instructure.com/courses/568/assignments/2903][Upload Vectors in R in-class practice file]]
-  #+attr_html: :width 600px
-  [[../img/vectorsinR.png]]
-* TODO Lab: indexing vectors ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org#indexing-vectors][GitHub]])
-  #+attr_html: :width 300px
-  [[../img/indexing.jpg]]
+** [[https://lyon.instructure.com/courses/568/assignments/2903][Upload Vectors in R in-class practice file]]
+#+attr_html: :width 600px
+[[../img/vectorsinR.png]]
+** Lab: indexing vectors ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org#indexing-vectors][GitHub]])
+#+attr_html: :width 300px
+[[../img/indexing.jpg]]
 
-    Functions and operators for subsetting:
-    - Get element 5 of vector v: ~v[5]~
-    - Length of v: ~length(v)~
-    - Remove element 5 of vector v: ~v[-5]~
-    - Positive elements of v: ~v[v>0]~
-    - Indices of negative elements of v: ~which(v==0)~
-  #+begin_src R
-    v <- c(45, -3, 2)   # example vector v
-    length(v)           # length of v
-    v[3]                # 3rd element of v
-    v[-3]               # all of v but 3rd element
-    v[v<0]              # negative elements of v with logical flag vector
-    which(v<0)          # indices of negative elements of v
-    v[which(v<0)]       # negative elements of v with which()
-  #+end_src
+Functions and operators for subsetting:
+  - Get element 5 of vector v: ~v[5]~
+  - Length of v: ~length(v)~
+  - Remove element 5 of vector v: ~v[-5]~
+  - Positive elements of v: ~v[v>0]~
+  - Logical flag vector: ~v>0~
+  - Indices of zero elements of v: ~which(v==0)~
+    #+begin_src R
+      v <- c(45, -3, 2)   # example vector v
+      length(v)           # length of v
+      v[3]                # 3rd element of v
+      v[-3]               # all of v but 3rd element
+      v[v<0]              # negative elements with logical flag vector
+      which(v<0)          # indices of negative elements of v
+      v[which(v<0)]       # negative elements of v with which()
+    #+end_src
 
-  *Download raw practice file [[https://raw.githubusercontent.com/birkenkrahe/ds1/piHome/org/5_indexing_practice.org][from GitHub]]: tinyurl.com/5n6t398v*
+    #+RESULTS:
+    : [1] 3
+    : [1] 2
+    : [1] 45 -3
+    : [1] -3
+    : [1] 2
+    : [1] -3
 
-  *See also lecture with examples [[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org#indexing-vectors][on GitHub]]: tinyurl.com/bdfdrf4x*
+    *Download raw practice file [[https://raw.githubusercontent.com/birkenkrahe/ds1/piHome/org/5_indexing_practice.org][from GitHub]]: tinyurl.com/5n6t398v*
 
-* TODO Project Update - 2nd sprint
-  #+attr_html: :width 600px
-  [[../img/scrum.jpg]]
+    *See also lecture with examples [[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org#indexing-vectors][on GitHub]]: tinyurl.com/bdfdrf4x*
+
+** Project Update - 2nd sprint
+#+attr_html: :width 600px
+[[../img/scrum.jpg]]
 
 *Let's hear from a few teams:*
 - What's your research question?
 - What's your chosen method?
 - What're your sources?
-- What's your excitement level?
+- What's your excitement level (not in life but rgd the project)?
 
-* TODO What did you learn so far?
-  #+attr_html: :width 600px
-  [[../img/darts.jpg]]
+** What did you learn so far?
+#+attr_html: :width 600px
+[[../img/darts.jpg]]
 
 *What did you learnt in the first 1/2 of the term?*
 
 What's on your list?
+#+begin_src R
+  learn <-
+
+    c("foo","vectors","matrix","R","indexing","data science skills",
+      "help", "functions", "sorting","link")
+
+#+end_src
 
 Here's my list - 3 x infrastructure + 7 x content
 #+begin_quote
@@ -1202,38 +1220,56 @@ Here's my list - 3 x infrastructure + 7 x content
 #+end_quote
 
 * Week 8: Character and string manipulation
-** TODO Review DataCamp Factors
-  #+attr_html: :width 600px
-  [[../img/factory.jpg]]
-** TODO Lecture/practice: subsetting and extracting
-  #+attr_html: :width 600px
-  [[../img/extraction.png]]
-** TODO Lab session: ~Nile~ extraction!
-  #+attr_html: :width 500px
-  [[../img/extraction.png]]
+** NEXT Review: 2nd sprint review
 
-  Functions and operators for subsetting:
+- Question (Hayden & Nick): »What do you do when you feel like you are
+  starting to stall in progress towards your goal?«
+  #+begin_notes
+  My answer to your question: in an agile Scrum-like project, this is
+  easy: contact me as the customer after analysing your issues and have
+  a frank discussion. This opens up negotiations with the customer. Such
+  negotiations may result in a modified goal or process, but they
+  certainly will inject some needed energy. If the problem persists
+  afterwards, external factors may play a role (e.g. other commitments).
+  #+end_notes
+- Questions (Jackson):
+  1) Wide or narrow focus (e.g. special players or whole league)
+  2) Are we far enough in our project yet? How about in comparison
+     with other projects?
+  3) Is the topic too broad? Should we take fewer variables?
+
+** TODO Review DataCamp Factors
+#+attr_html: :width 600px
+[[../img/factory.jpg]]
+** TODO Lecture/practice: subsetting and extracting
+#+attr_html: :width 600px
+[[../img/extraction.png]]
+** TODO Lab session: ~Nile~ extraction!
+#+attr_html: :width 500px
+[[../img/extraction.png]]
+
+Functions and operators for subsetting:
     - get element 5 of vector v: ~v[5]~
     - length of v: ~length(v)~
     - remove element 5 of vector v: ~v[-5]~
     - positive elements of v: ~v[v>0]~
     - indices of negative elements of v: ~which(v==0)~
-      
-  #+begin_src R
-    v <- c(45, -3, 2)
-    length(v)
-    v[3]
-    v[-3]
-    v[v<0]
-    which(v<0)
-    v[which(v<0)]
-  #+end_src
 
-  - Download ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
-    tinyurl.com/4azpfkpz
+      #+begin_src R
+        v <- c(45, -3, 2)
+        length(v)
+        v[3]
+        v[-3]
+        v[v<0]
+        which(v<0)
+        v[which(v<0)]
+      #+end_src
 
-  - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
-  
+      - Download ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
+        tinyurl.com/4azpfkpz
+
+      - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
+
 * Week 9: Factors and levels
 * Week 10: Data frames and lists
 * Week 11-15: Plotting / Reading / Writing data / Projects
