@@ -125,6 +125,10 @@ We're working with the pre-loaded ~Nile~ data set.
     foo <- c(-1,3.0,4,67,330,-3) # assign vector to foo
     foo
   #+end_src
+
+  #+RESULTS:
+  : [1]  -1   3   4  67 330  -3
+
 - You can now use ~:~ to extract any interval of indices
   #+begin_src R
     bar <- foo[2:5]
@@ -165,16 +169,14 @@ We're working with the pre-loaded ~Nile~ data set.
   
 - Modify the sample vector ~foo~:  ~-1   3   4  67 330  -3~
   1) add a ~5~ between ~4~ and ~67~
-  2) 
-     
+  2) add ~-99 0 0 44~ at the end of the vector
   #+begin_src R
-    foo <- c(-1, 3, 4, 5, 67, 330, -3, -99, 0, 0, 44)
+    foo <- c(-1,3.0,4,67,330,-3) # original vector
+    foo <- c(foo[1:3],5,foo[4:length(foo)], c(-99,0,0,44))
     foo
   #+end_src
 
-  #+RESULTS:
-  : [1]  -1   3   4  67 330  -3
-  :  [1]  -1   3   4   5  67 330  -3 -99   0   0  44
+- If you messed up somewhere, reset your variables with ~rm(list=ls())~
 
 - Create logical sub-vectors of positive and negative elements
   #+begin_src R
