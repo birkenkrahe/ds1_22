@@ -90,13 +90,13 @@ We're working with the pre-loaded ~Nile~ data set.
   "atomic" vectors (not part of a data frame or list as column
   vectors), you need to use the ~[ ]~ index operator.
 
-- Which value are we retrieving with ~Nile[1]~?
+- Print the first element of ~Nile~
   #+begin_src R
     Nile[1]
   #+end_src
-- What's the corresponding data science (not R) question?
+- What's the corresponding data science (*not R*) question?
   #+begin_quote
-     »What was the average flow through the Nile in 1871?«
+     » What was the average flow through the Nile in 1871? «
   #+end_quote
 - To extract the time at which a time series was sampled, use ~time~,
   which is a function wrapper of the time series, and also a ~ts~ object
@@ -114,6 +114,7 @@ We're working with the pre-loaded ~Nile~ data set.
     »What was the flow through the river Nile in the last year of
     observations?«
   #+end_quote
+  
   #+begin_src R
     time(Nile)[length(Nile)]
   #+end_src
@@ -129,7 +130,8 @@ We're working with the pre-loaded ~Nile~ data set.
     bar <- foo[2:5]
     bar
   #+end_src
-- [ ] Careful with sequences!  Check this: is ~foo[n]:foo[m]==foo[n:m]~ ?
+
+- [ ] Check using R: is ~foo[n]:foo[m]~ the same as ~foo[n:m]~
   #+begin_src R
     foo # original vector
     bar # subset of indices 2:5
@@ -161,11 +163,19 @@ We're working with the pre-loaded ~Nile~ data set.
 
 - You can directly use logical operators to subset vectors
   
-- Modify the sample vector ~foo~:
+- Modify the sample vector ~foo~:  ~-1   3   4  67 330  -3~
+  1) add a ~5~ between ~4~ and ~67~
+  2) 
+     
   #+begin_src R
     foo <- c(-1, 3, 4, 5, 67, 330, -3, -99, 0, 0, 44)
     foo
   #+end_src
+
+  #+RESULTS:
+  : [1]  -1   3   4  67 330  -3
+  :  [1]  -1   3   4   5  67 330  -3 -99   0   0  44
+
 - Create logical sub-vectors of positive and negative elements
   #+begin_src R
     foo_pos <- c(foo > 0)
