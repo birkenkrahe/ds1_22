@@ -1220,11 +1220,13 @@ Here's my list - 3 x infrastructure + 7 x content
 #+end_quote
 
 * Week 8: Character and string manipulation
+#+attr_html: :width 500px
+[[../img/week8.jpg]]
 
- - [ ] Review 2nd sprint review
- - [ ] Subsetting vectors and extracting elements
- - [ ] Review DataCamp lesson on Factors
- - [ ] Lab session: subsetting with ~Nile~
+- [ ] Review 2nd sprint review
+- [ ] Subsetting vectors and extracting elements
+- [ ] Review DataCamp lesson on Factors
+- [ ] Lab session: subsetting with ~Nile~
 
 * DONE Review: 2nd sprint review
 #+attr_html: :width 500px
@@ -1318,7 +1320,7 @@ Here's my list - 3 x infrastructure + 7 x content
     summary(i1)
   #+end_src
 - [ ] How would you order ~investment~ so that stocks are less than
-  bonds? 
+  bonds?
   #+begin_src R
     answers
     i2 <- factor(answers,
@@ -1326,20 +1328,20 @@ Here's my list - 3 x infrastructure + 7 x content
                  ordered=TRUE)
     str(i2)
     summary(i2)
-    #+end_src
+  #+end_src
 
-    #+RESULTS:
-    : [1] "stock" "bond"  "bond"  "stock"
-    :  Ord.factor w/ 2 levels "stocks"<"bonds": NA NA NA NA
-    : stocks  bonds   NA's 
-    :      0      0      4
-    : [1] NA NA NA NA
-    : [1] NA NA NA NA
+  #+RESULTS:
+  : [1] "stock" "bond"  "bond"  "stock"
+  :  Ord.factor w/ 2 levels "stocks"<"bonds": NA NA NA NA
+  : stocks  bonds   NA's
+  :      0      0      4
+  : [1] NA NA NA NA
+  : [1] NA NA NA NA
 
 - [ ] Why are ~NA~ introduced by coercion?
   #+begin_notes
-    Because the character strings cannot be properly formatted as
-    numeric values. Notice that there is no warning!
+  Because the character strings cannot be properly formatted as
+  numeric values. Notice that there is no warning!
   #+end_notes
   #+begin_src R
     as.numeric(i2)
