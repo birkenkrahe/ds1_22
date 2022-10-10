@@ -52,7 +52,7 @@ Subsetting and extracting relates to vectorization:
        bar <- foo[-c(4:length(foo))]   # delete part of a vector
        rep(x=bar, times=2)    # repeat a vector
        exp(pi*1i) + 1  # Euler's formula - a complex number
-       class(exp(pi*1i) + 1)  
+       class(exp(pi*1i) + 1)
        prod(c(1,2,3,4,5))  # 5!
        sapply(X=c(5),FUN=factorial) # apply FUN to X
      #+end_src
@@ -73,7 +73,7 @@ Subsetting and extracting relates to vectorization:
        mean(c(1,2)) # OK
      #+end_src
 
-* Subsetting: retrieving vector elements
+* TODO Subsetting: retrieving vector elements
 
 We're working with the pre-loaded ~Nile~ data set.
 
@@ -96,7 +96,7 @@ We're working with the pre-loaded ~Nile~ data set.
   #+end_src
 - What's the corresponding data science (*not R*) question?
   #+begin_quote
-     » What was the average flow through the Nile in 1871? «
+  » What was the average flow through the Nile in 1871? «
   #+end_quote
 - To extract the time at which a time series was sampled, use ~time~,
   which is a function wrapper of the time series, and also a ~ts~ object
@@ -111,25 +111,21 @@ We're working with the pre-loaded ~Nile~ data set.
   #+end_src
 - What's the corresponding question?
   #+begin_quote
-    »What was the flow through the river Nile in the last year of
-    observations?«
+  »What was the flow through the river Nile in the last year of
+  observations?«
   #+end_quote
-  
+
   #+begin_src R
     time(Nile)[length(Nile)]
   #+end_src
-* Using the colon operator in index
+* TODO Using the colon operator in index
 
 - Create a sample vector ~foo~
   #+begin_src R
     foo <- c(-1,3.0,4,67,330,-3) # assign vector to foo
     foo
   #+end_src
-
-  #+RESULTS:
-  : [1]  -1   3   4  67 330  -3
-
-- You can now use ~:~ to extract any interval of indices
+- You can now use the colon operator ~:~ for intervals of indices
   #+begin_src R
     bar <- foo[2:5]
     bar
@@ -142,8 +138,8 @@ We're working with the pre-loaded ~Nile~ data set.
     baz <- foo[2]:foo[5] # vector built using indices 2 and 5
     identical(bar,baz)  # are bar and baz the same?
     all.equal(bar,baz)  # are they near equal at last?
-  #+end_src 
-* Statistical functions work on subsets
+  #+end_src
+* TODO Statistical functions work on subsets
 
 - [ ] What is the average (~mean~) of the elements 2 to 5 in ~foo~?
   #+begin_src R
@@ -163,10 +159,10 @@ We're working with the pre-loaded ~Nile~ data set.
     summary(foo[2:5])
     summary(foo)
   #+end_src
-* Logical functions in vectors: ~<~, ~>~, ~!=~, ~==~
+* TODO Logical functions in vectors: ~<~, ~>~, ~!=~, ~==~
 
 - You can directly use logical operators to subset vectors
-  
+
 - Modify the sample vector ~foo~:  ~-1   3   4  67 330  -3~
   1) add a ~5~ between ~4~ and ~67~
   2) add ~-99 0 0 44~ at the end of the vector
@@ -176,7 +172,7 @@ We're working with the pre-loaded ~Nile~ data set.
     foo
   #+end_src
 
-- If you messed up somewhere, reset your variables with ~rm(list=ls())~
+- /Tip: reset your variables with ~rm(list=ls())~ at any time/
 
 - Create logical sub-vectors of positive and negative elements
   #+begin_src R
@@ -189,56 +185,118 @@ We're working with the pre-loaded ~Nile~ data set.
   #+end_src
 - What is ~c(foo = 0)~?
   #+begin_src R
-    c(foo=0)    
+    c(foo=0)
   #+end_src
-- What happens if you ~sum~ these vectors?
+- What happens if you ~sum~ the logical index vectors?
   #+begin_src R
     sum(foo_pos)
     sum(foo_neg)
     sum(foo_nul)
   #+end_src
-* Selecting with logical index vectors
+* TODO Selecting with logical index vectors
 
 - You can now use these subvectors as logical flag or index vectors
-
-- For example, to extract all /positive/ elements from ~foo~ 
+- For example, to extract all /positive/ elements from ~foo~
   #+begin_src R
     foo[foo_pos]  # using an index vector
     foo[foo>0]    # using a logical operator
   #+end_src
-
-- For example, to extract all /negative/ elements from ~foo~ 
+- For example, to extract all /negative/ elements from ~foo~
   #+begin_src R
     foo[foo_neg]  # using an index vector
     foo[foo<0]    # using a logical operator
   #+end_src
-
-  #+RESULTS:
-  : [1]  -1  -3 -99
-  : [1]  -1  -3 -99
- 
-- For example, to extract all 0 elements from ~foo~ 
+- For example, to extract all 0 elements from ~foo~
   #+begin_src R
     foo[foo_nul]  # using an index vector
     foo[foo==0]    # using a logical operator
   #+end_src
-
-  #+RESULTS:
-  : [1] 0 0
-  : [1] 0 0
-
 - Why would you define logical flag vectors instead of using operators?
   #+begin_quote
-    Because you can define and alter the index vector definition in
-    ONE place, while you'd have to alter the logical operators in many
-    places in a program.
+  Because you can define and alter the index vector definition in
+  ONE place, while you'd have to alter the logical operators in many
+  places in a program.
   #+end_quote
 * TODO Practice with ~Nile~
+#+attr_html: :width 500px
+[[../img/nile.png]]
+
+- Download the raw ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
+  [[https://tinyurl.com/5fzh98vd][tinyurl.com/5fzh98vd]]
+
+- Complete the tasks in class
+
+- When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
+
 * TODO Negative indices
+
+- The minus operator ~-~ removes values with respective indices
+
+- We'll work with our (extended) vector ~foo~ - you may have to re-run
+  the code block where you first defined it, or re-enter the vector:
+  #+begin_src R
+    foo <- c(-1,3.0,4,5,67,330,-3,-99,0,0,44)
+    foo
+  #+end_src
+
+- [ ] Remove the first element of ~foo~, then remove the last element of
+  ~foo~ (without storing), and finally remove both elements simultaneously
+  #+begin_src R
+    foo
+    foo[-1]
+    foo[-length(foo)]
+    foo[-c(1,length(foo))]
+  #+end_src
+
+- [ ] What is the difference between ~foo[length(foo)]~ and
+  ~foo[-length(foo)]~?
+  #+begin_notes
+  - ~foo[(length(foo)]~ selects the last element of ~foo~
+  - ~foo[-(length(foo)]~ removes the last element of ~foo~ 
+  #+end_notes
+
+- [ ] I've made an entry mistake: I defined a vector
+
+  ~vec <- c(5,-2,3,4,6,10,40221,-8)~ but I really wanted:
+
+  ~vec = 5 -2.3 4 6 10 40221 -8~ - how can I fix that?
+
+  #+begin_src R
+    vec <- c(5,-2,3,4,6,10,40221,-8)
+    vec[c(2,3)] # I want to replace these by -2.3
+    vec[-3]  # delete third element (this will NOT change vec yet)
+    vec <- vec[-3]  # this will change vec
+    vec[2] <- -2.3 # overwrite second element (this will change vec)
+    vec
+  #+end_src
+  
 * TODO Putting dissected vectors back together
-* TODO Defining and using index vectors
-* TODO Overwriting subvectors
-* TODO Practice: subsetting (home assignment)
 
+- Store the next-to-last value of ~vec~ in ~bar~
+  #+begin_src R
+    bar <- vec[length(vec)-1]
+    bar
+  #+end_src
 
+  #+RESULTS:
+  : [1] 40221
 
+- Store all other elements of ~vec~ in ~qux~
+  #+begin_src R
+    qux <- vec[-(length(vec)-1)]
+    qux
+  #+end_src
+
+  #+RESULTS:
+  : [1]  5.0 -2.3  4.0  6.0 10.0 -8.0
+  
+- [ ] Now put ~qux~ and ~bar~ together again to get the original ~vec~ in
+  only one command!
+  #+begin_src R
+    c(qux[-length(qux)],bar,qux[length(qux)])
+  #+end_src
+  #+begin_notes
+  1. remove last element of ~qux~
+  2. add ~bar~ at the end
+  3. put last element of ~qux~ back
+  #+end_notes

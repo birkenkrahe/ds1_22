@@ -844,7 +844,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 
 End of the lecture on vectors. Next stop: subsetting/extraction.
 
-* Week 7: Logical subsetting and extraction
+* Week 7: Creating, sorting, measuring vectors
 #+attr_html: :width 400px
 #+caption: Francisco Goya, 'The Colossus (ca. 1818–25). Museo Nacional del Prado, Madrid.
 [[../img/colossus.jpeg]]
@@ -1219,14 +1219,15 @@ Here's my list - 3 x infrastructure + 7 x content
 10) Everything is an object, and there's a function for everything
 #+end_quote
 
-* Week 8: Character and string manipulation
+* Week 8: Subsetting and extracting, factors
 #+attr_html: :width 500px
 [[../img/week8.jpg]]
 
-- [ ] Review 2nd sprint review
-- [ ] Subsetting vectors and extracting elements
+- [X] Review 2nd sprint review
+- [X] Subsetting vectors and extracting elements
 - [ ] Review DataCamp lesson on Factors
 - [ ] Lab session: subsetting with ~Nile~
+- [ ] [[https://app.datacamp.com/groups/lyon-college-data-science-fall-2022/assignments][DataCamp assignments 8-10: data frames, lists, data import]]
 
 * DONE Review: 2nd sprint review
 #+attr_html: :width 500px
@@ -1272,14 +1273,12 @@ Here's my list - 3 x infrastructure + 7 x content
   minimally at least on what your options were and why you chose them.
 
 - Is there a specific dress code?  Answer: no, but you should always strive to look "professional" (this means adapted to the occasion - possible check with someone)
-* TODO Lecture/practice: subsetting and extracting
-#+attr_html: :width 600px
-[[../img/extraction.png]]
 * TODO Review DataCamp Factors
-#+attr_html: :width 600px
+#+attr_html: :width 400px
 [[../img/factory.jpg]]
 
 - [ ] Open an Org-mode file in Emacs for R code blocks to code along
+
 - [ ] What is the format of the ~factor~ function? How can you find out?
   #+begin_example R
   factor(x = character(),      # character vector data
@@ -1300,9 +1299,6 @@ Here's my list - 3 x infrastructure + 7 x content
     answers <- c("stock","bond","bond","stock")
     answers
   #+end_src
-
-  #+RESULTS:
-  : [1] "stock" "bond"  "bond"  "stock"
 - [ ] Create a variable ~investment~ from ~answers~ using ~factor~ and check
   if it is ordered
   #+begin_src R
@@ -1329,15 +1325,6 @@ Here's my list - 3 x infrastructure + 7 x content
     str(i2)
     summary(i2)
   #+end_src
-
-  #+RESULTS:
-  : [1] "stock" "bond"  "bond"  "stock"
-  :  Ord.factor w/ 2 levels "stocks"<"bonds": NA NA NA NA
-  : stocks  bonds   NA's
-  :      0      0      4
-  : [1] NA NA NA NA
-  : [1] NA NA NA NA
-
 - [ ] Why are ~NA~ introduced by coercion?
   #+begin_notes
   Because the character strings cannot be properly formatted as
@@ -1346,26 +1333,24 @@ Here's my list - 3 x infrastructure + 7 x content
   #+begin_src R
     as.numeric(i2)
   #+end_src
-
-  #+RESULTS:
-  : [1] NA NA NA NA
-
 - Example taken from [[https://campus.datacamp.com/courses/introduction-to-r-for-finance/factors-4?ex=1]["Introduction to R for Finance" @DataCamp]]
 
-* TODO Home assignment: ~Nile~ extraction!
+* TODO Lecture/practice: subsetting and extracting
+#+attr_html: :width 600px
+[[../img/extraction.png]]
+
+- How vectorization makes life easy in R
+- How to retrieve vector elements
+- How to remove vector elements
+- How to put dissected vectors back together
+- How to overwrite subvectors
+* TODO Lab practice: ~Nile~ extraction!
 #+attr_html: :width 500px
 [[../img/nile.png]]
 
-- Download the raw ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
-  [[https://tinyurl.com/5fzh98vd][tinyurl.com/5fzh98vd]]
-
-- When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
-
-- Deadline Monday, October 17, 11 AM.
-
-* Week 9: Factors and levels
-* Week 10: Data frames and lists
-* Week 11-15: Plotting/Reading/Writing data/Projects
+* Week 9: Data frames and lists
+* Week 10: Importing external data with utils
+* Week 11-15: Basic plotting/ggplot2/projects
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
