@@ -1225,6 +1225,7 @@ Here's my list - 3 x infrastructure + 7 x content
 
 - [X] Review 2nd sprint review
 - [X] Subsetting vectors and extracting elements
+- [X] Invitation to the Lyon career fair (w/incentive)
 - [ ] Review DataCamp lesson on Factors
 - [ ] Lab session: subsetting with ~Nile~
 - [ ] [[https://app.datacamp.com/groups/lyon-college-data-science-fall-2022/assignments][DataCamp assignments 8-10: data frames, lists, data import]]
@@ -1273,26 +1274,65 @@ Here's my list - 3 x infrastructure + 7 x content
   minimally at least on what your options were and why you chose them.
 
 - Is there a specific dress code?  Answer: no, but you should always strive to look "professional" (this means adapted to the occasion - possible check with someone)
+*  NEXT Lyon College Career Expo
+#+attr_html: :width 300px
+[[../img/recruit.jpg]]
+
+- Matthew Stewart (Stone Ward, Little Rock) will be there: Stone Ward
+  offers data science mini-internships and paid big internships
+
+- Many other organizations are likely to look for talent: Senior
+  students should definitely go to this talent show
+
+- Special incentive: bring back a company story for points
+
+- [X] Who will attend?
+
+- [X] What does "Come dressed for success" mean in this case?
+  #+attr_html: :width 200px
+  [[../img/dress-for-success.png]]
+  [[https://uca.edu/career/files/2017/09/dress-for-success.png][Source: uca.edu]]
+
 * TODO Review DataCamp Factors
 #+attr_html: :width 400px
 [[../img/factory.jpg]]
 
-- [ ] Open an Org-mode file in Emacs for R code blocks to code along
+- [ ] Open an Org-mode file in Emacs for R code blocks to code along:
+  on the (Windows) command line, enter ~emacs --file factor.org~ to load
+  the file into the 1st buffer (it'll be created if it doesn't exist).
+
+- [ ] In ~factor.org~ insert any of your other R coding files with ~C-x i~
+  followed by the file name. This will give you the necessary header.
+
+- [ ] Run *each* header line to activate it and start an R session ~*R*~
+  (run with ~C-c C-c~, resulting in: /"Local setup has been refreshed"/)
+
+- [ ] Delete all lines below the header lines by going to the first
+  character with your cursor, set the mark (~C-x SPC~), expand region to
+  EOF (~M->~) and delete (~DEL~). Now your Emacs buffer should look like
+  this: like this:
+  #+attr_html: :width 500px
+  [[../img/meta.png]]
 
 - [ ] What is the format of the ~factor~ function? How can you find out?
   #+begin_example R
   factor(x = character(),      # character vector data
-             levels,           # optional vector of unique values
-             labels = levels,
-             exclude = NA,
-             ordered = is.ordered(x),
-             nmax = NA)
-
-  ## how to find out
+         levels,           # optional vector of unique values
+         labels = levels,
+         exclude = NA,
+         ordered = is.ordered(x),
+         nmax = NA)
+  #+end_example
+- [ ] How can you find out what the definition of ~factor~ is?
+  #+begin_example R
   str(factor) # structure of the function object
-  help(factor) # online help with examples
+  help(factor) # online help with examples: quit process with C-g
   factor # prints function definition
   #+end_example
+- [ ] How can you find out what all these options really mean?
+  #+begin_src R
+    example(factor)
+  #+end_src
 - [ ] Create a ~character~ vector ~answers~ from investors, with the
   values: {stock, bond, bond, stock}
   #+begin_src R
@@ -1300,23 +1340,31 @@ Here's my list - 3 x infrastructure + 7 x content
     answers
   #+end_src
 - [ ] Create a variable ~investment~ from ~answers~ using ~factor~ and check
-  if it is ordered
+  if it is ordered and named
   #+begin_src R
     investment <- factor(answers)
     investment
     is.ordered(investment)
+    names(investment)
   #+end_src
-- [ ] How would you order ~investment~ so that bonds are less than
-  stocks?
+- [ ] Where do the ~integer~ values in ~str(investment)~ come from?
+  #+begin_src R
+    str(investment)  # structure of the factor vector
+    as.integer(investment)   # integer values of the vector variable values
+    str(ToothGrowth)        # another example: a data frame
+    as.integer(ToothGrowth$supp)   # integer values of the factor variable values
+  #+end_src
+- [ ] How would you order ~investment~ so that "bonds" are less than
+  "stocks"?
   #+begin_src R
     i1 <- factor(answers, order=TRUE)
     i1
     is.ordered(i1)
     str(i1)
-    summary(i1)
+    summary(i1)  # the statistical summary is a contingency table
   #+end_src
-- [ ] How would you order ~investment~ so that stocks are less than
-  bonds?
+- [ ] How would you order ~investment~ so that "stocks" are less than
+  "bonds"?
   #+begin_src R
     answers
     i2 <- factor(answers,
@@ -1332,7 +1380,7 @@ Here's my list - 3 x infrastructure + 7 x content
   #+end_notes
   #+begin_src R
     as.numeric(i2)
-  #+end_src
+  #+end_src  
 - Example taken from [[https://campus.datacamp.com/courses/introduction-to-r-for-finance/factors-4?ex=1]["Introduction to R for Finance" @DataCamp]]
 
 * TODO Lecture/practice: subsetting and extracting
