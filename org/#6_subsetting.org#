@@ -218,7 +218,7 @@ We're working with the pre-loaded ~Nile~ data set.
   #+end_
 
 - What was the flow through the Nile from 1960-1966?
-  #+begin_src R
+ #+begin_src R
     t <- time(Nile)
     Nile[ t >= 1960 & t <= 1966]
     sum(Nile[ t >= 1960 & t <= 1966])

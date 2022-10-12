@@ -1274,7 +1274,7 @@ Here's my list - 3 x infrastructure + 7 x content
   minimally at least on what your options were and why you chose them.
 
 - Is there a specific dress code?  Answer: no, but you should always strive to look "professional" (this means adapted to the occasion - possible check with someone)
-*  NEXT Lyon College Career Expo
+* DONE Lyon College Career Expo
 #+attr_html: :width 300px
 [[../img/recruit.jpg]]
 
@@ -1293,7 +1293,7 @@ Here's my list - 3 x infrastructure + 7 x content
   [[../img/dress-for-success.png]]
   [[https://uca.edu/career/files/2017/09/dress-for-success.png][Source: uca.edu]]
 
-* TODO Review DataCamp Factors
+* DONE Review DataCamp Factors
 #+attr_html: :width 400px
 [[../img/factory.jpg]]
 
@@ -1383,6 +1383,19 @@ Here's my list - 3 x infrastructure + 7 x content
   #+end_src  
 - Example taken from [[https://campus.datacamp.com/courses/introduction-to-r-for-finance/factors-4?ex=1]["Introduction to R for Finance" @DataCamp]]
 
+* NEXT Review: indexing the Nile
+
+- Print only the last year of observations from the data set ~Nile~?
+  #+begin_src R
+    time(Nile)
+    time(Nile)[length(Nile)]
+  #+end_src
+
+- Print the flow through the Nile in the year 1966
+  #+begin_src R
+    Nile[time(Nile)==1966]
+  #+end_src  
+
 * TODO Lecture/practice: subsetting and extracting
 #+attr_html: :width 600px
 [[../img/extraction.png]]
@@ -1392,6 +1405,17 @@ Here's my list - 3 x infrastructure + 7 x content
 - How to remove vector elements
 - How to put dissected vectors back together
 - How to overwrite subvectors
+  
+* READ [[https://lyon.instructure.com/courses/568/discussion_topics/940][No class on Founder's Day Fri Oct 21]]
+* Review: logical selection
+
+- What was the flow through the Nile from 1960-1966?
+  #+begin_src R
+    t <- time(Nile)
+    Nile[ t >= 1960 & t <= 1966]
+    sum(Nile[ t >= 1960 & t <= 1966])
+  #+end_src
+  
 * TODO Lab practice: ~Nile~ extraction!
 #+attr_html: :width 500px
 [[../img/nile.png]]
