@@ -1224,11 +1224,11 @@ Here's my list - 3 x infrastructure + 7 x content
 [[../img/week8.jpg]]
 
 - [X] Review 2nd sprint review
-- [X] Subsetting vectors and extracting elements
+- [X] Lecture: subsetting vectors and extracting elements
 - [X] Invitation to the Lyon career fair (w/incentive)
-- [ ] Review DataCamp lesson on Factors
+- [X] Review DataCamp lesson on Factors
+- [X] [[https://app.datacamp.com/groups/lyon-college-data-science-fall-2022/assignments][DataCamp assignments 8-10: data frames, lists, data import]]
 - [ ] Lab session: subsetting with ~Nile~
-- [ ] [[https://app.datacamp.com/groups/lyon-college-data-science-fall-2022/assignments][DataCamp assignments 8-10: data frames, lists, data import]]
 
 * DONE Review: 2nd sprint review
 #+attr_html: :width 500px
@@ -1383,20 +1383,42 @@ Here's my list - 3 x infrastructure + 7 x content
   #+end_src  
 - Example taken from [[https://campus.datacamp.com/courses/introduction-to-r-for-finance/factors-4?ex=1]["Introduction to R for Finance" @DataCamp]]
 
-* NEXT Review: indexing the Nile
+* DONE Review: indexing the Nile
 
 - Print only the last year of observations from the data set ~Nile~?
   #+begin_src R
-    time(Nile)
-    time(Nile)[length(Nile)]
+
+  length(Nile)
+  time(Nile)
+  time(Nile)[length(Nile)]
   #+end_src
+
+  #+RESULTS:
+  #+begin_example
+  [1] 100
+  Time Series:
+  Start = 1871 
+  End = 1970 
+  Frequency = 1 
+    [1] 1871 1872 1873 1874 1875 1876 1877 1878 1879 1880 1881 1882 1883 1884 1885
+   [16] 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 1896 1897 1898 1899 1900
+   [31] 1901 1902 1903 1904 1905 1906 1907 1908 1909 1910 1911 1912 1913 1914 1915
+   [46] 1916 1917 1918 1919 1920 1921 1922 1923 1924 1925 1926 1927 1928 1929 1930
+   [61] 1931 1932 1933 1934 1935 1936 1937 1938 1939 1940 1941 1942 1943 1944 1945
+   [76] 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 1957 1958 1959 1960
+   [91] 1961 1962 1963 1964 1965 1966 1967 1968 1969 1970
+  [1] 1970
+  #+end_example
 
 - Print the flow through the Nile in the year 1966
   #+begin_src R
     Nile[time(Nile)==1966]
   #+end_src  
 
-* TODO Lecture/practice: subsetting and extracting
+  #+RESULTS:
+  : [1] 746
+
+* DONE Lecture/practice: subsetting and extracting
 #+attr_html: :width 600px
 [[../img/extraction.png]]
 
@@ -1406,19 +1428,17 @@ Here's my list - 3 x infrastructure + 7 x content
 - How to put dissected vectors back together
 - How to overwrite subvectors
   
-* READ [[https://lyon.instructure.com/courses/568/discussion_topics/940][No class on Founder's Day Fri Oct 21]]
-* Review: logical selection
-
-- What was the flow through the Nile from 1960-1966?
-  #+begin_src R
-    t <- time(Nile)
-    Nile[ t >= 1960 & t <= 1966]
-    sum(Nile[ t >= 1960 & t <= 1966])
-  #+end_src
-  
+* READ NOTE: [[HTTPS://LYON.INSTRUCTURE.COM/COURSES/568/DISCUSSION_TOPICS/940][NO CLASS ON FOUNDER'S DAY FRI OCT 21]]
 * TODO Lab practice: ~Nile~ extraction!
 #+attr_html: :width 500px
 [[../img/nile.png]]
+
+  - Download the raw ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
+    [[https://tinyurl.com/5fzh98vd][tinyurl.com/5fzh98vd]]
+
+  - Complete the tasks in class
+
+  - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
 
 * Week 9: Data frames and lists
 * Week 10: Importing external data with utils
