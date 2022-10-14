@@ -22,9 +22,9 @@
 
 * TODO 10 QUESTIONS ABOUT THE NILE
 
-1) Print the length of the data set ~Nile~ using an R function
+1) Print the length of the data set ~Nile~ using an R function.
 
-2) Retrieve the second to fifth value of the ~Nile~ data set
+2) Retrieve the second to fifth value of the ~Nile~ data set.
 
 3) Which data science (not R) question does the last output answer?
    Write a full sentence.
@@ -33,10 +33,11 @@
      ...
    #+end_quote
 
-4) Extract the time that corresponds to the next-to-last value of
-   ~Nile~.
-
-5) What was the Nile flow in 1967?
+4) Extract the year that corresponds to the last value of
+   ~Nile~. Remember that the years are stored in ~time(Nile)~.
+   
+5) What was the Nile flow in 1967? Tip: use a logical operator, and
+   store ~time(Nile)~ in ~t~ for the remaining questions.
    
 6) What is the index of the third-to-last element of ~Nile~? Use the
    ~which~ function to answer this question.
