@@ -52,6 +52,8 @@
     ~plot~ and mark the lowest level of the line using the ~abline~
     function. The result is stored in ~nile.png~
 
+    Tip: you can draw a vertical line at point ~x~ with ~abline(v=x)~
+
     #+begin_src R :results graphics file :file nile.png
       ...
     #+end_src
