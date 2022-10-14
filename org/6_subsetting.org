@@ -236,7 +236,7 @@ Subsetting and extracting relates to vectorization:
       sum(Nile[ t >= 1960 & t <= 1966])
     #+end_src
 
-* Negative indices
+* TODO Negative indices
 
   - The minus operator ~-~ removes values with respective indices
 
@@ -247,8 +247,9 @@ Subsetting and extracting relates to vectorization:
       foo
     #+end_src
 
-  - [ ] Remove the first element of ~foo~, then remove the last element of
-    ~foo~ (without storing), and finally remove both elements simultaneously
+  - [ ] Remove the first element of ~foo~, then remove the last element
+    of ~foo~ (without storing), and finally remove both elements
+    simultaneously (don't overwrite ~foo~)
     #+begin_src R
       foo
       foo[-1]
@@ -262,12 +263,12 @@ Subsetting and extracting relates to vectorization:
     - ~foo[(length(foo)]~ selects the last element of ~foo~
     - ~foo[-(length(foo)]~ removes the last element of ~foo~
     #+end_notes
-
+    
   - [ ] I've made an entry mistake: I defined a vector
 
     ~vec <- c(5,-2,3,4,6,10,40221,-8)~ but I really wanted:
 
-    ~vec = 5 -2.3 4 6 10 40221 -8~ - how can I fix that?
+    ~5 -2.3 4 6 10 40221 -8~ - how can I fix that?
 
     #+begin_src R
       vec <- c(5,-2,3,4,6,10,40221,-8)
@@ -278,43 +279,42 @@ Subsetting and extracting relates to vectorization:
       vec
     #+end_src
 
-* Putting dissected vectors back together
+* TODO Putting dissected vectors back together
 
-  - Store the next-to-last value of ~vec~ in ~bar~
-    #+begin_src R
-      bar <- vec[length(vec)-1]
-      bar
-    #+end_src
+  We're going to remove the next-to-last element of a vector and store
+  the result. Then we re-insert the removed value again
+    
+  1) Store the next-to-last value of ~vec~ in ~bar~
+     #+begin_src R
+       vec
+       bar <- vec[length(vec)-1]
+       bar
+     #+end_src
 
-    #+RESULTS:
-    : [1] 40221
+  2) Store all other elements of ~vec~ in ~qux~
+     #+begin_src R
+       qux <- vec[-(length(vec)-1)]
+       qux
+     #+end_src
 
-  - Store all other elements of ~vec~ in ~qux~
-    #+begin_src R
-      qux <- vec[-(length(vec)-1)]
-      qux
-    #+end_src
-
-    #+RESULTS:
-    : [1]  5.0 -2.3  4.0  6.0 10.0 -8.0
-
-  - [ ] Now put ~qux~ and ~bar~ together again to get the original ~vec~ in
-    only one command!
-    #+begin_src R
-      c(qux[-length(qux)],bar,qux[length(qux)])
-    #+end_src
-    #+begin_notes
-    1. remove last element of ~qux~
-    2. add ~bar~ at the end
-    3. put last element of ~qux~ back
-    #+end_notes
+  3) [ ] Now put ~qux~ and ~bar~ together again to get the original ~vec~ -
+     use only one command!
+     #+begin_src R
+       c(qux[-length(qux)],bar,qux[length(qux)])
+     #+end_src
+     #+begin_notes
+     1. remove last element of ~qux~
+     2. add ~bar~ at the end
+     3. put last element of ~qux~ back
+     #+end_notes
 * TODO Practice with ~Nile~
-  #+attr_html: :width 500px
-  [[../img/nile.png]]
+#+attr_html: :width 500px
+[[../img/nile.png]]
 
-  - Download the raw ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
-    [[https://tinyurl.com/5fzh98vd][tinyurl.com/5fzh98vd]]
+- Download the raw ~6_subsetting_practice.org~ [[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting_practice.org][from GitHub]]:
+  [[https://tinyurl.com/5fzh98vd][tinyurl.com/5fzh98vd]]
 
-  - Complete the tasks in class
+- Complete the tasks in class (ca. 30 min)
 
-  - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload to Canvas]]
+- When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload the Org-mode file to Canvas]]
+

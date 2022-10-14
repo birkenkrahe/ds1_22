@@ -26,24 +26,23 @@
 
 2) Retrieve the first value of the ~Nile~ data set
 
-3) Which data science question does the last output answer? Write a
-   full sentence.
+3) Which data science (not R) question does the last output answer?
+   Write a full sentence.
 
    #+begin_quote
      ...
    #+end_quote
 
 4) Extract the time that corresponds to the first value of ~Nile~ using
-   the ~time~ function. Store that time in ~year~. Tip: look at ~time(Nile)~
-   first.
+   the ~time~ function. Store that time in ~year~.
 
 5) What is the value of the /last/ element of ~Nile~? Use the ~length~
    function to answer this question and store the value in ~last~. 
 
 6) What was the Nile flow in 1967?
 
-7) What is the index of the third-to-last element of ~Nile~? Use the
-   function ~which~ to answer this question.
+7) What is the index of the third-to-last element of ~Nile~? Use a
+   function to answer this question.
 
 8) How many values of ~Nile~ are larger than the third-to-last value?
 
