@@ -20,11 +20,11 @@
     until you see ~DONE~ instead of ~TODO~ next to the title.
   - Perform this last step each time you complete a section.
 
-* TODO NINE QUESTIONS ABOUT THE NILE
+* TODO 10 QUESTIONS ABOUT THE NILE
 
 1) Print the length of the data set ~Nile~ using an R function
 
-2) Retrieve the first value of the ~Nile~ data set
+2) Retrieve the second to fifth value of the ~Nile~ data set
 
 3) Which data science (not R) question does the last output answer?
    Write a full sentence.
@@ -33,17 +33,25 @@
      ...
    #+end_quote
 
-4) Extract the time that corresponds to the next-to-last value of ~Nile~
-   using the ~time~ function. Store that time in ~year~.
+4) Extract the time that corresponds to the next-to-last value of
+   ~Nile~.
 
-5) What is the value of the /last/ element of ~Nile~? Use the ~length~
-   function to answer this question and store the value in ~last~. 
+5) What was the Nile flow in 1967?
+   
+6) What is the index of the third-to-last element of ~Nile~? Use the
+   ~which~ function to answer this question.
 
-6) What was the Nile flow in 1967?
+7) How many values of ~Nile~ are larger than the third-to-last value?
 
-7) What is the index of the third-to-last element of ~Nile~? Use a
-   function to answer this question.
+8) How much water flowed down the Nile between 1871 and 1970?
 
-8) How many values of ~Nile~ are larger than the third-to-last value?
+9) In which year was the Nile at its lowest level? Use the ~min~
+   function for this task.
 
-9) How much water flowed down the Nile between 1871 and 1970?
+10) Make a line plot of all observations in the data set ~Nile~ using
+    ~plot~ and mark the lowest level of the line using the ~abline~
+    function. The result is stored in ~nile.png~
+
+    #+begin_src R :results graphics file :file nile.png
+      ...
+    #+end_src
