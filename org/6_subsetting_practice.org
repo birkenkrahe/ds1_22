@@ -47,14 +47,20 @@
 8) How much water flowed down the Nile between 1871 and 1970?
 
 9) In which year was the Nile at its lowest level? Use the ~min~
-   function for this task.
+   function for this task and store the result in ~tmin~
 
 10) Make a line plot of all observations in the data set ~Nile~ using
-    ~plot~ and mark the lowest level of the line using the ~abline~
-    function. The result is stored in ~nile.png~
+    ~plot~, mark the year of the lowest level of the Nile with a
+    vertical line, and the average flow through the Nile with a
+    horizontal line. The result is stored in ~nile.png~.
 
-    Tip: you can draw a vertical line at point ~x~ with ~abline(v=x)~
+    You can draw a vertical line at point ~x~ with ~abline(v=x)~, and a
+    horizontal line at point ~y~ with ~abline(h=y)~.
 
     #+begin_src R :results graphics file :file nile.png
       ...
     #+end_src
+
+    Tip: You can change the appearance of lines with the parameters ~col~,
+    ~lty~, ~lwd~. E.g. ~col="red, lty=2, lwd=2~ for a red, dashed, thick
+    line.
