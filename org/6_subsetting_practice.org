@@ -20,7 +20,7 @@
     until you see ~DONE~ instead of ~TODO~ next to the title.
   - Perform this last step each time you complete a section.
 
-* TODO NINE TIMES DOWN THE NILE
+* TODO NINE QUESTIONS ABOUT THE NILE
 
 1) Print the length of the data set ~Nile~ using an R function
 
