@@ -1,4 +1,4 @@
-#+TITLE: Bonus assignment: Subsetting and Extracting
+#+TITLE: Practice: Subsetting and Extracting
 #+AUTHOR: [YourName] 
 #+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
 #+STARTUP: overview hideblocks indent
@@ -6,10 +6,10 @@
 * README
 
 - Practice file for the lecture on "Subsetting and extracting indices
-  in R" ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org][GitHub]])
+  in R" ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/6_subsetting.org][GitHub]])
 - Create, execute and debug R code blocks as needed
 - Emacs + ESS + Org-mode and R must be installed
-- Upload the completed file as a bonus assignment ([[https://lyon.instructure.com/courses/568/assignments/2952][Canvas]])
+- You find the solutions in the PDF repository
 
 * TODO IDENTIFY YOURSELF
 
@@ -27,8 +27,7 @@ set. Here, we're using another built-in data set, ~islands~. Instead of
 instead of a line plot, you will draw a dot plot.
 
 Find out what ~islands~ contains and what its structure is. Take a
-look at ~example(islands)~, too. Submit the completed Org-mode file
-to Canvas for 5 bonus points.
+look at ~example(islands)~, too.
 
 #+begin_src R
   ...
