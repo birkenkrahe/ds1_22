@@ -1,0 +1,121 @@
+#+TITLE: Bonus assignment: Subsetting and Extracting
+#+AUTHOR: [YourName] 
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:R :session *R* :results output
+* README
+
+- Practice file for the lecture on "Subsetting and extracting indices
+  in R" ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/5_vectors.org][GitHub]])
+- Create, execute and debug R code blocks as needed
+- Emacs + ESS + Org-mode and R must be installed
+- Upload the completed file as a bonus assignment ([[https://lyon.instructure.com/courses/568/assignments/2952][Canvas]])
+
+* TODO IDENTIFY YOURSELF
+
+  - Update the ~#+AUTHOR:~ information in the header
+  - Add ~(pledged)~ after your name
+  - Put your cursor on the headline of this section, and type ~S <LEFT>~
+    until you see ~DONE~ instead of ~TODO~ next to the title.
+  - Perform this last step each time you complete a section.
+
+* TODO 10 questions about Earth's ~islands~
+
+This exercise is very similar to the practice on the ~Nile~ data
+set. Here, we're using another built-in data set, ~islands~. Instead of
+~time~, you need to use ~names~ to analyze the content of ~islands~, and
+instead of a line plot, you will draw a dot plot.
+
+Find out what ~islands~ contains and what its structure is. Take a
+look at ~example(islands)~, too. Submit the completed Org-mode file
+to Canvas for 5 bonus points.
+
+#+begin_src R
+  ...
+#+end_src
+
+1) How many elements does the vector ~islands~ have?
+
+   #+begin_src R
+     ...
+   #+end_src
+
+2) Retrieve the third to fourth, the twelfth to thirty-fifth, and the
+   48th element of ~islands~ with one command, and check that you
+   retrieved 28 elements altogether (with another command)
+
+   #+begin_src R
+     ...
+     ...
+   #+end_src
+
+3) Create a vector ~islands_unnamed~ from ~islands~ that is not named and
+   show its structure. Tip: to remove the ~names~ of a vector, assign
+   ~NULL~ to it.
+
+   #+begin_src R
+     ...
+     ...   
+     ...
+   #+end_src
+
+4) Print the value of ~islands~ that belongs to the ~names(islands)~
+   element ~"Iceland"~- which data science question could this answer?
+
+   #+begin_src R
+     ...
+   #+end_src
+
+   #+begin_quote
+   »...«
+   #+end_quote
+
+5) Which element of ~islands~ corresponds to the greatest area? (Put
+   differently: what is the greatest landmass on Earth?)
+
+   #+begin_src R
+     ...
+   #+end_src
+
+6) What is the index of the next-to-last element of ~islands~? Use ~which~
+   to answer this question and save the result as ~index~.
+
+   #+begin_src R
+     ...
+     ...
+   #+end_src
+
+7) Check your answer to the last question by finding the value of
+   ~islands~ that belongs to ~index~.
+   #+begin_src R
+     ...
+   #+end_src
+
+8) How many values of ~islands~ are larger than the next-to-last value
+   of ~islands~, the answer to the last question?
+   #+begin_src R
+     ...
+   #+end_src
+
+9) What is the landmass of all areas listed in ~islands~?
+   #+begin_src R
+     ...
+   #+end_src
+
+10) Make a dot plot of all entries in the data set ~islands~ using the
+    ~dotchart~ function. As its only argument, use the
+    ~log10~-transformed, ordered data set ~areas <- log10(sort(islands))~.
+
+    Add a line for the median of this data set, ~median(areas)~ and add
+    it to the plot with ~abline(v=median(areas)~.
+
+    #+begin_src R :results graphics file :file islands.png
+      ...  # define areas argument
+      ...  # compute median 
+      ...  # plot dotchart
+      ...  # add vertical line for median
+    #+end_src
+
+    Tip: You can change the appearance of lines with the parameters
+    ~col~, ~lty~, ~lwd~. E.g. ~col="red, lty=2, lwd=2~ for a red, dashed,
+    thick line.
