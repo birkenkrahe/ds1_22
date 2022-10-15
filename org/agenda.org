@@ -1219,7 +1219,7 @@ Here's my list - 3 x infrastructure + 7 x content
 10) Everything is an object, and there's a function for everything
 #+end_quote
 
-* Week 8: Subsetting and extracting, factors
+* Week 8+9: Subsetting and extracting, factors
 #+attr_html: :width 500px
 [[../img/week8.jpg]]
 
@@ -1230,7 +1230,7 @@ Here's my list - 3 x infrastructure + 7 x content
 - [X] [[https://app.datacamp.com/groups/lyon-college-data-science-fall-2022/assignments][DataCamp assignments 8-10: data frames, lists, data import]]
 - [ ] Lab session: subsetting with ~Nile~
 
-* DONE Review: 2nd sprint review
+** Review: 2nd sprint review
 #+attr_html: :width 500px
 [[../img/scrum.png]]
 
@@ -1274,7 +1274,7 @@ Here's my list - 3 x infrastructure + 7 x content
   minimally at least on what your options were and why you chose them.
 
 - Is there a specific dress code?  Answer: no, but you should always strive to look "professional" (this means adapted to the occasion - possible check with someone)
-* DONE Lyon College Career Expo
+** Lyon College Career Expo
 #+attr_html: :width 300px
 [[../img/recruit.jpg]]
 
@@ -1293,7 +1293,7 @@ Here's my list - 3 x infrastructure + 7 x content
   [[../img/dress-for-success.png]]
   [[https://uca.edu/career/files/2017/09/dress-for-success.png][Source: uca.edu]]
 
-* DONE Review DataCamp Factors
+** Review DataCamp Factors
 #+attr_html: :width 400px
 [[../img/factory.jpg]]
 
@@ -1383,7 +1383,7 @@ Here's my list - 3 x infrastructure + 7 x content
   #+end_src  
 - Example taken from [[https://campus.datacamp.com/courses/introduction-to-r-for-finance/factors-4?ex=1]["Introduction to R for Finance" @DataCamp]]
 
-* DONE Review: indexing the Nile
+** Review: indexing the Nile
 
 - Print only the last year of observations from the data set ~Nile~?
   #+begin_src R
@@ -1418,7 +1418,7 @@ Here's my list - 3 x infrastructure + 7 x content
   #+RESULTS:
   : [1] 746
 
-* DONE Lecture/practice: subsetting and extracting
+** Lecture/practice: subsetting and extracting
 #+attr_html: :width 600px
 [[../img/extraction.png]]
 
@@ -1428,16 +1428,16 @@ Here's my list - 3 x infrastructure + 7 x content
 - How to put dissected vectors back together
 - How to overwrite subvectors
   
-* READ NOTE: [[HTTPS://LYON.INSTRUCTURE.COM/COURSES/568/DISCUSSION_TOPICS/940][NO CLASS ON FOUNDER'S DAY FRI OCT 21]]
-* NEXT DataCamp assignment "Data Frames" (Oct 17)
+** NOTE: [[HTTPS://LYON.INSTRUCTURE.COM/COURSES/568/DISCUSSION_TOPICS/940][NO CLASS ON FOUNDER'S DAY FRI OCT 21]]
+** DataCamp assignment "Data Frames" (Oct 17)
 [[../img/racing.jpg]]
 
 - Data frames are the most important data structures for exploration
 - This is not a difficult lesson (though we will review it in class)
 - Make sure you complete it on time (October 17)
 
-* NEXT Test 7: subset vectors, matrices, data frames
-* TODO Lab practice: ~Nile~ extraction!
+** Test 7: subset vectors, matrices, data frames
+** Lab practice: ~Nile~ extraction!
 #+attr_html: :width 500px
 [[../img/nile.png]]
 
@@ -1448,13 +1448,13 @@ Here's my list - 3 x infrastructure + 7 x content
 
   - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload the Org-mode file to Canvas]]
 
-* Week 9: Data frames, lists and 3rd sprint review
+* Week 10: Data frames, lists and 3rd sprint review
 
 - [ ] Review: data frames (DataCamp)
-- [ ] 3rd sprint review: first results!
+- [ ] Lecture/practice: data frames
+- [ ] 3rd sprint review coming up: first results!
 
-* Week 10: Importing external data with utils
-* Week 11-15: Basic plotting/ggplot2/projects
+* Week 11-15: Import/basic plotting/ggplot2/projects
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
