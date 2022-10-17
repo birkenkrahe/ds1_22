@@ -1,0 +1,503 @@
+#+title: Data frames and Factors
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+OPTIONS: toc:nil num:nil
+#+STARTUP: overview hideblocks indent inlineimages
+#+PROPERTY: header-args:R :session *R* :exports both :results output
+* What will you learn?
+
+ - What is a data frame?
+ - How do you run R programs?
+ - How do you create data frames?
+ - How can you subset data frames?
+ - Orange juice or Vitamin C?
+ - What about lists?
+
+* What is a data frame?
+
+  - A data frame is a *table* of one row for each data point
+  - A data frame consists of *vectors* of the same length
+  - The vectors can have *different* data types
+
+* Running R programs
+
+  - Run it as script or batch ([[http://datacornering.com/how-to-run-r-scripts-from-the-windows-command-line-cmd/][Windows]])
+  - Run it as a script with [[https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/Rscript][~Rscript~]]
+  - Run in [[https://en.wikipedia.org/wiki/Batch_processing][batch mode]] with [[https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/BATCH][~R CMD BATCH~]]
+  - Use the [[http://dirk.eddelbuettel.com/code/littler.html][~littler~]] package
+
+** Practice
+
+   1) Create a file ~test.R~
+   2) Put the code from ~dslabs::murders~ into it
+   3) Execute ~Rscript test.R~ in a terminal
+   4) Execute ~R CMD BATCH test.R~ in a terminal
+   5) What's the difference? (See here)
+   6) Remove the first two lines and repeat 3-4
+
+** Solutions
+*** ~Rscript~
+
+    - Does not echo
+    - Prints output to ~stdout~
+    - Can be used without input file
+
+    #+begin_example bash
+ linux> ls ./ -la
+ total 12
+ drwxrwxr-x 2 marcus marcus 4096 Apr 24 17:10 .
+ drwxrwxr-x 4 marcus marcus 4096 Apr 24 17:00 ..
+ -rw-rw-r-- 1 marcus marcus  177 Apr 24 17:10 test.R
+
+ linux> cat test.R
+     library(dslabs)
+     data(murders)
+     str(murders)
+
+ linux> Rscript test.R
+ 'data.frame':   51 obs. of  5 variables:
+  $ state     : chr  "Alabama" "Alaska" "Arizona" "Arkansas" ...
+  $ abb       : chr  "AL" "AK" "AZ" "AR" ...
+  $ region    : Factor w/ 4 levels "Northeast","South",..: 2 4 4 2 4 4 1 2 2 2 ...
+  $ population: num  4779736 710231 6392017 2915918 37253956 ...
+  $ total     : num  135 19 232 93 1257 ...
+
+ linux> ls ./ -la
+ total 12
+ drwxrwxr-x 2 marcus marcus 4096 Apr 24 17:10 .
+ drwxrwxr-x 4 marcus marcus 4096 Apr 24 17:00 ..
+ -rw-rw-r-- 1 marcus marcus  177 Apr 24 17:10 test.R
+
+ linux> Rscript -e 1+1
+ [1] 2
+ linux>
+
+ linux> cat test1.R
+ #    library(dslabs)
+ #    data(murders)
+     str(murders)     # show structure of 'murders'
+ linux> Rscript test1.R
+ Error in str(murders) : object 'murders' not found
+ Execution halted
+
+    #+end_example
+
+*** ~BATCH~
+
+    - Echoes the input statements
+    - Cannot output to ~stdout~
+    - Recovers workspace
+
+    #+begin_example bash
+ linux> R CMD BATCH test.R
+ linux> R CMD BATCH test.R
+ linux> ls -la
+ total 60
+ drwxrwxr-x 2 marcus marcus  4096 Apr 24 17:26 .
+ drwxrwxr-x 4 marcus marcus  4096 Apr 24 17:26 ..
+ -rw-rw-r-- 1 marcus marcus 32790 Apr 24 17:26 .RData
+ -rw-rw-r-- 1 marcus marcus   177 Apr 24 17:10 test.R
+ -rw-rw-r-- 1 marcus marcus  1324 Apr 24 17:26 test.Rout
+
+ linux> cat test.Rout
+
+ R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+ [...]
+
+ [Previously saved workspace restored]
+
+ >     library(dslabs)  # load 'dslabs' package (must be installed)
+ >     data(murders)    # load data set 'murders' from 'dslabs'
+ >     str(murders)     # show structure of 'murders'
+ 'data.frame':   51 obs. of  5 variables:
+  $ state     : chr  "Alabama" "Alaska" "Arizona" "Arkansas" ...
+  $ abb       : chr  "AL" "AK" "AZ" "AR" ...
+  $ region    : Factor w/ 4 levels "Northeast","South",..: 2 4 4 2 4 4 1 2 2 2 ...
+  $ population: num  4779736 710231 6392017 2915918 37253956 ...
+  $ total     : num  135 19 232 93 1257 ...
+ >
+ > proc.time()
+    user  system elapsed
+   0.316   0.500   0.177
+
+ linux> R CMD BATCH test.R > outfile
+ linux> ls -la
+ total 60
+ drwxrwxr-x 2 marcus marcus  4096 Apr 24 17:27 .
+ drwxrwxr-x 4 marcus marcus  4096 Apr 24 17:28 ..
+ -rw-rw-r-- 1 marcus marcus     0 Apr 24 17:27 outfile
+ -rw-rw-r-- 1 marcus marcus 32790 Apr 24 17:27 .RData
+ -rw-rw-r-- 1 marcus marcus    93 Apr 24 17:23 test1.R
+ -rw-rw-r-- 1 marcus marcus   177 Apr 24 17:10 test.R
+ -rw-rw-r-- 1 marcus marcus  1324 Apr 24 17:27 test.Rout
+
+ linux> R CMD BATCH test1.R
+
+ linux> ls -la
+ total 64
+ drwxrwxr-x 2 marcus marcus  4096 Apr 24 17:29 .
+ drwxrwxr-x 4 marcus marcus  4096 Apr 24 17:28 ..
+ -rw-rw-r-- 1 marcus marcus     0 Apr 24 17:27 outfile
+ -rw-rw-r-- 1 marcus marcus 32790 Apr 24 17:29 .RData
+ -rw-rw-r-- 1 marcus marcus    93 Apr 24 17:23 test1.R
+ -rw-rw-r-- 1 marcus marcus   177 Apr 24 17:10 test1.R~
+ -rw-rw-r-- 1 marcus marcus  1240 Apr 24 17:29 test1.Rout
+ -rw-rw-r-- 1 marcus marcus   177 Apr 24 17:10 test.R
+ -rw-rw-r-- 1 marcus marcus  1324 Apr 24 17:27 test.Rout
+
+ linux> cat test1.Rout
+
+ R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+ [...]
+
+ [Previously saved workspace restored]
+
+ > #    library(dslabs)
+ > #    data(murders)
+ >     str(murders)     # show structure of 'murders'
+ 'data.frame':   51 obs. of  5 variables:
+  $ state     : chr  "Alabama" "Alaska" "Arizona" "Arkansas" ...
+  $ abb       : chr  "AL" "AK" "AZ" "AR" ...
+  $ region    : Factor w/ 4 levels "Northeast","South",..: 2 4 4 2 4 4 1 2 2 2 ...
+  $ population: num  4779736 710231 6392017 2915918 37253956 ...
+  $ total     : num  135 19 232 93 1257 ...
+ >
+ > proc.time()
+    user  system elapsed
+   0.320   0.511   0.172
+    #+end_example
+
+*** ~littler~
+    - Does all that ~Rscript~ does
+    - Can read commands from ~stdin~
+    - Faster startup time
+    - Loads the ~methods~ package ([[https://www.rdocumentation.org/packages/methods/versions/3.6.2/topics/Methods_for_S3][OOP]])
+
+    #+begin_example bash
+    R> install.packages("littler")   # install package on computer
+    R> library(littler)              # load package in R session
+
+    linux> /home/marcus/R/x86_64-pc-linux-gnu-library/4.0/littler/bin/r test.R
+ 'data.frame':   51 obs. of  5 variables:
+  $ state     : chr  "Alabama" "Alaska" "Arizona" "Arkansas" ...
+  $ abb       : chr  "AL" "AK" "AZ" "AR" ...
+  $ region    : Factor w/ 4 levels "Northeast","South",..: 2 4 4 2 4 4 1 2 2 2 ...
+  $ population: num  4779736 710231 6392017 2915918 37253956 ...
+  $ total     : num  135 19 232 93 1257 ...
+
+    #+end_example
+
+* Creating data frames
+
+  - Use the function ~data.frame~
+  - Check out ~example(data.frame)~
+  - Enter the first example from ~help(data.frame)~
+
+  #+begin_src R :session :results output
+
+    L3 <- LETTERS[1:3]   # create vector of capital letters
+    L3
+    fac <- sample(L3,10,replace=TRUE) # generate a sample from the vector
+    fac
+    df_ex <- data.frame(1,1:10,fac) # create named 10x3 data frame (auto-named)
+    df_ex
+    df_ex <- data.frame("x"=1,"y"=1:10,fac) # data frame with named columns
+    df_ex
+    str(df_ex)  # check structure
+
+  #+end_src
+
+** Testing functions
+
+   - Check for vector, matrix, list, data frame
+   - What are you expecting?
+
+   #+begin_src R :session :results output
+
+     is.vector(df_ex)
+     is.matrix(df_ex)
+     is.data.frame(df_ex)
+     is.list(df_ex)
+
+   #+end_src
+
+** Practice
+
+   - Create and print the data frame shown in figure [[1]]
+
+   #+name: 1
+   #+caption: data frame example (source: guru99.com)
+   [[./img/df.png]]
+
+** Solution
+
+   - Define vectors with ~c()~
+   - Create data frame with ~data.frame()~
+   - You can rename columns with ~colnames()~
+   - You can auto-convert ~character~ to ~factor~
+
+   #+begin_src R :session :results output
+     ## define vectors
+     ID <- c(10,20,30,40) # numeric integer vector
+     items <- c("book","pen","textbook","pencil_case") # character vector
+     store <- c(TRUE,FALSE,TRUE,FALSE) # logical vector
+     price <- c(2.5,8.0,10.0,7.0)  # numeric double vector
+
+     ## create data frame and properties
+     df <- data.frame(ID,items,store,price)
+     df
+     rownames(df)   # row names (auto-created)
+     colnames(df)   # column names
+     str(df)        # data frame structure
+
+     ## auto-convert characters to factors
+     df_fac <- data.frame(ID,items,store,price,
+                          stringsAsFactors = TRUE )
+     str(df_fac)
+   #+end_src
+
+* Subsetting data frames
+
+  - Select rows 1 to 2: ~df[1:2,]~
+  - Select row 3 in column 2: ~df[3,2]~ or ~df$items[3]~
+  - Select column 1: ~df[,1]~ or ~df$ID~
+  - Select rows 1 to 3 and columns 3 to 4: ~df[1:3,3:4]~
+  - Select rows 2 to 3 and columns 1 and 4: ~df[2:3,c(1,4)]~
+
+  #+name: 2
+  #+caption: subsetting data frame
+  [[./img/subset.png]]
+
+  #+begin_src R :session :results output
+    df[3,2]     # select row 3 in column 2 with []
+    df$items[3] # select row 3 in column 2 with $
+    df[1:2,]    # select rows 1 to 2
+    df[,1]      # select column 1 with []
+    df$ID       # select column 1 with $
+    df[1:3,3:4] # select rows 1 to 3, and columns 3 to 4
+    df[2:3,c(1,4)] # select rows 2 to 3, and columns 1 and 4
+  #+end_src
+
+** Practice
+
+   - Look at the top of the dataset ~ToothGrowth~
+   - Save the dataset to the data frame ~tg~
+   - Compute the ~mean~ tooth length with ~$~
+   - Compute the ~mean~ tooth length with ~[]~
+   - Show that both values are identical
+   - Print the length of the longest tooth
+   - Extract rows 2 through 5, and columns 1 and 3
+   - Verify that the data frame is rectangular
+
+** Solution
+
+   #+begin_src R :session :results output
+     head(ToothGrowth)   # first lines of data set
+     tg <- ToothGrowth   # save data set in variable
+     mean(tg$len)        # compute mean tooth length with $
+     mean(tg[,1])        # compute mean tooth length with []
+     identical(mean(tg$len), mean(tg[,1])) # compare results
+     max(tg$len)         # length of longest tooth
+     tg[2:4,c(1,3)]      # extract rows 2-4, and columns 1 and 3
+
+                                             # the data frame is rectangular
+     length(tg$len)==length(tg$supp)
+     length(tg$len)==length(tg$dose)
+     str(tg)
+   #+end_src
+
+* More useful functions
+
+  - ~dim~ gives you the data frame dimensions
+  - ~nrow~ gives you the number of rows
+  - ~ncol~ gives you the number of columns
+  - ~head(x=,N)~ gives you the first ~N~ rows
+  - ~order~ gives you the indices of an ordered vector
+  - ~subset~ gives you a subset of any data structure
+
+  #+begin_src R :session :results output
+    dim(df)          # dimension of df
+    nrow(df)         # no. of rows
+    ncol(df)         # no. of columns
+
+    dim(tg)          # dimension of tg
+    nrow(tg)         # no. of rows
+    ncol(tg)         # no. of columns
+    head(tg$len,10)  # first 10 lines of vector
+
+    order(head(tg$len)) # order and print indices
+
+    ## print ordered vector
+    tg$len[order(head(tg$len))]
+    tg$len[order(head(tg$len), decreasing = TRUE)]
+
+    ## ?subset: type out the 'airquality' examples
+  #+end_src
+
+* Data frame challenges
+** Challenge 1
+   - Try to create a not rectangular data frame
+   - Define vectors of different length
+   - Combine them using  ~data.frame~
+   - Explain the result!
+
+*** Solution
+
+    #+begin_src R :session :results output
+      ## the longer vector is an even multiple of the shorter one
+      data.frame(x1=c("moo","meh"),x2=1:4)
+
+      ## the longer vector is an odd multiple of the shorter one
+      data.frame(x1=c("moo","meh"),x2=1:3)
+    #+end_src
+
+    #+name: 3
+    #+caption: element-wise vector operation
+    [[./img/challenge.png]]
+
+** Challenge 2
+
+   - Use the dataset ~ToothGrowth~ (aka ~tg~)
+   - Find the number of cases in which tooth length is less than 16
+
+     #+begin_src R :session :results output
+
+       ## create index vector for observations with tooth length < 16
+       small <- tg$len < 16
+
+       ## look at the result - surprised?
+       head(small)    # print first few vector elements
+       sum(small)     # number of teeth of length < 16
+       length(small)  # some teeth are greater than 16
+
+       ## print the tooth length values
+       tg$len[small]  # tg[small] won't work here - why not?
+
+     #+end_src
+
+* Factor advantage
+  - Compare the following two plots
+  - You have to have ~ggplot2~ installed
+  - Uses the quick plot function ~qplot~
+
+    #+begin_src R :session :results output
+      ## check class of vector
+      class(mtcars$cyl)
+      class(factor(mtcars$cyl))
+
+      ## plot mpg vs wt, cyl
+      qplot(data=mtcars,x=wt,y=mpg,colour=cyl)
+      ggsave(filename="mtcars.png")
+
+      ## plot mpg vs wt, factor(cyl)
+      qplot(data=mtcars,x=wt,y=mpg,colour=factor(cyl))
+      ggsave(filename="mtcars_fac.png")
+    #+end_src
+
+* Orange Juice or Vitamin C?
+** Extract factor levels
+
+   - What's the class of ~tg$supp~?
+   - What're the levels of ~tg$supp~?
+   - We want to compare ~mean~ tooth length for each ~level~
+
+   #+begin_src R :session :results output
+
+     class(tg$supp)   # class check
+     levels(tg$supp)  # levels check
+
+     ## select the rows for each level
+     tgoj <- tg[tg$supp == 'OJ',]  # Orange Juice
+     tgvc <- tg[tg$supp == 'VC',]  # Vitamin C
+
+     ## compute the mean over all selected rows
+     mean(tgoj$len)
+     mean(tgvc$len)
+
+   #+end_src
+
+** What's going on here?
+
+   ~tg[tg$supp == 'OJ',]~ is loaded with meaning:
+
+   - ~[i,j]~: select row ~i~, column ~j~
+   - ~i~ can be a vector (several rows)
+   - ~j~ can be a vector (several columns)
+   - If either is missing: take all rows or columns
+   - ~==~ produces logical values
+   - ~TRUE~ means "take it", ~FALSE~ means "skip it"
+
+     #+begin_quote
+     ~tg[tg$supp == 'OJ', ]~ says:
+
+     "Find which elements of the ~tg$supp~ vector equal ~'OJ'~ and
+     extract the corresponding rows of ~tg~."
+
+     = "Take from tg the rows in which the supplement was ~OJ~."
+
+     Notice that ~tgoj~, ~tgvc~ are also still data frames.
+     #+end_quote
+
+* What about lists?
+  - Data frames (and ~data.table~) are really lists
+  - Subsetting: same ol', same ol' (with ~[[]]~)
+  - Create lists with ~list~
+  - Useful for web data
+
+    #+begin_src R :session :results output
+      class(mtcars)   # object class of data frame
+      typeof(mtcars)  # type or storage mode of data frame
+
+      ## subsetting a data frame as a list
+      identical(mtcars$mpg[1], mtcars[[1]][1])
+
+      ## create mtcars list (and add any other information)
+      mtcars_list <- list(mtcars)
+      typeof(mtcars_list)
+    #+end_src
+
+* Concept summary
+  - A data frame is a table of one row for each data point
+  - A data frame consists of vectors of the same length
+  - You can change row and column names
+  - You can convert ~character~ into ~factor~ vectors
+  - You can subset data frames using ~[]~ or ~$~ operators
+  - You can run R scripts from the command line (e.g. ~Rscript~)
+  - You can plot to file (e.g. using ~ggsave~)
+* Code summary
+  | ~library~         | load package                   |
+  | ~data~            | load dataset                   |
+  | ~str(df)~         | structure of data frame ~df~   |
+  | ~dslabs::murders~ | data set ~murders~ in ~dslabs~ |
+  | ~Rscript~         | run R on script ~.R~           |
+  | ~R CMD BATCH~     | execute R as batch command     |
+  | ~ls~, ~cat~       | (linux) shell commands         |
+  | ~littler~         | R script program package       |
+  | ~data.frame~      | create data frame              |
+  | ~example~         | show examples of function      |
+  | ~LETTERS~         | pre-stored alphabet (caps)     |
+  | ~sample~          | generate sample from vector    |
+  | ~is.vector~       | test for vector                |
+  | ~is.matrix~       | test for matrix                |
+  | ~is.data.frame~   | test for data frame            |
+  | ~is.list~         | test for list                  |
+  | ~rownames~        | get/set row names              |
+  | ~colnames~        | get/set column names           |
+  | ~$~               | access named vector            |
+  | ~[]~              | select index values            |
+  | ~mean~            | compute mean (1 argument)      |
+  | ~length~          | compute vector length          |
+  | ~identical~       | check equality (2 arguments)   |
+  | ~max~             | find maximum value             |
+  | ~dim~             | dimensions of object           |
+  | ~nrow~, ~ncol~    | number of rols, columns        |
+  | ~head~            | top lines (default: 6)         |
+  | ~order~           | order vector, print indices    |
+  | ~subset~          | select subset                  |
+  | ~list~            | make list                      |
+  | ~factor~          | turn vector into factor vector |
+  | ~ggplot2::ggsave~ | save named plot                |
+  | ~ggplot2::qplot~  | quick pretty plot              |
+
+* References
+  Matloff N (2019). fasteR: Fast Lane to Learning R! [[https://github.com/matloff/fasteR#--on-to-data-frames][Online: github]]

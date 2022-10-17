@@ -854,8 +854,8 @@ End of the lecture on vectors. Next stop: subsetting/extraction.
 - [X] Review test 5 - vectors and matrices in R
 - [X] Review test 6 - creating, sorting, measuring vectors
 - [X] 2nd sprint review due by Friday afternoon
-- [ ] Lecture/lab subsetting vectors
-- [ ] Next DataCamp lesson "Factors" (complete by Oct 7)
+- [X] Lecture/lab subsetting vectors
+- [X] Next DataCamp lesson "Factors" (complete by Oct 7)
 
 ** Review test 5 - vectors and matrices in R
 
@@ -1228,7 +1228,7 @@ Here's my list - 3 x infrastructure + 7 x content
 - [X] Invitation to the Lyon career fair (w/incentive)
 - [X] Review DataCamp lesson on Factors
 - [X] [[https://app.datacamp.com/groups/lyon-college-data-science-fall-2022/assignments][DataCamp assignments 8-10: data frames, lists, data import]]
-- [ ] Lab session: subsetting with ~Nile~
+- [X] Lab session: subsetting with ~Nile~
 
 ** Review: 2nd sprint review
 #+attr_html: :width 500px
@@ -1449,11 +1449,151 @@ Here's my list - 3 x infrastructure + 7 x content
   - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload the Org-mode file to Canvas]]
 
 * Week 10: Data frames, lists and 3rd sprint review
+#+attr_html: :width 500px
+[[../img/frame.jpg]]
 
 - [ ] Review: data frames (DataCamp)
 - [ ] Lecture/practice: data frames
 - [ ] 3rd sprint review coming up: first results!
+* Review: data frames [DataCamp]
+#+attr_html: :width 600px
+[[../img/df.png]]
 
+*Create a practice file ~df.org~ with the necessary headers in Emacs.*
+
+1) What is a data frame (technically)?
+   #+begin_quote
+   A rectangular data structure that has the VARIABLES (observables) of
+   a data set as COLUMNS, and their values (observations) as ROWS as
+   records. Variables can have different data types (unlike vectors).
+   #+end_quote
+
+2) You've bought a new car. The car company sends you a survey. What
+   kind of variables and corresponding data types do you expect?
+   #+begin_quote
+   - Name (of customer): ~character~
+   - Make (of car): ~character~
+   - Type (of car): ~character~
+   - Year (of build): ~character~
+   - Customer (returning or not): ~logical~
+   - Price (of car): ~numeric~
+   - Happiness (of customer): ~factor~
+   #+end_quote
+   
+3) How would you create such a data frame for a survey?
+   #+begin_quote
+   1) Create vectors with ~c~ or ~factor~
+   2) Add vectors to data frame with ~data.frame~
+   3) Store data frame in R object
+   #+end_quote
+   #+begin_src R
+     survey <- data.frame(
+       "Name"="Birkenkrahe",
+       "Make"="GMC",
+       "Type"="Equinox",
+       "Year"="2022",
+       "Customer"=TRUE,
+       "Price"=2,
+       "Happiness"=factor("happy",
+                          order=TRUE,
+                          levels=c("unhappy", "neutral", "happy")))
+     survey
+     class(survey)
+   #+end_src
+   
+4) Which R commands are used to explore data frames?
+   #+begin_src R
+     str(survey)  # data frame structure: variables and values
+   #+end_src
+   #+begin_src R
+     head(survey) # or tail: tabular view of the top (or the bottom)
+   #+end_src
+   #+begin_src R
+     summary(survey)  # statistical view of each variable incl. NA
+   #+end_src
+
+5) What about ~NA~?
+    #+begin_src R
+      s_na <- data.frame(survey,NA) # add NA column to data frame
+      str(s_na)
+    #+end_src
+    #+begin_src R
+      summary(s_na)
+    #+end_src
+
+    #+RESULTS:
+    #+begin_example
+         Name               Make               Type               Year          
+     Length:1           Length:1           Length:1           Length:1          
+     Class :character   Class :character   Class :character   Class :character  
+     Mode  :character   Mode  :character   Mode  :character   Mode  :character  
+
+
+
+     Customer           Price     Happiness   NA.         
+     Mode:logical   Min.   :1   unhappy:0   Mode:logical  
+     TRUE:1         1st Qu.:1   neutral:0   NA's:1        
+                    Median :1   happy  :1                 
+                    Mean   :1                             
+                    3rd Qu.:1                             
+                    Max.   :1
+    #+end_example
+
+6) How do you get values from a data frame? For example:
+   - the first row
+   - the third column
+   - the fourth through fifth column
+   #+begin_src R
+     ## using rownames (numbers)
+     survey[1,]  # first row
+     survey[,3]  # third column
+     survey[,4:5] # fourth through fifth column
+
+     ## using colnames
+     survey[,"Type"]  
+     survey[,c("Year","Customer")]
+   #+end_src
+   
+7) How can you add another row to the data frame?
+   #+begin_src R
+     new_survey <- survey # always store intermediate results
+     new_survey[2,] <- c("Birkenkrahe",
+                         "Kia",
+                         "Rio",
+                         "2023",
+                         FALSE,
+                         1,
+                         "neutral")
+     new_survey
+     nrow(new_survey)
+     ncol(new_survey)
+     dim(new_survey)
+   #+end_src
+
+8) How can you name the observations or rows?
+   #+begin_src R
+     names(new_survey)
+     rownames(new_survey)
+     rownames(new_survey) <- c("Car_1", "Car_2")
+     new_survey
+
+     new_survey["Car_2",]
+   #+end_src
+
+9) How can you subset observations? E.g. for car types from 2023?
+   #+begin_src R
+     subset(new_survey, Year==2023)
+   #+end_src
+
+   #+RESULTS:
+   :              Name Make Type Year Customer Price Happiness
+   : Car_2 Birkenkrahe  Kia  Rio 2023    FALSE     1   neutral
+   
+10) How can you extract the ~Make~ from that subset?
+    #+begin_src R
+      subset(new_survey, Year==2023)[,"Make"]
+    #+end_src
+   
 * Week 11-15: Import/basic plotting/ggplot2/projects
 * References
 #+attr_html: :width 500px
