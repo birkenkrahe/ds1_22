@@ -1468,7 +1468,17 @@ Here's my list - 3 x infrastructure + 7 x content
    records. Variables can have different data types (unlike vectors).
    #+end_quote
 
-2) You've bought a new car. The car company sends you a survey. What
+2) How can you create a data frame of two vectors with values ~1 2 3 4
+   5 6 7 8 9 10~? What are the properties of this data frame?
+   #+begin_src R
+     data.frame(1:10,1:10)
+   #+end_src
+   #+begin_quote
+     - Rows are automatically numbered
+     - Columns have default names ~X1.10~ and ~X1.10.1~
+   #+end_quote
+
+3) You've bought a new car. The car company sends you a survey. What
    kind of variables and corresponding data types do you expect?
    #+begin_quote
    - Name (of customer): ~character~
@@ -1480,7 +1490,7 @@ Here's my list - 3 x infrastructure + 7 x content
    - Happiness (of customer): ~factor~
    #+end_quote
    
-3) How would you create such a data frame for a survey?
+4) How would you create such a data frame for a survey?
    #+begin_quote
    1) Create vectors with ~c~ or ~factor~
    2) Add vectors to data frame with ~data.frame~
@@ -1501,7 +1511,7 @@ Here's my list - 3 x infrastructure + 7 x content
      class(survey)
    #+end_src
    
-4) Which R commands are used to explore data frames?
+5) Which R commands are used to explore data frames?
    #+begin_src R
      str(survey)  # data frame structure: variables and values
    #+end_src
@@ -1512,7 +1522,7 @@ Here's my list - 3 x infrastructure + 7 x content
      summary(survey)  # statistical view of each variable incl. NA
    #+end_src
 
-5) What about ~NA~?
+6) What about ~NA~?
     #+begin_src R
       s_na <- data.frame(survey,NA) # add NA column to data frame
       str(s_na)
@@ -1539,7 +1549,7 @@ Here's my list - 3 x infrastructure + 7 x content
                     Max.   :1
     #+end_example
 
-6) How do you get values from a data frame? For example:
+7) How do you get values from a data frame? For example:
    - the first row
    - the third column
    - the fourth through fifth column
@@ -1554,7 +1564,7 @@ Here's my list - 3 x infrastructure + 7 x content
      survey[,c("Year","Customer")]
    #+end_src
    
-7) How can you add another row to the data frame?
+8) How can you add another row to the data frame?
    #+begin_src R
      new_survey <- survey # always store intermediate results
      new_survey[2,] <- c("Birkenkrahe",
@@ -1570,7 +1580,7 @@ Here's my list - 3 x infrastructure + 7 x content
      dim(new_survey)
    #+end_src
 
-8) How can you name the observations or rows?
+9) How can you name the observations or rows?
    #+begin_src R
      names(new_survey)
      rownames(new_survey)
@@ -1580,16 +1590,16 @@ Here's my list - 3 x infrastructure + 7 x content
      new_survey["Car_2",]
    #+end_src
 
-9) How can you subset observations? E.g. for car types from 2023?
-   #+begin_src R
-     subset(new_survey, Year==2023)
-   #+end_src
+10) How can you subset observations? E.g. for car types from 2023?
+    #+begin_src R
+      subset(new_survey, Year==2023)
+    #+end_src
 
-   #+RESULTS:
-   :              Name Make Type Year Customer Price Happiness
-   : Car_2 Birkenkrahe  Kia  Rio 2023    FALSE     1   neutral
+    #+RESULTS:
+    :              Name Make Type Year Customer Price Happiness
+    : Car_2 Birkenkrahe  Kia  Rio 2023    FALSE     1   neutral
    
-10) How can you extract the ~Make~ from that subset?
+11) How can you extract the ~Make~ from that subset?
     #+begin_src R
       subset(new_survey, Year==2023)[,"Make"]
     #+end_src
