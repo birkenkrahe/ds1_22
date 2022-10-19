@@ -4,8 +4,12 @@
 #+STARTUP: overview hideblocks indent
 #+PROPERTY: header-args:R :session *R* :results output
 ** README
-#+attr_html: :width 600px
-[[../img/df.png]]
+
+- Review of the DataCamp chapter "Data frames" in the "Introduction to
+  R" online course plus some drilling exercises.
+- Upload the file after completion and don't forget to put your name
+  and ~(pledged)~ at the top in the ~#+AUTHOR:~ line.
+
 ** This is not a lecture
 #+attr_html: :width 500px
 - *Open Emacs on this Org-mode file to code along!*
@@ -168,7 +172,6 @@ Tip: before messing with a data frame, make a copy
      ...
      ...
    #+end_src
-
 
 ** TODO How do you remove a row from a data frame?
 

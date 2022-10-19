@@ -1478,7 +1478,8 @@ Here's my list - 3 x infrastructure + 7 x content
 - What are the levels of a factor?
 - Which functions are useful to quickly explore data frames?
 
-*Let's continue with the remainder of the topics for data frames*
+*Let's continue with the remainder of the topics for data frames:* Open
+the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][tinyurl.com/mpes4wen]]
 
 *We will practice more on data frames next week after the short break*
 
