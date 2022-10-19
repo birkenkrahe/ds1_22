@@ -5,330 +5,390 @@
 #+STARTUP: overview hideblocks indent inlineimages
 #+PROPERTY: header-args:R :session *R* :exports both :results output
 * What will you learn?
+#+attr_html: :width 500px
+[[../img/frame.jpg]]
 
- - What is a data frame?
- - How do you create data frames?
- - How can you subset data frames?
- - Orange juice or Vitamin C?
- - What about lists?
+- What is a data frame?
+- How do you create data frames?
+- How can you subset data frames?
+- Orange juice or Vitamin C?
+- What about lists?
 
 * What is a data frame?
 
-  - A data frame is a *table* of one row for each data point
-  - A data frame consists of *vectors* of the same length
-  - The vectors can have *different* data types
+- A data frame is a *table* of one row for each data point
+- A data frame consists of *vectors* of the same length
+- The vectors can have *different* data types
 
-* Creating data frames
+* Example: creating data frames
 
-  - Use the function ~data.frame~
-  - Check out ~example(data.frame)~
-  - Enter the first example from ~help(data.frame)~
-
-  #+begin_src R :session :results output
-
+- Create three vectors to put into the data frame
+  1) the 1st uses the constant vector ~LETTERS~
+  2) the 2nd uses the ~sample~ function to draw a sample from the first
+  3) the third one is just a colon-generated vector of integers
+  #+name: letters
+  #+begin_src R
     L3 <- LETTERS[1:3]   # create vector of capital letters
     L3
-    fac <- sample(L3,10,replace=TRUE) # generate a sample from the vector
+  #+end_src
+  #+name: sample
+  #+begin_src R
+    fac <- sample(x=L3,        # generate a sample from L3
+                  size=10,     # draw 10 letters
+                  replace=TRUE)  # with replacement
     fac
-    df_ex <- data.frame(1,1:10,fac) # create named 10x3 data frame (auto-named)
+  #+end_src
+  #+name: dataframe_unnamed
+  #+begin_src R
+    df_ex <- data.frame(1,1:10,fac) # create named 10x3 data frame (no names)
+    str(df_ex)  # check structure (implicitly unnamed)
     df_ex
+  #+end_src
+  #+name: dataframe_named
+  #+begin_src R
     df_ex <- data.frame("x"=1,"y"=1:10,fac) # data frame with named columns
+    str(df_ex)  # check structure (explicitly named)
     df_ex
-    str(df_ex)  # check structure
-
   #+end_src
+- More information: check out ~example(data.frame)~
 
-** Testing functions
+* Functions to test data structuresx
 
-   - Check for vector, matrix, list, data frame
-   - What are you expecting?
-
-   #+begin_src R :session :results output
-
-     is.vector(df_ex)
-     is.matrix(df_ex)
-     is.data.frame(df_ex)
-     is.list(df_ex)
-
-   #+end_src
+- Check for vector, matrix, list, data frame
+- What are you expecting?
+  #+begin_src R :session :results output
+    is.vector(df_ex)
+    is.matrix(df_ex)
+    is.data.frame(df_ex)
+    is.list(df_ex)
+  #+end_src
+- Data frames are special lists
 
 ** Practice
 
-   - Create and print the data frame shown in figure [[1]]
+- Create and print the data frame shown in figure [[1]]
 
-   #+name: 1
-   #+caption: data frame example (source: guru99.com)
-   [[./img/df.png]]
+  #+name: 1
+  #+caption: data frame example (source: guru99.com)
+  [[../img/7_df.png]]
 
 ** Solution
 
-   - Define vectors with ~c()~
-   - Create data frame with ~data.frame()~
-   - You can rename columns with ~colnames()~
-   - You can auto-convert ~character~ to ~factor~
+- Define vectors with ~c()~
+- Create data frame with ~data.frame()~
+- You can rename columns with ~colnames()~
+- You can auto-convert ~character~ to ~factor~
 
-   #+begin_src R :session :results output
-     ## define vectors
-     ID <- c(10,20,30,40) # numeric integer vector
-     items <- c("book","pen","textbook","pencil_case") # character vector
-     store <- c(TRUE,FALSE,TRUE,FALSE) # logical vector
-     price <- c(2.5,8.0,10.0,7.0)  # numeric double vector
+  #+begin_src R :session :results output
+    ## define vectors
+    ID <- c(10,20,30,40) # numeric integer vector
+    items <- c("book","pen","textbook","pencil_case") # character vector
+    store <- c(TRUE,FALSE,TRUE,FALSE) # logical vector
+    price <- c(2.5,8.0,10.0,7.0)  # numeric double vector
 
-     ## create data frame and properties
-     df <- data.frame(ID,items,store,price)
+    ## create data frame and properties
+    df <- data.frame(ID,items,store,price)
+    df
+    rownames(df)   # row names (auto-created)
+    colnames(df)   # column names
+    str(df)        # data frame structure
+
+    ## auto-convert characters to factors
+    df_fac <- data.frame(ID,items,store,price,
+                         stringsAsFactors = TRUE )
+    str(df_fac)
+  #+end_src
+
+* Practice: Creating and ubsetting data frames
+
+1) Create the data frame below and name it ~df~
+   #+attr_html: :width 500px
+   [[../img/7_df.png]]
+
+2) Select subsets using ~$~ and/or ~[]~ index operators:
+   - Select rows 1 to 2 using ~[]~
+   - Select column 2 using ~[]~ and ~$~
+   - Select row 3 of column 2  using ~[]~ and ~$~
+   - Select rows 1 to 3 in columns 3 and 4 using ~[]~ and ~$~
+   - Select rows 2 to 3, and columns 1 and 4 using ~[]~ and ~$~
+
+3) Using ~subset~,
+   - Select product IDs above 20
+   - Select all books listed
+   - Select all items cheaper than $11 and in stock
+
+** Solution
+
+1) Create the data frame:
+   #+begin_src R
+     df <- data.frame (
+       "ID" = seq(from=10,to=40,by=10),
+       "items" = c("book", "pen", "textbook", "pencil_case"),
+       "store" = rep(c(TRUE,FALSE), times=2),
+       "price" = c(2.5, 8, 10, 7))
      df
-     rownames(df)   # row names (auto-created)
-     colnames(df)   # column names
-     str(df)        # data frame structure
-
-     ## auto-convert characters to factors
-     df_fac <- data.frame(ID,items,store,price,
-                          stringsAsFactors = TRUE )
-     str(df_fac)
    #+end_src
-
-* Subsetting data frames
-
-  - Select rows 1 to 2: ~df[1:2,]~
-  - Select row 3 in column 2: ~df[3,2]~ or ~df$items[3]~
-  - Select column 1: ~df[,1]~ or ~df$ID~
-  - Select rows 1 to 3 and columns 3 to 4: ~df[1:3,3:4]~
-  - Select rows 2 to 3 and columns 1 and 4: ~df[2:3,c(1,4)]~
-
-  #+name: 2
-  #+caption: subsetting data frame
-  [[./img/subset.png]]
-
-  #+begin_src R :session :results output
-    df[3,2]     # select row 3 in column 2 with []
-    df$items[3] # select row 3 in column 2 with $
-    df[1:2,]    # select rows 1 to 2
-    df[,1]      # select column 1 with []
-    df$ID       # select column 1 with $
-    df[1:3,3:4] # select rows 1 to 3, and columns 3 to 4
-    df[2:3,c(1,4)] # select rows 2 to 3, and columns 1 and 4
-  #+end_src
-
-** Practice
-
-   - Look at the top of the dataset ~ToothGrowth~
-   - Save the dataset to the data frame ~tg~
-   - Compute the ~mean~ tooth length with ~$~
-   - Compute the ~mean~ tooth length with ~[]~
-   - Show that both values are identical
-   - Print the length of the longest tooth
-   - Extract rows 2 through 5, and columns 1 and 3
-   - Verify that the data frame is rectangular
-
-** Solution
+2) Select subsets:
+   #+attr_html: :width 500px
+   [[../img/7_subset.png]]
 
    #+begin_src R :session :results output
-     head(ToothGrowth)   # first lines of data set
-     tg <- ToothGrowth   # save data set in variable
-     mean(tg$len)        # compute mean tooth length with $
-     mean(tg[,1])        # compute mean tooth length with []
-     identical(mean(tg$len), mean(tg[,1])) # compare results
-     max(tg$len)         # length of longest tooth
-     tg[2:4,c(1,3)]      # extract rows 2-4, and columns 1 and 3
-
-                                             # the data frame is rectangular
-     length(tg$len)==length(tg$supp)
-     length(tg$len)==length(tg$dose)
-     str(tg)
+     df[3,2]     # select row 3 in column 2 with []
+     df$items[3] # select row 3 in column 2 with $
+     df[1:2,]    # select rows 1 to 2
+     df[,1]      # select column 1 with []
+     df$ID       # select column 1 with $
+     df[1:3,3:4] # select rows 1 to 3, and columns 3 to 4
+     df[2:3,c(1,4)] # select rows 2 to 3, and columns 1 and 4
+     df[which(df
+   #+end_src
+   #+begin_src R
+     which(colnames(df)=="price")
+     which(df=="pencil_case")
+     which(df==40)
+     "pencil_case" %in% df$items
+   #+end_src
+3) Using ~subset~:
+   #+begin_src R
+     subset(x=df, ID > 20)   # product IDs above 20
+     subset(x=df, items == "book")  # items called "book"
+     subset(x=df, (price < 11) & (store == TRUE)) # compound condition
    #+end_src
 
-* More useful functions
+   #+RESULTS:
+   :   ID       items store price
+   : 3 30    textbook  TRUE    10
+   : 4 40 pencil_case FALSE     7
+   :   ID items store price
+   : 1 10  book  TRUE   2.5
+   :   ID    items store price
+   : 1 10     book  TRUE   2.5
+   : 3 30 textbook  TRUE  10.0
 
-  - ~dim~ gives you the data frame dimensions
-  - ~nrow~ gives you the number of rows
-  - ~ncol~ gives you the number of columns
-  - ~head(x=,N)~ gives you the first ~N~ rows
-  - ~order~ gives you the indices of an ordered vector
-  - ~subset~ gives you a subset of any data structure
+* Practice: properties of real data frames
 
-  #+begin_src R :session :results output
-    dim(df)          # dimension of df
-    nrow(df)         # no. of rows
-    ncol(df)         # no. of columns
+1) Look at the top of the dataset ~ToothGrowth~
+2) Save the dataset to the data frame ~tg~
+3) Compute the ~mean~ tooth length with ~$~
+4) Compute the ~mean~ tooth length with ~[]~
+5) Show that both values are identical
+6) Print the length of the longest tooth
+7) Extract rows 2 through 5, and columns 1 and 3
+8) Verify that the data frame is rectangular
 
-    dim(tg)          # dimension of tg
-    nrow(tg)         # no. of rows
-    ncol(tg)         # no. of columns
-    head(tg$len,10)  # first 10 lines of vector
+** Solution
+#+begin_src R :session :results output
+  head(ToothGrowth)   # first lines of data set
+  tg <- ToothGrowth   # save data set in variable
+  mean(tg$len)        # compute mean tooth length with $
+  mean(tg[,1])        # compute mean tooth length with []
+  identical(mean(tg$len), mean(tg[,1])) # compare results
+  max(tg$len)         # length of longest tooth
+  tg[2:4,c(1,3)]      # extract rows 2-4, and columns 1 and 3
+  ## the data frame is rectangular
+  length(tg$len)==length(tg$supp)
+  length(tg$len)==length(tg$dose)
+  str(tg)
+#+end_src
 
-    order(head(tg$len)) # order and print indices
+* Some useful functions
 
-    ## print ordered vector
-    tg$len[order(head(tg$len))]
-    tg$len[order(head(tg$len), decreasing = TRUE)]
+- ~dim~ gives you the data frame dimensions
+- ~nrow~ gives you the number of rows
+- ~ncol~ gives you the number of columns
+- ~head(x=,N)~ gives you the first ~N~ rows
+- ~order~ gives you the indices of an ordered vector
+- ~subset~ gives you a subset of any data structure
 
-    ## ?subset: type out the 'airquality' examples
-  #+end_src
+#+begin_src R :session :results output
+  dim(df)          # dimension of df
+  nrow(df)         # no. of rows
+  ncol(df)         # no. of columns
 
-* Data frame challenges
+  dim(tg)          # dimension of tg
+  nrow(tg)         # no. of rows
+  ncol(tg)         # no. of columns
+  head(tg$len,10)  # first 10 lines of vector
+
+  order(head(tg$len)) # order and print indices
+
+  ## print ordered vector
+  tg$len[order(head(tg$len))]
+  tg$len[order(head(tg$len), decreasing = TRUE)]
+
+  ## ?subset: type out the 'airquality' examples
+#+end_src
+
+* TODO Data frame challenges
 ** Challenge 1
-   - Try to create a not rectangular data frame
-   - Define vectors of different length
-   - Combine them using  ~data.frame~
-   - Explain the result!
+- Try to create a not rectangular data frame
+- Define vectors of different length
+- Combine them using  ~data.frame~
+- Explain the result!
 
 *** Solution
 
-    #+begin_src R :session :results output
-      ## the longer vector is an even multiple of the shorter one
-      data.frame(x1=c("moo","meh"),x2=1:4)
+#+begin_src R :session :results output
+  ## the longer vector is an even multiple of the shorter one
+  data.frame(x1=c("moo","meh"),x2=1:4)
 
-      ## the longer vector is an odd multiple of the shorter one
-      data.frame(x1=c("moo","meh"),x2=1:3)
-    #+end_src
+  ## the longer vector is an odd multiple of the shorter one
+  data.frame(x1=c("moo","meh"),x2=1:3)
+#+end_src
 
-    #+name: 3
-    #+caption: element-wise vector operation
-    [[./img/challenge.png]]
+#+name: 3
+#+caption: element-wise vector operation
+[[./img/challenge.png]]
 
 ** Challenge 2
 
-   - Use the dataset ~ToothGrowth~ (aka ~tg~)
-   - Find the number of cases in which tooth length is less than 16
+- Use the dataset ~ToothGrowth~ (aka ~tg~)
+- Find the number of cases in which tooth length is less than 16
 
-     #+begin_src R :session :results output
+  #+begin_src R :session :results output
 
-       ## create index vector for observations with tooth length < 16
-       small <- tg$len < 16
+    ## create index vector for observations with tooth length < 16
+    small <- tg$len < 16
 
-       ## look at the result - surprised?
-       head(small)    # print first few vector elements
-       sum(small)     # number of teeth of length < 16
-       length(small)  # some teeth are greater than 16
+    ## look at the result - surprised?
+    head(small)    # print first few vector elements
+    sum(small)     # number of teeth of length < 16
+    length(small)  # some teeth are greater than 16
 
-       ## print the tooth length values
-       tg$len[small]  # tg[small] won't work here - why not?
+    ## print the tooth length values
+    tg$len[small]  # tg[small] won't work here - why not?
 
-     #+end_src
+  #+end_src
 
-* Factor advantage
-  - Compare the following two plots
-  - You have to have ~ggplot2~ installed
-  - Uses the quick plot function ~qplot~
+* TODO Factor advantage
 
-    #+begin_src R :session :results output
-      ## check class of vector
-      class(mtcars$cyl)
-      class(factor(mtcars$cyl))
+- Compare the following two plots
+- You have to have ~ggplot2~ installed
+- Uses the quick plot function ~qplot~
 
-      ## plot mpg vs wt, cyl
-      qplot(data=mtcars,x=wt,y=mpg,colour=cyl)
-      ggsave(filename="mtcars.png")
+  #+begin_src R :session :results output
+    ## check class of vector
+    class(mtcars$cyl)
+    class(factor(mtcars$cyl))
 
-      ## plot mpg vs wt, factor(cyl)
-      qplot(data=mtcars,x=wt,y=mpg,colour=factor(cyl))
-      ggsave(filename="mtcars_fac.png")
-    #+end_src
+    ## plot mpg vs wt, cyl
+    qplot(data=mtcars,x=wt,y=mpg,colour=cyl)
+    ggsave(filename="mtcars.png")
 
-* Orange Juice or Vitamin C?
+    ## plot mpg vs wt, factor(cyl)
+    qplot(data=mtcars,x=wt,y=mpg,colour=factor(cyl))
+    ggsave(filename="mtcars_fac.png")
+  #+end_src
+
+* TODO Orange Juice or Vitamin C?
 ** Extract factor levels
 
-   - What's the class of ~tg$supp~?
-   - What're the levels of ~tg$supp~?
-   - We want to compare ~mean~ tooth length for each ~level~
+- What's the class of ~tg$supp~?
+- What're the levels of ~tg$supp~?
+- We want to compare ~mean~ tooth length for each ~level~
 
-   #+begin_src R :session :results output
+  #+begin_src R :session :results output
 
-     class(tg$supp)   # class check
-     levels(tg$supp)  # levels check
+    class(tg$supp)   # class check
+    levels(tg$supp)  # levels check
 
-     ## select the rows for each level
-     tgoj <- tg[tg$supp == 'OJ',]  # Orange Juice
-     tgvc <- tg[tg$supp == 'VC',]  # Vitamin C
+    ## select the rows for each level
+    tgoj <- tg[tg$supp == 'OJ',]  # Orange Juice
+    tgvc <- tg[tg$supp == 'VC',]  # Vitamin C
 
-     ## compute the mean over all selected rows
-     mean(tgoj$len)
-     mean(tgvc$len)
+    ## compute the mean over all selected rows
+    mean(tgoj$len)
+    mean(tgvc$len)
 
-   #+end_src
+  #+end_src
 
 ** What's going on here?
 
-   ~tg[tg$supp == 'OJ',]~ is loaded with meaning:
+~tg[tg$supp == 'OJ',]~ is loaded with meaning:
 
-   - ~[i,j]~: select row ~i~, column ~j~
-   - ~i~ can be a vector (several rows)
-   - ~j~ can be a vector (several columns)
-   - If either is missing: take all rows or columns
-   - ~==~ produces logical values
-   - ~TRUE~ means "take it", ~FALSE~ means "skip it"
+- ~[i,j]~: select row ~i~, column ~j~
+- ~i~ can be a vector (several rows)
+- ~j~ can be a vector (several columns)
+- If either is missing: take all rows or columns
+- ~==~ produces logical values
+- ~TRUE~ means "take it", ~FALSE~ means "skip it"
 
-     #+begin_quote
-     ~tg[tg$supp == 'OJ', ]~ says:
+  #+begin_quote
+  ~tg[tg$supp == 'OJ', ]~ says:
 
-     "Find which elements of the ~tg$supp~ vector equal ~'OJ'~ and
-     extract the corresponding rows of ~tg~."
+  "Find which elements of the ~tg$supp~ vector equal ~'OJ'~ and
+  extract the corresponding rows of ~tg~."
 
-     = "Take from tg the rows in which the supplement was ~OJ~."
+  = "Take from tg the rows in which the supplement was ~OJ~."
 
-     Notice that ~tgoj~, ~tgvc~ are also still data frames.
-     #+end_quote
+  Notice that ~tgoj~, ~tgvc~ are also still data frames.
+  #+end_quote
 
-* What about lists?
-  - Data frames (and ~data.table~) are really lists
-  - Subsetting: same ol', same ol' (with ~[[]]~)
-  - Create lists with ~list~
-  - Useful for web data
+* TODO What about lists?
 
-    #+begin_src R :session :results output
-      class(mtcars)   # object class of data frame
-      typeof(mtcars)  # type or storage mode of data frame
+- Data frames (and ~data.table~) are really lists
+- Subsetting: same ol', same ol' (with ~[[]]~)
+- Create lists with ~list~
+- Useful for web data
 
-      ## subsetting a data frame as a list
-      identical(mtcars$mpg[1], mtcars[[1]][1])
+#+begin_src R :session :results output
+  class(mtcars)   # object class of data frame
+  typeof(mtcars)  # type or storage mode of data frame
 
-      ## create mtcars list (and add any other information)
-      mtcars_list <- list(mtcars)
-      typeof(mtcars_list)
-    #+end_src
+  ## subsetting a data frame as a list
+  identical(mtcars$mpg[1], mtcars[[1]][1])
+
+  ## create mtcars list (and add any other information)
+  mtcars_list <- list(mtcars)
+  typeof(mtcars_list)
+#+end_src
 
 * Concept summary
-  - A data frame is a table of one row for each data point
-  - A data frame consists of vectors of the same length
-  - You can change row and column names
-  - You can convert ~character~ into ~factor~ vectors
-  - You can subset data frames using ~[]~ or ~$~ operators
-  - You can run R scripts from the command line (e.g. ~Rscript~)
-  - You can plot to file (e.g. using ~ggsave~)
+
+- A data frame is a table of one row for each data point
+- A data frame consists of vectors of the same length
+- You can change row and column names
+- You can convert ~character~ into ~factor~ vectors
+- You can subset data frames using ~[]~ or ~$~ operators
+- You can run R scripts from the command line (e.g. ~Rscript~)
+- You can plot to file (e.g. using ~ggsave~)
+
 * Code summary
-  | ~library~         | load package                   |
-  | ~data~            | load dataset                   |
-  | ~str(df)~         | structure of data frame ~df~   |
-  | ~dslabs::murders~ | data set ~murders~ in ~dslabs~ |
-  | ~Rscript~         | run R on script ~.R~           |
-  | ~R CMD BATCH~     | execute R as batch command     |
-  | ~ls~, ~cat~       | (linux) shell commands         |
-  | ~littler~         | R script program package       |
-  | ~data.frame~      | create data frame              |
-  | ~example~         | show examples of function      |
-  | ~LETTERS~         | pre-stored alphabet (caps)     |
-  | ~sample~          | generate sample from vector    |
-  | ~is.vector~       | test for vector                |
-  | ~is.matrix~       | test for matrix                |
-  | ~is.data.frame~   | test for data frame            |
-  | ~is.list~         | test for list                  |
-  | ~rownames~        | get/set row names              |
-  | ~colnames~        | get/set column names           |
-  | ~$~               | access named vector            |
-  | ~[]~              | select index values            |
-  | ~mean~            | compute mean (1 argument)      |
-  | ~length~          | compute vector length          |
-  | ~identical~       | check equality (2 arguments)   |
-  | ~max~             | find maximum value             |
-  | ~dim~             | dimensions of object           |
-  | ~nrow~, ~ncol~    | number of rols, columns        |
-  | ~head~            | top lines (default: 6)         |
-  | ~order~           | order vector, print indices    |
-  | ~subset~          | select subset                  |
-  | ~list~            | make list                      |
-  | ~factor~          | turn vector into factor vector |
-  | ~ggplot2::ggsave~ | save named plot                |
-  | ~ggplot2::qplot~  | quick pretty plot              |
+
+| ~library~         | load package                   |
+| ~data~            | load dataset                   |
+| ~str(df)~         | structure of data frame ~df~   |
+| ~dslabs::murders~ | data set ~murders~ in ~dslabs~ |
+| ~Rscript~         | run R on script ~.R~           |
+| ~R CMD BATCH~     | execute R as batch command     |
+| ~ls~, ~cat~       | (linux) shell commands         |
+| ~littler~         | R script program package       |
+| ~data.frame~      | create data frame              |
+| ~example~         | show examples of function      |
+| ~LETTERS~         | pre-stored alphabet (caps)     |
+| ~sample~          | generate sample from vector    |
+| ~is.vector~       | test for vector                |
+| ~is.matrix~       | test for matrix                |
+| ~is.data.frame~   | test for data frame            |
+| ~is.list~         | test for list                  |
+| ~rownames~        | get/set row names              |
+| ~colnames~        | get/set column names           |
+| ~$~               | access named vector            |
+| ~[]~              | select index values            |
+| ~mean~            | compute mean (1 argument)      |
+| ~length~          | compute vector length          |
+| ~identical~       | check equality (2 arguments)   |
+| ~max~             | find maximum value             |
+| ~dim~             | dimensions of object           |
+| ~nrow~, ~ncol~    | number of rols, columns        |
+| ~head~            | top lines (default: 6)         |
+| ~order~           | order vector, print indices    |
+| ~subset~          | select subset                  |
+| ~list~            | make list                      |
+| ~factor~          | turn vector into factor vector |
+| ~ggplot2::ggsave~ | save named plot                |
+| ~ggplot2::qplot~  | quick pretty plot              |
 
 * References
-  Matloff N (2019). fasteR: Fast Lane to Learning R! [[https://github.com/matloff/fasteR#--on-to-data-frames][Online: github]]
+
+Matloff N (2019). fasteR: Fast Lane to Learning R! [[https://github.com/matloff/fasteR#--on-to-data-frames][Online: github]]
