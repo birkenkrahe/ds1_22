@@ -52,7 +52,7 @@
   #+end_src
 - More information: check out ~example(data.frame)~
 
-* Functions to test data structuresx
+* Functions to test data structures
 
 - Check for vector, matrix, list, data frame
 - What are you expecting?
@@ -99,7 +99,7 @@
     str(df_fac)
   #+end_src
 
-* Practice: Creating and ubsetting data frames
+* Practice: Creating and subsetting data frames
 
 1) Create the data frame below and name it ~df~
    #+attr_html: :width 500px

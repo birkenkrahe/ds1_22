@@ -3,3 +3,272 @@
 #+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
 #+STARTUP: overview hideblocks indent
 #+PROPERTY: header-args:R :session *R* :results output
+** README
+#+attr_html: :width 600px
+[[../img/df.png]]
+** This is not a lecture
+#+attr_html: :width 500px
+- *Open Emacs on this Org-mode file to code along!*
+- *Look at your notes later to check what you did not get*
+- *Challenge me to review/repeat topics that went by you*
+** DONE What is a data
+
+What is a data frame (technically)?
+#+begin_quote
+A rectangular data structure that has the VARIABLES (observables) of
+a data set as COLUMNS, and their values (observations) as ROWS as
+records. Variables can have different data types (unlike vectors).
+#+end_quote
+
+#+begin_quote
+A ~matrix~ is also a rectangular data structure but its entries have
+only ONE data type and columns and rows are not really different.
+#+end_quote
+
+** DONE Creating a data frame of numeric values (numbers)
+
+How can you create a data frame of two vectors with values ~1 2 3 4
+5 6 7 8 9 10~? What are the properties of this data frame?
+#+begin_src R
+  data.frame(1:10,1:10)
+#+end_src
+
+#+begin_quote
+- Rows are automatically numbered
+- Columns have default names ~X1.10~ and ~X1.10.1~
+#+end_quote
+
+** DONE Creating a data frame from survey data
+
+1) You've bought a new car. The car company sends you a survey. What
+   kind of variables and corresponding data types do you expect?
+   #+begin_quote
+   - Name (of customer): ~character~
+   - Make (of car): ~character~
+   - Type (of car): ~character~
+   - Year (of build): ~character~
+   - Customer (returning or not): ~logical~
+   - Price (of car): ~numeric~
+   - Happiness (of customer): ~factor~
+   #+end_quote
+
+2) How would you create such a data frame for a survey?
+   #+begin_quote
+   1) Create vectors with ~c~ or ~factor~
+   2) Add vectors to data frame with ~data.frame~
+   3) Store data frame in R object
+   #+end_quote
+
+   #+begin_src R
+     survey <- data.frame(
+       "Name"="Birkenkrahe",
+       "Make"="GMC",
+       "Type"="Equinox",
+       "Year"="2022",
+       "Customer"=TRUE,
+       "Price"=2,
+       "Happiness"=factor("happy",
+                          order=TRUE,
+                          levels=c("unhappy", "neutral", "happy")))
+   #+end_src
+
+3) Print ~survey~ and check that ~survey~ is a data frame using ~class~
+   #+begin_src R
+     survey
+     class(survey)
+   #+end_src
+
+
+** DONE Which commands are used to explore data frames
+
+Which R commands are used to explore data frames?
+
+1) Data frame structure (variables and first few values)
+   #+begin_src R
+     str(survey)  # data frame structure: variables and values
+   #+end_src
+
+2) First few lines of the data frame
+#+begin_src R
+  head(survey) # or tail: tabular view of the top (or the bottom)
+#+end_src
+
+3) Statistical summary of all variables
+   #+begin_src R
+     summary(survey)  # statistical view of each variable incl. NA
+   #+end_src
+
+
+** DONE What do you do with missing values (~NA~)?
+
+What about missing values, ~NA~?
+- Create a new data frame with a column ~missing~ of missing values
+- Compute the ~summary~ of the resulting data frame
+#+begin_src R :noweb yes
+  s_na <- data.frame(survey,"missing"=NA) # add NA column to data frame
+  str(s_na)
+#+end_src
+
+#+begin_src R
+  summary(s_na$"missing")
+#+end_src
+
+
+** TODO How do you extract values from a data frame?
+
+1) Look at the variables to remind yourself of the data structure
+   #+begin_src R
+     ...
+   #+end_src
+
+2) How do you get values from a data frame? For example:
+   - the first row
+   - the third column
+   - the fourth through fifth column
+
+   #+begin_src R
+     ...
+     ...
+     ...
+   #+end_src
+
+3) How do you extract values using the names of the columns?
+   - a named column (like ~Happiness~ OR ~Customer~)?
+   - two named columns (like ~Happiness~ AND ~Customer~)
+   #+begin_src R
+     ...
+     ...
+   #+end_src
+   
+** TODO How do you add another row to the data frame?
+
+How can you add another row to the data frame?
+- add rows with the index operator ~[]~
+- add rows with ~rbind(data_frame, vector)~
+
+Tip: the index of row two (for all columns) would be ~survey[2,]~
+
+Tip: before messing with a data frame, make a copy
+
+1) Add new row using ~[]~. The values are already stored in ~row2~
+
+   #+begin_src R
+     row2 <- c("Birkenkrahe", "Kia", "Rio", "2023", FALSE, 1, "neutral")
+
+     ## make a copy "new_survey" of the "survey" data frame
+     ...
+     ## add row to your copy using [ ] then print data frame
+     ...
+     ...
+   #+end_src
+
+2) Add the same row again using ~rbind~. The values are stored in ~row2~
+   #+begin_src R
+     ## add row using rbind
+     ...
+     ...
+   #+end_src
+
+
+** TODO How do you remove a row from a data frame?
+
+1) The data frame ~new_survey~ now has a double record in row 3. Print
+   that row on its own first using ~[]~ to make sure, then repeat the
+   command but add ~-~ before the index value
+   #+begin_src R
+     ...
+     ...
+   #+end_src
+
+2) Now overwrite ~new_survey~ accordingly, then print the data frame
+
+   #+begin_src R
+     ## overwriting new_survey with itself after removing row 3
+     ...
+     ...
+   #+end_src
+
+** TODO How do you name rows of a data frame?
+
+1) To name observations (rows) of a data frame, use ~rownames~.
+   - Save ~new_survey~ in a copy named ~df~
+   - Print all row names of ~df~ with ~rownames~
+
+   #+begin_src R
+     ...
+     ...
+   #+end_src
+
+2) Now overwrite ~rownames(df)~ with new names, e.g. ~Car_1~ and ~Car_2~ and
+   print the whole data frame to see the new names
+   #+begin_src R :noweb yes
+     ...
+     ...
+   #+end_src
+
+3) Now you can use the row names to index rows - print the second row
+   only, using ~[]~
+   #+begin_src R
+     ...
+   #+end_src
+
+** TODO How do you rename column names?
+
+1) For a data frame, the ~names~ function returns the same values as
+   ~colnames~. Print the column names of ~df~ using both functions
+   #+begin_src R
+     ...
+     ...
+   #+end_src
+
+2) How can you check if these two vectors are really ~identical~?
+   #+begin_src R
+     ...
+   #+end_src
+
+3) To change a column vector name means overwriting it. For example,
+   change the name of the column ~Customer~ to ~Account~.
+   - Find the index of the column using ~which~
+   - Print the current ~colnames~ using the index value you found
+   - Then overwrite its ~colnames~ value with the new name ~Account~
+   - Print the data frame to check the result
+   #+begin_src R
+     ...
+     ...
+     ...
+     ...
+   #+end_src
+   
+** TODO How can you ~subset~ observations?
+
+1) How can you ~subset~ observations? E.g. for car types from 2023?
+
+   Reminder: the arguments of ~subset~ are: input data frame, and a
+   logical condition on the subset.
+
+   #+begin_src R
+     ...
+   #+end_src
+
+2) How can you extract the ~Make~ only from that ~subset~?
+   - The subset is a data frame, too. Store it in ~dfs~
+   - Now extract the column that corresponds to ~Make~
+   #+begin_src R
+     ...
+     ...
+     ...
+   #+end_src
+
+** TODO How can you clean up after a session?
+
+Remove objects from the current session using ~rm~.
+- Run ~ls(~) to see your currently loaded R objects
+- Remove ~new_survey~ by feeding it to ~rm~
+- Run ~ls(~) again to see your currently loaded R objects
+- Run ~rm(list=ls())~ to remove all remaining objects
+- Run ~ls(~) again to see the result
+  #+begin_src R
+    ...
+    ...
+    ...
+  #+end_src

@@ -1471,6 +1471,17 @@ Here's my list - 3 x infrastructure + 7 x content
 * IN PROGRESS Review: data frames [DataCamp]
 #+attr_html: :width 600px
 [[../img/df.png]]
+
+*Recall what we did last time and test your memory/understanding:*
+- What is the function to create a data frame from scratch?
+- What is the function to create a factor vector?
+- What are the levels of a factor?
+- Which functions are useful to quickly explore data frames?
+
+*Let's continue with the remainder of the topics for data frames*
+
+*We will practice more on data frames next week after the short break*
+
 * Lecture/practice: more about data frames/lists
 #+attr_html: :width 400px
 [[../img/ThisIsNotALecture.jpg]]
