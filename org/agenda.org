@@ -1457,7 +1457,7 @@ Here's my list - 3 x infrastructure + 7 x content
 - [ ] Review: data frames (DataCamp)
 - [ ] Lecture/practice: data frames
 - [ ] 3rd sprint review coming up: first results!
-* How can you find out what your problems are?
+** How can you find out what your problems are?
 #+attr_html: :width 500px
 [[../img/failure.jpg]]
 
@@ -1468,7 +1468,7 @@ Here's my list - 3 x infrastructure + 7 x content
 - Do the practice files (hide answers and check your understanding)
 - Do the DataCamp practice and look at the flashcards (mobile app)
 
-* IN PROGRESS Review: data frames [DataCamp]
+** IN PROGRESS Review: data frames [DataCamp]
 #+attr_html: :width 600px
 [[../img/df.png]]
 
@@ -1483,7 +1483,42 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 *We will practice more on data frames next week after the short break*
 
-* Lecture/practice: more about data frames/lists
+* Week 11-15: Import/basic plotting/ggplot2/projects
+** I can teach it to you but I can't learn it for you
+#+attr_html: :width 600px
+#+caption: Prof Dr Gerhard Mack (2018)
+[[../img/mack1.png]]
+
+- Some of y'all's difficulties reminded me of this diary post:
+   [[https://github.com/birkenkrahe/org/blob/master/diary.org#i-can-teach-it-to-you-but-i-cannot-learn-it-for-you]["I can teach it to you but I can't learn it for you."]]
+
+- I remember this from my own studies: it was always dangerous to
+  learn from a brilliant teacher (of which I had a few) because I
+  mistook his competence for my own! His teaching usually put me into
+  a trance: everything seemed to make sense and I understood it all!
+
+- It is only when I tried to solve similar problems on my own
+  afterwards, completely by myself, and failed miserably more often
+  than not, that I understood the difference between learning
+  something FROM someone else (which isn't really possible), and
+  learning it BY yourself (which really is the only way of learning
+  anything).
+
+** IN PROGRESS Review: data frames [DataCamp]
+#+attr_html: :width 600px
+[[../img/df.png]]
+
+*Recall what we did last time and test your memory/understanding:*
+- What is the function to create a data frame from scratch?
+- What is the function to create a factor vector?
+- What are the levels of a factor?
+- Which functions are useful to quickly explore data frames?
+
+*Let's continue with the remainder of the topics for data frames:* Open
+the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][tinyurl.com/mpes4wen]]
+
+*We will practice more on data frames next week after the short break*
+** Lecture/practice: more about data frames/lists
 #+attr_html: :width 400px
 [[../img/ThisIsNotALecture.jpg]]
 
@@ -1493,7 +1528,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 - Orange juice or Vitamin C?
 - What about lists?
 
-* NEXT DataCamp assignment: Lists
+** NEXT DataCamp assignment: Lists
 #+attr_html: :width 500px
 [[../img/certificate.png]]
 
@@ -1501,7 +1536,6 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 - Download the certificate and add it to your resume!
 
-* Week 11-15: Import/basic plotting/ggplot2/projects
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]

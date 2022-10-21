@@ -118,7 +118,7 @@ What about missing values, ~NA~?
 #+end_src
 
 
-** TODO How do you extract values from a data frame?
+** DONE How do you extract values from a data frame?
 
 1) Look at the variables to remind yourself of the data structure
    #+begin_src R
@@ -144,7 +144,7 @@ What about missing values, ~NA~?
      ...
    #+end_src
    
-** TODO How do you add another row to the data frame?
+** DONE How do you add another row to the data frame?
 
 How can you add another row to the data frame?
 - add rows with the index operator ~[]~
@@ -173,7 +173,7 @@ Tip: before messing with a data frame, make a copy
      ...
    #+end_src
 
-** TODO How do you remove a row from a data frame?
+** DONE How do you remove a row from a data frame?
 
 1) The data frame ~new_survey~ now has a double record in row 3. Print
    that row on its own first using ~[]~ to make sure, then repeat the
@@ -191,7 +191,7 @@ Tip: before messing with a data frame, make a copy
      ...
    #+end_src
 
-** TODO How do you name rows of a data frame?
+** DONE How do you (re)name rows of a data frame?
 
 1) To name observations (rows) of a data frame, use ~rownames~.
    - Save ~new_survey~ in a copy named ~df~
