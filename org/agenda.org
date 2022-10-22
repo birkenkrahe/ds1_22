@@ -9,7 +9,7 @@
 - DSC 105 covers the basics of data science with R, simple
   visualization and productivity tools
 - We use R as a language, GNU Emacs as editor, ESS as statistics
-  extension, and Org-mode for literate programming
+  extension, and Org-mode for [[http://www.literateprogramming.com/][literate programming]]
 - For details on objectives, audience, grading, schedule, check the
   [[https://github.com/birkenkrahe/ds1/blob/piHome/org/syllabus.org][syllabus]] or the [[https://github.com/birkenkrahe/org/blob/master/FAQ.org][FAQ]] on GitHub.
 - This file contains a (dynamically updated) agenda for each session
@@ -1208,7 +1208,7 @@ What's on your list?
 Here's my list - 3 x infrastructure + 7 x content
 #+begin_quote
 1) /Basic agile project management process (with Scrum)/
-2) /Principles and practice of Literate Programming/
+2) /Principles and practice of [[http://www.literateprogramming.com/][Literate Programming]]/
 3) /Introduction to GNU Emacs + ESS + Org-mode infrastructure/
 4) Data science jobs, skills, job profiles and trends
 5) Why R, R console, shell commands and basic workflow
