@@ -99,7 +99,7 @@
     str(df_fac)
   #+end_src
 
-* Practice: Creating and subsetting data frames
+* TODO Practice: Creating and subsetting data frames
 
 1) Create the data frame below and name it ~df~
    #+attr_html: :width 500px
@@ -165,7 +165,7 @@
    : 1 10     book  TRUE   2.5
    : 3 30 textbook  TRUE  10.0
 
-* Practice: properties of real data frames
+* TODO Practice: properties of real data frames
 
 1) Look at the top of the dataset ~ToothGrowth~
 2) Save the dataset to the data frame ~tg~
@@ -267,18 +267,17 @@
 - Uses the quick plot function ~qplot~
 
   #+begin_src R :session :results output
-    ## check class of vector
-    class(mtcars$cyl)
-    class(factor(mtcars$cyl))
+    library(ggplot2)
 
     ## plot mpg vs wt, cyl
     qplot(data=mtcars,x=wt,y=mpg,colour=cyl)
-    ggsave(filename="mtcars.png")
+    ggsave(file...
 
     ## plot mpg vs wt, factor(cyl)
     qplot(data=mtcars,x=wt,y=mpg,colour=factor(cyl))
-    ggsave(filename="mtcars_fac.png")
   #+end_src
+
+  #+RESULTS:
 
 * TODO Orange Juice or Vitamin C?
 ** Extract factor levels

@@ -1454,8 +1454,8 @@ Here's my list - 3 x infrastructure + 7 x content
 
 - [X] New test available (subsetting)
 - [X] New practice sheet available (subsetting)
-- [ ] Review: data frames (DataCamp)
-- [ ] Lecture/practice: data frames
+- [X] Review: data frames (DataCamp)
+- [X] Lecture/practice: data frames
 - [ ] 3rd sprint review coming up: first results!
 ** How can you find out what your problems are?
 #+attr_html: :width 500px
@@ -1484,13 +1484,13 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 *We will practice more on data frames next week after the short break*
 
 * Week 11-15: Import/basic plotting/ggplot2/projects
-** I can teach it to you but I can't learn it for you
+* TODO I can teach it to you but I can't learn it for you
 #+attr_html: :width 600px
 #+caption: Prof Dr Gerhard Mack (2018)
 [[../img/mack1.png]]
 
 - Some of y'all's difficulties reminded me of this diary post:
-   [[https://github.com/birkenkrahe/org/blob/master/diary.org#i-can-teach-it-to-you-but-i-cannot-learn-it-for-you]["I can teach it to you but I can't learn it for you."]]
+  [[https://github.com/birkenkrahe/org/blob/master/diary.org#i-can-teach-it-to-you-but-i-cannot-learn-it-for-you]["I can teach it to you but I can't learn it for you."]]
 
 - I remember this from my own studies: it was always dangerous to
   learn from a brilliant teacher (of which I had a few) because I
@@ -1504,21 +1504,79 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
   learning it BY yourself (which really is the only way of learning
   anything).
 
-** IN PROGRESS Review: data frames [DataCamp]
-#+attr_html: :width 600px
-[[../img/df.png]]
+* IN PROGRESS Review of the review: data frames [DataCamp]
+#+attr_html: :width 400px
+[[../img/df1.png]]
 
 *Recall what we did last time and test your memory/understanding:*
-- What is the function to create a data frame from scratch?
-- What is the function to create a factor vector?
-- What are the levels of a factor?
-- Which functions are useful to quickly explore data frames?
+
+- Can you add a column to a built-in data frame? For example, a column
+  of ~NA~ values called ~missing~.
+  #+begin_src R
+    mtcars
+    mtcars <- data.frame(mtcars,"missing"=NA)
+    mtcars
+  #+end_src
+
+- What if we mess up and overwrite a built-in data frame by mistake?
+  #+begin_src R
+    data(mtcars)
+  #+end_src
+
+- How do you extract values from a data frame? (For example: what's
+  the mileage ~mpg~ of the ~Honda Civic~ in the ~mtcars~ data set?)
+  #+begin_src R
+    mtcars["Honda Civic","mpg"]
+  #+end_src
+
+- How do you add another row to a data frame? (For example: add a row
+  for my ~Kia Rio~ to ~mtcars~
+
+  Let's remove the useless ~NA~ column "missing" first:
+  #+begin_src R
+    idx <- which(colnames(mtcars)=="missing")
+    mtcars <- mtcars[,-idx]
+    mtcars
+  #+end_src
+
+  Here are two alternative methods to do this:
+  #+begin_src R
+    mtcars <- mtcars[,-length(colnames(mtcars))]
+    mtcars <- mtcars[,-ncol(mtcars)]
+    mtcars
+  #+end_src
+
+  Now add a new row:
+  #+begin_src R
+    nrow(mtcars)  # number of rows of the dataset
+    mtcars <- rbind(mtcars,"Kia Rio"=NA)
+    str(mtcars) # what will be different in this output?
+    mtcars
+  #+end_src
+  
+- How do you remove a row from a data frame?
+
+  For example the ~Kia Rio~ row(s) from ~mtcars~?
+  #+begin_src R
+    mtcars <- mtcars[-(33:34),]
+    mtcars
+  #+end_src
+
+- How do you (re)name rows of a data frame?
+
+  For example the ~Honda Civic~ row to just ~Honda~?
+  #+begin_src R
+    idx <- which(rownames(mtcars)=="Honda Civic")
+    rownames(mtcars)[idx] <- "Honda"
+    rownames(mtcars)
+  #+end_src
 
 *Let's continue with the remainder of the topics for data frames:* Open
 the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][tinyurl.com/mpes4wen]]
 
 *We will practice more on data frames next week after the short break*
-** Lecture/practice: more about data frames/lists
+
+* Lecture/practice: more about data frames/lists
 #+attr_html: :width 400px
 [[../img/ThisIsNotALecture.jpg]]
 
@@ -1528,7 +1586,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 - Orange juice or Vitamin C?
 - What about lists?
 
-** NEXT DataCamp assignment: Lists
+* NEXT DataCamp assignment: Lists (Oct 28)
 #+attr_html: :width 500px
 [[../img/certificate.png]]
 
