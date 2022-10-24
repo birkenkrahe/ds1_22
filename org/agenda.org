@@ -1512,7 +1512,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
   learning it BY yourself (which really is the only way of learning
   anything).
 
-* IN PROGRESS Review of the review: data frames [DataCamp]
+* Review of the review: data frames [DataCamp]
 #+attr_html: :width 400px
 [[../img/df1.png]]
 
