@@ -1483,8 +1483,16 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 *We will practice more on data frames next week after the short break*
 
-* Week 11-15: Import/basic plotting/ggplot2/projects
-* TODO I can teach it to you but I can't learn it for you
+* Week 11-15: Dataframes / Import data / Basic plotting/ggplot2/projects
+
+- [ ] Finish dataframe review with a review of the review
+- [ ] Take a look at lists
+- [ ] Look at how to import and store data in data frames
+- [ ] Look at basic plotting using ~plot~
+- [ ] 3rd sprint review is due
+
+
+* I can teach it to you but I can't learn it for you
 #+attr_html: :width 600px
 #+caption: Prof Dr Gerhard Mack (2018)
 [[../img/mack1.png]]
@@ -1510,23 +1518,29 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 *Recall what we did last time and test your memory/understanding:*
 
-- Can you add a column to a built-in data frame? For example, a column
-  of ~NA~ values called ~missing~.
+- Can you alter built-in data frames like ~mtcars~?
   #+begin_src R
-    mtcars
+  data(mtcars)  # reload pristine data frame from the package
+  #+end_src
+
+- Can you add a column to a built-in data frame? For example, a column
+  of ~NA~ values called ~missing~ to the ~mtcars~ data frame.
+  #+begin_src R
     mtcars <- data.frame(mtcars,"missing"=NA)
-    mtcars
+    str(mtcars)
   #+end_src
 
 - What if we mess up and overwrite a built-in data frame by mistake?
   #+begin_src R
+    ## reload the original data set
     data(mtcars)
+    str(mtcars)
   #+end_src
 
 - How do you extract values from a data frame? (For example: what's
-  the mileage ~mpg~ of the ~Honda Civic~ in the ~mtcars~ data set?)
+  the mileage ~mpg~ of the Honda Civic in the ~mtcars~ data set?)
   #+begin_src R
-    mtcars["Honda Civic","mpg"]
+    mtcars["Honda Civic","mpg"]  # indexing with row and col names
   #+end_src
 
 - How do you add another row to a data frame? (For example: add a row
@@ -1535,7 +1549,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
   Let's remove the useless ~NA~ column "missing" first:
   #+begin_src R
     idx <- which(colnames(mtcars)=="missing")
-    mtcars <- mtcars[,-idx]
+    mtcars <- mtcars[,-idx] 
     mtcars
   #+end_src
 
@@ -1544,6 +1558,10 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
     mtcars <- mtcars[,-length(colnames(mtcars))]
     mtcars <- mtcars[,-ncol(mtcars)]
     mtcars
+  #+end_src
+
+  #+begin_src R
+    data(mtcars)
   #+end_src
 
   Now add a new row:
@@ -1558,7 +1576,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
   For example the ~Kia Rio~ row(s) from ~mtcars~?
   #+begin_src R
-    mtcars <- mtcars[-(33:34),]
+    mtcars <- mtcars[-(33:38),]
     mtcars
   #+end_src
 
@@ -1568,9 +1586,12 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
   #+begin_src R
     idx <- which(rownames(mtcars)=="Honda Civic")
     rownames(mtcars)[idx] <- "Honda"
-    rownames(mtcars)
   #+end_src
 
+  #+begin_src R
+    rownames(mtcars)[19]
+  #+end_src
+ 
 *Let's continue with the remainder of the topics for data frames:* Open
 the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][tinyurl.com/mpes4wen]]
 
