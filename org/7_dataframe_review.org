@@ -15,45 +15,28 @@
 - *Open Emacs on this Org-mode file to code along!*
 - *Look at your notes later to check what you did not get*
 - *Challenge me to review/repeat topics that went by you*
-** DONE What is a data
+** TODO What is a data
 
 What is a data frame (technically)?
 #+begin_quote
-A rectangular data structure that has the VARIABLES (observables) of
-a data set as COLUMNS, and their values (observations) as ROWS as
-records. Variables can have different data types (unlike vectors).
+A data frame is ...
 #+end_quote
 
-#+begin_quote
-A ~matrix~ is also a rectangular data structure but its entries have
-only ONE data type and columns and rows are not really different.
-#+end_quote
-
-** DONE Creating a data frame of numeric values (numbers)
+** TODO Creating a data frame of numeric values (numbers)
 
 How can you create a data frame of two vectors with values ~1 2 3 4
 5 6 7 8 9 10~? What are the properties of this data frame?
 #+begin_src R
-  data.frame(1:10,1:10)
+...
 #+end_src
 
-#+begin_quote
-- Rows are automatically numbered
-- Columns have default names ~X1.10~ and ~X1.10.1~
-#+end_quote
-
-** DONE Creating a data frame from survey data
+** TODO Creating a data frame from survey data
 
 1) You've bought a new car. The car company sends you a survey. What
    kind of variables and corresponding data types do you expect?
    #+begin_quote
-   - Name (of customer): ~character~
-   - Make (of car): ~character~
-   - Type (of car): ~character~
-   - Year (of build): ~character~
-   - Customer (returning or not): ~logical~
-   - Price (of car): ~numeric~
-   - Happiness (of customer): ~factor~
+   ...
+   ...
    #+end_quote
 
 2) How would you create such a data frame for a survey?
@@ -62,63 +45,44 @@ How can you create a data frame of two vectors with values ~1 2 3 4
    2) Add vectors to data frame with ~data.frame~
    3) Store data frame in R object
    #+end_quote
-
    #+begin_src R
-     survey <- data.frame(
-       "Name"="Birkenkrahe",
-       "Make"="GMC",
-       "Type"="Equinox",
-       "Year"="2022",
-       "Customer"=TRUE,
-       "Price"=2,
-       "Happiness"=factor("happy",
-                          order=TRUE,
-                          levels=c("unhappy", "neutral", "happy")))
+     ...
    #+end_src
 
 3) Print ~survey~ and check that ~survey~ is a data frame using ~class~
    #+begin_src R
-     survey
-     class(survey)
+     ...
    #+end_src
 
-
-** DONE Which commands are used to explore data frames
+** TODO Which commands are used to explore data frames
 
 Which R commands are used to explore data frames?
 
 1) Data frame structure (variables and first few values)
    #+begin_src R
-     str(survey)  # data frame structure: variables and values
+     ...
    #+end_src
 
 2) First few lines of the data frame
-#+begin_src R
-  head(survey) # or tail: tabular view of the top (or the bottom)
-#+end_src
+   #+begin_src R
+     ...
+   #+end_src
 
 3) Statistical summary of all variables
    #+begin_src R
-     summary(survey)  # statistical view of each variable incl. NA
+     ...
    #+end_src
 
-
-** DONE What do you do with missing values (~NA~)?
+** TODO What do you do with missing values (~NA~)?
 
 What about missing values, ~NA~?
-- Create a new data frame with a column ~missing~ of missing values
+- Create a new data frame ~s_na~ with a column ~missing~ of missing values
 - Compute the ~summary~ of the resulting data frame
-#+begin_src R :noweb yes
-  s_na <- data.frame(survey,"missing"=NA) # add NA column to data frame
-  str(s_na)
-#+end_src
-
 #+begin_src R
-  summary(s_na$"missing")
+  ...
+  ...
 #+end_src
-
-
-** DONE How do you extract values from a data frame?
+** TODO How do you extract values from a data frame?
 
 1) Look at the variables to remind yourself of the data structure
    #+begin_src R
@@ -129,7 +93,6 @@ What about missing values, ~NA~?
    - the first row
    - the third column
    - the fourth through fifth column
-
    #+begin_src R
      ...
      ...
@@ -144,7 +107,7 @@ What about missing values, ~NA~?
      ...
    #+end_src
    
-** DONE How do you add another row to the data frame?
+** TODO How do you add another row to the data frame?
 
 How can you add another row to the data frame?
 - add rows with the index operator ~[]~
@@ -173,7 +136,7 @@ Tip: before messing with a data frame, make a copy
      ...
    #+end_src
 
-** DONE How do you remove a row from a data frame?
+** TODO How do you remove a row from a data frame?
 
 1) The data frame ~new_survey~ now has a double record in row 3. Print
    that row on its own first using ~[]~ to make sure, then repeat the
@@ -191,12 +154,11 @@ Tip: before messing with a data frame, make a copy
      ...
    #+end_src
 
-** DONE How do you (re)name rows of a data frame?
+** TODO How do you (re)name rows of a data frame?
 
 1) To name observations (rows) of a data frame, use ~rownames~.
    - Save ~new_survey~ in a copy named ~df~
    - Print all row names of ~df~ with ~rownames~
-
    #+begin_src R
      ...
      ...
@@ -204,13 +166,13 @@ Tip: before messing with a data frame, make a copy
 
 2) Now overwrite ~rownames(df)~ with new names, e.g. ~Car_1~ and ~Car_2~ and
    print the whole data frame to see the new names
-   #+begin_src R :noweb yes
+   #+begin_src R
      ...
      ...
    #+end_src
 
 3) Now you can use the row names to index rows - print the second row
-   only, using ~[]~
+   only, using the index operator ~[]~
    #+begin_src R
      ...
    #+end_src
@@ -248,7 +210,6 @@ Tip: before messing with a data frame, make a copy
 
    Reminder: the arguments of ~subset~ are: input data frame, and a
    logical condition on the subset.
-
    #+begin_src R
      ...
    #+end_src
@@ -270,8 +231,9 @@ Remove objects from the current session using ~rm~.
 - Run ~ls(~) again to see your currently loaded R objects
 - Run ~rm(list=ls())~ to remove all remaining objects
 - Run ~ls(~) again to see the result
-  #+begin_src R
+
+#+begin_src R
     ...
     ...
     ...
-  #+end_src
+#+end_src
