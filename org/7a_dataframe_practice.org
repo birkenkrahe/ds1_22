@@ -21,9 +21,10 @@
 
 * TODO Create data frame
 
-  Create the data frame shown behind the link below, and name it ~df~
-  #+attr_html: :width 500px
-  [[~/Documents/GitHub/ds1/img/7_df.png]]
+  1) Create the data frame shown in the image (link below)
+  2) Name the dataframe ~df~
+  3) Print the dataframe
+  4) Print the dataframe's structure information
 
   [[https://tinyurl.com/2hs7dpp4][tinyurl.com/2hs7dpp4]]
 
