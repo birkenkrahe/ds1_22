@@ -100,8 +100,13 @@
   #+end_src
 
 * TODO Lab session: Creating/subsetting data frames
+#+attr_html: :width 600px
+[[../img/penguins.jpg]]
 
-
+1) Get the raw file from GitHub: [[https://tinyurl.com/2hhwwtfh][tinyurl.com/2hhwwtfh]]
+2) Save it as a practice Org-mode file to your PC
+3) Complete the file on your own (or with thy neighbour)
+4) Submit it in Canvas: [[https://lyon.instructure.com/courses/568/assignments/3541][Practice 8: Creating/subsetting data frames]]
 
 * TODO Practice: properties of real data frames
 
@@ -159,6 +164,7 @@
 
 * TODO Data frame challenges
 ** Challenge 1
+
 - Try to create a not rectangular data frame
 - Define vectors of different length
 - Combine them using  ~data.frame~

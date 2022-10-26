@@ -1483,6 +1483,16 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 *We will practice more on data frames next week after the short break*
 
+** Lecture/practice: more about data frames/lists
+#+attr_html: :width 400px
+[[../img/ThisIsNotALecture.jpg]]
+
+- What is a data frame?
+- How do you create data frames?
+- How can you subset data frames?
+- Orange juice or Vitamin C?
+- What about lists?
+
 * Week 11-15: Dataframes / Import data / Basic plotting/ggplot2/projects
 #+attr_html: :width 300px
 [[../img/template.jpg]]
@@ -1490,13 +1500,13 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 - [X] "I can teach it to you but I cannot learn it for you." (Rant)
 - [X] Review of the DataCamp review on data frames
 - [X] Finish dataframe review with a review of the review
-- [ ] Even more about data frames, and a lab session
+- [ ] Data frame lab session
 - [ ] Take a look at lists
 - [ ] Look at basic plotting using ~plot~
 - [ ] Look at how to import and store data in data frames
 - [ ] 3rd sprint review: write an abstract [[https://github.com/birkenkrahe/org/blob/master/img/template.jpg][à la Nature magazine]] 
 
-* I can teach it to you but I can't learn it for you
+* DONE I can teach it to you but I can't learn it for you
 #+attr_html: :width 600px
 #+caption: Prof Dr Gerhard Mack (2018)
 [[../img/mack1.png]]
@@ -1516,7 +1526,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
   learning it BY yourself (which really is the only way of learning
   anything).
 
-* Review of the review: data frames [DataCamp]
+* DONE Review of the review: data frames [DataCamp]
 #+attr_html: :width 400px
 [[../img/df1.png]]
 
@@ -1601,17 +1611,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 *We will practice more on data frames next week after the short break*
 
-* Lecture/practice: more about data frames/lists
-#+attr_html: :width 400px
-[[../img/ThisIsNotALecture.jpg]]
-
-- What is a data frame?
-- How do you create data frames?
-- How can you subset data frames?
-- Orange juice or Vitamin C?
-- What about lists?
-
-* 3rd sprint review - write an abstract
+* TODO 3rd sprint review - write an abstract
 
 Here is an example from my current publication project - you're the
 research participants!
@@ -1674,7 +1674,7 @@ to 300. [[https://github.com/birkenkrahe/org/blob/master/research/Abstract.org][
    code/no code" trend in IT (???).
    #+end_quote
 
-5) "One or two sentences to put the results in a broader context."
+5) "One or two sentences to put the results in a broader *context*."
 
    #+begin_quote
    We have used these methods for two consecutive terms across a
@@ -1688,6 +1688,15 @@ to 300. [[https://github.com/birkenkrahe/org/blob/master/research/Abstract.org][
    least as successful if not more successful. Only followup studies
    can show if this hope will pan out.
    #+end_quote
+
+* TODO Lab session: Create/subset data frames
+#+attr_html: :width 600px
+[[../img/penguins.jpg]]
+
+1) Get the raw file from GitHub: [[https://tinyurl.com/2hhwwtfh][tinyurl.com/2hhwwtfh]]
+2) Save it as a practice Org-mode file to your PC
+3) Complete the file on your own (or with thy neighbour)
+4) Submit it in Canvas: [[https://lyon.instructure.com/courses/568/assignments/3541][Practice 8: Creating/subsetting data frames]]
 
 * NEXT DataCamp assignment: lists (Oct 28)
 #+attr_html: :width 500px
