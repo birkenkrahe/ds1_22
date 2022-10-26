@@ -102,6 +102,7 @@
 * TODO Lab session: Creating/subsetting data frames
 
 
+
 * TODO Practice: properties of real data frames
 
 1) Look at the top of the dataset ~ToothGrowth~
