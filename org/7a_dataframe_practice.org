@@ -49,7 +49,7 @@
 
 Select data frame indices using functions ~which~, ~colnames~ and ~%in%~:
 1) Print the column index for the column ~price~ using ~colnames~
-2) Store the column index for ~textbook~ in ~idx~
+2) Store the row index for ~textbook~ in ~idx~
 3) Print the entry ~textbook~ using ~idx~
 4) Check if ~pencil_case~ is a store item using ~%in%~ 
 
