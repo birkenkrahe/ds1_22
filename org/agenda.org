@@ -1601,6 +1601,8 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 * TODO 3rd sprint review - write an abstract
 
+Complete this review and submit it [[https://lyon.instructure.com/courses/568/assignments/1441][in Canvas]] by Nov 2, 11 am!
+
 Here is an example from my current publication project - you're the
 research participants!
 
