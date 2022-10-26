@@ -1484,21 +1484,17 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 *We will practice more on data frames next week after the short break*
 
 * Week 11-15: Dataframes / Import data / Basic plotting/ggplot2/projects
-
-- [ ] Finish dataframe review with a review of the review
-- [ ] Take a look at lists
-- [ ] Look at how to import and store data in data frames
-- [ ] Look at basic plotting using ~plot~
-- [ ] 3rd sprint review is due
-
 #+attr_html: :width 300px
 [[../img/template.jpg]]
 
 - [X] "I can teach it to you but I cannot learn it for you." (Rant)
 - [X] Review of the DataCamp review on data frames
-- [ ] 3rd sprint review: write an abstract [[https://github.com/birkenkrahe/org/blob/master/img/template.jpg][à la Nature magazine]] (below
-  is an example from my current research project)
-- [ ] More about data frames, and a lab session
+- [X] Finish dataframe review with a review of the review
+- [ ] Even more about data frames, and a lab session
+- [ ] Take a look at lists
+- [ ] Look at basic plotting using ~plot~
+- [ ] Look at how to import and store data in data frames
+- [ ] 3rd sprint review: write an abstract [[https://github.com/birkenkrahe/org/blob/master/img/template.jpg][à la Nature magazine]] 
 
 * I can teach it to you but I can't learn it for you
 #+attr_html: :width 600px
@@ -1615,14 +1611,6 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 - Orange juice or Vitamin C?
 - What about lists?
 
-* NEXT DataCamp assignment: Lists (Oct 28)
-#+attr_html: :width 500px
-[[../img/certificate.png]]
-
-- You're now done with the "Introduction to R" DataCamp course
-
-- Download the certificate and add it to your resume!
-
 * 3rd sprint review - write an abstract
 
 Here is an example from my current publication project - you're the
@@ -1701,6 +1689,15 @@ to 300. [[https://github.com/birkenkrahe/org/blob/master/research/Abstract.org][
    can show if this hope will pan out.
    #+end_quote
 
+* NEXT DataCamp assignment: lists (Oct 28)
+#+attr_html: :width 500px
+[[../img/certificate.png]]
+
+- You're now done with the "Introduction to R" DataCamp course
+
+- Download the certificate and add it to your resume!
+
+* NEXT DataCamp assignment: importing data (Nov 2) 
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]

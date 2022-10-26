@@ -1,0 +1,56 @@
+#+TITLE: Practice: Creating and subsetting data frames
+#+AUTHOR: [YourName]
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:R :session *R* :results output
+* README
+
+  - Practice file for the lecture on "Subsetting and extracting data
+    frames in R" ([[https://github.com/birkenkrahe/ds1/tree/piHome/org][lecture and review file in GitHub]])
+  - Create, execute and debug R code blocks as needed
+  - Emacs + ESS + Org-mode and R must be installed
+  - You can find the solutions in the PDF repository for the course
+
+* TODO IDENTIFY YOURSELF
+
+  - Update the ~#+AUTHOR:~ information in the header
+  - Add ~(pledged)~ after your name
+  - Put your cursor on the headline of this section, and type ~S <LEFT>~
+    until you see ~DONE~ instead of ~TODO~ next to the title.
+  - Perform this last step each time you complete a section.
+
+* TODO Create data frame
+
+  Create the data frame shown behind the link below, and name it ~df~
+  #+attr_html: :width 500px
+  [[~/Documents/GitHub/ds1/img/7_df.png]]
+
+  [[https://tinyurl.com/2hs7dpp4][tinyurl.com/2hs7dpp4]]
+
+  #+begin_src R
+    ## create dataframe df
+  #+end_src
+
+* TODO Select subsets using index operators
+
+  Select subsets using the index operators ~$~ and ~[]~:
+  1) Select rows 1 to 2 using ~[]~
+  2) Select column 2 using ~[]~ and ~$~
+  3) Select row 3 of column 2  using ~[]~ and ~$~
+  4) Select rows 1 to 3 in columns 3 and 4 using ~[]~ and ~$~
+  5) Select rows 2 to 3, and columns 1 and 4 using ~[]~ and ~$~
+
+  #+begin_src R
+    ## select subsets using index operators
+  #+end_src
+
+* TODO Select subsets using the ~subset~ function
+
+  Using ~subset~,
+  1) Select product IDs above 20
+  2) Select all books listed
+  3) Select all items cheaper than $11 and in stock
+
+  #+begin_src R
+    ## select subsets using the subset function
+  #+end_src
