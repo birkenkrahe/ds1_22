@@ -1448,7 +1448,7 @@ Here's my list - 3 x infrastructure + 7 x content
 
 - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload the Org-mode file to Canvas]]
 
-* Week 10: Data frames, lists and 3rd sprint review
+* Week 10: Data frames, lists
 #+attr_html: :width 400px
 [[../img/frame.jpg]]
 
@@ -1493,19 +1493,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 - Orange juice or Vitamin C?
 - What about lists?
 
-* Week 11-15: Dataframes / Import data / Basic plotting/ggplot2/projects
-#+attr_html: :width 300px
-[[../img/template.jpg]]
-
-- [X] "I can teach it to you but I cannot learn it for you." (Rant)
-- [X] Review of the DataCamp review on data frames
-- [X] Finish dataframe review with a review of the review
-- [ ] Data frame lab session
-- [ ] Take a look at lists
-- [ ] Look at basic plotting using ~plot~
-- [ ] Look at how to import and store data in data frames
-- [ ] 3rd sprint review: write an abstract [[https://github.com/birkenkrahe/org/blob/master/img/template.jpg][à la Nature magazine]] 
-
+* Week 11: Data frames and 3rd sprint review
 * DONE I can teach it to you but I can't learn it for you
 #+attr_html: :width 600px
 #+caption: Prof Dr Gerhard Mack (2018)
@@ -1702,11 +1690,23 @@ to 300. [[https://github.com/birkenkrahe/org/blob/master/research/Abstract.org][
 #+attr_html: :width 500px
 [[../img/certificate.png]]
 
+- This is a very short lesson [[https://app.datacamp.com/learn/courses/free-introduction-to-r][in DataCamp]]
+  
 - You're now done with the "Introduction to R" DataCamp course
 
 - Download the certificate and add it to your resume!
 
-* NEXT DataCamp assignment: importing data (Nov 2) 
+* NEXT Home assignment: explore data frame (Oct 31)
+#+attr_html: :width 600px
+[[../img/guineapigs.jpg]]
+
+- This assignment is now live [[https://lyon.instructure.com/courses/568/assignments/3542][in Canvas]]
+
+- You can submit for points at any time
+
+- I will subtract 1 point per day for late submissions
+
+* NEXT DataCamp assignment: importing data (Nov 2)
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
