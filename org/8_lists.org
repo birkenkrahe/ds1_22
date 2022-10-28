@@ -40,7 +40,7 @@
   2) Matrices like ~matrix(1:9, nrow=3)~
      #+begin_src R
        matrix(1:9,nrow=3)
-     #+end_src
+     #+end_src     
   3) Data frames like ~ToothGrowth~
      #+begin_src R
        str(ToothGrowth)  # two numeric, one factor vectors
@@ -51,7 +51,7 @@
   1) Operators like ~$~, ~[]~ and ~:~
   2) Functions like ~c()~, ~seq()~, ~rep()~
   3) Functions like ~hist()~, ~subset()~
-  4) Utility functions like ~options()~
+  4) Utility functions like ~options()~, ~par()~
   5) Variables like ~foo~
   6) Constants like ~LETTERS~
   7) Environments like ~getwd()~
@@ -63,7 +63,11 @@
 
 - You can group any mix of R structures and objects in a ~list~
 
-- You can even have a ~list~ as a component of another ~list~
+- You can even have a ~list~ as a component of another ~list~ - this
+  separates languages suitable for data science from others. Scratch
+  e.g. cannot do this, but Snap!, its advanced cousin, can
+  #+attr_html: :width 600px
+  [[../img/snap.png]]
 
 - Equivalents of lists in other programming languages: /recursive/
   structures, like /dictionary/ in Python, /containers/ in C++, or LIST in
@@ -76,7 +80,6 @@
 - You supply the elements to the ~list~ function, separated by commata
 
 - Let's define a list ~foo~ and print it:
-  #+name: foo
   #+begin_src R
     foo <- list(
       matrix(data = 1:4,
@@ -103,7 +106,7 @@
     class(foo[[3]])
   #+end_src
 
-* TODO Practice creating a ~list~
+* DONE Practice creating a ~list~
 
 Create a list that contains, in this order
 1) a ~seq~-uence of 20 evenly spread numbers between ~-4~ and ~4~
@@ -160,19 +163,11 @@ Create a list that contains, in this order
     foo[[2]][3]
   #+end_src
 
-  #+RESULTS:
-  : [1] TRUE
-  : [1] TRUE
-
 - Using the ~-~ operator inside the single index brackets to remove:
   #+begin_src R
     foo[[2]]
     foo[[2]][-1]
   #+end_src
-
-  #+RESULTS:
-  : [1]  TRUE FALSE  TRUE  TRUE
-  : [1] FALSE  TRUE  TRUE
   
 - Preview: how would you extract the string member of ~foo~?
   #+begin_src R
@@ -180,11 +175,10 @@ Create a list that contains, in this order
     idx <- which(char==TRUE) # get the index
     foo[[idx]]  # index list
   #+end_src
-
 - The ~apply~ family of functions will be taught in advanced data
   science, including ~lapply~ (apply ~FUN~-ctions across a whole ~list~)
 
-* TODO Practice extracting from a ~list~
+* DONE Practice extracting from a ~list~
 
 Solve the following extraction problems:
 1) Extract the 2nd member of ~p~ (def'd [[p][here]])

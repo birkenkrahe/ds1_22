@@ -1599,7 +1599,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 *We will practice more on data frames next week after the short break*
 
-* TODO 3rd sprint review - write an abstract
+* DONE 3rd sprint review - write an abstract
 
 Complete this review and submit it [[https://lyon.instructure.com/courses/568/assignments/1441][in Canvas]] by Nov 2, 11 am!
 
@@ -1679,7 +1679,7 @@ to 300. [[https://github.com/birkenkrahe/org/blob/master/research/Abstract.org][
    can show if this hope will pan out.
    #+end_quote
 
-* TODO Lab session: Create/subset data frames
+* DONE Lab session: Create/subset data frames
 #+attr_html: :width 600px
 [[../img/penguins.jpg]]
 
@@ -1717,7 +1717,6 @@ This exercise involves:
 
 * NEXT DataCamp assignment: importing data (Nov 2)
 * PROJECT [[https://github.com/birkenkrahe/db330/issues/44][DataCamp SQL webinar (Nov 8)]]
-
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
