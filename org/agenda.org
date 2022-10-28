@@ -1494,7 +1494,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 - What about lists?
 
 * Week 11: Data frames and 3rd sprint review
-* DONE I can teach it to you but I can't learn it for you
+** I can teach it to you but I can't learn it for you
 #+attr_html: :width 600px
 #+caption: Prof Dr Gerhard Mack (2018)
 [[../img/mack1.png]]
@@ -1514,7 +1514,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
   learning it BY yourself (which really is the only way of learning
   anything).
 
-* DONE Review of the review: data frames [DataCamp]
+** Review of the review: data frames [DataCamp]
 #+attr_html: :width 400px
 [[../img/df1.png]]
 
@@ -1599,7 +1599,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 *We will practice more on data frames next week after the short break*
 
-* DONE 3rd sprint review - write an abstract
+** 3rd sprint review - write an abstract
 
 Complete this review and submit it [[https://lyon.instructure.com/courses/568/assignments/1441][in Canvas]] by Nov 2, 11 am!
 
@@ -1679,7 +1679,7 @@ to 300. [[https://github.com/birkenkrahe/org/blob/master/research/Abstract.org][
    can show if this hope will pan out.
    #+end_quote
 
-* DONE Lab session: Create/subset data frames
+** Lab session: Create/subset data frames
 #+attr_html: :width 600px
 [[../img/penguins.jpg]]
 
@@ -1695,7 +1695,7 @@ This exercise involves:
 - Indexing with ~which~ and ~colnames~
 - Matching patterns with ~%in%~
   
-* NEXT DataCamp assignment: lists (Oct 28)
+** DataCamp assignment: lists (Oct 28)
 #+attr_html: :width 500px
 [[../img/certificate.png]]
 
@@ -1705,7 +1705,7 @@ This exercise involves:
 
 - Download the certificate and add it to your resume!
 
-* NEXT Home assignment: explore data frame (Oct 31)
+** Home assignment: explore data frame (Oct 31)
 #+attr_html: :width 600px
 [[../img/guineapigs.jpg]]
 
@@ -1715,8 +1715,26 @@ This exercise involves:
 
 - I will subtract 1 point per day for late submissions
 
+** PROJECT [[https://github.com/birkenkrahe/db330/issues/44][DataCamp SQL webinar (Nov 8)]]
+* Week 12: Basic plotting in R
+#+begin_src R :results graphics file :file ../img/plotting.png
+  plot(
+    ToothGrowth$len ~ ToothGrowth$supp, # len vs. supp levels
+    xlab="Supply level",  # x-axis label
+    ylab="Tooth length (mm)", # y-axis label
+    main="Length vs. Supply levels in ToothGrowth", # plot title
+    las=1, # orient all labels horizontally
+    xaxt="n")  # remove x-axis values
+  axis(side=1,
+       at=1:2,
+       labels=c("Orange Juice","Vitamin C"))
+#+end_src
+#+RESULTS:
+[[file:../img/plotting.png]]
+
+- [ ] [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-keep-my-knowledge-of-r-current][New FAQ: how can you keep your R knowledge current?]]
+
 * NEXT DataCamp assignment: importing data (Nov 2)
-* PROJECT [[https://github.com/birkenkrahe/db330/issues/44][DataCamp SQL webinar (Nov 8)]]
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
