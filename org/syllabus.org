@@ -84,6 +84,18 @@ the impact of a requirement on your total grade.
 You should be able to see your current grade at any time using the
 gradebook for the course.
 
+| REQUIREMENT       | UNITS | PPU | TOTAL | % of TOTAL |
+|-------------------+-------+-----+-------+------------|
+| Final exam        |     1 | 100 |   100 |        25. |
+| Home assignments  |    10 |  10 |   100 |        25. |
+| Class assignments |    10 |  10 |   100 |        25. |
+| Sprint review     |     5 |  20 |   100 |        25. |
+|-------------------+-------+-----+-------+------------|
+| TOTAL             |       |     |   400 |       100. |
+|-------------------+-------+-----+-------+------------|
+#+TBLFM: @2$4=$2*$3::@2$5=(@2$4/@6$4)*100::@3$4=$2*$3::@3$5=(@3$4/@6$4)*100::@4$4=$2*$3::@4$5=(@4$4/@6$4)*100::@5$4=$2*$3::@5$5=(@5$4/@6$4)*100::@6$4=vsum(@2..@5)::@6$5=vsum(@2..@5)
+
+
 * Grading table
 
 This table is used to convert completion rates into letter grades. For

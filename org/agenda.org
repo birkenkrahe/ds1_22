@@ -1716,6 +1716,8 @@ This exercise involves:
 - I will subtract 1 point per day for late submissions
 
 * NEXT DataCamp assignment: importing data (Nov 2)
+* PROJECT [[https://github.com/birkenkrahe/db330/issues/44][DataCamp SQL webinar (Nov 8)]]
+
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
