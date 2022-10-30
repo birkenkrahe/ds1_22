@@ -1734,7 +1734,8 @@ This exercise involves:
 
 - [ ] [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-keep-my-knowledge-of-r-current][New FAQ: how can you keep your R knowledge current?]]
 
-* NEXT DataCamp assignment: importing data (Nov 2)
+* NEXT Assignment: explore real data frames (Nov 4)
+* NEXT DataCamp assignment: importing data (Nov 11)
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]

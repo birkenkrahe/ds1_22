@@ -1,0 +1,281 @@
+#+title: Basic plotting in R
+#+AUTHOR: Marcus Birkenkrahe
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+OPTIONS: toc:nil num:nil
+#+STARTUP: overview hideblocks indent inlineimages
+#+PROPERTY: header-args:R :session *R* :exports both :results output
+* What are you going to learn?
+#+attr_html: :width 600px
+[[../img/whiskers.jpg]]
+
+- Why visualization? What does it depend on?
+- What types of charts are there?
+- Barplots and pie charts
+- Histograms
+- Box-and-Whisker Plots
+- Scatterplots
+- Using base R and ggplot2
+
+  This section closely follows the presentation in Davies (2016),
+  chapter 14, pp. 289-308.
+
+* When do we visualize data? When don't we?
+#+attr_html: :width 600px
+[[../img/9_bigpicture.jpg]]
+#+begin_notes
+Data visualization is important for EXPLORATION and for DOCUMENTATION:
+
+1) During data exploration (EDA), we visualize to see patterns rather
+   than rely on summary statistics and numbers only
+2) During data storytelling, we document and communicate insights
+   using graphs rather than tables
+
+It's easy to miss *relevant details* in graphs, and it's easy to miss
+the *big picture* in tables.
+#+end_notes
+* What does visualization depend on?
+#+attr_html: :width 600px
+[[../img/9_viz.png]]
+(Source: r-charts.com - base R and ggplot2 examples[fn:1])
+#+begin_notes
+
+1) Raw/transformed data (observations and experiments)
+
+2) Available/affordable tools (computing and infrastructure)
+
+3) Variable types/style (related to the programming language)
+
+4) Skill/Benefit (data scientists and data science customers)
+
+#+end_notes
+* What types of visualizations are there?
+#+attr_html: :width 700px
+[[../img/9_chart_types.png]]
+(Source: r-graph-gallery.com)
+#+begin_notes
+- Plots with bars (bar plot, histogram, lollipop, dotplot, pie chart)
+
+- Plots with curves (density, ridgeline)
+
+- Plots with points (scatterplot, bubbleplot, correlogram, line plot)
+
+- Plots with areas (mosaicplot, boxplot, violinplot)
+
+- Plots with trees (treemap, dendrogram)
+#+end_notes
+* Barplots and Pie charts
+
+- Barplots and pie charts are used to visualize *qualitative* data by
+  *category frequency*
+
+- The height of the bars of a barplot indicate the frequency or count
+  of each category
+
+* Frequency tables
+
+- The frequencies can be computed using the ~table~ function
+
+- Example: look at the dataset ~ToothGrowth~ - it has two ~numeric~ and
+  one ~factor~ variable.
+  #+begin_src R
+    str(ToothGrowth)
+    tg <- ToothGrowth
+  #+end_src
+
+  #+RESULTS:
+  : 'data.frame':       60 obs. of  3 variables:
+  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+
+- Compute the frequencies for the variables of ~ToothGrowth~ - what do
+  these results mean? Which questions does each ~table~ result answer?
+  #+begin_src R
+    table(tg$len)
+    table(tg$supp)
+    table(tg$dose)
+  #+end_src
+
+  #+begin_quote
+  How many observations correspond to the values of ~len~, ~supp~ and
+  ~dose~?
+  #+end_quote
+
+- What kind of R data structure is this frequency table? What
+  structure does a table have? Is the table named or unnamed?
+  #+begin_src R
+    tbl <- table(ToothGrowth$supp)
+    class(tbl)
+    str(tbl)
+    names(tbl)
+  #+end_src
+
+  #+RESULTS:
+  : [1] "table"
+  :  'table' int [1:2(1d)] 30 30
+  :  - attr(*, "dimnames")=List of 1
+  :   ..$ : chr [1:2] "OJ" "VC"
+  : [1] "OJ" "VC"
+
+* Building a barplot for ~ToothGrowth~
+
+- A barplot draws vertical or horizontal bars separated by white
+  space, to visualize frequencies according to the relevant categories
+
+- You can visualize raw quantities (i.e. counts), or functions of
+  them, like the ~mean~ or proportions
+
+- For more than one variable, the bars can be stacked or dodged (drawn
+  next to one another)
+
+- 
+
+- Example: to build barplots for ~ToothGrowth~, we merely pass the
+  frequency table to the ~barplot~ function. The value of each table
+  entry determines the height of the bar
+
+- We make three plots - one for each variable. If you do this in
+  Org-mode, you need to add ~:results graphics file :file file.png~ to
+  your code block header. This will store the resulting plot in
+  ~file.png~
+
+- Before creating the plot, stop for a moment and imagine the results,
+  and ask yourself which of these data are worth visualizing, if any
+
+- Barplot of the tooth lengths in ~len~ (mm)
+  #+begin_src R :results graphics file :file ../img/9_len.png
+    barplot(height = table(tg$len))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_len.png]]
+
+- Barplot of the tooth supply categories in ~supp~ (Orange Juice or
+  Vitamin C)
+  #+begin_src R :results graphics file :file ../img/9_supp.png
+    barplot(height = table(tg$supp))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_supp.png]]
+
+- Barplot of the dosages in ~dose~ (mg/day)
+  #+begin_src R :results graphics file :file ../img/9_dose.png
+    barplot(height = table(tg$dose))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_dose.png]]
+
+* Building a barplot for  ~mtcars~
+
+      - The barplots for ~ToothGrowth~ weren't very interesting! We'll see
+        that there are more appropriate plot types to characterize the
+        distribution of values in that data set.
+
+      - As another example let's use ~mtcars~, which contains characteristics
+        of 32 classic performance cars in the mid-1970s.
+
+      - Print the first 5 rows of the data frame ~mtcars~
+        #+begin_src R
+          head(mtcars,5)
+        #+end_src
+
+      - We're only interested in one variable, ~cyl~, the number of cylinders
+        of the cars listed. 
+
+      - We use ~table~ to find out how many cars have how many cylinders and
+        store the result in ~cyl.freq~
+        #+begin_src R
+          cyl.freq <- table(mtcars$cyl)
+          cyl.freq
+        #+end_src
+
+      - We create a barplot of the cylinder frequencies in ~mtcar~
+        #+begin_src R :results graphics file :file ../img/9_cyl.png
+          barplot(cyl.freq)
+        #+end_src
+
+      - The plot displays the number of 4-, 6- and 8-cylinder cars in the
+        data set but without annotations it's not clear what is summarized
+
+* Annotating a barplot
+
+- Annotating a barplot works no different than annotating any plot,
+  which is a great advantage of base R plotting
+
+- The ~barplot~ function has a bunch of parameters, which you can view
+  with ~help~ (if you run this in Org-mode, you have to quit with ~C-g~)
+  #+begin_src R
+    help(barplot)
+  #+end_src
+
+- For simple annotation, we need:
+  1) title
+  2) x-axis label
+  3) y-axis label
+  #+begin_src R :results graphics file :file ../img/9_cyl_ann.png
+    barplot(
+      height = cyl.freq,
+      main = "Barplot of 4-, 5- and 6-cylinder cars in mtcars",
+      xlab = "Number of cylinders",
+      ylab = "Frequency"
+    )
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl_ann.png]]
+
+* Practice: build a barplot
+
+1) Check out the pre-loaded data set ~InsectSprays~
+   #+begin_src R
+     str(InsectSprays)
+   #+end_src
+
+2) Store its variables for later use
+   #+begin_src R 
+     count <-InsectSprays$count
+     (count.freq <- table(count))
+     spray <- InsectSprays$spray
+     (spray.freq <- table(spray))
+   #+end_src
+   
+3) Create raw barplots for its variables
+   #+begin_src R :results graphics file :file 9_insectsprays.png
+     par(mfrow=c(1,2),pty='s')
+     barplot(count.freq)
+     barplot(spray.freq)
+   #+end_src
+
+   #+RESULTS:
+   [[file:9_insectsprays.png]]
+   
+4) Annotate the plots accordingly
+   #+begin_src R :results graphics file :file 9_insectsprays_ann.png
+     par(mfrow=c(1,2),pty='s')
+     barplot(
+       height = count.freq,
+       main = "Barplot (InsectSprays)",
+       xlab = "Number of insects killed",
+       ylab = "Frequency")
+     barplot(
+      height = spray.freq,
+       main = "Barplot (InsectSprays)",
+       xlab = "Type of insect spray",
+       ylab = "Frequency")
+   #+end_src
+
+   #+RESULTS:
+   [[file:9_insectsprays_ann.png]]
+
+* TODO Building stacked/dodged barplots
+* Footnotes
+
+[fn:1]What are the categories used to organize the graphs?
+Distribution, correlation and evolution (aka growth) relate to
+statistical summaries. Spatial relates to an application, and the last
+ones are qualitative characteristics related to patterns (part/whole),
+order (ranking) and time (flow), showing special types of graphs (pie
+chart, spider graph and line graph). The "Miscellaneous" category is
+filled with fun examples, too.
