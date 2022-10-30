@@ -81,21 +81,15 @@ the *big picture* in tables.
     str(ToothGrowth)
     tg <- ToothGrowth
   #+end_src
-
-  #+RESULTS:
-  : 'data.frame':       60 obs. of  3 variables:
-  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
-  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
-  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
-
-- Compute the frequencies for the variables of ~ToothGrowth~ - what do
-  these results mean? Which questions does each ~table~ result answer?
+- Compute the frequencies for the variables of ~ToothGrowth~ 
   #+begin_src R
     table(tg$len)
     table(tg$supp)
     table(tg$dose)
   #+end_src
 
+- What do these results mean? Which questions does each ~table~ result
+  answer?
   #+begin_quote
   How many observations correspond to the values of ~len~, ~supp~ and
   ~dose~?
@@ -109,15 +103,9 @@ the *big picture* in tables.
     str(tbl)
     names(tbl)
   #+end_src
-
-  #+RESULTS:
-  : [1] "table"
-  :  'table' int [1:2(1d)] 30 30
-  :  - attr(*, "dimnames")=List of 1
-  :   ..$ : chr [1:2] "OJ" "VC"
-  : [1] "OJ" "VC"
-
-* Building a barplot for ~ToothGrowth~
+* How to build a barplot
+#+attr_html: :width 400px
+[[../img/errorbar.png]]
 
 - A barplot draws vertical or horizontal bars separated by white
   space, to visualize frequencies according to the relevant categories
@@ -128,76 +116,37 @@ the *big picture* in tables.
 - For more than one variable, the bars can be stacked or dodged (drawn
   next to one another)
 
-- 
-
-- Example: to build barplots for ~ToothGrowth~, we merely pass the
+- Example: to build barplots for any variable, we merely pass the
   frequency table to the ~barplot~ function. The value of each table
-  entry determines the height of the bar
-
-- We make three plots - one for each variable. If you do this in
-  Org-mode, you need to add ~:results graphics file :file file.png~ to
-  your code block header. This will store the resulting plot in
-  ~file.png~
-
-- Before creating the plot, stop for a moment and imagine the results,
-  and ask yourself which of these data are worth visualizing, if any
-
-- Barplot of the tooth lengths in ~len~ (mm)
-  #+begin_src R :results graphics file :file ../img/9_len.png
-    barplot(height = table(tg$len))
-  #+end_src
-
-  #+RESULTS:
-  [[file:../img/9_len.png]]
-
-- Barplot of the tooth supply categories in ~supp~ (Orange Juice or
-  Vitamin C)
-  #+begin_src R :results graphics file :file ../img/9_supp.png
-    barplot(height = table(tg$supp))
-  #+end_src
-
-  #+RESULTS:
-  [[file:../img/9_supp.png]]
-
-- Barplot of the dosages in ~dose~ (mg/day)
-  #+begin_src R :results graphics file :file ../img/9_dose.png
-    barplot(height = table(tg$dose))
-  #+end_src
-
-  #+RESULTS:
-  [[file:../img/9_dose.png]]
+  entry determines the height of the bar: ~barplot(table(var))~
 
 * Building a barplot for  ~mtcars~
 
-      - The barplots for ~ToothGrowth~ weren't very interesting! We'll see
-        that there are more appropriate plot types to characterize the
-        distribution of values in that data set.
+- As an example let's use ~mtcars~, which contains characteristics of 32
+  classic performance cars in the mid-1970s.
 
-      - As another example let's use ~mtcars~, which contains characteristics
-        of 32 classic performance cars in the mid-1970s.
+- Print the first 5 rows of the data frame ~mtcars~
+  #+begin_src R
+    head(mtcars,5)
+  #+end_src
 
-      - Print the first 5 rows of the data frame ~mtcars~
-        #+begin_src R
-          head(mtcars,5)
-        #+end_src
+- We're only interested in one variable, ~cyl~, the number of cylinders
+  of the cars listed.
 
-      - We're only interested in one variable, ~cyl~, the number of cylinders
-        of the cars listed. 
+- We use ~table~ to find out how many cars have how many cylinders and
+  store the result in ~cyl.freq~
+  #+begin_src R
+    cyl.freq <- table(mtcars$cyl)
+    cyl.freq
+  #+end_src
 
-      - We use ~table~ to find out how many cars have how many cylinders and
-        store the result in ~cyl.freq~
-        #+begin_src R
-          cyl.freq <- table(mtcars$cyl)
-          cyl.freq
-        #+end_src
+- We create a barplot of the cylinder frequencies in ~mtcar~
+  #+begin_src R :results graphics file :file ../img/9_cyl.png
+    barplot(cyl.freq)
+  #+end_src
 
-      - We create a barplot of the cylinder frequencies in ~mtcar~
-        #+begin_src R :results graphics file :file ../img/9_cyl.png
-          barplot(cyl.freq)
-        #+end_src
-
-      - The plot displays the number of 4-, 6- and 8-cylinder cars in the
-        data set but without annotations it's not clear what is summarized
+- The plot displays the number of 4-, 6- and 8-cylinder cars in the
+  data set but without annotations it's not clear what is summarized
 
 * Annotating a barplot
 
@@ -214,7 +163,7 @@ the *big picture* in tables.
   1) title
   2) x-axis label
   3) y-axis label
-  #+begin_src R :results graphics file :file ../img/9_cyl_ann.png
+    #+begin_src R :results graphics file :file ../img/9_cyl_ann.png
     barplot(
       height = cyl.freq,
       main = "Barplot of 4-, 5- and 6-cylinder cars in mtcars",
@@ -226,48 +175,89 @@ the *big picture* in tables.
   #+RESULTS:
   [[file:../img/9_cyl_ann.png]]
 
-* Practice: build a barplot
+* Practice: building a barplot
 
-1) Check out the pre-loaded data set ~InsectSprays~
+1) Download the data set from the Internet and turn it straightaway
+   into a data frame using ~read.csv~
+   #+begin_src R :results silent
+     df <- read.csv(
+       file="https://tinyurl.com/spdnvxbr",
+       header=TRUE,
+       stringsAsFactors=TRUE)
+   #+end_src
+
+2) Check the data out
    #+begin_src R
-     str(InsectSprays)
-   #+end_src
-
-2) Store its variables for later use
-   #+begin_src R 
-     count <-InsectSprays$count
-     (count.freq <- table(count))
-     spray <- InsectSprays$spray
-     (spray.freq <- table(spray))
-   #+end_src
-   
-3) Create raw barplots for its variables
-   #+begin_src R :results graphics file :file 9_insectsprays.png
-     par(mfrow=c(1,2),pty='s')
-     barplot(count.freq)
-     barplot(spray.freq)
+     str(df)
    #+end_src
 
    #+RESULTS:
-   [[file:9_insectsprays.png]]
-   
-4) Annotate the plots accordingly
-   #+begin_src R :results graphics file :file 9_insectsprays_ann.png
-     par(mfrow=c(1,2),pty='s')
-     barplot(
-       height = count.freq,
-       main = "Barplot (InsectSprays)",
-       xlab = "Number of insects killed",
-       ylab = "Frequency")
-     barplot(
-      height = spray.freq,
-       main = "Barplot (InsectSprays)",
-       xlab = "Type of insect spray",
-       ylab = "Frequency")
+   : 'data.frame':	10 obs. of  4 variables:
+   :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
+   :  $ Height: int  161 185 174 154 188 178 170 167 181 178
+   :  $ Sex   : Factor w/ 2 levels "female","male": 1 2 2 1 2 2 1 2 2 1
+   :  $ Name  : Factor w/ 10 levels "Carl","Carla",..: 7 8 9 2 1 3 6 4 5 10
+
+   #+begin_src R
+     df
    #+end_src
 
    #+RESULTS:
-   [[file:9_insectsprays_ann.png]]
+   #+begin_example
+      Weight Height    Sex  Name
+   1      55    161 female  Jane
+   2      85    185   male   Jim
+   3      75    174   male   Joe
+   4      42    154 female Carla
+   5      93    188   male  Carl
+   6      63    178   male Chris
+   7      58    170 female  Dora
+   8      75    167   male  Dave
+   9      89    181   male Derek
+   10     67    178 female Lucia
+   #+end_example
+
+3) Compute the frequency table for the variable ~Sex~ and store it in
+   ~sex.freq~ 
+   #+begin_src R
+     sex.freq <- table(df$Sex)
+     sex.freq
+   #+end_src
+
+   #+RESULTS:
+   : 
+   : female   male 
+   :      4      6
+
+4) What information does ~sex.freq~ contain?
+   #+begin_quote
+     The variable contains the number of male and female members of
+     the data set.
+   #+end_quote
+   
+5) Create a barplot for the ~Sex~ category - if you do this in Org-mode,
+   you need to add ~:results graphics file :file file.png~ to your code
+   block header. This will store the resulting plot in ~file.png~
+   #+begin_src R :results graphics file :file ../img/9_sex.png
+    barplot(height = sex.freq)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/9_sex.png]]
+
+6) Annotate the barplot by adding a title and labels, and orient the
+   axis labels horizontally by adding the parameter ~las=1~.
+   #+begin_src R :results graphics file :file ../img/9_sex_ann.png
+     barplot(
+       height = sex.freq,
+       main = "Number of males and females in dataset df",
+       xlab = "Sex",
+       ylab = "Frequency",
+       las = 1)
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/9_sex_ann.png]]
 
 * TODO Building stacked/dodged barplots
 * Footnotes
