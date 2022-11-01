@@ -1718,22 +1718,22 @@ This exercise involves:
 ** PROJECT [[https://github.com/birkenkrahe/db330/issues/44][DataCamp SQL webinar (Nov 8)]]
 * Week 12: Basic plotting in R
 #+begin_src R :results graphics file :file ../img/plotting.png
-  plot(
-    ToothGrowth$len ~ ToothGrowth$supp, # len vs. supp levels
-    xlab="Supply level",  # x-axis label
-    ylab="Tooth length (mm)", # y-axis label
-    main="Length vs. Supply levels in ToothGrowth", # plot title
-    las=1, # orient all labels horizontally
-    xaxt="n")  # remove x-axis values
-  axis(side=1,
-       at=1:2,
-       labels=c("Orange Juice","Vitamin C"))
+    plot(
+      ToothGrowth$len ~ ToothGrowth$supp, # len vs. supp levels
+      xlab="Supply level",  # x-axis label
+      ylab="Tooth length (mm)", # y-axis label
+      main="Length vs. Supply levels in ToothGrowth", # plot title
+      las=1, # orient all labels horizontally
+      xaxt="n") # remove x-axis values
+    axis(side=1,
+         at=1:2,
+         labels=c("Orange Juice","Vitamin C"))
 #+end_src
 #+RESULTS:
 [[file:../img/plotting.png]]
 
-- [ ] [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-keep-my-knowledge-of-r-current][New FAQ: how can you keep your R knowledge current?]]
-
+- [X] [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-keep-my-knowledge-of-r-current][New FAQ: how can you keep your R knowledge current?]]
+- [X] Lecture/Practice: plotting in base R (and ggplot2)
 * NEXT Assignment: explore real data frames (Nov 4)
 * NEXT DataCamp assignment: importing data (Nov 11)
 * References
