@@ -1734,8 +1734,18 @@ This exercise involves:
 
 - [X] [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-keep-my-knowledge-of-r-current][New FAQ: how can you keep your R knowledge current?]]
 - [X] Lecture/Practice: plotting in base R (and ggplot2)
+
 * NEXT Assignment: explore real data frames (Nov 4)
 * NEXT DataCamp assignment: importing data (Nov 11)
+
+* Veterans'Day Celebration Nov 11, 11:11 hrs
+#+attr_html: :width 400px
+[[../img/LyonVeteranFlyer.jpg]]
+
+- No class on November 11 at 11 AM
+- Join us for the celebration & the BBQ
+- Great keynote speaker (Brian Norris)
+  
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]

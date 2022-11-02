@@ -90,12 +90,17 @@ the *big picture* in tables.
 #+end_quote
 
 * Barplots and Pie charts
+#+attr_html: :width 400px
+[[../img/9_piebar.png]]
 
 - Barplots and pie charts are used to visualize *qualitative* data by
   *category frequency*
 
-- The height of the bars of a barplot indicate the frequency or count
+- The height of the bars of a *barplot* indicate the frequency or count
   of each category
+
+- The size of the segment of the *pie chart* indicate the frequency or
+  count of each category
 
 * Frequency tables
 
@@ -209,14 +214,12 @@ the *big picture* in tables.
 1) Check the ~help~ for the ~read.csv~ function. What's the difference
    between ~read.csv~ and ~read.csv2~?
    #+begin_quote
-
-
+   ...
    #+end_quote
 
 2) What is the meaning of the parameter ~stringsAsFactors~?
    #+begin_quote
-
-
+   ...
    #+end_quote
 
 3) Save the file at https://tinyurl.com/spdnvxbr as a data frame using
@@ -225,15 +228,11 @@ the *big picture* in tables.
 
    #+begin_src R :results silent
 
-
-
    #+end_src
 
 4) Save the file again as a data frame ~dnf~ but this time do *not* set
    ~stringsAsFactors~ to ~TRUE~. Print the structure of ~dnf~.
    #+begin_src R
-
-
 
    #+end_src
 
@@ -266,7 +265,7 @@ the *big picture* in tables.
 9) What information does ~sex.freq~ contain? Write your answer below (as
    a full sentence).
    #+begin_quote
-
+   ...
    #+end_quote
 
 10) Create a barplot for the ~Sex~ category and store it in the file
@@ -282,7 +281,7 @@ the *big picture* in tables.
 
     #+end_src
     
-* Building stacked/dodged barplots (two variables)
+* TODO Building stacked/dodged barplots (two variables)
 
 
 
