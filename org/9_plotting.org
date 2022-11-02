@@ -152,7 +152,7 @@ the *big picture* in tables.
   frequency table to the ~barplot~ function. The value of each table
   entry determines the height of the bar: ~barplot(table(var))~
 
-* Building a barplot for  ~mtcars~
+* Building a barplot for ~mtcars~
 
 - As an example let's use ~mtcars~, which contains characteristics of 32
   classic performance cars in the mid-1970s.
@@ -191,7 +191,7 @@ the *big picture* in tables.
     help(barplot)
   #+end_src
 
-- For simple annotation, we need:
+- For the simplest annotation, we need:
   1) title
   2) x-axis label
   3) y-axis label
@@ -209,7 +209,7 @@ the *big picture* in tables.
   #+RESULTS:
   [[file:../img/9_cyl_ann.png]]
 
-* Practice: building a barplot (single variable)
+* Practice: building a simple barplot
 
 1) Check the ~help~ for the ~read.csv~ function. What's the difference
    between ~read.csv~ and ~read.csv2~?
@@ -280,12 +280,188 @@ the *big picture* in tables.
     #+begin_src R :results graphics file :file sex.freq_ann.png
 
     #+end_src
-    
-* TODO Building stacked/dodged barplots (two variables)
 
+* Building stacked/dodged barplots
 
+- We're interested in cylinder and transmission information: for
+  example, how many 4-cylinder cars have automatic transmission?
+  #+begin_src R
+    table(cylinders[transmission == 0])["4"]
+  #+end_src
 
+- /Stacked/ barplots have bars that are split up vertically
 
+- In /dodged/ or /side-by-side/ barplots, the bars are broken up and
+  placed next to one another
+
+* Frequency matrix
+
+- To make such plots, ~barplot~ needs a suitably arranged matrix as its
+  first argument. E.g. for ~cylinders~ and ~transmissions~, it shows the
+  number of all cylinders associated with each transmission type:
+  #+begin_src R
+    cyl.freq.matrix <- table(transmission, cylinders)
+    cyl.freq.matrix
+  #+end_src
+
+  #+RESULTS:
+  :             cylinders
+  : transmission  4  6  8
+  :            0  3  4 12
+  :            1  8  3  2
+
+- The condition for ~table~ to cross-tabulate categorical variables (or
+  vectors of discrete numeric values) is that the vectors have the
+  *same length*.
+
+- Column vectors having the same length means that for each
+  observation, values of both variables were recorded: each car in
+  ~mtcars~ has a ~cylinders~ and a ~transmission~ value.
+
+- Each bar of the barplot corresponds to a column of the supplied
+  matrix, and it is further split by the row values.
+
+- Creating the barplot:
+  #+begin_src R :results graphics file :file ../img/9_cyl_am.png
+    barplot(cyl.freq.matrix,
+            las = 1)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl_am.png]]
+
+- Each bar/column of the plot corresponds to a column of the
+  categorical variable on the x-axis. Let's customize it!
+  
+* Customizing barplots
+
+- There are a LOT of potential parameters in ~help(barplot)~ with the
+  default values. 
+  #+begin_example R
+  barplot(height, width = 1, space = NULL,
+          names.arg = NULL, legend.text = NULL, beside = FALSE,
+          horiz = FALSE, density = NULL, angle = 45,
+          col = NULL, border = par("fg"),
+          main = NULL, sub = NULL, xlab = NULL, ylab = NULL,
+          xlim = NULL, ylim = NULL, xpd = TRUE, log = "",
+          axes = TRUE, axisnames = TRUE,
+          cex.axis = par("cex.axis"), cex.names = par("cex.axis"),
+          inside = TRUE, plot = TRUE, axis.lty = 0, offset = 0,
+          add = FALSE, ann = !add && par("ann"),
+          args.legend = NULL, ...)
+  #+end_example
+
+- Let's look at some of these, which we will customize later:
+  
+  1) ~height~ is a non-optional argument (vector or matrix)
+  2) ~horiz = FALSE~ means bars are drawn vertically (first on the
+     left); if ~TRUE~, bars are drawn horizontally (first at bottom)
+  3) ~names.arg = NULL~ means that names for each bar are taken from the
+     ~names~ attribute of ~height~ if it is a vector, or the column
+     names if it is a matrix (which is what happened here):
+     #+begin_src R
+       colnames(cyl.freq.matrix)
+     #+end_src
+  4) ~beside = FALSE~ means stacked bars, ~TRUE~ means side-by-side bars
+  5) ~legend.text~ is a quick way to add a legend (always useful)
+          
+  #+RESULTS:
+  : [1] "0" "1"
+
+- We already know how to add a title and x- and y-axis labels:
+  #+begin_src R :results graphics file :file ../img/9_cyl_am1.png
+    barplot(cyl.freq.matrix,
+            las = 1,
+            main = "Car counts by transmission and cylinders",
+            xlab = "Number of cylinders",
+            ylab = "Number of cars")
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl_am1.png]]
+
+- Change the x-axis names to more meaningful values with ~names.arg~:
+  #+begin_src R :results graphics file :file ../img/9_cyl_am2.png
+    barplot(cyl.freq.matrix,
+            las = 1,
+            main = "Car counts by transmission and cylinders",
+            xlab = "Transmission type",
+            ylab = "Number of cars",
+            names.arg = c("V4", "V6", "V8"))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl_am2.png]]
+
+- Add a legend using ~legend.text~:
+  #+begin_src R :results graphics file :file ../img/9_cyl_am3.png
+    barplot(cyl.freq.matrix,
+            las = 1,
+            main = "Car counts by transmission and cylinders",
+            xlab = "Transmission type",
+            ylab = "Number of cars",
+            names.arg = c("V4", "V6", "V8"),
+            legend.text = c("Auto", "Manual"))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl_am3.png]]
+
+- We don't want the legend to overlap with the bars: we use
+  the ~args.legend~ parameter to change the position:
+  #+begin_src R :results graphics file :file ../img/9_cyl_am4.png
+    barplot(cyl.freq.matrix,
+            las = 1,
+            main = "Car counts by transmission and cylinders",
+            xlab = "Transmission type",
+            ylab = "Number of cars",
+            names.arg = c("V4", "V6", "V8"),
+            legend.text = c("Auto", "Manual"),
+            args.legend = list(x="topleft"))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl_am4.png]]
+
+- Turning it on its side changing the parameter ~horiz~ to ~TRUE~ (and
+  moving the legend to center ~right~):
+  #+begin_src R :results graphics file :file ../img/9_cyl_am5.png
+    barplot(cyl.freq.matrix,
+            las = 1,
+            main = "Car counts by transmission and cylinders",
+            xlab = "Transmission type",
+            ylab = "Number of cars",
+            names.arg = c("V4", "V6", "V8"),
+            legend.text = c("Auto", "Manual"),
+            args.legend = list(x="right"),
+            horiz = TRUE)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl_am5.png]]
+
+- Finally, let's look at the dodged version of this plot:
+    #+begin_src R :results graphics file :file ../img/9_cyl_am6.png
+      barplot(cyl.freq.matrix,
+              las = 1,
+              main = "Car counts by transmission and cylinders",
+              xlab = "Transmission type",
+              ylab = "Number of cars",
+              names.arg = c("V4", "V6", "V8"),
+              legend.text = c("Auto", "Manual"),
+              args.legend = list(x="right"),
+              horiz = TRUE,
+              beside = TRUE)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl_am6.png]]
+
+- Especially for stacked plots, it might be good to see the values
+  attached to the bars. There is no parameter to do this, we must use
+  ~text~: the ~labels~ inside the function use the ~numeric~ values and
+  convert them to ~character~ values for printing.
+  
 * Footnotes
 
 [fn:1]What are the categories used to organize the graphs?
