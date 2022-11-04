@@ -4,3 +4,7 @@
 #+OPTIONS: toc:nil num:nil
 #+STARTUP: overview hideblocks indent inlineimages
 #+PROPERTY: header-args:R :session *R* :exports both :results output
+* RStudio example
+
+ - [[https://youtu.be/MtiGnSZGSQs][LawrenceStats (Sep 2, 2016). Basic Summary Statistics in R.]]
+ - [[https://rdrr.io/cran/Lock5withR/man/HollywoodMovies2011.html][Dataset: Hollywood Movies in 2011]] (rdrr.io)

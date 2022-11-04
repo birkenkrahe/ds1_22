@@ -1729,14 +1729,22 @@ This exercise involves:
          at=1:2,
          labels=c("Orange Juice","Vitamin C"))
 #+end_src
-#+RESULTS:
+#+attr_html: :width 400px
 [[file:../img/plotting.png]]
 
 - [X] [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-keep-my-knowledge-of-r-current][New FAQ: how can you keep your R knowledge current?]]
 - [X] Lecture/Practice: plotting in base R (and ggplot2)
+- [ ] How to update R and R packages
+* TODO Command line update of R and packages ([[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-update-r-on-my-computer][FAQ]])
+* TODO Review assignment: explore real data frames
 
-* NEXT Assignment: explore real data frames (Nov 4)
-* NEXT DataCamp assignment: importing data (Nov 11)
+1) What's the length of the longest tooth recorded in ~ToothGrowth~?
+
+2) How can you check if the ~supp~ variable in ~ToothGrowth~ is ordered?
+
+3) How can you create a histogram of the tooth lengths in ~ToothGrowth~?
+
+* TODO DataCamp assignment: importing data (Nov 11)
 
 * Veterans'Day Celebration Nov 11, 11:11 hrs
 #+attr_html: :width 400px

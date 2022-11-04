@@ -112,12 +112,36 @@ the *big picture* in tables.
     str(ToothGrowth)
     tg <- ToothGrowth
   #+end_src
+
+  #+RESULTS:
+  : 'data.frame':       60 obs. of  3 variables:
+  :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+  :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+  :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+
 - Compute the frequencies for the variables of ~ToothGrowth~
   #+begin_src R
     table(tg$len)
     table(tg$supp)
     table(tg$dose)
   #+end_src
+
+  #+RESULTS:
+  #+begin_example
+
+   4.2  5.2  5.8  6.4    7  7.3  8.2  9.4  9.7   10 11.2 11.5 13.6 14.5 15.2 15.5
+     1    1    1    1    1    1    1    1    2    2    2    1    1    3    2    1
+  16.5 17.3 17.6 18.5 18.8 19.7   20 21.2 21.5 22.4 22.5   23 23.3 23.6 24.5 24.8
+     3    2    1    1    1    1    1    1    2    1    1    1    2    2    1    1
+  25.2 25.5 25.8 26.4 26.7 27.3 29.4 29.5 30.9 32.5 33.9
+     1    2    1    4    1    2    1    1    1    1    1
+
+  OJ VC
+  30 30
+
+  0.5   1   2
+   20  20  20
+  #+end_example
 
 - What do these results mean? Which questions does each ~table~ result
   answer?
@@ -134,6 +158,13 @@ the *big picture* in tables.
     str(tbl)
     names(tbl)
   #+end_src
+
+  #+RESULTS:
+  : [1] "table"
+  :  'table' int [1:2(1d)] 30 30
+  :  - attr(*, "dimnames")=List of 1
+  :   ..$ : chr [1:2] "OJ" "VC"
+  : [1] "OJ" "VC"
 
 * How to build a barplot
 #+attr_html: :width 400px
@@ -162,6 +193,14 @@ the *big picture* in tables.
     head(mtcars,5)
   #+end_src
 
+  #+RESULTS:
+  :                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+  : Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+  : Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+  : Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+  : Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+  : Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+
 - We're only interested in one variable, ~cyl~, the number of cylinders
   of the cars listed.
 
@@ -172,10 +211,18 @@ the *big picture* in tables.
     cyl.freq
   #+end_src
 
+  #+RESULTS:
+  :
+  :  4  6  8
+  : 11  7 14
+
 - We create a barplot of the cylinder frequencies in ~mtcar~
   #+begin_src R :results graphics file :file ../img/9_cyl.png
     barplot(cyl.freq)
   #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cyl.png]]
 
 - The plot displays the number of 4-, 6- and 8-cylinder cars in the
   data set but without annotations it's not clear what is summarized
@@ -188,8 +235,10 @@ the *big picture* in tables.
 - The ~barplot~ function has a bunch of parameters, which you can view
   with ~help~ (if you run this in Org-mode, you have to quit with ~C-g~)
   #+begin_src R
-    help(barplot)
+                                            #  help(barplot)
   #+end_src
+
+  #+RESULTS:
 
 - For the simplest annotation, we need:
   1) title (~main~)
@@ -211,43 +260,44 @@ the *big picture* in tables.
 
 * Practice: building a simple barplot
 
- 1) Check the ~help~ for the ~read.csv~ function. What's the difference
-   between ~read.csv~ and ~read.csv2~?
-   #+begin_quote
-   The separator between the data is ~,~ for ~read.csv~ and ~;~ for
-   ~read.csv2~.
-   #+end_quote
+   1) Check the ~help~ for the ~read.csv~ function. What's the difference
+      between ~read.csv~ and ~read.csv2~?
+      #+begin_quote
+      The separator between the data is ~,~ for ~read.csv~ and ~;~ for
+      ~read.csv2~.
+      #+end_quote
 
-2) What is the meaning of the parameter ~stringsAsFactors~?
-   #+begin_quote
-   Setting this parameter to ~TRUE~ converts all ~character~ vectors to
-   ~factor~ vectors.
-   #+end_quote
+   2) What is the meaning of the parameter ~stringsAsFactors~?
+      #+begin_quote
+      Setting this parameter to ~TRUE~ converts all ~character~ vectors to
+      ~factor~ vectors.
+      #+end_quote
 
-3) Save the file at https://tinyurl.com/spdnvxbr as a data frame using
-   ~read.csv~. Look at the file to check if ~header~ should be ~TRUE~ or
-   ~FALSE~, and set ~stringsAsFactors=TRUE~.
+   3) Save the file at https://tinyurl.com/spdnvxbr as a data frame using
+      ~read.csv~. Look at the file to check if ~header~ should be ~TRUE~ or
+      ~FALSE~, and set ~stringsAsFactors=TRUE~.
 
-   #+begin_src R :results silent
-     df <- read.csv(file="https://tinyurl.com/spdnvxbr",
-                    header=TRUE,
-                    stringsAsFactors=TRUE)
-   #+end_src
+      #+begin_src R :results silent
+        df <- read.csv(file="https://tinyurl.com/spdnvxbr",
+                       header=TRUE,
+                       stringsAsFactors=TRUE)
+      #+end_src
 
-4) Save the file again as a data frame ~dnf~ but this time do *not* set
-   ~stringsAsFactors~ to ~TRUE~. Print the structure of ~dnf~.
-   #+begin_src R
-     dnf <- read.csv(file="https://tinyurl.com/spdnvxbr",
-                     header=TRUE)
-     str(dnf)
-   #+end_src
+   4) Save the file again as a data frame ~dnf~ but this time do *not* set
+      ~stringsAsFactors~ to ~TRUE~. Print the structure of ~dnf~.
+      #+begin_src R
+        dnf <- read.csv(file="https://tinyurl.com/spdnvxbr",
+                        header=TRUE)
+        str(dnf)
+      #+end_src
 
-   #+RESULTS:
-   : 'data.frame':	10 obs. of  4 variables:
-   :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
-   :  $ Height: int  161 185 174 154 188 178 170 167 181 178
-   :  $ Sex   : chr  "female" "male" "male" "female" ...
-   :  $ Name  : chr  "Jane" "Jim" "Joe" "Carla" ...
+      #+RESULTS:
+      : 'data.frame':   10 obs. of  4 variables:
+      :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
+      :  $ Height: int  161 185 174 154 188 178 170 167 181 178
+      :  $ Sex   : chr  "female" "male" "male" "female" ...
+      :  $ Name  : chr  "Jane" "Jim" "Joe" "Carla" ...
+
 
 5) Change the ~character~ vectors to ~factor~ vectors in ~dnf~.
    #+begin_src R :results silent
@@ -262,14 +312,14 @@ the *big picture* in tables.
 
    #+RESULTS:
    : [1] TRUE
-   
+
 6) Check the structure of the data frame ~df~.
    #+begin_src R
      str(df)
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	10 obs. of  4 variables:
+   : 'data.frame':      10 obs. of  4 variables:
    :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
    :  $ Height: int  161 185 174 154 188 178 170 167 181 178
    :  $ Sex   : Factor w/ 2 levels "female","male": 1 2 2 1 2 2 1 2 2 1
@@ -303,15 +353,15 @@ the *big picture* in tables.
    #+end_src
 
    #+RESULTS:
-   : 
-   : female   male 
+   :
+   : female   male
    :      4      6
 
 9) What information does ~sex.freq~ contain? Write your answer below (as
    a full sentence).
    #+begin_quote
-     The data frame contains observations on four female and six male
-     participants.
+   The data frame contains observations on four female and six male
+   participants.
    #+end_quote
 
 10) Create a barplot for the ~Sex~ category and store it in the file
@@ -344,13 +394,22 @@ the *big picture* in tables.
   ~mtcars~ data set: for example, how many 4-cylinder cars have
   automatic transmission?
   #+begin_src R
+    cylinders <- mtcars$cyl
+    transmission <- mtcars$am
+
     table(cylinders[transmission == 0])["4"]
   #+end_src
+
+  #+RESULTS:
+  : 4
+  : 3
 
 - /Stacked/ barplots have bars that are split up vertically
 
 - In /dodged/ or /side-by-side/ barplots, the bars are broken up and
-  placed next to one another
+  placed next to one another - the figure shows the contrast:
+  #+attr_html: :width 500px
+  [[../img/9_cylam.png]]
 
 * Frequency matrix
 
@@ -390,11 +449,11 @@ the *big picture* in tables.
 
 - Each bar/column of the plot corresponds to a column of the
   categorical variable on the x-axis. Let's customize it!
-  
+
 * Customizing barplots
 
 - There are a LOT of potential parameters in ~help(barplot)~ with the
-  default values. 
+  default values.
   #+begin_example R
   barplot(height, width = 1, space = NULL,
           names.arg = NULL, legend.text = NULL, beside = FALSE,
@@ -410,7 +469,7 @@ the *big picture* in tables.
   #+end_example
 
 - Let's look at some of these, which we will customize later:
-  
+
   1) ~height~ is a non-optional argument (vector or matrix)
   2) ~horiz = FALSE~ means bars are drawn vertically (first on the
      left); if ~TRUE~, bars are drawn horizontally (first at bottom)
@@ -420,11 +479,12 @@ the *big picture* in tables.
      #+begin_src R
        colnames(cyl.freq.matrix)
      #+end_src
+
+     #+RESULTS:
+     : [1] "4" "6" "8"
+
   4) ~beside = FALSE~ means stacked bars, ~TRUE~ means side-by-side bars
   5) ~legend.text~ is a quick way to add a legend (always useful)
-          
-  #+RESULTS:
-  : [1] "0" "1"
 
 - We already know how to add a title and x- and y-axis labels:
   #+begin_src R :results graphics file :file ../img/9_cyl_am1.png
@@ -499,26 +559,58 @@ the *big picture* in tables.
   [[file:../img/9_cyl_am5.png]]
 
 - Finally, let's look at the dodged version of this plot:
-    #+begin_src R :results graphics file :file ../img/9_cyl_am6.png
-      barplot(cyl.freq.matrix,
-              las = 1,
-              main = "Car counts by transmission and cylinders",
-              xlab = "Transmission type",
-              ylab = "Number of cars",
-              names.arg = c("V4", "V6", "V8"),
-              legend.text = c("Auto", "Manual"),
-              args.legend = list(x="right"),
-              horiz = TRUE,
-              beside = TRUE)
+  #+begin_src R :results graphics file :file ../img/9_cyl_am6.png
+    barplot(cyl.freq.matrix,
+            las = 1,
+            main = "Car counts by transmission and cylinders",
+            ylab = "Transmission type",
+            xlab = "Number of cars",
+            names.arg = c("V4", "V6", "V8"),
+            legend.text = c("Auto", "Manual"),
+            args.legend = list(x="right"),
+            horiz = TRUE,
+            beside = TRUE)
   #+end_src
 
   #+RESULTS:
   [[file:../img/9_cyl_am6.png]]
 
+
 - Especially for stacked plots, it might be good to see the values
   attached to the bars. There is no parameter to do this, we must use
   ~text~: the ~labels~ inside the function use the ~numeric~ values and
   convert them to ~character~ values for printing.
+
+- For completeness: both final plots in a side-by-side plot array:
+  #+begin_src R :results graphics file :file 9_cyl_am7.png
+    par(mfrow=c(1,2), pty='s')
+    barplot(cyl.freq.matrix,
+            las = 1,
+            xlab = "Transmission type",
+            ylab = "Number of cars",
+            names.arg = c("V4", "V6", "V8"),
+            legend.text = c("Auto", "Manual"),
+            args.legend = list(x="topleft",
+                               cex=0.9))
+    title("Stacked vertical barplot",
+          cex.main=0.9)
+    barplot(cyl.freq.matrix,
+            las = 1,
+            ylab = "Transmission type",
+            xlab = "Number of cars",
+            names.arg = c("V4", "V6", "V8"),
+            legend.text = c("Auto", "Manual"),
+            args.legend = list(x="right",
+                               cex=0.9),
+            horiz = TRUE,
+            beside = TRUE)
+    title("Stacked horizontal barplot",
+          cex.main=0.9)
+  #+end_src
+
+  #+RESULTS:
+  [[file:9_cyl_am7.png]]
+
   
 * Footnotes
 
