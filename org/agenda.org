@@ -1736,13 +1736,37 @@ This exercise involves:
 - [X] Lecture/Practice: plotting in base R (and ggplot2)
 - [ ] How to update R and R packages
 * TODO Command line update of R and packages ([[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-update-r-on-my-computer][FAQ]])
-* TODO Review assignment: explore real data frames
+* Review assignment: explore real data frames
 
 1) What's the length of the longest tooth recorded in ~ToothGrowth~?
 
+   #+begin_src R
+     str(ToothGrowth)
+     max(ToothGrowth$len)
+   #+end_src
+
+   #+RESULTS:
+   : 'data.frame':	60 obs. of  3 variables:
+   :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+   :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
+   :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
+
 2) How can you check if the ~supp~ variable in ~ToothGrowth~ is ordered?
 
+   #+begin_src R
+     is.ordered(ToothGrowth$supp)
+   #+end_src
+
+   #+RESULTS:
+   : [1] FALSE
+   
 3) How can you create a histogram of the tooth lengths in ~ToothGrowth~?
+
+   #+begin_src R
+     hist(ToothGrowth$len)
+   #+end_src
+
+   #+RESULTS:
 
 * TODO DataCamp assignment: importing data (Nov 11)
 
