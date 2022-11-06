@@ -1735,8 +1735,8 @@ This exercise involves:
 - [X] [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-keep-my-knowledge-of-r-current][New FAQ: how can you keep your R knowledge current?]]
 - [X] Lecture/Practice: plotting in base R (and ggplot2)
 - [ ] How to update R and R packages
-* TODO Command line update of R and packages ([[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-update-r-on-my-computer][FAQ]])
-* Review assignment: explore real data frames
+** Command line update of R and packages ([[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-update-r-on-my-computer][FAQ]])
+** Review assignment: explore real data frames
 
 1) What's the length of the longest tooth recorded in ~ToothGrowth~?
 
@@ -1768,7 +1768,9 @@ This exercise involves:
 
    #+RESULTS:
 
-* TODO DataCamp assignment: importing data (Nov 11)
+* Week 13: More plotting in R
+** TODO New test available
+** TODO DataCamp assignment: importing data (Nov 11)
 
 * Veterans'Day Celebration Nov 11, 11:11 hrs
 #+attr_html: :width 400px
