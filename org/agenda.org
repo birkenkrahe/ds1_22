@@ -1780,6 +1780,15 @@ This exercise involves:
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
   
+* Week 16: final sprint reviews
+#+attr_html: :width 400px
+[[../img/vangogh.jpg]]
+[[https://en.wikipedia.org/wiki/Sunflowers_(Van_Gogh_series)][Image: van Gogh's Sunflowers (1888), London]][fn:3]
+
+- *Present* final project prototype in no particular order!
+- *Submit* all material prior to the presentation!
+- *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist carefully *now*!
+
 * References
 #+attr_html: :width 500px
 [[../img/books.jpg]]
@@ -1788,6 +1797,9 @@ Chambers J (2008). Software for Data Analysis - Programming with
 R. New York: Springer. Online: [[https://doi.org/10.1007/978-0-387-75936-4][doi.org/10.1007/978-0-387-75936-4]]
 
 * Footnotes
+
+[fn:3]Can you figure out the connection between the three paintings
+selected for this term's final presentation announcement? 
 
 [fn:2]In the case of R, Norm Matloff is one of the greatest,
 especially when it comes to parallelization of code, debugging, and
