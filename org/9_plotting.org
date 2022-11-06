@@ -1,4 +1,4 @@
-#+title: Basic plotting in R
+#+title: Basic plotting in R - barplots, pie charts, histograms
 #+AUTHOR: Marcus Birkenkrahe
 #+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
 #+OPTIONS: toc:nil num:nil
@@ -16,7 +16,7 @@
 - Scatterplots
 - Using base R and ggplot2
 
-  This section closely follows the presentation in Davies (2016),
+  These lectures closely follows the presentation in Davies (2016),
   chapter 14, pp. 289-308.
 
 * When do we visualize data? When don't we?
@@ -614,7 +614,11 @@ the *big picture* in tables.
   #+RESULTS:
   [[file:9_cyl_am7.png]]
 
-  
+* TODO Pie charts
+* TODO Histograms
+* TODO Boxplots
+* TODO Scatterplots
+* TODO Practice
 * Footnotes
 
 [fn:1]What are the categories used to organize the graphs?
