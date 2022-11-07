@@ -1,0 +1,52 @@
+#+TITLE: Practice: barplots in ggplot2
+#+AUTHOR: [YourName]
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:R :session *R* :results output
+* README
+
+- Practice file for the lecture on plotting
+- Create, execute and debug R code blocks as needed
+- Emacs + ESS + Org-mode and R must be installed
+- You can find the solutions in the PDF repository for the course
+
+* TODO IDENTIFY YOURSELF
+
+- Update the ~#+AUTHOR:~ information in the header
+- Add ~(pledged)~ after your name
+- Put your cursor on the headline of this section, and type ~S <LEFT>~
+  until you see ~DONE~ instead of ~TODO~ next to the title.
+- Perform this last step each time you complete a section.
+
+* TODO Problems
+
+1) Create barplot for the ~ToothGrowth~ dataset:
+   - use the function ~ggplot~ with the arguments ~data=ToothGrowth~ and
+     ~aes(x=supp,y=len)~
+   - store the plot in an object ~p~
+   - print ~p~
+   #+begin_src R :results graphics file :file p.png
+
+   #+end_src
+
+2) Add a barplot geometry layer to the plot ~p~:
+   - add (~+~) ~geom_bar(stat="identity", width=0.8)~
+   - store the new plot in ~p1~ and print it
+   - note that adding with ~+~ on a new line gives an error!
+   #+begin_src R :results graphics file :file p1.png
+
+   #+end_src
+
+3) Turn the plot on its side:
+   - Add ~coord_flip()~ to ~p1~
+   - Store it in ~p2~ and print it
+   #+begin_src R :results graphics file :file p2.png
+
+   #+end_src
+
+4) Using ~ggplot~, make a stacked barplot of ~ToothGrowth~ which shows the
+   dosage ~dose~ for each ~supp~ category, and add ~theme_minimal~: save in
+   ~p3~ and print plot
+   #+begin_src R :results graphics file :file p3.png
+
+   #+end_src

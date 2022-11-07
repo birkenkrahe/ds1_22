@@ -1769,8 +1769,20 @@ This exercise involves:
    #+RESULTS:
 
 * Week 13: More plotting in R
-** TODO New test available
-** TODO DataCamp assignment: importing data (Nov 11)
+#+attr_html: :width 300px
+[[../img/vangogh.jpg]]
+[[https://en.wikipedia.org/wiki/Sunflowers_(Van_Gogh_series)][Image: van Gogh's Sunflowers (1888), London]][fn:3]
+
+ - [ ] *No class meeting on Veteran's day* (11-11 @11:11)
+ - [ ] New test available [[https://lyon.instructure.com/courses/568/assignments/3545/edit?quiz_lti][in Canvas]]
+ - [ ] New assignment: importing data [[https://lyon.instructure.com/courses/568/assignments/1533][in DataCamp]]
+ - [ ] Review: 3rd sprint review
+ - [ ] Plotting: pie charts, histograms
+ - [ ] Final presentation 3 weeks away: think ahead!
+
+* Comments: 3rd sprint review (abstract/results)
+
+
 
 * Veterans'Day Celebration Nov 11, 11:11 hrs
 #+attr_html: :width 400px
@@ -1780,10 +1792,10 @@ This exercise involves:
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
   
-* Week 16: final sprint reviews
-#+attr_html: :width 400px
-[[../img/vangogh.jpg]]
-[[https://en.wikipedia.org/wiki/Sunflowers_(Van_Gogh_series)][Image: van Gogh's Sunflowers (1888), London]][fn:3]
+* Final sprint reviews (Nov 28, 30, Dec 2)
+#+attr_html: :width 600px
+[[../img/goya.jpg]]
+[[https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0][Image: The clothed Maja (Francisco de Goya, 1800, Prado Madrid)]]
 
 - *Present* final project prototype in no particular order!
 - *Submit* all material prior to the presentation!

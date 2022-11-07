@@ -114,7 +114,7 @@ the *big picture* in tables.
   #+end_src
 
   #+RESULTS:
-  : 'data.frame':	60 obs. of  3 variables:
+  : 'data.frame':       60 obs. of  3 variables:
   :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
   :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
   :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
@@ -129,17 +129,17 @@ the *big picture* in tables.
   #+RESULTS:
   #+begin_example
 
-   4.2  5.2  5.8  6.4    7  7.3  8.2  9.4  9.7   10 11.2 11.5 13.6 14.5 15.2 15.5 
-     1    1    1    1    1    1    1    1    2    2    2    1    1    3    2    1 
-  16.5 17.3 17.6 18.5 18.8 19.7   20 21.2 21.5 22.4 22.5   23 23.3 23.6 24.5 24.8 
-     3    2    1    1    1    1    1    1    2    1    1    1    2    2    1    1 
-  25.2 25.5 25.8 26.4 26.7 27.3 29.4 29.5 30.9 32.5 33.9 
+   4.2  5.2  5.8  6.4    7  7.3  8.2  9.4  9.7   10 11.2 11.5 13.6 14.5 15.2 15.5
+     1    1    1    1    1    1    1    1    2    2    2    1    1    3    2    1
+  16.5 17.3 17.6 18.5 18.8 19.7   20 21.2 21.5 22.4 22.5   23 23.3 23.6 24.5 24.8
+     3    2    1    1    1    1    1    1    2    1    1    1    2    2    1    1
+  25.2 25.5 25.8 26.4 26.7 27.3 29.4 29.5 30.9 32.5 33.9
      1    2    1    4    1    2    1    1    1    1    1
 
-  OJ VC 
+  OJ VC
   30 30
 
-  0.5   1   2 
+  0.5   1   2
    20  20  20
   #+end_example
 
@@ -212,8 +212,8 @@ the *big picture* in tables.
   #+end_src
 
   #+RESULTS:
-  : 
-  :  4  6  8 
+  :
+  :  4  6  8
   : 11  7 14
 
 - We create a barplot of the cylinder frequencies in ~mtcar~
@@ -260,43 +260,43 @@ the *big picture* in tables.
 
 * Practice: building a simple barplot
 
-   1) Check the ~help~ for the ~read.csv~ function. What's the difference
-      between ~read.csv~ and ~read.csv2~?
-      #+begin_quote
-      The separator between the data is ~,~ for ~read.csv~ and ~;~ for
-      ~read.csv2~.
-      #+end_quote
+1) Check the ~help~ for the ~read.csv~ function. What's the difference
+   between ~read.csv~ and ~read.csv2~?
+   #+begin_quote
+   The separator between the data is ~,~ for ~read.csv~ and ~;~ for
+   ~read.csv2~.
+   #+end_quote
 
-   2) What is the meaning of the parameter ~stringsAsFactors~?
-      #+begin_quote
-      Setting this parameter to ~TRUE~ converts all ~character~ vectors to
-      ~factor~ vectors.
-      #+end_quote
+2) What is the meaning of the parameter ~stringsAsFactors~?
+   #+begin_quote
+   Setting this parameter to ~TRUE~ converts all ~character~ vectors to
+   ~factor~ vectors.
+   #+end_quote
 
-   3) Save the file at https://tinyurl.com/spdnvxbr as a data frame using
-      ~read.csv~. Look at the file to check if ~header~ should be ~TRUE~ or
-      ~FALSE~, and set ~stringsAsFactors=TRUE~.
+3) Save the file at https://tinyurl.com/spdnvxbr as a data frame using
+   ~read.csv~. Look at the file to check if ~header~ should be ~TRUE~ or
+   ~FALSE~, and set ~stringsAsFactors=TRUE~.
 
-      #+begin_src R :results silent
-        df <- read.csv(file="https://tinyurl.com/spdnvxbr",
-                       header=TRUE,
-                       stringsAsFactors=TRUE)
-      #+end_src
+   #+begin_src R :results silent
+     df <- read.csv(file="https://tinyurl.com/spdnvxbr",
+                    header=TRUE,
+                    stringsAsFactors=TRUE)
+   #+end_src
 
-   4) Save the file again as a data frame ~dnf~ but this time do *not* set
-      ~stringsAsFactors~ to ~TRUE~. Print the structure of ~dnf~.
-      #+begin_src R
-        dnf <- read.csv(file="https://tinyurl.com/spdnvxbr",
-                        header=TRUE)
-        str(dnf)
-      #+end_src
+4) Save the file again as a data frame ~dnf~ but this time do *not* set
+   ~stringsAsFactors~ to ~TRUE~. Print the structure of ~dnf~.
+   #+begin_src R
+     dnf <- read.csv(file="https://tinyurl.com/spdnvxbr",
+                     header=TRUE)
+     str(dnf)
+   #+end_src
 
-      #+RESULTS:
-      : 'data.frame':	10 obs. of  4 variables:
-      :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
-      :  $ Height: int  161 185 174 154 188 178 170 167 181 178
-      :  $ Sex   : chr  "female" "male" "male" "female" ...
-      :  $ Name  : chr  "Jane" "Jim" "Joe" "Carla" ...
+   #+RESULTS:
+   : 'data.frame':      10 obs. of  4 variables:
+   :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
+   :  $ Height: int  161 185 174 154 188 178 170 167 181 178
+   :  $ Sex   : chr  "female" "male" "male" "female" ...
+   :  $ Name  : chr  "Jane" "Jim" "Joe" "Carla" ...
 
 
 5) Change the ~character~ vectors to ~factor~ vectors in ~dnf~.
@@ -319,7 +319,7 @@ the *big picture* in tables.
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	10 obs. of  4 variables:
+   : 'data.frame':      10 obs. of  4 variables:
    :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
    :  $ Height: int  161 185 174 154 188 178 170 167 181 178
    :  $ Sex   : Factor w/ 2 levels "female","male": 1 2 2 1 2 2 1 2 2 1
@@ -353,8 +353,8 @@ the *big picture* in tables.
    #+end_src
 
    #+RESULTS:
-   : 
-   : female   male 
+   :
+   : female   male
    :      4      6
 
 9) What information does ~sex.freq~ contain? Write your answer below (as
@@ -404,7 +404,7 @@ the *big picture* in tables.
   #+end_src
 
   #+RESULTS:
-  : 4 
+  : 4
   : 3
 
 - /Stacked/ barplots have bars that are split up vertically
@@ -442,6 +442,7 @@ the *big picture* in tables.
   matrix, and it is further split by the row values.
 
 - Creating the barplot:
+  #+name: barplot
   #+begin_src R :results graphics file :file ../img/9_cyl_am.png
     barplot(cyl.freq.matrix,
             las = 1)
@@ -557,11 +558,12 @@ the *big picture* in tables.
             args.legend = list(x="right"),
             horiz = TRUE)
   #+end_src
-  
+
   #+RESULTS:
   [[file:../img/9_cyl_am5.png]]
 
 - Finally, let's look at the dodged version of this plot:
+  #+name: dodged
   #+begin_src R :results graphics file :file ../img/9_cyl_am6.png
     barplot(cyl.freq.matrix,
             las = 1,
@@ -575,9 +577,8 @@ the *big picture* in tables.
             beside = TRUE)
   #+end_src
 
-  #+RESULTS:
+  #+RESULTS: dodged
   [[file:../img/9_cyl_am6.png]]
-
 
 - Especially for stacked plots, it might be good to see the values
   attached to the bars. There is no parameter to do this, we must use
@@ -614,11 +615,163 @@ the *big picture* in tables.
   #+RESULTS:
   [[file:9_cyl_am7.png]]
 
+* Barplots with ggplot2
+
+- The ggplot2 package is an alternative to base R plotting
+
+- It it based on the "grammar of graphics" methodology: customization
+  is layered on top of the raw data plot using the ~+~ operator
+
+- Unlike base R, ggplot2 requires ~data.frame~ format, and is more picky
+
+- The function ~ggplot2::qplot~ is a shortcut that looks like ~plot~: the
+  code below produces a basic barplot from ~mtcars$cyl~
+  #+begin_src R :results graphics file :file ../img/7_qplot.png
+    qplot(factor(mtcars$cyl), geom="bar")
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/7_qplot.png]]
+
+- Here, the relevant "geometry" is ~"bar"~ and the ~numeric~ variable must
+  be supplied as a ~factor~ to allow treating it like a category
+
+- To get this [[barplot][plot with ~barplot~ in base R]], you need the frequency
+  ~table~ function but you don't need to change the vector to ~factor~
+
+- To produce a ggplot2 version of the [[dodged][dodged barplot]] created earlier
+  in base R, you can use this code:
+  #+begin_src R :results graphics file :file ../img/7_ggplot.png
+    qplot(
+      factor(mtcars$cyl),
+      geom="blank",
+      fill=factor(mtcars$am),
+      xlab="Number of cylinders",
+      ylab="Number of cars",
+      main="Car counts by transmission and cylinders") +
+      geom_bar(position="dodge") +
+      scale_x_discrete(
+        labels=c("V4", "V6", "V8")) +
+      scale_y_continuous(
+        breaks=seq(0,12,2)) +
+      coord_flip() +
+      theme_bw() +
+      scale_fill_grey(
+        name="Trans",
+        labels=c("auto","manual"))
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/7_ggplot.png]]
+
+- You can use ~ggplot~ to make this plot but the layers stay the same
+  #+attr_html: :width 400px
+  [[../img/7_gg.png]]
+
+- Direct contrast between ggplot2 and base R code: the default in
+  ggplot2 is color (you can [[https://ggplot2.tidyverse.org/reference/ggtheme.html][pick another theme]])
+  #+attr_html: :width 700px
+  [[../img/7_plots.png]]
+
+- The default makes the code just as short as the base R solution:
+  #+begin_src R :results graphics file :file ../img/7_ggplot1.png
+    qplot(
+      factor(mtcars$cyl),
+      geom="blank",
+      fill=factor(mtcars$am),
+      xlab="Number of cylinders",
+      ylab="Number of cars",
+      main="Car counts by transmission and cylinders") +
+      geom_bar(position="dodge") +
+      coord_flip()
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/7_ggplot1.png]]
+
+* Practice ggplot2
+
+Create a practice file ~ggplot2.org~ to work in using this template:
+
+
+1) Create barplot for the ~ToothGrowth~ dataset:
+   - use the function ~ggplot~ with the arguments ~data=ToothGrowth~ and
+     ~aes(x=supp,y=len)~
+   - store the plot in an object ~p~
+   - print ~p~
+   #+begin_src R :results graphics file :file ../img/7_ggtg.png
+     ggplot(
+       data = ToothGrowth,
+       aes(x=supp, y=len)) -> p
+     p
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/7_ggtg.png]]
+
+2) Add a barplot geometry layer to the plot ~p~:
+   - add (~+~) ~geom_bar(stat="identity", width=0.8)~
+   - store the new plot in ~p1~ and print it
+   - note that adding with ~+~ on a new line gives an error!
+   #+begin_src R :results graphics file :file ../img/7_ggtg1.png
+     p +
+       geom_bar(
+         stat="identity",
+         width=0.8) -> p1
+     p1
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/7_ggtg1.png]]
+
+3) Turn the plot on its side:
+   - Add ~coord_flip()~ to ~p1~
+   - Store it in ~p2~ and print it
+   #+begin_src R :results graphics file :file ../img/7_ggtg2.png
+     p +
+       geom_bar(
+         stat="identity",
+         width=0.8) +
+       coord_flip() -> p2
+     p2
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/7_ggtg2.png]]
+
+4) Using ~ggplot~, make a stacked barplot of ~ToothGrowth~ which shows the
+   dosage ~dose~ for each ~supp~ category, and add ~theme_minimal~: save in
+   ~p3~ and print plot
+   #+begin_src R :results graphics file :file ../img/7_ggtg3.png
+     ggplot(
+       data=ToothGrowth,
+       aes(x=supp,
+           y=len,
+           fill=dose)) +
+       geom_bar(stat="identity") +
+       theme_minimal() -> p3
+     p3
+   #+end_src
+
+   #+RESULTS:
+   [[file:../img/7_ggtg3.png]]
+
 * TODO Pie charts
+
+- Pie charts are an alternative to visualizing category frequencies
+
+- Pie slices represent relative counts of each categorical variable
+
+
+
 * TODO Histograms
 * TODO Boxplots
 * TODO Scatterplots
-* TODO Practice
+* TODO Plot matrices
+* References
+
+- [[http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization]["ggplot2 barplots: Quick start guide", sthda.com]]
+
 * Footnotes
 
 [fn:1]What are the categories used to organize the graphs?
