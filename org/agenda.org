@@ -1777,14 +1777,11 @@ This exercise involves:
  - [ ] New test available [[https://lyon.instructure.com/courses/568/assignments/3545/edit?quiz_lti][in Canvas]]
  - [ ] New assignment: importing data [[https://lyon.instructure.com/courses/568/assignments/1533][in DataCamp]]
  - [ ] Review: 3rd sprint review
- - [ ] Plotting: pie charts, histograms
+ - [ ] Plotting: ggplot2, pie charts, histograms
  - [ ] Final presentation 3 weeks away: think ahead!
 
-* Comments: 3rd sprint review (abstract/results)
-
-
-
-* Veterans'Day Celebration Nov 11, 11:11 hrs
+* NEXT Comments: 3rd sprint review (abstract/results)
+* NEXT Veterans'Day Celebration Nov 11, 11:11 hrs
 #+attr_html: :width 400px
 [[../img/LyonVeteranFlyer.jpg]]
 

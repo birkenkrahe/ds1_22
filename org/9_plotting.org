@@ -691,8 +691,7 @@ the *big picture* in tables.
 
 * Practice ggplot2
 
-Create a practice file ~ggplot2.org~ to work in using this template:
-
+*Create a practice file ~ggplot2.org~ to work in: [[https://tinyurl.com/3pjpbyvz][tinyurl.com/3pjpbyvz]]*
 
 1) Create barplot for the ~ToothGrowth~ dataset:
    - use the function ~ggplot~ with the arguments ~data=ToothGrowth~ and
@@ -761,8 +760,6 @@ Create a practice file ~ggplot2.org~ to work in using this template:
 - Pie charts are an alternative to visualizing category frequencies
 
 - Pie slices represent relative counts of each categorical variable
-
-
 
 * TODO Histograms
 * TODO Boxplots
