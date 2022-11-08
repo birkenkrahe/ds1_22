@@ -622,10 +622,15 @@ the *big picture* in tables.
 - It it based on the "grammar of graphics" methodology: customization
   is layered on top of the raw data plot using the ~+~ operator
 
+- You can use ~ggplot~ to make this plot but the layers stay the same
+  #+attr_html: :width 400px
+  [[../img/7_gg.png]]
+
 - Unlike base R, ggplot2 requires ~data.frame~ format, and is more picky
 
 - The function ~ggplot2::qplot~ is a shortcut that looks like ~plot~: the
   code below produces a basic barplot from ~mtcars$cyl~
+
   #+begin_src R :results graphics file :file ../img/7_qplot.png
     qplot(factor(mtcars$cyl), geom="bar")
   #+end_src
@@ -663,10 +668,6 @@ the *big picture* in tables.
 
   #+RESULTS:
   [[file:../img/7_ggplot.png]]
-
-- You can use ~ggplot~ to make this plot but the layers stay the same
-  #+attr_html: :width 400px
-  [[../img/7_gg.png]]
 
 - Direct contrast between ggplot2 and base R code: the default in
   ggplot2 is color (you can [[https://ggplot2.tidyverse.org/reference/ggtheme.html][pick another theme]])
@@ -734,7 +735,7 @@ the *big picture* in tables.
        coord_flip() -> p2
      p2
    #+end_src
-
+   
    #+RESULTS:
    [[file:../img/7_ggtg2.png]]
 

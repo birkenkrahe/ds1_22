@@ -1522,7 +1522,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
 
 - Can you alter built-in data frames like ~mtcars~?
   #+begin_src R
-  data(mtcars)  # reload pristine data frame from the package
+    data(mtcars)  # reload pristine data frame from the package
   #+end_src
 
 - Can you add a column to a built-in data frame? For example, a column
@@ -1551,7 +1551,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
   Let's remove the useless ~NA~ column "missing" first:
   #+begin_src R
     idx <- which(colnames(mtcars)=="missing")
-    mtcars <- mtcars[,-idx] 
+    mtcars <- mtcars[,-idx]
     mtcars
   #+end_src
 
@@ -1573,7 +1573,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
     str(mtcars) # what will be different in this output?
     mtcars
   #+end_src
-  
+
 - How do you remove a row from a data frame?
 
   For example the ~Kia Rio~ row(s) from ~mtcars~?
@@ -1593,7 +1593,7 @@ the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][t
   #+begin_src R
     rownames(mtcars)[19]
   #+end_src
- 
+
 *Let's continue with the remainder of the topics for data frames:* Open
 the (partially filled) practice file in Emacs: [[https://tinyurl.com/mpes4wen][tinyurl.com/mpes4wen]]
 
@@ -1632,7 +1632,7 @@ to 300. [[https://github.com/birkenkrahe/org/blob/master/research/Abstract.org][
    data science is highly fragmented - it involves different
    programming languages, data visualization techniques, mathematical
    and process modeling, and knowledge of computing infrastructure
-   (???). 
+   (???).
    #+end_quote
 
 3) "One sentence clearly stating the general *problem* being addressed
@@ -1694,13 +1694,13 @@ This exercise involves:
 - Extracting values with ~$~, ~[]~ and ~subset~
 - Indexing with ~which~ and ~colnames~
 - Matching patterns with ~%in%~
-  
+
 ** DataCamp assignment: lists (Oct 28)
 #+attr_html: :width 500px
 [[../img/certificate.png]]
 
 - This is a very short lesson [[https://app.datacamp.com/learn/courses/free-introduction-to-r][in DataCamp]]
-  
+
 - You're now done with the "Introduction to R" DataCamp course
 
 - Download the certificate and add it to your resume!
@@ -1718,16 +1718,16 @@ This exercise involves:
 ** PROJECT [[https://github.com/birkenkrahe/db330/issues/44][DataCamp SQL webinar (Nov 8)]]
 * Week 12: Basic plotting in R
 #+begin_src R :results graphics file :file ../img/plotting.png
-    plot(
-      ToothGrowth$len ~ ToothGrowth$supp, # len vs. supp levels
-      xlab="Supply level",  # x-axis label
-      ylab="Tooth length (mm)", # y-axis label
-      main="Length vs. Supply levels in ToothGrowth", # plot title
-      las=1, # orient all labels horizontally
-      xaxt="n") # remove x-axis values
-    axis(side=1,
-         at=1:2,
-         labels=c("Orange Juice","Vitamin C"))
+  plot(
+    ToothGrowth$len ~ ToothGrowth$supp, # len vs. supp levels
+    xlab="Supply level",  # x-axis label
+    ylab="Tooth length (mm)", # y-axis label
+    main="Length vs. Supply levels in ToothGrowth", # plot title
+    las=1, # orient all labels horizontally
+    xaxt="n") # remove x-axis values
+  axis(side=1,
+       at=1:2,
+       labels=c("Orange Juice","Vitamin C"))
 #+end_src
 #+attr_html: :width 400px
 [[file:../img/plotting.png]]
@@ -1746,7 +1746,7 @@ This exercise involves:
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':	60 obs. of  3 variables:
+   : 'data.frame':      60 obs. of  3 variables:
    :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
    :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
    :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
@@ -1759,7 +1759,7 @@ This exercise involves:
 
    #+RESULTS:
    : [1] FALSE
-   
+
 3) How can you create a histogram of the tooth lengths in ~ToothGrowth~?
 
    #+begin_src R
@@ -1773,12 +1773,17 @@ This exercise involves:
 [[../img/vangogh.jpg]]
 [[https://en.wikipedia.org/wiki/Sunflowers_(Van_Gogh_series)][Image: van Gogh's Sunflowers (1888), London]][fn:3]
 
- - [ ] *No class meeting on Veteran's day* (11-11 @11:11)
- - [ ] New test available [[https://lyon.instructure.com/courses/568/assignments/3545/edit?quiz_lti][in Canvas]]
- - [ ] New assignment: importing data [[https://lyon.instructure.com/courses/568/assignments/1533][in DataCamp]]
- - [ ] Review: 3rd sprint review
- - [ ] Plotting: ggplot2, pie charts, histograms
- - [ ] Final presentation 3 weeks away: think ahead!
+- [X] *No class meeting on Veteran's day* (11-11 @11:11)
+- [X] New test available [[https://lyon.instructure.com/courses/568/assignments/3545/edit?quiz_lti][in Canvas]]
+- [X] New assignment: importing data [[https://lyon.instructure.com/courses/568/assignments/1533][in DataCamp]]
+- [ ] Review: 3rd sprint review
+- [ ] Plotting: ggplot2, pie charts, histograms
+- [ ] Final presentation 3 weeks away: think ahead!
+- [ ] Easter egg: what do the paintings have in common?
+  - Goya, The Clothed Maja
+  - Da Vinci, The Last Supper
+  - van Gogh, Sunflowers
+  - Botticelli, La Primavera
 
 * NEXT Comments: 3rd sprint review (abstract/results)
 * NEXT Veterans'Day Celebration Nov 11, 11:11 hrs
@@ -1788,7 +1793,7 @@ This exercise involves:
 - No class on November 11 at 11 AM
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
-  
+
 * Final sprint reviews (Nov 28, 30, Dec 2)
 #+attr_html: :width 600px
 [[../img/goya.jpg]]
@@ -1808,7 +1813,7 @@ R. New York: Springer. Online: [[https://doi.org/10.1007/978-0-387-75936-4][doi.
 * Footnotes
 
 [fn:3]Can you figure out the connection between the three paintings
-selected for this term's final presentation announcement? 
+selected for this term's final presentation announcement?
 
 [fn:2]In the case of R, Norm Matloff is one of the greatest,
 especially when it comes to parallelization of code, debugging, and
