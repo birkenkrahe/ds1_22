@@ -1768,7 +1768,7 @@ This exercise involves:
 
    #+RESULTS:
 
-* Week 13: More plotting in R
+* Week 13: 3rd sprint review, rendering Org-mode
 #+attr_html: :width 300px
 [[../img/vangogh.jpg]]
 [[https://en.wikipedia.org/wiki/Sunflowers_(Van_Gogh_series)][Image: van Gogh's Sunflowers (1888), London]][fn:3]
@@ -1786,7 +1786,7 @@ This exercise involves:
   - Da Vinci, The Last Supper
   - van Gogh, Sunflowers
   - Botticelli, La Primavera
-* TODO FYI - ggplot2 update
+** FYI - ggplot2 update
 
 - Probably in an effort to sever ties with base R plotting completely,
   the "Tidyverse" folks have 'deprecated' ~qplot~ ([[https://www.tidyverse.org/blog/2022/11/ggplot2-3-4-0/][Pedersen, 2022]])
@@ -1797,22 +1797,23 @@ This exercise involves:
 - Implications: do not use 'deprecated' functions for /productive
   environments/. (What's that?)
 
-* TODO Comments: 3rd sprint review (abstract/results)
+** Comments: 3rd sprint review (abstract/results)
 #+attr_html: :width 400px
 [[../img/rosie.png]]
 
-Are you comfy?
-
-- Give me an impression of your comfort or discomfort with the state
-  of your own project, in particular with regard to the end!
+Are you comfy? Rosie is.
 
 - Only one person asked a question. This was still a sprint review, so
   although the abstract was the central deliverable, it's a customer
   contact.
 
-- What do you want or need to know before the final presentation?
+- Give me an impression of your comfort or discomfort with the state
+  of your own project, in particular with regard to the end! What do you want or need to know before the final presentation?
 
-* TODO Rendering HTML pages from Emacs Org-mode
+Questions:
+- How can I make an Org-mode presentation look as cool as possible
+- How can I best present in Org-mode
+** Rendering HTML pages from Emacs Org-mode
 
 1) Open one of your practice files (preferably with images) in Emacs
 2) In the ~#+PROPERTY~ header, add the parameter ~:exports both~
@@ -1820,7 +1821,7 @@ Are you comfy?
 4) Enter ~h o RET~ to render the file in a browser
 5) You can also export to WORD (OpenOffice), PDF, LaTeX etc.
 
-* TODO Veterans'Day Celebration Nov 11, 11:11 hrs
+** Veterans'Day Celebration Nov 11, 11:11 hrs
 #+attr_html: :width 400px
 [[../img/LyonVeteranFlyer.jpg]]
 
@@ -1828,16 +1829,8 @@ Are you comfy?
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
 
-* WAITING Final sprint reviews (Nov 28, 30, Dec 2)
-#+attr_html: :width 600px
-[[../img/goya.jpg]]
-[[https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0][Image: The clothed Maja (Francisco de Goya, 1800, Prado Madrid)]]
-
-- *Present* final project prototype in no particular order!
-- *Submit* all material prior to the presentation!
-- *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist carefully *now*!
-
-* Week 15: Python vs. R
+* Week 14: Pie charts, histograms
+* Week 15: boxplots, scatterplots & Python vs. R
 #+attr_html: :width 500px
 [[../img/workflow.jpg]]
 
@@ -1850,6 +1843,15 @@ Are you comfy?
 - *A couple of examples of useful feedback for me from past surveys:*
 #+attr_html: :width 700px
 [[../img/eval1.png]]
+
+* Week 16: Final sprint reviews (Nov 28, 30, Dec 2)
+#+attr_html: :width 600px
+[[../img/goya.jpg]]
+[[https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0][Image: The clothed Maja (Francisco de Goya, 1800, Prado Madrid)]]
+
+- *Present* final project prototype in no particular order!
+- *Submit* all material prior to the presentation!
+- *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist carefully *now*!
 
 * References
 #+attr_html: :width 500px
