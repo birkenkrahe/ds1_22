@@ -1786,13 +1786,19 @@ This exercise involves:
   - Botticelli, La Primavera
 
 * NEXT Comments: 3rd sprint review (abstract/results)
-* NEXT Veterans'Day Celebration Nov 11, 11:11 hrs
 #+attr_html: :width 400px
-[[../img/LyonVeteranFlyer.jpg]]
+[[../img/rosie.png]]
 
-- No class on November 11 at 11 AM
-- Join us for the celebration & the BBQ
-- Great keynote speaker (Brian Norris)
+Are you comfy?
+
+- Give me an impression of your comfort or discomfort with the state
+  of your own project, in particular with regard to the end!
+
+- Only one person asked a question. This was still a sprint review, so
+  although the abstract was the central deliverable, it's a customer
+  contact.
+
+- What do you want or need to know before the final presentation?
 
 * Final sprint reviews (Nov 28, 30, Dec 2)
 #+attr_html: :width 600px
@@ -1802,6 +1808,14 @@ This exercise involves:
 - *Present* final project prototype in no particular order!
 - *Submit* all material prior to the presentation!
 - *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist carefully *now*!
+
+* NEXT Veterans'Day Celebration Nov 11, 11:11 hrs
+#+attr_html: :width 400px
+[[../img/LyonVeteranFlyer.jpg]]
+
+- No class on November 11 at 11 AM
+- Join us for the celebration & the BBQ
+- Great keynote speaker (Brian Norris)
 
 * References
 #+attr_html: :width 500px
