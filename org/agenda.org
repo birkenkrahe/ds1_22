@@ -1777,6 +1777,8 @@ This exercise involves:
 - [X] New test available [[https://lyon.instructure.com/courses/568/assignments/3545/edit?quiz_lti][in Canvas]]
 - [X] New assignment: importing data [[https://lyon.instructure.com/courses/568/assignments/1533][in DataCamp]]
 - [ ] Review: 3rd sprint review
+- [ ] *How can you render an Emacs Org-mode file in HTML, WORD etc.*
+- [ ] Deprecation of functions (packages, data sets)
 - [ ] Plotting: ggplot2, pie charts, histograms
 - [ ] Final presentation 3 weeks away: think ahead!
 - [ ] Easter egg: what do the paintings have in common?
@@ -1784,8 +1786,18 @@ This exercise involves:
   - Da Vinci, The Last Supper
   - van Gogh, Sunflowers
   - Botticelli, La Primavera
+* TODO FYI - ggplot2 update
 
-* NEXT Comments: 3rd sprint review (abstract/results)
+- Probably in an effort to sever ties with base R plotting completely,
+  the "Tidyverse" folks have 'deprecated' ~qplot~ ([[https://www.tidyverse.org/blog/2022/11/ggplot2-3-4-0/][Pedersen, 2022]])
+
+- Deprecation means that there will be no further development efforts:
+  over time, the function will cease to work properly
+
+- Implications: do not use 'deprecated' functions for /productive
+  environments/. (What's that?)
+
+* TODO Comments: 3rd sprint review (abstract/results)
 #+attr_html: :width 400px
 [[../img/rosie.png]]
 
@@ -1800,7 +1812,23 @@ Are you comfy?
 
 - What do you want or need to know before the final presentation?
 
-* Final sprint reviews (Nov 28, 30, Dec 2)
+* TODO Rendering HTML pages from Emacs Org-mode
+
+1) Open one of your practice files (preferably with images) in Emacs
+2) In the ~#+PROPERTY~ header, add the parameter ~:exports both~
+3) Enter ~C-c C-e~ - this opens the ~Org Export Dispatcher~ dashboard
+4) Enter ~h o RET~ to render the file in a browser
+5) You can also export to WORD (OpenOffice), PDF, LaTeX etc.
+
+* TODO Veterans'Day Celebration Nov 11, 11:11 hrs
+#+attr_html: :width 400px
+[[../img/LyonVeteranFlyer.jpg]]
+
+- No class on November 11 at 11 AM
+- Join us for the celebration & the BBQ
+- Great keynote speaker (Brian Norris)
+
+* WAITING Final sprint reviews (Nov 28, 30, Dec 2)
 #+attr_html: :width 600px
 [[../img/goya.jpg]]
 [[https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0][Image: The clothed Maja (Francisco de Goya, 1800, Prado Madrid)]]
@@ -1809,13 +1837,19 @@ Are you comfy?
 - *Submit* all material prior to the presentation!
 - *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist carefully *now*!
 
-* NEXT Veterans'Day Celebration Nov 11, 11:11 hrs
-#+attr_html: :width 400px
-[[../img/LyonVeteranFlyer.jpg]]
+* Week 15: Python vs. R
+#+attr_html: :width 500px
+[[../img/workflow.jpg]]
 
-- No class on November 11 at 11 AM
-- Join us for the celebration & the BBQ
-- Great keynote speaker (Brian Norris)
+** TODO Nov 21st: Course evaluation now! Hit me! Hard!
+#+attr_html: :width 480px
+[[../img/eval.png]]
+
+- *If you'd like for me to stick around, please evaluate (fairly) now*
+- *Extra credit (5 pts) for completing this in class today!*
+- *A couple of examples of useful feedback for me from past surveys:*
+#+attr_html: :width 700px
+[[../img/eval1.png]]
 
 * References
 #+attr_html: :width 500px
@@ -1823,6 +1857,8 @@ Are you comfy?
 
 Chambers J (2008). Software for Data Analysis - Programming with
 R. New York: Springer. Online: [[https://doi.org/10.1007/978-0-387-75936-4][doi.org/10.1007/978-0-387-75936-4]]
+
+Pedersen T L (2022/11/07). ggplot2 3.4.0. [[https://www.tidyverse.org/blog/2022/11/ggplot2-3-4-0/][Online: tidyverse.org.]]
 
 * Footnotes
 

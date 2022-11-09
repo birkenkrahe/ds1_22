@@ -735,7 +735,7 @@ the *big picture* in tables.
        coord_flip() -> p2
      p2
    #+end_src
-   
+
    #+RESULTS:
    [[file:../img/7_ggtg2.png]]
 
@@ -756,13 +756,155 @@ the *big picture* in tables.
    #+RESULTS:
    [[file:../img/7_ggtg3.png]]
 
-* TODO Pie charts
+* NEXT Pie charts with base R
 
 - Pie charts are an alternative to visualizing category frequencies
 
 - Pie slices represent relative counts of each categorical variable
 
-* TODO Histograms
+- Example: remember the ~cylinders~ in the ~mtcars~ data set?
+  #+begin_src R :results graphics file :file ../img/9_cylbar.png
+    cyl.freq <- table(mtcars$cyl)
+    barplot(height=cyl.freq)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cylbar.png]]
+  
+- Use ~pie~ to create a pie chart:
+  #+begin_src R :results graphics file :file ../img/9_cylpie.png
+    pie(x=cyl.freq)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cylpie.png]]
+
+- Customize with parameters ~label~ (axis labels), ~col~ (color) and ~main~
+  (title):
+  #+begin_src R :results graphics file :file ../img/9_cylpie1.png
+    pie(
+      x = cyl.freq,
+      labels = c("V4", "V6", "V8"),
+      col = c("white","gray","black"),
+      main = "Performance cars by cylinder")
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cylpie1.png]]
+
+- Both plots next to one another in a plot array
+  #+begin_src R :results graphics file :file ../img/9_barpie.png
+    par(mfrow=c(1,2),pty='s')
+    cyl.freq <- table(mtcars$cyl)
+    pie(
+      x = cyl.freq,
+      labels = c("V4", "V6", "V8"),
+      col = c("white","gray","black"),
+      main = "Pie chart")
+    barplot(
+      height = cyl.freq,
+      main = "Barplot",
+      xlab = "Number of cylinders",
+      ylab = "Frequency"
+    )
+  #+end_src  
+
+  #+RESULTS:
+  [[file:../img/9_barpie.png]]
+
+* Pie charts with ggplot2
+
+- There's no pie chart geometry in ggplot2, you have to improvise:
+  first build the data frame to be plotted:
+  #+begin_src R
+    value <- c(sum(mtcars$cyl == "4"),
+               sum(mtcars$cyl == "6"),
+               sum(mtcars$cyl == "8"))
+    value
+    group <- c("V4","V6","V8")
+    group
+    data <- data.frame(value,group)
+    data
+  #+end_src
+
+  #+RESULTS:
+  : [1] 11  7 14
+  : [1] "V4" "V6" "V8"
+  :   value group
+  : 1    11    V4
+  : 2     7    V6
+  : 3    14    V8
+
+- Then plot as a barplot with polar coordinates:
+  #+begin_src R :results graphics file :file ../img/9_cylpie2.png
+    ggplot(data,
+           aes(x="", y=value, fill=group)) +
+      geom_bar(width=1, stat="identity") +
+      coord_polar("y", start=0)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_cylpie2.png]]
+
+- Pie charts are only useful when you have few categories that are
+  unordered. As soon as you want to display a second variable, or if
+  you have more than a few levels, bar charts are to be preferred.
+
+* IN PROGRESS Histograms
+
+- Barplots are sensible for counting observations of categories
+
+- Histograms are useful when you have numeric-continuous variables
+
+- Example 1) You've already seen the histogram for a simple data
+  structure, the time series (here next to the line plot):
+  #+begin_src R :results graphics file :file ../img/9_nile.png
+    par(mfrow=c(2,1)) # create 2 x 1 plot array
+    plot(Nile)
+    hist(Nile)    
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_nile.png]]
+
+- [ ] What does the /height/ of a bar represent exactly?
+
+- [ ] What is the /binwidth/ of this histogram? Tip: look at its
+  /structure/ to find this out.
+  #+begin_src R
+    str(hist(Nile))
+  #+end_src
+
+  #+RESULTS:
+  : List of 6
+  :  $ breaks  : int [1:11] 400 500 600 700 800 900 1000 1100 1200 1300 ...
+  :  $ counts  : int [1:10] 1 0 5 20 25 19 12 11 6 1
+  :  $ density : num [1:10] 0.0001 0 0.0005 0.002 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
+  :  $ mids    : num [1:10] 450 550 650 750 850 950 1050 1150 1250 1350
+  :  $ xname   : chr "Nile"
+  :  $ equidist: logi TRUE
+  :  - attr(*, "class")= chr "histogram"
+
+- [ ] Look at the ~help~ for ~hist~ and change the binwidth to ~30~.
+  #+begin_src R :results graphics file :file ../img/9_nile1.png
+      hist(Nile, breaks=30)    
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_nile1.png]]
+
+- Example 2) Create a histogram of the horsepower data of the 32 cars
+  in ~mtcars~
+  #+begin_src R :results graphics file :file ../img/9_hphist.png
+    hist(mtcars$hp)    
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_hphist.png]]
+
+** TO BE CONTINUED...
+
+
 * TODO Boxplots
 * TODO Scatterplots
 * TODO Plot matrices
