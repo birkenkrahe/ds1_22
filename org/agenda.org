@@ -1829,7 +1829,16 @@ Questions:
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
 
-* Week 14: Pie charts, histograms
+* NEXT Week 14: Pie charts, histograms, Org-present
+** Presenting Org-mode files
+
+- [[https://geeksocket.in/posts/presentations-org-emacs/][GeekSocket blog by Bhavin Gandhi (2019)]]
+- SystemCrafters video(s)
+- ~M-x epresent-run~
+- ~M-x org-tree-slide-mode~ ([[https://github.com/takaxp/org-tree-slide][GitHub]])
+- ~M-x org-present~ ([[https://github.com/rlister/org-present][GitHub]])
+- [[https://revealjs.com/][Reveal.js]]
+
 * Week 15: boxplots, scatterplots & Python vs. R
 #+attr_html: :width 500px
 [[../img/workflow.jpg]]
