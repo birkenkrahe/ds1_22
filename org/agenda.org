@@ -1830,14 +1830,11 @@ Questions:
 - Great keynote speaker (Brian Norris)
 
 * NEXT Week 14: Pie charts, histograms, Org-present
-** Presenting Org-mode files
+* TODO Presenting in Emacs: new FAQ / ~reveal.js~ 
 
-- [[https://geeksocket.in/posts/presentations-org-emacs/][GeekSocket blog by Bhavin Gandhi (2019)]]
-- SystemCrafters video(s)
-- ~M-x epresent-run~
-- ~M-x org-tree-slide-mode~ ([[https://github.com/takaxp/org-tree-slide][GitHub]])
-- ~M-x org-present~ ([[https://github.com/rlister/org-present][GitHub]])
-- [[https://revealjs.com/][Reveal.js]]
+[[../img/paratrooper.png]]
+
+File: reveal-demo.org (GitHub)
 
 * Week 15: boxplots, scatterplots & Python vs. R
 #+attr_html: :width 500px
