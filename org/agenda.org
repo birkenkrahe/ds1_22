@@ -1834,7 +1834,7 @@ Questions:
 
 [[../img/paratrooper.png]]
 
-File: reveal-demo.org (GitHub)
+File: ~reveal-demo.org~ ([[https://raw.githubusercontent.com/birkenkrahe/ds1/piHome/org/reveal_demo.org][GitHub]])
 
 * Week 15: boxplots, scatterplots & Python vs. R
 #+attr_html: :width 500px

@@ -24,36 +24,18 @@
 4. Where are you headed?
 
 * Course details
-#+attr_html: :width 500px
-[[../img/1_pferd.jpeg]]
+#+attr_html: :width 400px
+[[../img/horse.gif]]
 
-** Course syllabus (on GitHub and on Canvas)
-#+attr_html: :width 500px
-[[../img/1_syllabus.png]]
-
-- General information & standard policies
-- Course information (grading, attendance)
-- [[https://github.com/birkenkrahe/ds1/blob/piHome/org/syllabus.org#classroom-sessions-schedule][Schedule]] with dates of tests and assignments
-- The [[https://github.com/birkenkrahe/ds1][GitHub repo]] contains course material
-** Course "learning" platform: Canvas
-
-#+attr_html: :width 500px
-[[../img/1_canvas.png]]
-
-- All [[https://lyon.instructure.com/courses/568/grades][grades]] should be visible at all times
-- Control your own [[https://lyon.instructure.com/courses/568?view=notifications][notifications]] (email)
-- Important course [[https://lyon.instructure.com/courses/568/pages/course-links][links]] on a page
-- New CMS for me & for Lyon: bear with us[fn:1]
-- Lecture /notes/ (from Emacs Org-mode) will not show in GitHub
 * Course topics
-#+attr_html: :width 500px
+#+attr_html: :width 300px
 [[../img/1_topics.jpg]]
 
 1) The R statistical programming language
 2) Basics of data visualization with R
 3) Professional software development methods
 ** Video lectures
-#+attr_html: :width 400px
+#+attr_html: :width 200px
 [[../img/1_lecture.jpg]]
 
 - [[https://www.youtube.com/playlist?list=PLwgb17bzeNygo8GU6SivwwjsQj9QabqAJ][Emacs + Org-mode + R]] (Tutorial videos Spring '22)
@@ -103,7 +85,10 @@ initial results (see FAQ on [[https://github.com/birkenkrahe/org/blob/master/FAQ
 - Double/triple up if you're in > 1 of my courses
 - Use problems from other courses for your project, e.g. data
   collected by yourself, or data in economics, business, art etc.
-* Infrastructure    
+* Infrastructure
+#+attr_html: :width 400px
+[[../img/infrastructure.gif]]
+
 ** Introduction TO DataCamp
 #+attr_html: :width 500px
 [[../img/1_datacamp.png]]
@@ -147,16 +132,27 @@ Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WI
 - /Paradigm/ behind interactive computing notebooks
 - Useful when learning any programming language
 
-*** Code blocks
+*** R code blocks
 
-#+begin_src R
+#+begin_src R :exports both
   head(mtcars,2)
+  library(MASS)
+  sample <- function(x) { }
 #+end_src
 
 #+RESULTS:
 :               mpg cyl disp  hp drat    wt  qsec vs am gear carb
 : Mazda RX4      21   6  160 110  3.9 2.620 16.46  0  1    4    4
 : Mazda RX4 Wag  21   6  160 110  3.9 2.875 17.02  0  1    4    4
+
+*** R graphics code block
+
+#+begin_src R :results graphics file :file ../img/revealhist.png :exports both
+  plot(Nile)
+#+end_src
+
+#+RESULTS:
+[[file:revealhist.png]]
 
 * Grading
 
