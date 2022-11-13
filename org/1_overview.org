@@ -7,8 +7,7 @@
 [[../img/1_pferd.jpeg]]
 * About me
 #+attr_html: :width 300px
-#+caption: Teddy Roosevelt at Harvard (ca. 1877)
-[[../img/1_einstein.jpg]]
+[[../img/paratrooper.png]]
 
 - PhD theoretical particle physics (mostly worked alone)
 - Data science interests: languages, infrastructure, culture 

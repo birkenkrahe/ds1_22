@@ -4,6 +4,12 @@
 #+STARTUP:overview hideblocks indent inlineimages
 #+PROPERTY: header-args:R :exports both :results output :session *R*
 #+OPTIONS: toc:nil num:nil ^:nil
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_THEME: black
+#+REVEAL_INIT_OPTIONS: transition: 'cube'
+:END:
 * README
 
 - DSC 105 covers the basics of data science with R, simple
@@ -27,6 +33,11 @@
 - FAQ is regularly updated with new content
 
 * Week 1: Introduction to the course
+#+attr_html: :width 500px
+[[../img/CorreCorre.gif]]
+
+Gif: Corre, Corre, Que Te Pillo (play catch) - xkcd.com
+
 ** Objectives
 
 - [X] Mutual introductions
@@ -106,9 +117,9 @@ participation (if there's a practice file, you can make up).
 ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/1_practice.org][Link to practice file in GitHub]])
 
 * Week 2: Getting started
-
--*START BBB RECORDING*-
-
+#+attr_html: :width 600px
+#+caption: Blaues Pferd I (Franz Marc, 1911)
+[[../img/1_pferd.jpeg]]
 - [X] Quiz 1: course infrastructure
 - [X] Team projects: getting ready for 1st sprint review
 - [X] Lecture: Introduction to data science
@@ -116,7 +127,7 @@ participation (if there's a practice file, you can make up).
 - [X] Practice: Running R in an Emacs Org-mode file
 - [X] Practice: Introduction to R
 
-** DONE Home assignments - how they work
+** Home assignments - how they work
 #+attr_html: :width 400px
 #+captions: course infrastructure
 [[../img/platforms.png]]
@@ -126,7 +137,7 @@ participation (if there's a practice file, you can make up).
 - You loose 1 point for every day of late submission
 - Canvas Gradebook is updated manually (with some delay)
 
-** DONE Team projects - check in
+** Team projects - check in
 #+attr_html: :width 600px
 [[../img/scrum.jpg]]
 
@@ -138,7 +149,7 @@ participation (if there's a practice file, you can make up).
 - [X] *Who has not yet found a team?*
 - [X] *Who has a team but no idea what to do?*
 
-** DONE DataCamp assignment: What Is Data Science?
+** DataCamp assignment: What Is Data Science?
 
 - Data science definition biased towards Machine Learning
   #+attr_html: :width 600px
@@ -151,9 +162,9 @@ participation (if there's a practice file, you can make up).
 
 - What follows if this claim is true? What if it isn't?
 
-** DONE [[https://github.com/birkenkrahe/ds1/blob/piHome/pdf/1_skills.pdf][What are your skills? (Mon 22-Aug)]]
+** [[https://github.com/birkenkrahe/ds1/blob/piHome/pdf/1_skills.pdf][What are your skills? (Mon 22-Aug)]]
 
-** DONE 1st sprint review - Wed 31-Aug
+** 1st sprint review - Wed 31-Aug
 
 - [[https://lyon.instructure.com/courses/568/assignments/1438][Canvas assignment with submission]]
 
@@ -161,22 +172,22 @@ participation (if there's a practice file, you can make up).
 
 - If you are in > 1 course, you can use the same project idea!
 
-** DONE Test 2 open ("What is data science?")
+** Test 2 open ("What is data science?")
 
-** DONE Project idea: compare base-R and "Tidyverse"
+** Project idea: compare base-R and "Tidyverse"
 
 - Base-R is the foundation software from CRAN (the one you're using)
 - "Tidyverse" is a popular bundle of packages (like ~dplyr~)
 - The project would consist of comparing both with examples, along the
   lines of Matloff's "[[https://github.com/matloff/TidyverseSkeptic][TidyverseSceptic]]" essay (see also recent [[https://github.com/matloff/TidyverseSkeptic/blob/master/RDesign.pdf][update]])
 
-** DONE Practice: Run R in Org-mode file
+** Practice: Run R in Org-mode file
 
 - [[https://github.com/birkenkrahe/ds1/blob/piHome/org/1_overview_practice.org#run-r-in-org-mode-file][Instructions in GitHub]]
 - Update your Emacs configuration file
 - Check that you can run R inside Emacs
 
-** IN PROGRESS Lecture/practice: introduction to R
+** Lecture/practice: introduction to R
 
 1) [[https://github.com/birkenkrahe/ds1/blob/piHome/org/3_introR_practice.org][Download the file]]
 2) Complete the file
@@ -184,8 +195,7 @@ participation (if there's a practice file, you can make up).
 
 * Week 3: Introduction to R
 #+attr_html: :width 500px
-[[../img/online.jpg]]
-
+[[../img/3_Rlogo.png]]
 
 - [X] [[file:~/Documents/R/ds1/3_introR_practice.org][Complete introR practice file]]
 - [ ] Lecture & practice: arithmetics in R
@@ -425,8 +435,8 @@ The first part of the review deals with vector data types and names.
 
 ** NEXT DataCamp assignment: "[[https://lyon.instructure.com/courses/568/assignments/1439][Matrices in R]]" (Sept 14)
 * Week 5: Vectors in R
-#+attr_html: :width 300px
-[[../img/queen1.jpg]]
+#+attr_html: :width 600px
+[[../img/5_workhorse.png]]
 
 - [X] Review DataCamp vectors in R (2)
 - [X] Featured applications: automation, Python, learning
@@ -738,7 +748,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 
 * Week 6: Vectors in R (continued)
 #+attr_html: :width 600px
-[[../img/5_workhorse.png]]
+[[../img/vectorsinR1.png]]
 
 - Journey down the Nile (plotting example)
 - Vectors as sequences and repetitions
@@ -748,9 +758,10 @@ tendency to miss lunch.” — Tim Berners-Lee
 
 ** Featured application: S
 
-- John M. Chambers: S, R, and Data Science ([[This talk discusses the history and characteristics of the R software. R began, 20-odd years ago, as the open-source clone of the S software. So the story of R has to start with S and with its history. S came from the Statistics and Data Analysis Research group at AT&T Bell Labs. We'll see that the design goal of S, and so of R, is to support studies in what we'd now call data science. The principles resulting from this goal are still central to computing for data science.][video]])
+- John M. Chambers: S, R, and Data Science ([[https://youtu.be/qWG_MLrxKps][video]])
   #+attr_html: :width 400px
   [[../img/chambers.png]]
+
   #+begin_quote
   This talk discusses the history and characteristics of the R
   software. R began, 20-odd years ago, as the open-source clone of the
@@ -783,7 +794,7 @@ tendency to miss lunch.” — Tim Berners-Lee
 - The next 2-3 assignments will be independent sets of exercises to be
   completed in and submitted as Org-mode files - [[https://lyon.instructure.com/courses/568/assignments/2952][1st assignment today!]]
 
-** DONE Review: creating, sorting, measuring vectors
+** Review: creating, sorting, measuring vectors
 
 1) How many parameters does ~options()~ have?
    #+begin_src R
@@ -818,7 +829,7 @@ tendency to miss lunch.” — Tim Berners-Lee
      rep(x=1,times=2,length.out=NA,each=2)
    #+end_src
 
-** TODO About the 2nd sprint review
+** About the 2nd sprint review
 #+attr_html: :width 600px
 [[../img/scrum.png]]
 
@@ -838,7 +849,7 @@ tendency to miss lunch.” — Tim Berners-Lee
   3) Emphasis on basic uses of R
 - If you don't know what this means --> ASK ME
 
-** TODO Vectors: naming, indexing, coercion
+** Vectors: naming, indexing, coercion
 #+attr_html: :width 600px
 [[../img/coercion.jpg]]
 
@@ -1449,7 +1460,7 @@ Here's my list - 3 x infrastructure + 7 x content
 - When you're done, [[https://lyon.instructure.com/courses/568/assignments/3078][upload the Org-mode file to Canvas]]
 
 * Week 10: Data frames, lists
-#+attr_html: :width 400px
+#+attr_html: :width 500px
 [[../img/frame.jpg]]
 
 - [X] New test available (subsetting)
@@ -1829,16 +1840,19 @@ Questions:
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
 
-* NEXT Week 14: Pie charts, histograms, Org-present
-* TODO Presenting in Emacs: new FAQ / ~reveal.js~ 
+* NEXT Week 14: Pie charts, histograms, boxplots
+#+attr_html: :width 500px
+[[../img/boxplot.png]]
 
+** TODO Presenting in Emacs: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-present-in-emacs][new FAQ]]
+#+attr_html: :width 250px
 [[../img/paratrooper.png]]
 
-File: ~reveal-demo.org~ ([[https://raw.githubusercontent.com/birkenkrahe/ds1/piHome/org/reveal_demo.org][GitHub]])
+~present-demo.org~ ([[https://github.com/birkenkrahe/org/blob/master/emacs/present_demo.org][GitHub]] - [[https://raw.githubusercontent.com/birkenkrahe/org/master/emacs/present_demo.org][raw Org-mode file]]: [[https://tinyurl.com/556k452p][tinyurl.com/556k452p]])
 
-* Week 15: boxplots, scatterplots & Python vs. R
-#+attr_html: :width 500px
-[[../img/workflow.jpg]]
+* Week 15: scatterplots, Python vs.R & evaluation
+#+attr_html: :width 600px
+[[../img/pythonvsr.png]]
 
 ** TODO Nov 21st: Course evaluation now! Hit me! Hard!
 #+attr_html: :width 480px
@@ -1853,6 +1867,7 @@ File: ~reveal-demo.org~ ([[https://raw.githubusercontent.com/birkenkrahe/ds1/piH
 * Week 16: Final sprint reviews (Nov 28, 30, Dec 2)
 #+attr_html: :width 600px
 [[../img/goya.jpg]]
+
 [[https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0][Image: The clothed Maja (Francisco de Goya, 1800, Prado Madrid)]]
 
 - *Present* final project prototype in no particular order!
