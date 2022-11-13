@@ -1,0 +1,28 @@
+
+R version 4.2.2 (2022-10-31 ucrt) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+*** Loaded .Rprofile ***
+>       hist(Nile, breaks=1000001)
+Warning message:
+In hist.default(Nile, breaks = 1000001) :
+  'breaks = 1e+06' is too large and set to 1e6
+> 
+> proc.time()
+   user  system elapsed 
+   1.09    0.09    1.20 

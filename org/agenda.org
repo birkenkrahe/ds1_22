@@ -444,7 +444,7 @@ The first part of the review deals with vector data types and names.
 - [X] Review test 4 - arithmetic in R
 - [X] Vectors in R
 
-** DONE Review: DataCamp chapter "Vectors in R" (2)
+** Review: DataCamp chapter "Vectors in R" (2)
 
 1) How can you add ~c(1,2,3)~ and ~c(4,5,6)~?
 
@@ -581,7 +581,7 @@ The first part of the review deals with vector data types and names.
    : [1] 3
    : [1] 1000
 
-** DONE Arithmetics in R - lecture & practice
+** Arithmetics in R - lecture & practice
 
 #+attr_html: :width 700px
 [[../img/setup.png]]
@@ -630,7 +630,7 @@ success is that you enjoy and would do it for its own sake."/
 propensity to dream, the urge to make dreams come true, and the
 tendency to miss lunch.” — Tim Berners-Lee
 #+end_quote
-** DONE Review test 4
+** Review test 4
 
 1) What is ~log(1)~ independent of the base parameter
 2) What are exponentiation operators in R: ~^, ~**~, ~exp~
@@ -1747,6 +1747,11 @@ This exercise involves:
 - [X] Lecture/Practice: plotting in base R (and ggplot2)
 - [ ] How to update R and R packages
 ** Command line update of R and packages ([[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-update-r-on-my-computer][FAQ]])
+#+attr_html: :width 400px
+[[../img/packages.png]]
+
+Image: [[https://www.datacamp.com/tutorial/r-packages-guide][DataCamp R packages guide (2019)]]
+
 ** Review assignment: explore real data frames
 
 1) What's the length of the longest tooth recorded in ~ToothGrowth~?
@@ -1840,15 +1845,31 @@ Questions:
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
 
-* NEXT Week 14: Pie charts, histograms, boxplots
+* Week 14: Pie charts, histograms, boxplots
 #+attr_html: :width 500px
 [[../img/boxplot.png]]
 
-** TODO Presenting in Emacs: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-present-in-emacs][new FAQ]]
+- [ ] GitHub: Living in the matrix
+- [ ] Presenting in Emacs (FAQ + examples)
+- [ ] Pie charts and histograms
+- [ ] Review: Importing data from flat files with utils
+
+* GitHub: Living in the matrix ([[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=Gogehc82S3rO6cODfrOvZw][tweet]])
+#+attr_html: :width 500px
+[[../img/matrix.png]]
+
+[That's 20 file uploads ("commits") on every work day]
+
+* Presenting in Emacs: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-present-in-emacs][new FAQ]]
 #+attr_html: :width 250px
 [[../img/paratrooper.png]]
 
-~present-demo.org~ ([[https://github.com/birkenkrahe/org/blob/master/emacs/present_demo.org][GitHub]] - [[https://raw.githubusercontent.com/birkenkrahe/org/master/emacs/present_demo.org][raw Org-mode file]]: [[https://tinyurl.com/556k452p][tinyurl.com/556k452p]])
+- Demo file: ~present-demo.org~
+- [[https://github.com/birkenkrahe/org/blob/master/emacs/present_demo.org][GitHub]] - [[https://tinyurl.com/556k452p][tinyurl.com/556k452p]]
+
+* TODO DataCamp review: importing data
+
+
 
 * Week 15: scatterplots, Python vs.R & evaluation
 #+attr_html: :width 600px
@@ -1868,8 +1889,6 @@ Questions:
 #+attr_html: :width 600px
 [[../img/goya.jpg]]
 
-[[https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0][Image: The clothed Maja (Francisco de Goya, 1800, Prado Madrid)]]
-
 - *Present* final project prototype in no particular order!
 - *Submit* all material prior to the presentation!
 - *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist carefully *now*!
@@ -1881,7 +1900,10 @@ Questions:
 Chambers J (2008). Software for Data Analysis - Programming with
 R. New York: Springer. Online: [[https://doi.org/10.1007/978-0-387-75936-4][doi.org/10.1007/978-0-387-75936-4]]
 
+[[https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0][Francisco de Goya: The clothed Maja (1800, Prado Madrid)]]
+
 Pedersen T L (2022/11/07). ggplot2 3.4.0. [[https://www.tidyverse.org/blog/2022/11/ggplot2-3-4-0/][Online: tidyverse.org.]]
+
 
 * Footnotes
 

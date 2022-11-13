@@ -4,8 +4,14 @@
 #+OPTIONS: toc:nil num:nil
 #+STARTUP: overview hideblocks indent inlineimages
 #+PROPERTY: header-args:R :session *R* :exports both :results output
-* What are you going to learn?
-#+attr_html: :width 600px
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_THEME: black
+#+REVEAL_INIT_OPTIONS: transition: 'cube'
+:END:
+* What's in it for you?
+#+attr_html: :width 200px
 [[../img/whiskers.jpg]]
 
 - Why visualization? What does it depend on?
@@ -16,8 +22,7 @@
 - Scatterplots
 - Using base R and ggplot2
 
-  These lectures closely follows the presentation in Davies (2016),
-  chapter 14, pp. 289-308.
+  Source: Davies (2016), chapter 14, pp. 289-308.
 
 * When do we visualize data? When don't we?
 #+attr_html: :width 600px
@@ -104,7 +109,7 @@ the *big picture* in tables.
 
 * Frequency tables
 
-- The frequencies can be computed using the ~table~ function
+- Frequencies can be computed using the ~table~ function
 
 - Example: look at the dataset ~ToothGrowth~ - it has two ~numeric~ and
   one ~factor~ variable.
@@ -770,7 +775,7 @@ the *big picture* in tables.
 
   #+RESULTS:
   [[file:../img/9_cylbar.png]]
-  
+
 - Use ~pie~ to create a pie chart:
   #+begin_src R :results graphics file :file ../img/9_cylpie.png
     pie(x=cyl.freq)
@@ -807,7 +812,7 @@ the *big picture* in tables.
       xlab = "Number of cylinders",
       ylab = "Frequency"
     )
-  #+end_src  
+  #+end_src
 
   #+RESULTS:
   [[file:../img/9_barpie.png]]
@@ -852,58 +857,79 @@ the *big picture* in tables.
 
 * IN PROGRESS Histograms
 
-- Barplots are sensible for counting observations of categories
+- When do you think of using *barplots*?
+  #+begin_quote
+  Barplots are sensible for counting *observations of categories*
+  #+end_quote
+- When do you think of using a *histogram*?
+  #+begin_quote
+  When you have observed a single *numeric-continuous variable*
+  #+end_quote
 
-- Histograms are useful when you have numeric-continuous variables
-
-- Example 1) You've already seen the histogram for a simple data
-  structure, the time series (here next to the line plot):
+- /Example:/ You've already seen the histogram for a simple data
+  structure, the *time series* ~ts~ (here next to the *line plot*):
   #+begin_src R :results graphics file :file ../img/9_nile.png
     par(mfrow=c(2,1)) # create 2 x 1 plot array
     plot(Nile)
-    hist(Nile)    
+    hist(Nile)
   #+end_src
 
   #+RESULTS:
   [[file:../img/9_nile.png]]
 
 - [ ] What does the /height/ of a bar represent exactly?
+  #+begin_quote
+  The height of each bar (on the y-axis) represents the number of
+  years in which the volume of water flowing through the Nile was
+  within its interval of 100 mio cubic metres width (on the x-axis).
+  #+end_quote
 
-- [ ] What is the /binwidth/ of this histogram? Tip: look at its
-  /structure/ to find this out.
+- [ ] How can you find out what the /binwidth/ of this histogram is?
   #+begin_src R
     str(hist(Nile))
   #+end_src
 
-  #+RESULTS:
-  : List of 6
-  :  $ breaks  : int [1:11] 400 500 600 700 800 900 1000 1100 1200 1300 ...
-  :  $ counts  : int [1:10] 1 0 5 20 25 19 12 11 6 1
-  :  $ density : num [1:10] 0.0001 0 0.0005 0.002 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
-  :  $ mids    : num [1:10] 450 550 650 750 850 950 1050 1150 1250 1350
-  :  $ xname   : chr "Nile"
-  :  $ equidist: logi TRUE
-  :  - attr(*, "class")= chr "histogram"
-
-- [ ] Look at the ~help~ for ~hist~ and change the binwidth to ~30~.
+- [ ] Look at the ~help~ for ~hist~, then change the binwidth to ~30~.
   #+begin_src R :results graphics file :file ../img/9_nile1.png
-      hist(Nile, breaks=30)    
+    hist(Nile, breaks=30)
   #+end_src
 
   #+RESULTS:
   [[file:../img/9_nile1.png]]
 
-- Example 2) Create a histogram of the horsepower data of the 32 cars
-  in ~mtcars~
-  #+begin_src R :results graphics file :file ../img/9_hphist.png
-    hist(mtcars$hp)    
+- [ ] How can you *print* the binwidth?
+  #+begin_src R
+    h <- hist(Nile)
+    h$breaks[2]-h$breaks[1]
   #+end_src
 
-  #+RESULTS:
-  [[file:../img/9_hphist.png]]
+- [ ] What happens when you choose ~breaks=0~?
+  #+begin_src R :results graphics file :file ../img/9_nile2.png
+    hist(Nile, breaks=1000001)
+  #+end_src
 
-** TO BE CONTINUED...
+- [ ] What happens when you set ~breaks=1000000~ (1e+6)? Don't run the
+  code block in Emacs (takes too long) but instead create a script
+  file ~Nile.R~, put the command into it, and run it as a batch process
+  in the shell (~M-x eshell~):
+  #+begin_example bash
+    $ R CMD BATCH nile.R
+  #+end_example
+  Open the output file ~.rout~ to see the result:
+  #+begin_example R
+  > hist(Nile, breaks=1000001)
+  Warning message:
+  In hist.default(Nile, breaks = 1000001) :
+  'breaks = 1e+06' is too large and set to 1e6
+  >
+  > proc.time()
+    user  system elapsed
+    1.09    0.09    1.20
+  #+end_example
 
+* Practice creating and customizing a histogram
+
+* TODO Histogram analysis
 
 * TODO Boxplots
 * TODO Scatterplots
@@ -913,6 +939,9 @@ the *big picture* in tables.
 - [[http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization]["ggplot2 barplots: Quick start guide", sthda.com]]
 
 * Footnotes
+
+[fn:2]The unit of horsepower [hp] is equivalent fo a horse moving
+33,000 pounds of mass 1 foot in 1 minute [lbs x ft / min]
 
 [fn:1]What are the categories used to organize the graphs?
 Distribution, correlation and evolution (aka growth) relate to

@@ -1,0 +1,38 @@
+#+TITLE: Practice: histograms
+#+AUTHOR: [YourName]
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+STARTUP: overview hideblocks indent
+#+PROPERTY: header-args:R :session *R* :results output
+* README
+
+- Practice file for the lecture on plotting
+- Create, execute and debug R code blocks as needed
+- Emacs + ESS + Org-mode and R must be installed
+- You can find the solutions in the PDF repository for the course
+
+* TODO IDENTIFY YOURSELF
+
+- Update the ~#+AUTHOR:~ information in the header
+- Add ~(pledged)~ after your name
+- Put your cursor on the headline of this section, and type ~S <LEFT>~
+  until you see ~DONE~ instead of ~TODO~ next to the title.
+- Perform this last step each time you complete a section.
+
+* TODO Problems
+
+1) Create a histogram of the horsepower data of the 32 cars in the
+   ~mtcars~ data set[fn:2]. Run the code.
+2) Label the x-axis. Run the code.
+3) Label the y-axis. Run the code.
+4) Title the plot. Run the code.
+5) Print the binwidth.
+6) Plot the logarithm of hp to base 10.
+7) Plot only the car count for cars with a horsepower of greater or
+   equal ~sub = 220 hp~.
+8) Change the x-axis label so that it automatically shows ~sub~.
+
+R graphics code block:
+#+begin_src R :results graphics file :file hist.png
+
+#+end_src
+
