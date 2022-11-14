@@ -1849,7 +1849,8 @@ Questions:
 #+attr_html: :width 500px
 [[../img/boxplot.png]]
 
-- [ ] GitHub: Living in the matrix
+- [ ] GitHub: [[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=ppE-pwX7XsnQ1kIRdo6B5g][Living in the matrix]]
+- [ ] SocMed: [[https://twitter.com/DataCamp/status/1591793383885967360?s=20&t=BpWX6t4pbYnPHZQoKHyw3Q][Featured on Twitter @DataCamp]]
 - [ ] Presenting in Emacs (FAQ + examples)
 - [ ] Pie charts and histograms
 - [ ] Review: Importing data from flat files with utils
@@ -1860,12 +1861,21 @@ Questions:
 
 [That's 20 file uploads ("commits") on every work day]
 
+* SocMed: @datacamp
+#+attr_html: :width 400px
+[[../img/twitter.png]]
+
+- Gave a long interview to DataCamp
+- Interview was [[https://twitter.com/DataCamp/status/1591793383885967360?s=20&t=kKam3s8Ba18HHxbQ_KrFvA][featured on Twitter]]
+- I didn't smile once during it!
+- Though the other guy was nice & funny
+
 * Presenting in Emacs: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-present-in-emacs][new FAQ]]
 #+attr_html: :width 250px
 [[../img/paratrooper.png]]
 
-- Demo file: ~present-demo.org~
-- [[https://github.com/birkenkrahe/org/blob/master/emacs/present_demo.org][GitHub]] - [[https://tinyurl.com/556k452p][tinyurl.com/556k452p]]
+- Demo file: ~present-demo.org~ on [[https://github.com/birkenkrahe/org/blob/master/emacs/present_demo.org][GitHub]]
+- URL: [[https://tinyurl.com/556k452p][tinyurl.com/556k452p]]
 
 * TODO DataCamp review: importing data
 

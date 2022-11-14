@@ -928,6 +928,16 @@ the *big picture* in tables.
   #+end_example
 
 * Practice creating and customizing a histogram
+#+attr_html: :width 400px
+[[../img/penguins.jpg]]
+
+- Download and open in GNU Emacs: [[https://tinyurl.com/nhkykkxr][tinyurl.com/nhkykkxr]]
+
+- Work with a friend or with your neighbor in class
+  
+- Complete the problems in the file (we'll discuss at the end)
+
+- Upload the result (for each participants) [[https://lyon.instructure.com/courses/568/assignments/3755][to Canvas (Practice 10)]]
 
 * TODO Histogram analysis
 
