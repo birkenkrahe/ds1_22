@@ -761,7 +761,7 @@ the *big picture* in tables.
    #+RESULTS:
    [[file:../img/7_ggtg3.png]]
 
-* NEXT Pie charts with base R
+* Pie charts with base R
 
 - Pie charts are an alternative to visualizing category frequencies
 
@@ -857,15 +857,14 @@ the *big picture* in tables.
 
 * IN PROGRESS Histograms
 
-- When do you think of using *barplots*?
+- [X] When do you think of using *barplots*?
   #+begin_quote
   Barplots are sensible for counting *observations of categories*
   #+end_quote
-- When do you think of using a *histogram*?
+- [X] When do you think of using a *histogram*?
   #+begin_quote
   When you have observed a single *numeric-continuous variable*
   #+end_quote
-
 - /Example:/ You've already seen the histogram for a simple data
   structure, the *time series* ~ts~ (here next to the *line plot*):
   #+begin_src R :results graphics file :file ../img/9_nile.png
@@ -877,19 +876,19 @@ the *big picture* in tables.
   #+RESULTS:
   [[file:../img/9_nile.png]]
 
-- [ ] What does the /height/ of a bar represent exactly?
+- [X] What does the /height/ of a bar represent exactly?
   #+begin_quote
   The height of each bar (on the y-axis) represents the number of
   years in which the volume of water flowing through the Nile was
   within its interval of 100 mio cubic metres width (on the x-axis).
   #+end_quote
 
-- [ ] How can you find out what the /binwidth/ of this histogram is?
+- [X] How can you find out what the /binwidth/ of this histogram is?
   #+begin_src R
     str(hist(Nile))
   #+end_src
 
-- [ ] Look at the ~help~ for ~hist~, then change the binwidth to ~30~.
+- [X] Look at the ~help~ for ~hist~, then change the binwidth to ~30~.
   #+begin_src R :results graphics file :file ../img/9_nile1.png
     hist(Nile, breaks=30)
   #+end_src
@@ -902,6 +901,17 @@ the *big picture* in tables.
     h <- hist(Nile)
     h$breaks[2]-h$breaks[1]
   #+end_src
+
+  #+RESULTS:
+  : [1] 100
+  : List of 6
+  :  $ breaks  : int [1:11] 400 500 600 700 800 900 1000 1100 1200 1300 ...
+  :  $ counts  : int [1:10] 1 0 5 20 25 19 12 11 6 1
+  :  $ density : num [1:10] 0.0001 0 0.0005 0.002 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
+  :  $ mids    : num [1:10] 450 550 650 750 850 950 1050 1150 1250 1350
+  :  $ xname   : chr "Nile"
+  :  $ equidist: logi TRUE
+  :  - attr(*, "class")= chr "histogram"
 
 - [ ] What happens when you choose ~breaks=0~?
   #+begin_src R :results graphics file :file ../img/9_nile2.png

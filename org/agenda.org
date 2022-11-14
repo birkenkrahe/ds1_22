@@ -1849,9 +1849,9 @@ Questions:
 #+attr_html: :width 500px
 [[../img/boxplot.png]]
 
-- [ ] GitHub: [[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=ppE-pwX7XsnQ1kIRdo6B5g][Living in the matrix]]
-- [ ] SocMed: [[https://twitter.com/DataCamp/status/1591793383885967360?s=20&t=BpWX6t4pbYnPHZQoKHyw3Q][Featured on Twitter @DataCamp]]
-- [ ] Presenting in Emacs (FAQ + examples)
+- [X] GitHub: [[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=ppE-pwX7XsnQ1kIRdo6B5g][Living in the matrix]]
+- [X] SocMed: [[https://twitter.com/DataCamp/status/1591793383885967360?s=20&t=BpWX6t4pbYnPHZQoKHyw3Q][Featured on Twitter @DataCamp]]
+- [X] Presenting in Emacs (FAQ + examples)
 - [ ] Pie charts and histograms
 - [ ] Review: Importing data from flat files with utils
 
