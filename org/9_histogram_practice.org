@@ -18,10 +18,10 @@
   until you see ~DONE~ instead of ~TODO~ next to the title.
 - Perform this last step each time you complete a section.
 
-* TODO Problems
+* TODO 10 piccolo problems
 
 1) Create a histogram of the horsepower data of the 32 cars in the
-   ~mtcars~ data set[fn:2]. Run the code.
+   ~mtcars~ data set. Run the code.
 2) Label the x-axis. Run the code.
 3) Label the y-axis. Run the code.
 4) Title the plot. Run the code.
@@ -31,8 +31,21 @@
    equal ~sub = 220 hp~.
 8) Change the x-axis label so that it automatically shows ~sub~.
 
-R graphics code block:
+You can reuse this R graphics code block to build up the final plot.
 #+begin_src R :results graphics file :file hist.png
 
 #+end_src
+
+9) Put the log10 plot and the original plot in one plot array (on top
+  of one another) - without any customization.
+  #+begin_src R :results graphics file :file histarray1.png
+
+  #+end_src
+
+10) Put the log10 plot and the original plot in one plot array (side by
+  side) - without any customization.
+  #+begin_src R :results graphics file :file histarray2.png
+
+  #+end_src
+
 

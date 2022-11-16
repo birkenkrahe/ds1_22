@@ -896,36 +896,25 @@ the *big picture* in tables.
   #+RESULTS:
   [[file:../img/9_nile1.png]]
 
-- [ ] How can you *print* the binwidth?
+- [ ] How can you *print* the value for the binwidth (~breaks~)?
   #+begin_src R
     h <- hist(Nile)
     h$breaks[2]-h$breaks[1]
   #+end_src
-
-  #+RESULTS:
-  : [1] 100
-  : List of 6
-  :  $ breaks  : int [1:11] 400 500 600 700 800 900 1000 1100 1200 1300 ...
-  :  $ counts  : int [1:10] 1 0 5 20 25 19 12 11 6 1
-  :  $ density : num [1:10] 0.0001 0 0.0005 0.002 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
-  :  $ mids    : num [1:10] 450 550 650 750 850 950 1050 1150 1250 1350
-  :  $ xname   : chr "Nile"
-  :  $ equidist: logi TRUE
-  :  - attr(*, "class")= chr "histogram"
-
 - [ ] What happens when you choose ~breaks=0~?
-  #+begin_src R :results graphics file :file ../img/9_nile2.png
+  #+begin_src R
+    hist(Nile, breaks=0)
+  #+end_src
+- [ ] What happens when you set ~breaks=1000001~ (~1e+6 + 1~)?
+  #+begin_src R
     hist(Nile, breaks=1000001)
   #+end_src
-
-- [ ] What happens when you set ~breaks=1000000~ (1e+6)? Don't run the
-  code block in Emacs (takes too long) but instead create a script
-  file ~Nile.R~, put the command into it, and run it as a batch process
-  in the shell (~M-x eshell~):
+- [ ] Create a script file ~Nile.R~, put the previous command into it,
+  and run it as a batch process in the shell (using ~M-x eshell~):
   #+begin_example bash
     $ R CMD BATCH nile.R
   #+end_example
-  Open the output file ~.rout~ to see the result:
+  Open the output file ~Nile.rout~ to see the result:
   #+begin_example R
   > hist(Nile, breaks=1000001)
   Warning message:
@@ -937,6 +926,69 @@ the *big picture* in tables.
     1.09    0.09    1.20
   #+end_example
 
+- ~proc.time~ and ~system.time~ measure the performance of R. Example:
+  measure rolling 1 die a million times:
+  #+begin_src R
+    system.time(
+      for (i in 1:1e6)
+        sample(1:6,1))
+  #+end_src
+
+* Histogram analysis
+
+- You can manually set the histogram ~breaks~ by supplying a vector
+
+- Example: horsepower ~hp~ in the ~mtcars~ dataset with ~breaks~ from ~0~ to
+  ~400~, ~25~ units apart from each other: 
+  #+begin_src R :results graphics file :file ../img/9_hpbreaks.png
+    hp <- mtcars$hp
+    hist(x=hp,
+         breaks=seq(from=0, to=400, by=25),
+         main="Horsepower (hp) in mtcars")  # histogram
+    abline(v=c(mean(hp),median(hp)),
+           lty=c(2,3),lwd=2) # mean, median
+    legend("topright",
+           legend=c("mean HP","median HP"),
+           lty=c(2,3),lwd=2) # legend
+    #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_hpbreaks.png]]
+
+  - Reducing the bin width allows seeing more detail but also risks
+    highlighting irrelevant features (like the single outlying car).
+    #+begin_src R
+      max(hp) # outlier in mtcars$hp 
+    #+end_src
+
+  - Too small a binwidth leads to too much detail
+
+  - Too large a binwidth leads to loss of detail
+
+* Histograms in ggplot2
+
+- Histogram of ~mtcars$hp~ in ggplot2:
+  #+begin_src R :results graphics file :file ../img/9_gghisthp.png
+    library(ggplot2)
+    ggplot(data=mtcars,
+           aes(x=hp)) +
+      geom_histogram(binwidth=25, color="white", fill="red")
+    #+end_src
+
+    #+RESULTS:
+    [[file:../img/9_gghisthp.png]]
+
+- A histogram of ~Nile~ is not so easy because it's a time series:
+  #+begin_src R :results graphics file :file ../img/9_gghistNile.png
+    library(ggplot2)
+    ggplot(data=data.frame(Nile),
+           aes(x=Nile)) +
+      geom_histogram(color="black", fill="green")
+    #+end_src
+
+    #+RESULTS:
+    [[file:../img/9_gghistNile.png]]
+
 * Practice creating and customizing a histogram
 #+attr_html: :width 400px
 [[../img/penguins.jpg]]
@@ -944,12 +996,10 @@ the *big picture* in tables.
 - Download and open in GNU Emacs: [[https://tinyurl.com/nhkykkxr][tinyurl.com/nhkykkxr]]
 
 - Work with a friend or with your neighbor in class
-  
+
 - Complete the problems in the file (we'll discuss at the end)
 
 - Upload the result (for each participants) [[https://lyon.instructure.com/courses/568/assignments/3755][to Canvas (Practice 10)]]
-
-* TODO Histogram analysis
 
 * TODO Boxplots
 * TODO Scatterplots

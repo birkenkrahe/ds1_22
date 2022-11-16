@@ -1852,8 +1852,8 @@ Questions:
 - [X] GitHub: [[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=ppE-pwX7XsnQ1kIRdo6B5g][Living in the matrix]]
 - [X] SocMed: [[https://twitter.com/DataCamp/status/1591793383885967360?s=20&t=BpWX6t4pbYnPHZQoKHyw3Q][Featured on Twitter @DataCamp]]
 - [X] Presenting in Emacs (FAQ + examples)
-- [ ] Pie charts and histograms
-- [ ] Review: Importing data from flat files with utils
+- [ ] Pie charts, histograms, scatterplots, boxplots
+- [ ] Test: data import, histograms, scatterplot, boxplot
 
 * GitHub: Living in the matrix ([[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=Gogehc82S3rO6cODfrOvZw][tweet]])
 #+attr_html: :width 500px
@@ -1876,10 +1876,6 @@ Questions:
 
 - Demo file: ~present-demo.org~ on [[https://github.com/birkenkrahe/org/blob/master/emacs/present_demo.org][GitHub]]
 - URL: [[https://tinyurl.com/556k452p][tinyurl.com/556k452p]]
-
-* TODO DataCamp review: importing data
-
-
 
 * Week 15: scatterplots, Python vs.R & evaluation
 #+attr_html: :width 600px
