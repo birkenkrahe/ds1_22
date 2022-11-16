@@ -888,6 +888,16 @@ the *big picture* in tables.
     str(hist(Nile))
   #+end_src
 
+  #+RESULTS:
+  : List of 6
+  :  $ breaks  : int [1:11] 400 500 600 700 800 900 1000 1100 1200 1300 ...
+  :  $ counts  : int [1:10] 1 0 5 20 25 19 12 11 6 1
+  :  $ density : num [1:10] 0.0001 0 0.0005 0.002 0.0025 0.0019 0.0012 0.0011 0.0006 0.0001
+  :  $ mids    : num [1:10] 450 550 650 750 850 950 1050 1150 1250 1350
+  :  $ xname   : chr "Nile"
+  :  $ equidist: logi TRUE
+  :  - attr(*, "class")= chr "histogram"
+
 - [X] Look at the ~help~ for ~hist~, then change the binwidth to ~30~.
   #+begin_src R :results graphics file :file ../img/9_nile1.png
     hist(Nile, breaks=30)
@@ -905,14 +915,24 @@ the *big picture* in tables.
   #+begin_src R
     hist(Nile, breaks=0)
   #+end_src
+
+  #+RESULTS:
+  : Error in hist.default(Nile, breaks = 0) : invalid number of 'breaks'
+
 - [ ] What happens when you set ~breaks=1000001~ (~1e+6 + 1~)?
   #+begin_src R
     hist(Nile, breaks=1000001)
   #+end_src
+
+  #+RESULTS:
+  : Warning message:
+  : In hist.default(Nile, breaks = 1000001) :
+  :   'breaks = 1e+06' is too large and set to 1e6
+
 - [ ] Create a script file ~Nile.R~, put the previous command into it,
   and run it as a batch process in the shell (using ~M-x eshell~):
   #+begin_example bash
-    $ R CMD BATCH nile.R
+    $ R CMD BATCH Nile.R
   #+end_example
   Open the output file ~Nile.rout~ to see the result:
   #+begin_example R
@@ -960,6 +980,9 @@ the *big picture* in tables.
     #+begin_src R
       max(hp) # outlier in mtcars$hp 
     #+end_src
+
+    #+RESULTS:
+    : [1] 335
 
   - Too small a binwidth leads to too much detail
 

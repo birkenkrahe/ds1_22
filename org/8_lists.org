@@ -13,7 +13,7 @@
 - How do you create a (named) list?
 - How can you subset lists?
 
-* TODO Practice file
+* Practice file
 #+attr_html: :width 600px
 [[../img/practice1.jpg]]
 
@@ -40,7 +40,7 @@
   2) Matrices like ~matrix(1:9, nrow=3)~
      #+begin_src R
        matrix(1:9,nrow=3)
-     #+end_src     
+     #+end_src
   3) Data frames like ~ToothGrowth~
      #+begin_src R
        str(ToothGrowth)  # two numeric, one factor vectors
@@ -80,6 +80,7 @@
 - You supply the elements to the ~list~ function, separated by commata
 
 - Let's define a list ~foo~ and print it:
+  #+name: foo
   #+begin_src R
     foo <- list(
       matrix(data = 1:4,
@@ -106,7 +107,7 @@
     class(foo[[3]])
   #+end_src
 
-* DONE Practice creating a ~list~
+* Practice creating a ~list~
 
 Create a list that contains, in this order
 1) a ~seq~-uence of 20 evenly spread numbers between ~-4~ and ~4~
@@ -168,7 +169,7 @@ Create a list that contains, in this order
     foo[[2]]
     foo[[2]][-1]
   #+end_src
-  
+
 - Preview: how would you extract the string member of ~foo~?
   #+begin_src R
     char <- lapply(X=foo,FUN=is.character) # test each member
@@ -178,7 +179,7 @@ Create a list that contains, in this order
 - The ~apply~ family of functions will be taught in advanced data
   science, including ~lapply~ (apply ~FUN~-ctions across a whole ~list~)
 
-* DONE Practice extracting from a ~list~
+* Practice extracting from a ~list~
 
 Solve the following extraction problems:
 1) Extract the 2nd member of ~p~ (def'd [[p][here]])
@@ -226,7 +227,7 @@ Solve the following extraction problems:
     foo[c(2,3)] # select list members 2 and 3
   #+end_src
 
-- Note that the sliced list is itself a ~list~ 
+- Note that the sliced list is itself a ~list~
 
 * Naming lists
 
@@ -282,10 +283,10 @@ Solve the following extraction problems:
       "my sons"= c("Kain", "Abel"))
     str(q)
   #+end_src
-  
+
 * TODO Practice naming lists
 
-1) Make a safety copy ~np~ of ~p~ 
+1) Make a safety copy ~np~ of ~p~
 2) Name the elements of ~np~ in this order: ~num~, ~logmat~, ~char~
 3) Display the structure of the named list ~p~
 4) Remove the 2nd string of the 3rd member using its name

@@ -1845,7 +1845,7 @@ Questions:
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
 
-* Week 14: Pie charts, histograms, boxplots
+* Week 14: Pie chart, histogram, boxplot, scatterplot
 #+attr_html: :width 500px
 [[../img/boxplot.png]]
 
@@ -1855,13 +1855,13 @@ Questions:
 - [ ] Pie charts, histograms, scatterplots, boxplots
 - [ ] Test: data import, histograms, scatterplot, boxplot
 
-* GitHub: Living in the matrix ([[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=Gogehc82S3rO6cODfrOvZw][tweet]])
+** GitHub: Living in the matrix ([[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=Gogehc82S3rO6cODfrOvZw][tweet]])
 #+attr_html: :width 500px
 [[../img/matrix.png]]
 
 [That's 20 file uploads ("commits") on every work day]
 
-* SocMed: @datacamp
+** SocMed: @datacamp
 #+attr_html: :width 400px
 [[../img/twitter.png]]
 
@@ -1870,14 +1870,14 @@ Questions:
 - I didn't smile once during it!
 - Though the other guy was nice & funny
 
-* Presenting in Emacs: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-present-in-emacs][new FAQ]]
+** Presenting in Emacs: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-present-in-emacs][new FAQ]]
 #+attr_html: :width 250px
 [[../img/paratrooper.png]]
 
 - Demo file: ~present-demo.org~ on [[https://github.com/birkenkrahe/org/blob/master/emacs/present_demo.org][GitHub]]
 - URL: [[https://tinyurl.com/556k452p][tinyurl.com/556k452p]]
 
-* Week 15: scatterplots, Python vs.R & evaluation
+* Week 15: Final exam test, Python vs.R & evaluation
 #+attr_html: :width 600px
 [[../img/pythonvsr.png]]
 
