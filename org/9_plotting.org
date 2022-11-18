@@ -1026,6 +1026,8 @@ the *big picture* in tables.
 
 * NEXT Boxplots - global summary stats
 
+- Open the practice file in Emacs to code along: [[https://tinyurl.com/2e6dy9yb][tinyurl.com/2e6dy9yb]]
+
 - Box-and-whisker plots, or boxplots represent the five-number
   ~summary~:
   1) Minimum
