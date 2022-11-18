@@ -855,13 +855,13 @@ the *big picture* in tables.
   unordered. As soon as you want to display a second variable, or if
   you have more than a few levels, bar charts are to be preferred.
 
-* IN PROGRESS Histograms
+* Histograms
 
-- [X] When do you think of using *barplots*?
+- [ ] When do you think of using *barplots*?
   #+begin_quote
   Barplots are sensible for counting *observations of categories*
   #+end_quote
-- [X] When do you think of using a *histogram*?
+- [ ] When do you think of using a *histogram*?
   #+begin_quote
   When you have observed a single *numeric-continuous variable*
   #+end_quote
@@ -876,14 +876,14 @@ the *big picture* in tables.
   #+RESULTS:
   [[file:../img/9_nile.png]]
 
-- [X] What does the /height/ of a bar represent exactly?
+- [ ] What does the /height/ of a bar represent exactly?
   #+begin_quote
   The height of each bar (on the y-axis) represents the number of
   years in which the volume of water flowing through the Nile was
   within its interval of 100 mio cubic metres width (on the x-axis).
   #+end_quote
 
-- [X] How can you find out what the /binwidth/ of this histogram is?
+- [ ] How can you find out what the /binwidth/ of this histogram is?
   #+begin_src R
     str(hist(Nile))
   #+end_src
@@ -898,7 +898,7 @@ the *big picture* in tables.
   :  $ equidist: logi TRUE
   :  - attr(*, "class")= chr "histogram"
 
-- [X] Look at the ~help~ for ~hist~, then change the binwidth to ~30~.
+- [ ] Look at the ~help~ for ~hist~, then change the binwidth to ~30~.
   #+begin_src R :results graphics file :file ../img/9_nile1.png
     hist(Nile, breaks=30)
   #+end_src
@@ -959,7 +959,7 @@ the *big picture* in tables.
 - You can manually set the histogram ~breaks~ by supplying a vector
 
 - Example: horsepower ~hp~ in the ~mtcars~ dataset with ~breaks~ from ~0~ to
-  ~400~, ~25~ units apart from each other: 
+  ~400~, ~25~ units apart from each other:
   #+begin_src R :results graphics file :file ../img/9_hpbreaks.png
     hp <- mtcars$hp
     hist(x=hp,
@@ -970,7 +970,7 @@ the *big picture* in tables.
     legend("topright",
            legend=c("mean HP","median HP"),
            lty=c(2,3),lwd=2) # legend
-    #+end_src
+  #+end_src
 
   #+RESULTS:
   [[file:../img/9_hpbreaks.png]]
@@ -978,7 +978,7 @@ the *big picture* in tables.
   - Reducing the bin width allows seeing more detail but also risks
     highlighting irrelevant features (like the single outlying car).
     #+begin_src R
-      max(hp) # outlier in mtcars$hp 
+      max(hp) # outlier in mtcars$hp
     #+end_src
 
     #+RESULTS:
@@ -996,10 +996,10 @@ the *big picture* in tables.
     ggplot(data=mtcars,
            aes(x=hp)) +
       geom_histogram(binwidth=25, color="white", fill="red")
-    #+end_src
+  #+end_src
 
-    #+RESULTS:
-    [[file:../img/9_gghisthp.png]]
+  #+RESULTS:
+  [[file:../img/9_gghisthp.png]]
 
 - A histogram of ~Nile~ is not so easy because it's a time series:
   #+begin_src R :results graphics file :file ../img/9_gghistNile.png
@@ -1007,10 +1007,10 @@ the *big picture* in tables.
     ggplot(data=data.frame(Nile),
            aes(x=Nile)) +
       geom_histogram(color="black", fill="green")
-    #+end_src
+  #+end_src
 
-    #+RESULTS:
-    [[file:../img/9_gghistNile.png]]
+  #+RESULTS:
+  [[file:../img/9_gghistNile.png]]
 
 * Practice creating and customizing a histogram
 #+attr_html: :width 400px
@@ -1024,9 +1024,250 @@ the *big picture* in tables.
 
 - Upload the result (for each participants) [[https://lyon.instructure.com/courses/568/assignments/3755][to Canvas (Practice 10)]]
 
-* TODO Boxplots
-* TODO Scatterplots
-* TODO Plot matrices
+* NEXT Boxplots - global summary stats
+
+- Box-and-whisker plots, or boxplots represent the five-number
+  ~summary~:
+  1) Minimum
+  2) 1st quartile (25% of the values are below it)
+  3) Median (50% of the values are below/above it)
+  4) Mean (Arithmetic average)
+  5) 3rd quartile (75% of the values are below it)
+  6) Maximum
+
+- For example for ~x <- c(1,2,3,4,5,6,7,8,9,10)~:
+  #+begin_src R
+    x <- 1:10
+    summary(x)
+  #+end_src
+
+  #+RESULTS:
+  :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.
+  :    1.00    3.25    5.50    5.50    7.75   10.00
+
+- For the built-in ~quakes~ data frame of 1,000 seismic events near the
+  island of Fiji (depth, magnitude, number of observing stations):
+  #+begin_src R
+    summary(quakes[,c("depth","mag","stations")])
+  #+end_src
+
+  #+RESULTS:
+  :      depth            mag          stations
+  :  Min.   : 40.0   Min.   :4.00   Min.   : 10.00
+  :  1st Qu.: 99.0   1st Qu.:4.30   1st Qu.: 18.00
+  :  Median :247.0   Median :4.60   Median : 27.00
+  :  Mean   :311.4   Mean   :4.62   Mean   : 33.42
+  :  3rd Qu.:543.0   3rd Qu.:4.90   3rd Qu.: 42.00
+  :  Max.   :680.0   Max.   :6.40   Max.   :132.00
+
+- Each record/row represents one recorded earthquake: where it was
+  located, at which depth the epicenter was, its magnitude, and the
+  number or observing stations:
+  #+begin_src R
+    head(quakes)
+  #+end_src
+
+  #+RESULTS:
+  :      lat   long depth mag stations
+  : 1 -20.42 181.62   562 4.8       41
+  : 2 -20.62 181.03   650 4.2       15
+  : 3 -26.00 184.10    42 5.4       43
+  : 4 -17.97 181.66   626 4.1       19
+  : 5 -20.42 181.96   649 4.0       11
+  : 6 -19.68 184.31   195 4.0       12
+
+- The boxplot of the earthquake magnitudes shows the output of ~summary~
+  except the ~mean~, but it also shows /outliers/, extreme values that
+  distort the mean:
+  #+attr_html: :width 400px
+  [[../img/9_boxplot_explained.png]]
+
+- Creating a boxplot is simple: for the earthquake magnitudes
+  (~quakes$mag~):
+  #+begin_src R :results graphics file :file ../img/9_box.png
+    boxplot(quakes$mag)
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_box.png]]
+
+- Let's look at histogram and boxplot on top of one another, with
+  a minimal customization:
+  #+begin_src R :results graphics file :file ../img/9_quakes.png
+    par(mfrow=c(2,1))
+    hist(quakes$mag, xlab="",
+         main="Histogram of earthquake magnitude in quakes")
+    boxplot(quakes$mag,
+            horizontal=TRUE,
+            main="Boxplot of earthquake magnitude in quakes",
+            xlab="Earthquake magnitude (Richter scale)")
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_quakes.png]]
+
+- Like the histogram, a boxplot shows important *global* (overall)
+  features of the value distribution:
+  + centrality (where is the midpoint of the distribution?)x
+  + spread (how far are the whiskers apart, how wide is the box?)
+  + skewness (where is the box relative to the whiskers?)
+
+- The boxplot does not show important *local* features, like
+  + modes (multiple significant peaks or maxima)
+  + valleys (local minima)
+
+- Outliers are displayed explicitly (computed as 1.5 times the
+  Inter-Quartile Range or IQR)
+
+- The ~range~ parameter in ~boxplot~ determines how far the whiskers
+  should extend from the box. ~range=0~ includes all values.
+  #+begin_src R :results graphics file :file ../img/9_boxplot1.png
+    boxplot(quakes$mag, horizontal=TRUE,
+            range=0,
+            main="Boxplot of earthquake magnitude in quakes",
+            xlab="Earthquake magnitude (Richter scale)")
+  #+end_src
+
+  #+RESULTS:
+  [[file:../img/9_boxplot1.png]]
+
+* Side-by-side boxplots
+
+- Boxplots are useful to compare data features by plotting them
+  side-by-side, e.g. for identifying how many monitoring stations
+  detected each event
+
+- We use ~cut~ to create three levels of stations for three boxes:
+  #+begin_src R
+    stations <- cut(quakes$stations, breaks=c(0,50,100,150))
+    stations[1:5] # first five elements
+  #+end_src
+
+  #+RESULTS:
+  : [1] (0,50] (0,50] (0,50] (0,50] (0,50]
+  : Levels: (0,50] (50,100] (100,150]
+
+- The factor ~stations~ breaks the observations in three groups
+  1) events detected by 50 stations or fewer ~(0,50]~
+  2) events detected by 51 to 100 stations ~(50,100]~
+  3) events detected by between 100 and 150 stations ~(100,150]~
+
+- The boxplot compares the distributions of the magnitudes of the
+  events according to these three groups:
+  #+begin_src R :results graphics file :file 9_stations.png
+    boxplot(quakes$mag ~ stations,
+            main="Groups of earthquake monitoring stations in quakes",
+            xlab="# stations detected",
+            ylab="Earthquake magnitude (pts on the Richter scale)",
+            col="gray")
+  #+end_src
+
+  #+RESULTS:
+  [[file:9_stations.png]]
+
+- You can see that the higher the recorded magnitude, the more
+  stations detected the given seismic event
+
+- In the argument, we've used the /formula/ ~y ~ x~ ("y vs. x") with
+  ~x=stations~ and ~y=quakes$mag~. If the ~y ~~ is missing, the argument is
+  taken as ~x~ (cp. ~help(boxplot)~).
+  
+* Scatterplots
+
+- Scatterplots are used to identify relationships between the observed
+  values of two different numeric-continuous variables x,y
+
+- The scatterplot is displayed as an x-y-coordinate plot but not every
+  x-y-plot shows relationships of interest - e.g. a plot of the
+  latitude vs. longitude in ~quakes~:
+  #+begin_src R :results graphics file :file 9_noscatter.png
+    plot(x=quakes$lat,
+         y=quakes$lon)
+  #+end_src
+
+  #+RESULTS:
+  [[file:9_noscatter.png]]
+
+- A real scatterplot is the visualization of the mileage (~mpg~)
+  vs. weight (~wt~) of cars in the built-in ~mtcars~ data set:
+  #+begin_src R :results graphics file :file 9_mtcars.png
+    plot(mtcars$mpg ~ mtcars$wt)
+    title("Car mileage (mpg) vs. weight (wt) in mtcars")
+  #+end_src
+
+  #+RESULTS:
+  [[file:9_mtcars.png]]
+
+* Scatterplots of more than two variables
+
+- The famous ~iris~ dataset, collected in the mid-1930s, contains petal
+  and sepal measurements for three species of perennial iris flowers,
+  /Iris setosa/, /Iris virginica/, and /Iris versicolor/ (Fisher, 1936).
+  #+attr_html: :width 500px
+  [[../img/iris.png]]
+
+- View the first few records:
+  #+begin_src R
+    head(iris[1:5])
+  #+end_src
+
+  #+RESULTS:
+  :   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+  : 1          5.1         3.5          1.4         0.2  setosa
+  : 2          4.9         3.0          1.4         0.2  setosa
+  : 3          4.7         3.2          1.3         0.2  setosa
+  : 4          4.6         3.1          1.5         0.2  setosa
+  : 5          5.0         3.6          1.4         0.2  setosa
+  : 6          5.4         3.9          1.7         0.4  setosa
+
+- To plot every variable against every other, you can plot an array of
+  x-y-plots:
+  + Each column has the shown variable as x- and the others as y-axis
+  + Each row has the shown variable as y- and the others as x-axis
+  + E.g. the square (2,1) shows x = ~Sepal.Length~, y = all others
+  #+begin_src R :results graphics file :file 9_iris.png
+    plot(iris)
+  #+end_src
+
+  #+RESULTS:
+  [[file:9_iris.png]]
+
+- The array is much easier to read when adding the iris species as a
+  sixth variable to the plot.
+  #+begin_src R :results graphics file :file 9_iris_col.png
+    plot(iris, col=iris$Species)
+  #+end_src
+
+  #+RESULTS:
+  [[file:9_iris_col.png]]
+
+- Homing in on one of the diagrams, e.g. ~Sepal.Width~ vs. ~Sepal.Length~:
+  #+begin_src R :results graphics file :file 9_iris1.png
+    plot(
+      iris$Sepal.Width ~ iris$Sepal.Length,
+      col=iris$Species,
+      pch=19)
+  #+end_src
+
+  #+RESULTS:
+  [[file:9_iris1.png]]
+
+- As an example for a fully customized plot with legend:
+  #+begin_src R :results graphics file :file 9_iris_final.png
+    plot(
+      y=iris$Petal.Length, xlab="Petal length (cm)",
+      x=iris$Petal.Width, ylab="Petal width (cm)",
+      col=iris$Species, 
+      pch=19)
+    legend("topleft",
+           legend=c("setosa", "virginica","versicolor"),
+           col=c("black","red","green"), pch=19)
+    title("Petal width vs. length for three species of iris")
+  #+end_src
+
+  #+RESULTS:
+  [[file:9_iris_final.png]]
+
 * References
 
 - [[http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization]["ggplot2 barplots: Quick start guide", sthda.com]]

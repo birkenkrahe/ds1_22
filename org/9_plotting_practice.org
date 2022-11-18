@@ -1,0 +1,111 @@
+#+title: Practice: Basic plotting in R - boxplots and scatterplots
+#+AUTHOR: [yourname]
+#+SUBTITLE: Introduction to data science (DSC 105) Fall 2022
+#+STARTUP: overview hideblocks indent inlineimages
+#+PROPERTY: header-args:R :session *R* :exports both :results output
+* README
+
+  Practice for the lecture on boxplots and scatterplots
+  (9_plotting.org)
+  
+* Boxplots - global summary stats
+
+  - Summary for ~x <- c(1,2,3,4,5,6,7,8,9,10)~:
+    #+begin_src R
+
+    #+end_src
+
+  - For the built-in ~quakes~ data frame of 1,000 seismic events near the
+    island of Fiji (depth, magnitude, number of observing stations):
+    #+begin_src R
+
+    #+end_src
+
+  - Each record/row represents one recorded earthquake: where it was
+    located, at which depth the epicenter was, its magnitude, and the
+    number or observing stations:
+    #+begin_src R
+
+    #+end_src
+
+  - Creating a boxplot is simple: for the magnitudes (~quakes$mag~):
+    #+begin_src R :results graphics file :file box1.png
+
+    #+end_src
+
+  - Let's look at histogram and boxplot on top of one another, with
+    a minimal customization:
+    #+begin_src R :results graphics file :file box2.png
+
+    #+end_src
+
+  - The ~range~ parameter in ~boxplot~ determines how far the whiskers
+    should extend from the box. ~range=0~ includes all values.
+    #+begin_src R :results graphics file :file box3.png
+
+    #+end_src
+
+* Side-by-side boxplots
+
+  - We use ~cut~ to create three levels of stations for three boxes:
+    #+begin_src R
+
+    #+end_src
+
+  - The boxplot compares the distributions of the magnitudes of the
+    events according to three groups of monitoring stations:
+    #+begin_src R :results graphics file :file box4.png
+
+    #+end_src
+
+* Scatterplots
+
+  - The scatterplot is displayed as an x-y-coordinate plot but not every
+    x-y-plot shows relationships of interest - e.g. a plot of the
+    latitude vs. longitude in ~quakes~:
+    #+begin_src R :results graphics file :file noscatter.png
+
+    #+end_src
+
+  - A real scatterplot is the visualization of the mileage (~mpg~)
+    vs. weight (~wt~) of cars in the built-in ~mtcars~ data set:
+    #+begin_src R :results graphics file :file mtcars.png
+
+    #+end_src
+
+* Scatterplots of more than two variables
+
+  - View the first few records:
+    #+begin_src R
+
+    #+end_src
+
+  - To plot every variable against every other, you can plot an array of
+    x-y-plots:
+    #+begin_src R :results graphics file :file iris1.png
+
+    #+end_src
+
+  - The array is much easier to read when adding the iris species as a
+    sixth variable to the plot.
+    #+begin_src R :results graphics file :file iris2.png
+
+    #+end_src
+
+  - Homing in on one of the diagrams, e.g. ~Sepal.Width~ vs. ~Sepal.Length~:
+    #+begin_src R :results graphics file :file iris3.png
+
+    #+end_src
+
+  - Run this as an example for a fully customized plot with legend:
+    #+begin_src R :results graphics file :file iris3.png
+      plot(
+        y=iris$Petal.Length, xlab="Petal length (cm)",
+        x=iris$Petal.Width, ylab="Petal width (cm)",
+        col=iris$Species,
+        pch=19)
+      legend("topleft",
+             legend=c("setosa", "virginica","versicolor"),
+             col=c("black","red","green"), pch=19)
+      title("Petal width vs. length for three species of iris")
+    #+end_src

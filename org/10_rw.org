@@ -4,6 +4,10 @@
 #+OPTIONS: toc:nil num:nil
 #+STARTUP: overview hideblocks indent inlineimages
 #+PROPERTY: header-args:R :session *R* :exports both :results output
+* README
+
+Planned for future instalments of this course.
+
 * Sources
 
 - https://www.dataquest.io/course/scraping-in-r/

@@ -1845,23 +1845,23 @@ Questions:
 - Join us for the celebration & the BBQ
 - Great keynote speaker (Brian Norris)
 
-* Week 14: Pie chart, histogram, boxplot, scatterplot
+* Week 14: Pie chart, histogram, box/scatterplot
 #+attr_html: :width 500px
 [[../img/boxplot.png]]
 
 - [X] GitHub: [[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=ppE-pwX7XsnQ1kIRdo6B5g][Living in the matrix]]
 - [X] SocMed: [[https://twitter.com/DataCamp/status/1591793383885967360?s=20&t=BpWX6t4pbYnPHZQoKHyw3Q][Featured on Twitter @DataCamp]]
 - [X] Presenting in Emacs (FAQ + examples)
-- [ ] Pie charts, histograms, scatterplots, boxplots
+- [X] Pie charts, histograms, scatterplots, boxplots
 - [ ] Test: data import, histograms, scatterplot, boxplot
 
-** GitHub: Living in the matrix ([[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=Gogehc82S3rO6cODfrOvZw][tweet]])
+* GitHub: Living in the matrix ([[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=Gogehc82S3rO6cODfrOvZw][tweet]])
 #+attr_html: :width 500px
 [[../img/matrix.png]]
 
 [That's 20 file uploads ("commits") on every work day]
 
-** SocMed: @datacamp
+* SocMed: @datacamp
 #+attr_html: :width 400px
 [[../img/twitter.png]]
 
@@ -1870,12 +1870,21 @@ Questions:
 - I didn't smile once during it!
 - Though the other guy was nice & funny
 
-** Presenting in Emacs: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-present-in-emacs][new FAQ]]
+* Presenting in Emacs: [[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-can-i-present-in-emacs][new FAQ]]
 #+attr_html: :width 250px
 [[../img/paratrooper.png]]
 
 - Demo file: ~present-demo.org~ on [[https://github.com/birkenkrahe/org/blob/master/emacs/present_demo.org][GitHub]]
 - URL: [[https://tinyurl.com/556k452p][tinyurl.com/556k452p]]
+
+* Keyboard vs. Mouse
+
+»There is a special ring in Dante's inferno for the inventor of the
+mouse and for the legions of GUI designers that built all the World's
+software around it.« ([[https://www.reddit.com/r/emacs/comments/r1s3k2/comment/hm1ijn2/][rebcabin-r @r/emacs]])
+#+attr_html: :width 500px
+[[../img/dante.jpg]]
+
 
 * Week 15: Final exam test, Python vs.R & evaluation
 #+attr_html: :width 600px
