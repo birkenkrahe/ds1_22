@@ -119,7 +119,7 @@ the *big picture* in tables.
   #+end_src
 
   #+RESULTS:
-  : 'data.frame':       60 obs. of  3 variables:
+  : 'data.frame':	60 obs. of  3 variables:
   :  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
   :  $ supp: Factor w/ 2 levels "OJ","VC": 2 2 2 2 2 2 2 2 2 2 ...
   :  $ dose: num  0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 ...
@@ -134,17 +134,17 @@ the *big picture* in tables.
   #+RESULTS:
   #+begin_example
 
-   4.2  5.2  5.8  6.4    7  7.3  8.2  9.4  9.7   10 11.2 11.5 13.6 14.5 15.2 15.5
-     1    1    1    1    1    1    1    1    2    2    2    1    1    3    2    1
-  16.5 17.3 17.6 18.5 18.8 19.7   20 21.2 21.5 22.4 22.5   23 23.3 23.6 24.5 24.8
-     3    2    1    1    1    1    1    1    2    1    1    1    2    2    1    1
-  25.2 25.5 25.8 26.4 26.7 27.3 29.4 29.5 30.9 32.5 33.9
+   4.2  5.2  5.8  6.4    7  7.3  8.2  9.4  9.7   10 11.2 11.5 13.6 14.5 15.2 15.5 
+     1    1    1    1    1    1    1    1    2    2    2    1    1    3    2    1 
+  16.5 17.3 17.6 18.5 18.8 19.7   20 21.2 21.5 22.4 22.5   23 23.3 23.6 24.5 24.8 
+     3    2    1    1    1    1    1    1    2    1    1    1    2    2    1    1 
+  25.2 25.5 25.8 26.4 26.7 27.3 29.4 29.5 30.9 32.5 33.9 
      1    2    1    4    1    2    1    1    1    1    1
 
-  OJ VC
+  OJ VC 
   30 30
 
-  0.5   1   2
+  0.5   1   2 
    20  20  20
   #+end_example
 
@@ -217,8 +217,8 @@ the *big picture* in tables.
   #+end_src
 
   #+RESULTS:
-  :
-  :  4  6  8
+  : 
+  :  4  6  8 
   : 11  7 14
 
 - We create a barplot of the cylinder frequencies in ~mtcar~
@@ -297,7 +297,7 @@ the *big picture* in tables.
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':      10 obs. of  4 variables:
+   : 'data.frame':	10 obs. of  4 variables:
    :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
    :  $ Height: int  161 185 174 154 188 178 170 167 181 178
    :  $ Sex   : chr  "female" "male" "male" "female" ...
@@ -324,7 +324,7 @@ the *big picture* in tables.
    #+end_src
 
    #+RESULTS:
-   : 'data.frame':      10 obs. of  4 variables:
+   : 'data.frame':	10 obs. of  4 variables:
    :  $ Weight: int  55 85 75 42 93 63 58 75 89 67
    :  $ Height: int  161 185 174 154 188 178 170 167 181 178
    :  $ Sex   : Factor w/ 2 levels "female","male": 1 2 2 1 2 2 1 2 2 1
@@ -358,8 +358,8 @@ the *big picture* in tables.
    #+end_src
 
    #+RESULTS:
-   :
-   : female   male
+   : 
+   : female   male 
    :      4      6
 
 9) What information does ~sex.freq~ contain? Write your answer below (as
@@ -409,7 +409,7 @@ the *big picture* in tables.
   #+end_src
 
   #+RESULTS:
-  : 4
+  : 4 
   : 3
 
 - /Stacked/ barplots have bars that are split up vertically
@@ -452,6 +452,9 @@ the *big picture* in tables.
     barplot(cyl.freq.matrix,
             las = 1)
   #+end_src
+
+  #+RESULTS: barplot
+  [[file:../img/9_cyl_am.png]]
 
   #+RESULTS:
   [[file:../img/9_cyl_am.png]]
@@ -591,7 +594,7 @@ the *big picture* in tables.
   convert them to ~character~ values for printing.
 
 - For completeness: both final plots in a side-by-side plot array:
-  #+begin_src R :results graphics file :file 9_cyl_am7.png
+  #+begin_src R :results graphics file :file ../img/9_cyl_am7.png
     par(mfrow=c(1,2), pty='s')
     barplot(cyl.freq.matrix,
             las = 1,
@@ -911,6 +914,10 @@ the *big picture* in tables.
     h <- hist(Nile)
     h$breaks[2]-h$breaks[1]
   #+end_src
+
+  #+RESULTS:
+  : [1] 100
+
 - [ ] What happens when you choose ~breaks=0~?
   #+begin_src R
     hist(Nile, breaks=0)
@@ -1156,7 +1163,7 @@ the *big picture* in tables.
 
 - The boxplot compares the distributions of the magnitudes of the
   events according to these three groups:
-  #+begin_src R :results graphics file :file 9_stations.png
+  #+begin_src R :results graphics file :file ../img/9_stations.png
     boxplot(quakes$mag ~ stations,
             main="Groups of earthquake monitoring stations in quakes",
             xlab="# stations detected",
@@ -1165,7 +1172,7 @@ the *big picture* in tables.
   #+end_src
 
   #+RESULTS:
-  [[file:9_stations.png]]
+  [[file:../img/9_stations.png]]
 
 - You can see that the higher the recorded magnitude, the more
   stations detected the given seismic event
@@ -1182,7 +1189,7 @@ the *big picture* in tables.
 - The scatterplot is displayed as an x-y-coordinate plot but not every
   x-y-plot shows relationships of interest - e.g. a plot of the
   latitude vs. longitude in ~quakes~:
-  #+begin_src R :results graphics file :file 9_noscatter.png
+  #+begin_src R :results graphics file :file ../img/9_noscatter.png
     plot(x=quakes$lat,
          y=quakes$lon)
   #+end_src
@@ -1192,7 +1199,7 @@ the *big picture* in tables.
 
 - A real scatterplot is the visualization of the mileage (~mpg~)
   vs. weight (~wt~) of cars in the built-in ~mtcars~ data set:
-  #+begin_src R :results graphics file :file 9_mtcars.png
+  #+begin_src R :results graphics file :file ../img/9_mtcars.png
     plot(mtcars$mpg ~ mtcars$wt)
     title("Car mileage (mpg) vs. weight (wt) in mtcars")
   #+end_src
@@ -1227,7 +1234,7 @@ the *big picture* in tables.
   + Each column has the shown variable as x- and the others as y-axis
   + Each row has the shown variable as y- and the others as x-axis
   + E.g. the square (2,1) shows x = ~Sepal.Length~, y = all others
-  #+begin_src R :results graphics file :file 9_iris.png
+  #+begin_src R :results graphics file :file ../img/9_iris.png
     plot(iris)
   #+end_src
 
@@ -1236,7 +1243,7 @@ the *big picture* in tables.
 
 - The array is much easier to read when adding the iris species as a
   sixth variable to the plot.
-  #+begin_src R :results graphics file :file 9_iris_col.png
+  #+begin_src R :results graphics file :file ../img/9_iris_col.png
     plot(iris, col=iris$Species)
   #+end_src
 
@@ -1244,7 +1251,7 @@ the *big picture* in tables.
   [[file:9_iris_col.png]]
 
 - Homing in on one of the diagrams, e.g. ~Sepal.Width~ vs. ~Sepal.Length~:
-  #+begin_src R :results graphics file :file 9_iris1.png
+  #+begin_src R :results graphics file :file ../img/9_iris1.png
     plot(
       iris$Sepal.Width ~ iris$Sepal.Length,
       col=iris$Species,
@@ -1255,7 +1262,7 @@ the *big picture* in tables.
   [[file:9_iris1.png]]
 
 - As an example for a fully customized plot with legend:
-  #+begin_src R :results graphics file :file 9_iris_final.png
+  #+begin_src R :results graphics file :file ../img/9_iris_final.png
     plot(
       y=iris$Petal.Length, xlab="Petal length (cm)",
       x=iris$Petal.Width, ylab="Petal width (cm)",
