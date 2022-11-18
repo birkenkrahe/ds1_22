@@ -1039,7 +1039,7 @@ the *big picture* in tables.
 
 - For example for ~x <- c(1,2,3,4,5,6,7,8,9,10)~:
   #+begin_src R
-    x <- 1:10
+    x <- c(1:10
     summary(x)
   #+end_src
 
@@ -1126,7 +1126,7 @@ the *big picture* in tables.
   #+begin_src R :results graphics file :file ../img/9_boxplot1.png
     boxplot(quakes$mag, horizontal=TRUE,
             range=0,
-            main="Boxplot of earthquake magnitude in quakes",
+            main="Boxplot of earthquake magnitude\nin the data frame quakes",
             xlab="Earthquake magnitude (Richter scale)")
   #+end_src
 

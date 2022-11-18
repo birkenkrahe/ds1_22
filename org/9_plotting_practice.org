@@ -12,33 +12,75 @@
 
   - Summary for ~x <- c(1,2,3,4,5,6,7,8,9,10)~:
     #+begin_src R
-
+      x <- c(1:10,100)
+      summary(x)
     #+end_src
+
+    #+RESULTS:
+    :    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    :    1.00    3.50    6.00   14.09    8.50  100.00
 
   - For the built-in ~quakes~ data frame of 1,000 seismic events near the
     island of Fiji (depth, magnitude, number of observing stations):
-    #+begin_src R
 
+    #+begin_src R
+      summary(
+        quakes[,c("depth","mag","stations")])      
     #+end_src
+
+    #+RESULTS:
+    :      depth            mag          stations     
+    :  Min.   : 40.0   Min.   :4.00   Min.   : 10.00  
+    :  1st Qu.: 99.0   1st Qu.:4.30   1st Qu.: 18.00  
+    :  Median :247.0   Median :4.60   Median : 27.00  
+    :  Mean   :311.4   Mean   :4.62   Mean   : 33.42  
+    :  3rd Qu.:543.0   3rd Qu.:4.90   3rd Qu.: 42.00  
+    :  Max.   :680.0   Max.   :6.40   Max.   :132.00
 
   - Each record/row represents one recorded earthquake: where it was
     located, at which depth the epicenter was, its magnitude, and the
     number or observing stations:
     #+begin_src R
-
+      head(quakes)
     #+end_src
+
+    #+RESULTS:
+    :      lat   long depth mag stations
+    : 1 -20.42 181.62   562 4.8       41
+    : 2 -20.62 181.03   650 4.2       15
+    : 3 -26.00 184.10    42 5.4       43
+    : 4 -17.97 181.66   626 4.1       19
+    : 5 -20.42 181.96   649 4.0       11
+    : 6 -19.68 184.31   195 4.0       12
 
   - Creating a boxplot is simple: for the magnitudes (~quakes$mag~):
     #+begin_src R :results graphics file :file box1.png
-
+      boxplot(quakes$mag, horizontal=TRUE, range=0)
     #+end_src
+
+    #+RESULTS:
+    [[file:box1.png]]
 
   - Let's look at histogram and boxplot on top of one another, with
     a minimal customization:
     #+begin_src R :results graphics file :file box2.png
-
+      par(mfrow=c(2,1))
+      hist(quakes$mag)
+      boxplot(quakes$mag,
+        horizontal=TRUE)
     #+end_src
 
+    #+RESULTS:
+    [[file:box2.png]]
+
+  - Interquartile range of this plot
+    #+begin_src R
+      IQR(quakes$mag)
+    #+end_src
+
+    #+RESULTS:
+    : [1] 0.6
+    
   - The ~range~ parameter in ~boxplot~ determines how far the whiskers
     should extend from the box. ~range=0~ includes all values.
     #+begin_src R :results graphics file :file box3.png
@@ -49,14 +91,26 @@
 
   - We use ~cut~ to create three levels of stations for three boxes:
     #+begin_src R
-
+      stations <- cut(quakes$stations, breaks=c(0,50,100,150))
+      stations[1:5]
     #+end_src
+
+    #+RESULTS:
+    : [1] (0,50] (0,50] (0,50] (0,50] (0,50]
+    : Levels: (0,50] (50,100] (100,150]
 
   - The boxplot compares the distributions of the magnitudes of the
     events according to three groups of monitoring stations:
     #+begin_src R :results graphics file :file box4.png
-
+      boxplot(quakes$mag ~ stations,
+            main="Groups of earthquake monitoring stations in quakes",
+            xlab="# stations detected",
+            ylab="Earthquake magnitude (pts on the Richter scale)",
+            col="gray")
     #+end_src
+
+    #+RESULTS:
+    [[file:box4.png]]
 
 * Scatterplots
 
@@ -64,38 +118,67 @@
     x-y-plot shows relationships of interest - e.g. a plot of the
     latitude vs. longitude in ~quakes~:
     #+begin_src R :results graphics file :file noscatter.png
-
+      plot(x = quakes$lat,
+           y = quakes$lon) 
     #+end_src
+
+    #+RESULTS:
+    [[file:noscatter.png]]
 
   - A real scatterplot is the visualization of the mileage (~mpg~)
     vs. weight (~wt~) of cars in the built-in ~mtcars~ data set:
     #+begin_src R :results graphics file :file mtcars.png
-
+      plot(mtcars$mpg ~ mtcars$wt)
+      title("Car mileage (mpg) vs. weight (tons)\nin the performance car dataset mtcars")
     #+end_src
+
+    #+RESULTS:
+    [[file:mtcars.png]]
 
 * Scatterplots of more than two variables
 
   - View the first few records:
     #+begin_src R
-
+      head(iris)
     #+end_src
+
+    #+RESULTS:
+    :   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+    : 1          5.1         3.5          1.4         0.2  setosa
+    : 2          4.9         3.0          1.4         0.2  setosa
+    : 3          4.7         3.2          1.3         0.2  setosa
+    : 4          4.6         3.1          1.5         0.2  setosa
+    : 5          5.0         3.6          1.4         0.2  setosa
+    : 6          5.4         3.9          1.7         0.4  setosa
 
   - To plot every variable against every other, you can plot an array of
     x-y-plots:
     #+begin_src R :results graphics file :file iris1.png
-
+      plot(iris)
     #+end_src
+
+    #+RESULTS:
+    [[file:iris1.png]]
 
   - The array is much easier to read when adding the iris species as a
     sixth variable to the plot.
     #+begin_src R :results graphics file :file iris2.png
-
+      plot(iris, col=iris$Species)
     #+end_src
+
+    #+RESULTS:
+    [[file:iris2.png]]
 
   - Homing in on one of the diagrams, e.g. ~Sepal.Width~ vs. ~Sepal.Length~:
     #+begin_src R :results graphics file :file iris3.png
-
+      plot(
+        iris$Petal.Width ~ iris$Petal.Length,
+        col=iris$Species,
+        pch=19)
     #+end_src
+
+    #+RESULTS:
+    [[file:iris3.png]]
 
   - Run this as an example for a fully customized plot with legend:
     #+begin_src R :results graphics file :file iris3.png
@@ -105,7 +188,10 @@
         col=iris$Species,
         pch=19)
       legend("topleft",
-             legend=c("setosa", "virginica","versicolor"),
+             legend=c("Iris setosa", "Iris virginica","Iris versicolor"),
              col=c("black","red","green"), pch=19)
       title("Petal width vs. length for three species of iris")
     #+end_src
+
+    #+RESULTS:
+    [[file:iris3.png]]
