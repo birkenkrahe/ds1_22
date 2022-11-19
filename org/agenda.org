@@ -1853,7 +1853,7 @@ Questions:
 - [X] SocMed: [[https://twitter.com/DataCamp/status/1591793383885967360?s=20&t=BpWX6t4pbYnPHZQoKHyw3Q][Featured on Twitter @DataCamp]]
 - [X] Presenting in Emacs (FAQ + examples)
 - [X] Pie charts, histograms, scatterplots, boxplots
-- [ ] Test: data import, histograms, scatterplot, boxplot
+- [X] Test: data import, histograms, scatterplot, boxplot
 
 * GitHub: Living in the matrix ([[https://twitter.com/birkenkrahe/status/1591425365234311179?s=20&t=Gogehc82S3rO6cODfrOvZw][tweet]])
 #+attr_html: :width 500px
