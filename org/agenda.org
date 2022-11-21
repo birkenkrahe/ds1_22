@@ -1919,7 +1919,7 @@ software around it.« ([[https://www.reddit.com/r/emacs/comments/r1s3k2/comment/
 #+attr_html: :width 600px
 [[../img/fastfurious.png]]
 
-*Selection of quiz questions (40/77) from the final exam*
+*Selection of quiz questions (14/77) from the final exam (40/77)*
 
 1) What are Python's ~pandas~?
    #+begin_notes
