@@ -5,7 +5,8 @@
 #+PROPERTY: header-args:R :session *R* :results output
 * README
 
-- Practice file for the lecture on plotting
+- Practice file for the lecture on plotting histograms, boxplots and
+  scatterplots ([[https://github.com/birkenkrahe/ds1/blob/piHome/org/10_hist_box_plot.org][see GitHub]])
 - Create, execute and debug R code blocks as needed
 - Emacs + ESS + Org-mode and R must be installed
 - You can find the solutions in the PDF repository for the course

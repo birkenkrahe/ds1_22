@@ -347,7 +347,7 @@
   #+end_src
 
   #+RESULTS:
-  [[file:9_noscatter.png]]
+  [[file:../img/9_noscatter.png]]
 
 - A real scatterplot is the visualization of the mileage (~mpg~)
   vs. weight (~wt~) of cars in the built-in ~mtcars~ data set:

@@ -640,6 +640,7 @@ the *big picture* in tables.
   code below produces a basic barplot from ~mtcars$cyl~
 
   #+begin_src R :results graphics file :file ../img/7_qplot.png
+    library(ggplot2)
     qplot(factor(mtcars$cyl), geom="bar")
   #+end_src
 
