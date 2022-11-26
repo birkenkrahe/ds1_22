@@ -1919,7 +1919,7 @@ software around it.« ([[https://www.reddit.com/r/emacs/comments/r1s3k2/comment/
 #+attr_html: :width 600px
 [[../img/fastfurious.png]]
 
-*Selection of quiz questions (14/77) from the final exam (40/77)*
+*Selection of quiz questions (14/40) from the final exam (40/77)*
 
 1) What are Python's ~pandas~?
    #+begin_notes
@@ -2124,12 +2124,12 @@ taken away. Two more have been added to the list in the last 2 weeks:
 #+end_quotes
 
 * Week 16: Final sprint reviews (Nov 28, 30, Dec 2)
-#+attr_html: :width 600px
-[[../img/goya.jpg]]
+#+attr_html: :width 550px
+[[../img/ds1projectsf22.png]]
 
-- *Present* final project prototype in no particular order!
-- *Submit* all material prior to the presentation!
-- *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist carefully *now*!
+- *Present* final project prototype!
+- *Submit* all material via GDrive!
+- *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist!
 
 * References
 #+attr_html: :width 500px
@@ -2141,7 +2141,6 @@ R. New York: Springer. Online: [[https://doi.org/10.1007/978-0-387-75936-4][doi.
 [[https://www.museodelprado.es/en/the-collection/art-work/the-clothed-maja/a3121efc-6924-454c-8a9f-e4320f26d3d0][Francisco de Goya: The clothed Maja (1800, Prado Madrid)]]
 
 Pedersen T L (2022/11/07). ggplot2 3.4.0. [[https://www.tidyverse.org/blog/2022/11/ggplot2-3-4-0/][Online: tidyverse.org.]]
-
 
 * Footnotes
 
