@@ -1,7 +1,10 @@
-#+TITLE: Introduction to data science
+#+TITLE: Data science I
 #+AUTHOR:Marcus Birkenkrahe
 #+SUBTITLE: DSC 105 @ Lyon College Fall 2022
 #+OPTIONS: toc:nil
+#+attr_html: :width 500px
+[[./img/cover.jpg]]
+[[https://unsplash.com/@layaclode][Photo by Laya Clode on Unsplash.]]
 * What's in this repo?
 
   - Repository for DSC 105 - Introduction to data science
