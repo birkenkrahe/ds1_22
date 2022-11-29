@@ -2123,13 +2123,14 @@ taken away. Two more have been added to the list in the last 2 weeks:
 - Monet, Les Meules (Berlin)
 #+end_quotes
 
-* Week 16: Final sprint reviews (Nov 28, 30, Dec 2)
+* Week 16: 4th sprint review (11/28,11/30,12/2)
 #+attr_html: :width 550px
 [[../img/ds1projectsf22.png]]
 
 - *Present* final project prototype!
-- *Submit* all material via GDrive!
+- *Submit* all material via GDrive ([[https://lyon.instructure.com/courses/568/assignments/1610][upload URL to Canvas]])!
 - *Read* *[[https://github.com/birkenkrahe/org/blob/master/FAQ.org#how-should-we-prepare-for-the-final-presentation][the FAQ]]* with the checklist!
+- *Wait* for the evaluation & grade! 
 
 * References
 #+attr_html: :width 500px
