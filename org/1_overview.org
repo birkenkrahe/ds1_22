@@ -158,7 +158,7 @@ Source: "[[https://docs.google.com/presentation/d/1wA7sb41EjV6GP3oBEFsOiYnoe29WI
 - Register with DataCamp and complete the DataCamp chapter
   [[https://lyon.instructure.com/courses/568/assignments/1420][Introduction to data science​]] by Monday, 22 August at 11 am (ca. 20
   min).
-
+  
   + Data science definition
   + Data science workflow
   + Application to real-world problems
