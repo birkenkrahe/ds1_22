@@ -75,27 +75,29 @@
 
    [[../img/ds1_f22_projects2.png]]
 
-   But what we want is grouping the results by team. We have:
+   But what we want is grouping the results by team. We define index
+   vectors using ~grep~ to search for the names of students that belong
+   to a team (names deleted here):
    #+begin_src R
      ##ds1$Student[3:nrow(ds1)-1]  # all students
-     soccer_idx <- sort(c(grep(pattern="Pedro",x=ds1$Student,fixed=TRUE)-1,
-                          grep(pattern="Andrei",x=ds1$Student,fixed=TRUE)-1,
-                          grep(pattern="Fortu",x=ds1$Student,fixed=TRUE)-1))
+     soccer_idx <- sort(c(grep(pattern="_____",x=ds1$Student,fixed=TRUE)-1,
+                          grep(pattern="_____",x=ds1$Student,fixed=TRUE)-1,
+                          grep(pattern="_____",x=ds1$Student,fixed=TRUE)-1))
      soccer_idx
-     rocket_idx <- sort(c(grep("Brittany",ds1$Student)-1,
-                          grep("Jordan",ds1$Student)-1))
+     rocket_idx <- sort(c(grep("_____",ds1$Student)-1,
+                          grep("_____",ds1$Student)-1))
      rocket_idx
-     baseball_idx <- sort(c(grep("Nick",ds1$Student)-1,
-                            grep("Hayden",ds1$Student)-1))
+     baseball_idx <- sort(c(grep("_____",ds1$Student)-1,
+                            grep("_____",ds1$Student)-1))
      baseball_idx
-     sticky_idx <- c(grep("Harrod",ds1$Student)-1)
+     sticky_idx <- c(grep("_____",ds1$Student)-1)
      sticky_idx
-     ceramics_idx <- sort(c(grep("Kim",ds1$Student)-1,
-                            grep("Balah",ds1$Student)-1,
-                            grep("David",ds1$Student)-1))
+     ceramics_idx <- sort(c(grep("_____",ds1$Student)-1,
+                            grep("_____",ds1$Student)-1,
+                            grep("_____",ds1$Student)-1))
      ceramics_idx
-     titanic_idx <- sort(c(grep("Jacob",ds1$Student)-1,
-                           grep("Brandon",ds1$Student)-1))
+     titanic_idx <- sort(c(grep("_____",ds1$Student)-1,
+                           grep("_____",ds1$Student)-1))
      titanic_idx
    #+end_src
 
@@ -127,7 +129,7 @@
      ds1_teams
      class(ds1_teams)
    #+end_src
-
+   
 6) Barplot of project averages by team and sprint review:
    #+begin_src R :results graphics file :file ../img/ds1_f22_projects3.png
      colors <- c("red","green","yellow","blue","black","gray")
