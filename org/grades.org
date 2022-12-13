@@ -1,4 +1,4 @@
-#+title: DSC 105 Grades Analysis
+#+title: DSC 105 Grades Analysis - Fall 2022
 #+options: toc:nil num:nil
 #+startup: overview hideblocks indent
 #+property: header-args:R :results output :session *R*
