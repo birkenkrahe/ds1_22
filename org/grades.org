@@ -99,7 +99,8 @@
      titanic_idx
    #+end_src
 
-   Extract team data (by index):
+   Extract team data (using the index vectors) and build data frame
+   row by row (there are different ways of doing this):
    #+begin_src R
      ds1_proj_team <- proj[soccer_idx[1],]
      ds1_proj_team[2,] <- proj[rocket_idx[1],]
