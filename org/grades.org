@@ -99,24 +99,7 @@
      titanic_idx
    #+end_src
 
-   Unname project data:
-   #+begin_src R
-     proj_unnamed <- unname(proj)
-     proj_unnamed
-   #+end_src
-
    Extract team data (by index):
-   #+begin_src R
-     ds1_proj_team <- proj_unnamed[soccer_idx[1],]
-     ds1_proj_team[2,] <- proj_unnamed[rocket_idx[1],]
-     ds1_proj_team[3,] <- proj_unnamed[baseball_idx[1],]
-     ds1_proj_team[4,] <- proj_unnamed[sticky_idx[1],]
-     ds1_proj_team[5,] <- proj_unnamed[ceramics_idx[1],]
-     ds1_proj_team[6,] <- proj_unnamed[titanic_idx[1],]
-     ds1_proj_team
-   #+end_src
-
-   Turns out unnaming is not necessary:
    #+begin_src R
      ds1_proj_team <- proj[soccer_idx[1],]
      ds1_proj_team[2,] <- proj[rocket_idx[1],]
@@ -133,11 +116,7 @@
      ds1_proj_team
    #+end_src
 
-   #+begin_src R
-     p <- prop.table(ds1_proj_team)
-     p
-   #+end_src
-
+   Normalize data for proportional stacked barplot:
    #+begin_src R
      ds1_teams <- apply(X=ds1_proj_team,
                         MARGIN=2,
