@@ -44,10 +44,14 @@ able to:
 
 - Learn computer and data science principles by playing with data
 - Acquire basic statistical programming skills using R
-- Apply literate programming principles to their work with Org-mode
+- Apply literate programming principles to their work with interactive
+  notebooks
 - Use infrastructure including command line, Jupyter notebooks, GitHub
 - Understand the relationship of humans, machines, and data
 - Develop their critical thinking skills
+- Learn how to effectively use AI coding assistants like Copilot, Code
+  Interpreter (ChatGPT)
+- Understand the impact of, and can code in R, Python, SQL, bash
 - Know how to effectively present assignment and project results
 
 Students, who complete DSC 105 will have fulfilled the prerequisites
@@ -77,7 +81,6 @@ i.e. every discipline, from accounting to zoology).
 | Weekly  | Tests                       |    25% |
 | TBD     | Final exam                  |    25% |
 
-#+begin_notes
 Notes:
 - To pass: 60%
 - DataCamp assignments: there are 15 assignments spread out over 3
@@ -88,7 +91,6 @@ Notes:
 - Tests: weekly online quizzes, which are previewed and reviewed in
   class.
 - Final exam: selection of the most challenging weekly quiz questions.
-#+end_notes
 
 * Dates and class schedule
 
@@ -111,11 +113,9 @@ Notes:
 |   15 | Nov 27-Dec 01 | Python for R users   |                   |
 |   16 | Dec 04-Dec 08 |                      | 4th sprint review |
 
-#+begin_notes
 - NO CLASSES: Aug 21, Oct 9 (Fall break), Nov 22 + 24
   (Thanksgiving). See [[https://catalog.lyon.edu/202324-academic-calendar][2023-2024 academic calendar]].
 - ONLINE CLASSES: Sept 15 + 22.
-#+end_notes
 
 * Learning management system
 
@@ -128,14 +128,18 @@ Notes:
 * DataCamp
 
 The course includes a free subscription to the DataCamp classroom at
-[[https://datacamp.com/][datacamp.com]] for further study, and for the opportunity to earn
+[[https://datacamp.com/][datacamp.com]] for further study, and the opportunity to earn
 certificates. DataCamp is a popular data science online learning
 platform.
 
 * GitHub
 
 All course materials are available in a public GitHub repository
-([[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]). GitHub is the worldwide largest online
-platform for software development.
+([[https://github.com/birkenkrahe/ds1][github.com/birkenkrahe/ds1]]). Registration for students includes a
+free subscription to GitHub codespaces with the AI coding assistant
+Copilot. GitHub is the worldwide largest online platform for software
+development.
 
-* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon Standard Policies (Fall 2023)]]
+* [[https://docs.google.com/document/d/1ZaoAIX7rdBOsRntBxPk7TK77Vld9NXECVLvT9_Jovwc/edit?usp=sharing][Lyon College Standard Policies (Fall 2023)]]
+
+Online: https://tinyurl.com/LyonPolicyF23, see also [[https://catalog.lyon.edu/class-attendance][Class Attendance]]
